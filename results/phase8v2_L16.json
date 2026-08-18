@@ -1,0 +1,603 @@
+{
+  "summary": {
+    "layer": 16,
+    "n_targets": 60,
+    "n_tfs_tested": 48,
+    "detection_rate": 0.9666666666666667,
+    "n_tfs_specific": 1,
+    "tf_specificity_rate": 0.020833333333333332,
+    "n_control_cells": 400,
+    "n_alive": 8853,
+    "mean_responding": 124.31666666666666
+  },
+  "targets": [
+    {
+      "target": "TRRAP",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 499,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "PHB2",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 834,
+      "n_resp_overlap_targets": 8,
+      "spec_p": 2.1069963019643495e-06,
+      "spec_q": 0.00010113582249428878
+    },
+    {
+      "target": "HIRA",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 6,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "BDP1",
+      "is_trrust_tf": true,
+      "n_known_targets": 3,
+      "n_cells": 25,
+      "n_responding": 58,
+      "n_resp_overlap_targets": 1,
+      "spec_p": 0.5389005930990765,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SIN3A",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 6,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SFPQ",
+      "is_trrust_tf": true,
+      "n_known_targets": 6,
+      "n_cells": 25,
+      "n_responding": 807,
+      "n_resp_overlap_targets": 14,
+      "spec_p": 0.6241818797207785,
+      "spec_q": 1.0
+    },
+    {
+      "target": "AATF",
+      "is_trrust_tf": true,
+      "n_known_targets": 5,
+      "n_cells": 25,
+      "n_responding": 125,
+      "n_resp_overlap_targets": 1,
+      "spec_p": 0.8179833966608716,
+      "spec_q": 1.0
+    },
+    {
+      "target": "MED1",
+      "is_trrust_tf": true,
+      "n_known_targets": 5,
+      "n_cells": 25,
+      "n_responding": 795,
+      "n_resp_overlap_targets": 5,
+      "spec_p": 0.9404416822168994,
+      "spec_q": 1.0
+    },
+    {
+      "target": "RAD51",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 30,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "RNF14",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 1,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "YEATS4",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 17,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "NFRKB",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 7,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "DRAP1",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 4,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SNW1",
+      "is_trrust_tf": true,
+      "n_known_targets": 3,
+      "n_cells": 25,
+      "n_responding": 3,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "RUVBL1",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 594,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "PIAS4",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 331,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "STAT5A",
+      "is_trrust_tf": true,
+      "n_known_targets": 13,
+      "n_cells": 25,
+      "n_responding": 1,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "UBTF",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 1,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "NELFCD",
+      "is_trrust_tf": true,
+      "n_known_targets": 3,
+      "n_cells": 25,
+      "n_responding": 28,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SRCAP",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 5,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "USF2",
+      "is_trrust_tf": true,
+      "n_known_targets": 47,
+      "n_cells": 25,
+      "n_responding": 2,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SMARCB1",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 2,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "MAX",
+      "is_trrust_tf": true,
+      "n_known_targets": 5,
+      "n_cells": 25,
+      "n_responding": 825,
+      "n_resp_overlap_targets": 27,
+      "spec_p": 0.005998543404109927,
+      "spec_q": 0.11180013335315299
+    },
+    {
+      "target": "DDB1",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 0,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "KLF7",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 1,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "HDAC7",
+      "is_trrust_tf": true,
+      "n_known_targets": 13,
+      "n_cells": 25,
+      "n_responding": 95,
+      "n_resp_overlap_targets": 4,
+      "spec_p": 0.006987508334572062,
+      "spec_q": 0.11180013335315299
+    },
+    {
+      "target": "DNMT1",
+      "is_trrust_tf": true,
+      "n_known_targets": 31,
+      "n_cells": 25,
+      "n_responding": 4,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "FOXL2",
+      "is_trrust_tf": true,
+      "n_known_targets": 5,
+      "n_cells": 25,
+      "n_responding": 4,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "TFDP1",
+      "is_trrust_tf": true,
+      "n_known_targets": 10,
+      "n_cells": 25,
+      "n_responding": 3,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "VHL",
+      "is_trrust_tf": true,
+      "n_known_targets": 20,
+      "n_cells": 25,
+      "n_responding": 0,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "HINFP",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 223,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "ZBTB17",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 25,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SRSF1",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 237,
+      "n_resp_overlap_targets": 3,
+      "spec_p": 0.3106733058186347,
+      "spec_q": 1.0
+    },
+    {
+      "target": "UPF2",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 78,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "PTMA",
+      "is_trrust_tf": true,
+      "n_known_targets": 4,
+      "n_cells": 25,
+      "n_responding": 13,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "DDX5",
+      "is_trrust_tf": true,
+      "n_known_targets": 2,
+      "n_cells": 25,
+      "n_responding": 8,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "TBP",
+      "is_trrust_tf": true,
+      "n_known_targets": 15,
+      "n_cells": 25,
+      "n_responding": 61,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "E2F6",
+      "is_trrust_tf": true,
+      "n_known_targets": 7,
+      "n_cells": 25,
+      "n_responding": 1,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "HNRNPR",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 3,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "SUGP1",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 78,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "BRCA2",
+      "is_trrust_tf": true,
+      "n_known_targets": 4,
+      "n_cells": 25,
+      "n_responding": 2,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "RBMX",
+      "is_trrust_tf": true,
+      "n_known_targets": 8,
+      "n_cells": 25,
+      "n_responding": 29,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "ZNF335",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 3,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "ATF5",
+      "is_trrust_tf": true,
+      "n_known_targets": 8,
+      "n_cells": 25,
+      "n_responding": 354,
+      "n_resp_overlap_targets": 9,
+      "spec_p": 0.3101717715516444,
+      "spec_q": 1.0
+    },
+    {
+      "target": "BARD1",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 1,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "NELFB",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 18,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "ILF3",
+      "is_trrust_tf": true,
+      "n_known_targets": 7,
+      "n_cells": 25,
+      "n_responding": 15,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "E4F1",
+      "is_trrust_tf": true,
+      "n_known_targets": 1,
+      "n_cells": 25,
+      "n_responding": 44,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0,
+      "spec_q": 1.0
+    },
+    {
+      "target": "PSMD12",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 85,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "SNAPC4",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 4,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "MRPL9",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 14,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "TOPBP1",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 10,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "LSM6",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 403,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "SIGLEC14",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 6,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "POLD2",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 194,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "RPLP0",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 73,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "FTSJ3",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 156,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "HIST2H2AC",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 4,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "RACGAP1",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 29,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    },
+    {
+      "target": "DDX24",
+      "is_trrust_tf": false,
+      "n_known_targets": 0,
+      "n_cells": 25,
+      "n_responding": 200,
+      "n_resp_overlap_targets": 0,
+      "spec_p": 1.0
+    }
+  ]
+}

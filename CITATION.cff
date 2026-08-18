@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "c2s-mechinterp: mechanistic interpretability of Cell2Sentence language models"
+message: "If you use this software, please cite the accompanying paper."
+type: software
+authors:
+  - family-names: Kendiukhov
+    given-names: Ihor
+    affiliation: "Institute of Medical Genetics and Applied Genomics, University of Tübingen"
+repository-code: "https://github.com/Biodyn-AI/c2s-mechinterp"
+url: "https://biodyn-ai.github.io/c2s-atlas/"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Same ceiling, different machinery: mechanistic interpretability of a text language model trained to read cells as sentences"
+  authors:
+    - family-names: Kendiukhov
+      given-names: Ihor
+      affiliation: "Institute of Medical Genetics and Applied Genomics, University of Tübingen"
+  year: 2026

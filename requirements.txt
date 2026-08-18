@@ -1,0 +1,20 @@
+# Pinned where the version matters. transformers 5.x breaks against torch 2.4 (DTensor import).
+torch>=2.4,<2.6
+transformers==4.46.3
+accelerate
+safetensors
+huggingface_hub
+tiktoken            # required by the Gemma-2 tokenizer
+protobuf            # required by the Gemma-2 tokenizer
+anndata
+scanpy
+numpy
+scipy
+scikit-learn
+statsmodels
+pandas
+umap-learn          # atlas layouts + intrinsic-dimension probes
+leidenalg           # co-activation modules
+igraph
+matplotlib
+tqdm

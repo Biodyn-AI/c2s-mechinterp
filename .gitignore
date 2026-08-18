@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+._*
+# large run artefacts - never commit
+*.npy
+*.npz
+*.pt
+*.h5ad
+runs/
+data/
