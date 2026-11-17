@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "params": {
+      "run": "/root/c2s/runs/geo_cs",
+      "h5ad": "/root/c2s/data/setty19_cd34_bm.h5ad",
+      "layer": 18,
+      "pseudotime_key": "palantir_pseudotime",
+      "fate_key": "clusters",
+      "counts_layer": "spliced",
+      "pca_dim": 20,
+      "out": "/root/c2s/runs/geo_cs/cell_state.json",
+      "seed": 0
+    }
+  },
+  "model_space": {
+    "space": "C2S-2B_L18",
+    "linear_r2": 0.6961942087909326,
+    "knn_r2": 0.7196338602710742,
+    "quad_r2": 0.7859656687245727,
+    "curvature": 0.0234396514801416,
+    "bilinear_gain": 0.08977145993364011,
+    "synthetic_linear_curvature": -0.11665079117135801,
+    "curved": true,
+    "theta_far_deg": 57.96059113677953,
+    "monotonicity_rho": 0.7818393231813857,
+    "fate_balacc": 0.6049555531936075,
+    "fate_null": 0.10728110992879433,
+    "fate_margin": 0.49767444326481314,
+    "pc1_pseudotime_rho": 0.048472411608045725,
+    "pseudotime_bin_participation_ratio": [
+      8.92369722205498,
+      9.613856996776077,
+      8.831694420652813,
+      9.687438844798601,
+      8.770684867212436,
+      7.157329718589213,
+      8.23849889439289,
+      8.022221623763317,
+      7.857029397512993,
+      7.797633029362293
+    ]
+  },
+  "expression_pca_baseline": {
+    "space": "expr_pca",
+    "linear_r2": 0.862458260640173,
+    "knn_r2": 0.9644334969555735,
+    "quad_r2": 0.9491022560657107,
+    "curvature": 0.10197523631540051,
+    "bilinear_gain": 0.0866439954255378,
+    "synthetic_linear_curvature": -0.04286398566378402,
+    "curved": true,
+    "theta_far_deg": 83.95963059122035,
+    "monotonicity_rho": 0.8454034957977584,
+    "fate_balacc": 0.8618163281898916,
+    "fate_null": 0.10695776811200683,
+    "fate_margin": 0.7548585600778848,
+    "pc1_pseudotime_rho": 0.38288858032095335,
+    "pseudotime_bin_participation_ratio": [
+      12.277456925306797,
+      14.00623596025227,
+      13.150296826115902,
+      9.454648366337432,
+      10.253723434246059,
+      11.281545706224762,
+      8.711974620213372,
+      12.7225422459941,
+      7.206333045649672,
+      8.80483200397466
+    ]
+  },
+  "earns_its_place": false
+}

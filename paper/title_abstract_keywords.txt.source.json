@@ -1,0 +1,10 @@
+{
+  "schema": "c2s-submission-frontmatter-v1",
+  "source": "paper/manuscript.tex",
+  "source_sha256": "5dfcf005e046204608c64fd8106ef15388210c76521f3d9b56fc91db0e087635",
+  "generated_text_sha256": "e6bdda6e37a7e7dfa6e3f85d57d83fe377321fffbcd2e3259797b0c25135c4ea",
+  "abstract_word_count": 240,
+  "keyword_count": 6,
+  "generator": "experiments/make_title_abstract_keywords.py",
+  "parser": "Existing validate_submission.py pylatexenc contexts; math_mode=text"
+}

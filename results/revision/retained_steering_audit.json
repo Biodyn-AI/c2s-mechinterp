@@ -1,0 +1,1442 @@
+{
+  "schema": "retained-steering-name-audit-v1",
+  "claims": [
+    {
+      "id": "name_n_probes",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/n_probes",
+      "value": 87
+    },
+    {
+      "id": "name_n_backbone",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/n_backbone",
+      "value": 24
+    },
+    {
+      "id": "name_human_auroc",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/human/auroc",
+      "value": 0.9886486486486487
+    },
+    {
+      "id": "name_human_separation_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/human/separation_deg",
+      "value": 40.72446101222556
+    },
+    {
+      "id": "name_human_p",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/human/p",
+      "value": 0.00024993751562109475
+    },
+    {
+      "id": "name_human_S_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/human/S_mean_deg",
+      "value": 339.64541139007304
+    },
+    {
+      "id": "name_human_G2M_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/human/G2M_mean_deg",
+      "value": 298.9209503778475
+    },
+    {
+      "id": "name_retrieval_human_n",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/n",
+      "value": 87
+    },
+    {
+      "id": "name_retrieval_human_n_positive",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/n_positive",
+      "value": 50
+    },
+    {
+      "id": "name_retrieval_human_prevalence",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/prevalence",
+      "value": 0.5747126436781609
+    },
+    {
+      "id": "name_retrieval_human_average_precision",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/average_precision",
+      "value": 0.9931168395791586,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_human_auroc",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/auroc",
+      "value": 0.9886486486486487,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_human_random_label_expected_ap",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/random_label_expected_ap",
+      "value": 0.5947350730168071
+    },
+    {
+      "id": "name_retrieval_human_average_precision_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/average_precision_ci95",
+      "value": [
+        0.9804605564219485,
+        1.0
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_retrieval_human_auroc_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/human/auroc_ci95",
+      "value": [
+        0.9654054054054054,
+        1.0
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_nearmiss_auroc",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/nearmiss/auroc",
+      "value": 0.6854054054054054
+    },
+    {
+      "id": "name_nearmiss_separation_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/nearmiss/separation_deg",
+      "value": 4.267425429470904
+    },
+    {
+      "id": "name_nearmiss_p",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/nearmiss/p",
+      "value": 0.0012496875781054736
+    },
+    {
+      "id": "name_nearmiss_S_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/nearmiss/S_mean_deg",
+      "value": 326.6780858925657
+    },
+    {
+      "id": "name_nearmiss_G2M_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/nearmiss/G2M_mean_deg",
+      "value": 322.4106604630948
+    },
+    {
+      "id": "name_retrieval_nearmiss_n",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/n",
+      "value": 87
+    },
+    {
+      "id": "name_retrieval_nearmiss_n_positive",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/n_positive",
+      "value": 50
+    },
+    {
+      "id": "name_retrieval_nearmiss_prevalence",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/prevalence",
+      "value": 0.5747126436781609
+    },
+    {
+      "id": "name_retrieval_nearmiss_average_precision",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/average_precision",
+      "value": 0.7726445596369185,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_nearmiss_auroc",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/auroc",
+      "value": 0.6854054054054054,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_nearmiss_random_label_expected_ap",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/random_label_expected_ap",
+      "value": 0.5947350730168071
+    },
+    {
+      "id": "name_retrieval_nearmiss_average_precision_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/average_precision_ci95",
+      "value": [
+        0.6870701682188967,
+        0.8597380509484893
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_retrieval_nearmiss_auroc_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/nearmiss/auroc_ci95",
+      "value": [
+        0.5735135135135134,
+        0.7902837837837837
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_nearmiss_class_separation_fraction_of_human",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": [
+        "/forms/nearmiss/separation_deg",
+        "/forms/human/separation_deg"
+      ],
+      "value": 0.10478776939957082,
+      "derivation": "perturbed-form class separation divided by human class separation"
+    },
+    {
+      "id": "name_lower_auroc",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/lower/auroc",
+      "value": 0.7670270270270271
+    },
+    {
+      "id": "name_lower_separation_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/lower/separation_deg",
+      "value": 3.4074110805172495
+    },
+    {
+      "id": "name_lower_p",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/lower/p",
+      "value": 0.00024993751562109475
+    },
+    {
+      "id": "name_lower_S_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/lower/S_mean_deg",
+      "value": 326.22895890097544
+    },
+    {
+      "id": "name_lower_G2M_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/lower/G2M_mean_deg",
+      "value": 322.8215478204582
+    },
+    {
+      "id": "name_retrieval_lower_n",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/n",
+      "value": 87
+    },
+    {
+      "id": "name_retrieval_lower_n_positive",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/n_positive",
+      "value": 50
+    },
+    {
+      "id": "name_retrieval_lower_prevalence",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/prevalence",
+      "value": 0.5747126436781609
+    },
+    {
+      "id": "name_retrieval_lower_average_precision",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/average_precision",
+      "value": 0.8272733858486694,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_lower_auroc",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/auroc",
+      "value": 0.7670270270270271,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_lower_random_label_expected_ap",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/random_label_expected_ap",
+      "value": 0.5947350730168071
+    },
+    {
+      "id": "name_retrieval_lower_average_precision_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/average_precision_ci95",
+      "value": [
+        0.7441794692468471,
+        0.9055707625160812
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_retrieval_lower_auroc_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/lower/auroc_ci95",
+      "value": [
+        0.6626891891891892,
+        0.8600405405405402
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_lower_class_separation_fraction_of_human",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": [
+        "/forms/lower/separation_deg",
+        "/forms/human/separation_deg"
+      ],
+      "value": 0.0836698877240963,
+      "derivation": "perturbed-form class separation divided by human class separation"
+    },
+    {
+      "id": "name_mouse_auroc",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/mouse/auroc",
+      "value": 0.7816216216216216
+    },
+    {
+      "id": "name_mouse_separation_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/mouse/separation_deg",
+      "value": 2.812762434118099
+    },
+    {
+      "id": "name_mouse_p",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/mouse/p",
+      "value": 0.00024993751562109475
+    },
+    {
+      "id": "name_mouse_S_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/mouse/S_mean_deg",
+      "value": 326.11585799078216
+    },
+    {
+      "id": "name_mouse_G2M_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/mouse/G2M_mean_deg",
+      "value": 323.30309555666406
+    },
+    {
+      "id": "name_retrieval_mouse_n",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/n",
+      "value": 87
+    },
+    {
+      "id": "name_retrieval_mouse_n_positive",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/n_positive",
+      "value": 50
+    },
+    {
+      "id": "name_retrieval_mouse_prevalence",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/prevalence",
+      "value": 0.5747126436781609
+    },
+    {
+      "id": "name_retrieval_mouse_average_precision",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/average_precision",
+      "value": 0.8345003579033765,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_mouse_auroc",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/auroc",
+      "value": 0.7816216216216216,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_mouse_random_label_expected_ap",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/random_label_expected_ap",
+      "value": 0.5947350730168071
+    },
+    {
+      "id": "name_retrieval_mouse_average_precision_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/average_precision_ci95",
+      "value": [
+        0.7505305291187309,
+        0.9123265712485737
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_retrieval_mouse_auroc_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/mouse/auroc_ci95",
+      "value": [
+        0.6848648648648649,
+        0.8718918918918919
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_mouse_class_separation_fraction_of_human",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": [
+        "/forms/mouse/separation_deg",
+        "/forms/human/separation_deg"
+      ],
+      "value": 0.06906813163896024,
+      "derivation": "perturbed-form class separation divided by human class separation"
+    },
+    {
+      "id": "name_anagram_auroc",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/anagram/auroc",
+      "value": 0.5113513513513513
+    },
+    {
+      "id": "name_anagram_separation_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/anagram/separation_deg",
+      "value": 0.18989148070124884
+    },
+    {
+      "id": "name_anagram_p",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/anagram/p",
+      "value": 0.4271432141964509
+    },
+    {
+      "id": "name_anagram_S_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/anagram/S_mean_deg",
+      "value": 325.08964565243775
+    },
+    {
+      "id": "name_anagram_G2M_mean_deg",
+      "status": "verified_saved",
+      "artifact": "route_genemanifold_c2s/results/surface_forms.json",
+      "pointer": "/forms/anagram/G2M_mean_deg",
+      "value": 324.8997541717365
+    },
+    {
+      "id": "name_retrieval_anagram_n",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/n",
+      "value": 87
+    },
+    {
+      "id": "name_retrieval_anagram_n_positive",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/n_positive",
+      "value": 50
+    },
+    {
+      "id": "name_retrieval_anagram_prevalence",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/prevalence",
+      "value": 0.5747126436781609
+    },
+    {
+      "id": "name_retrieval_anagram_average_precision",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/average_precision",
+      "value": 0.6065529252333978,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_anagram_auroc",
+      "status": "verified_and_independently_recomputed",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/auroc",
+      "value": 0.5113513513513513,
+      "derivation": "sklearn.metrics from saved labels/scores"
+    },
+    {
+      "id": "name_retrieval_anagram_random_label_expected_ap",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/random_label_expected_ap",
+      "value": 0.5947350730168071
+    },
+    {
+      "id": "name_retrieval_anagram_average_precision_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/average_precision_ci95",
+      "value": [
+        0.5254719865927392,
+        0.7166736114990724
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "name_retrieval_anagram_auroc_ci95",
+      "status": "verified_saved",
+      "artifact": "paper_cbc_rev1/experiments/results/surface_form_retrieval.json",
+      "pointer": "/forms/anagram/auroc_ci95",
+      "value": [
+        0.3891891891891892,
+        0.6286486486486487
+      ],
+      "caveats": [
+        "Intervals resample genes as retrieval items, not independent cells or experiments."
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_n_cells",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows",
+      "value": 24,
+      "derivation": "len(rows)",
+      "caveats": [
+        "All three retained runs have24 rows; the note claiming32 matched-run cells is unsupported."
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_manifold_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 1.9680777959365958,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        5.354117510206883,
+        1.1838722338557304,
+        0.47360866664260115,
+        3.7678117344025397,
+        2.3146087134480697,
+        1.733554710681859,
+        1.6490510103076876,
+        1.2896799845893727,
+        1.4995050680416093,
+        2.8350302680117587,
+        4.197898225618928,
+        1.3614344197979258,
+        1.5993118383983513,
+        0.8437445566766062,
+        1.742602382922719,
+        0.8154861579389836,
+        1.020901226659758,
+        3.8641563875103264,
+        1.6650582549357082,
+        3.202947360089503,
+        0.4258453781179945,
+        0.9141540441939728,
+        2.1493546635560676,
+        1.330132305873351
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_manifold_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 1.2754976100567565,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L21_manifold_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": [
+        "/rows/*/traj/manifold/0/phase",
+        "/rows/*/traj/manifold/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 0.8199411269841662,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_linear_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.9452031097787001,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        1.3671219562136843,
+        0.15462108185171886,
+        0.11350316960680829,
+        2.515373572777048,
+        1.15902633517576,
+        0.9834923487101941,
+        0.5966360238025858,
+        0.550621895116802,
+        0.3011846066544739,
+        3.039660335486774,
+        1.6241454867776008,
+        0.33805941457163025,
+        0.6030063473083245,
+        0.8437445566766062,
+        0.7115452520892349,
+        0.13657205692900387,
+        0.3486720893868389,
+        2.2512605391974767,
+        1.6650582549357078,
+        1.0732817126542855,
+        0.20459497375672875,
+        0.9141540441939733,
+        0.5608354963305273,
+        0.6287030844850139
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_linear_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.7842235451519154,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L21_linear_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": [
+        "/rows/*/traj/linear/0/phase",
+        "/rows/*/traj/linear/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 0.8199411269841662,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_random_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.18907081175989282,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        0.08569709807952286,
+        0.09977002726120343,
+        0.04116603926480966,
+        0.1450414358171619,
+        0.2813305693742496,
+        0.0890568617883103,
+        0.11420428659441928,
+        0.08442626769953288,
+        0.06723581007214996,
+        0.32836210264946075,
+        0.32204466656288533,
+        0.15218742309286482,
+        0.12947735605045096,
+        0.12467095066912837,
+        0.44679839546246036,
+        0.10302448062724867,
+        0.1301980791448658,
+        0.4221209872278813,
+        0.26365074722144666,
+        0.43063275789072186,
+        0.11674663375026118,
+        0.08597769240299957,
+        0.3732217057253453,
+        0.10065710780804693
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_random_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.13049071120887928,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L21_random_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": [
+        "/rows/*/traj/random/0/phase",
+        "/rows/*/traj/random/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 0.00723882006585765,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_manifold_exceeds_linear_count",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj",
+      "value": 21,
+      "derivation": "count(path_length_manifold > path_length_linear)"
+    },
+    {
+      "id": "manifold_steer_L21_manifold_exceeds_linear_fraction",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj",
+      "value": 0.875,
+      "derivation": "success count divided by n cells"
+    },
+    {
+      "id": "manifold_steer_L21_one_sided_sign_test_p",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/traj",
+      "value": 0.0001385807991027832,
+      "derivation": "scipy.stats.binomtest(success_count,n,0.5,alternative=\"greater\")",
+      "caveats": [
+        "These reproduce the manuscript p-values. They are not Wilcoxon p-values."
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_gate_R_diff",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": [
+        "/rows/*/traj/manifold/0/phase",
+        "/rows/*/src"
+      ],
+      "value": 0.7815709570687334,
+      "derivation": "abs(mean(exp(i*(baseline_readout-centers[src]))))",
+      "caveats": [
+        "The stored circular-correlation gate is unreliable because true source phases are exactly balanced."
+      ],
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_source_phase_resultant",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/rows/*/src",
+      "value": 7.459086818853016e-17,
+      "derivation": "abs(mean(exp(i*centers[src])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_stored_circular_gate",
+      "status": "invalid_instrument_statistic",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "pointer": "/summary/_instrument/readout_vs_true_circ_corr",
+      "value": 0.7386587746831772,
+      "caveats": [
+        "Circular source mean is not defined for the balanced source-bin design; do not treat this number as reproducible calibration."
+      ]
+    },
+    {
+      "id": "manifold_steer_L18_n_cells",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows",
+      "value": 24,
+      "derivation": "len(rows)",
+      "caveats": [
+        "All three retained runs have24 rows; the note claiming32 matched-run cells is unsupported."
+      ]
+    },
+    {
+      "id": "manifold_steer_L18_manifold_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 0.9300592098141202,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        0.7479660691535921,
+        0.27511951966992143,
+        0.1242213545775197,
+        3.913477940876607,
+        1.2221404358680492,
+        0.6515694005122548,
+        0.6561515176915402,
+        0.4275168898516619,
+        0.7185630626737423,
+        0.8294220035644941,
+        2.890992131320408,
+        0.7540439421751617,
+        0.701207164746767,
+        0.2639774381012172,
+        0.9790373256845433,
+        0.4175794313532224,
+        0.43752949061112023,
+        1.9741654132724533,
+        0.41187456357560315,
+        1.029699430187133,
+        0.13388048952843778,
+        0.5616870494540271,
+        1.4961439984209006,
+        0.703454972668506
+      ]
+    },
+    {
+      "id": "manifold_steer_L18_manifold_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 0.8833598236977281,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L18_manifold_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": [
+        "/rows/*/traj/manifold/0/phase",
+        "/rows/*/traj/manifold/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 0.36241475375512877,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L18_linear_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.47441488674773463,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        0.5981690467857383,
+        0.09975853892107978,
+        0.0854880208534432,
+        1.631107214509678,
+        0.4633611128717936,
+        0.30760254430778566,
+        0.3237200260533486,
+        0.1825459865348864,
+        0.11604208434541974,
+        0.6949114396328224,
+        1.307983826141594,
+        0.21353120278063686,
+        0.27914170849036823,
+        0.09011848375338172,
+        0.4581267281625223,
+        0.07190506283110576,
+        0.19829133064641358,
+        1.7193816198152514,
+        0.41187456357560315,
+        0.7587052505004888,
+        0.14996664849171015,
+        0.4547035520881586,
+        0.5093813438892516,
+        0.2601399459631497
+      ]
+    },
+    {
+      "id": "manifold_steer_L18_linear_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.463093615114102,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L18_linear_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": [
+        "/rows/*/traj/linear/0/phase",
+        "/rows/*/traj/linear/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 0.36241475375512877,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L18_random_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.13886110225204087,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        0.09860193280411655,
+        0.04563283093574455,
+        0.04766043750159543,
+        0.09558824947038103,
+        0.11693945694001062,
+        0.08682115555934189,
+        0.12354285514221308,
+        0.04698970302770844,
+        0.08806743212508339,
+        0.23445404253237223,
+        0.22721325240127266,
+        0.144122340135604,
+        0.10352455509269465,
+        0.07851431862256764,
+        0.24318574303430385,
+        0.06653620236041036,
+        0.0698365084988879,
+        0.21474661805391726,
+        0.06787865379715363,
+        0.2700623870538639,
+        0.1175623002543622,
+        0.0974049259810279,
+        0.5500880971940338,
+        0.0976924555303138
+      ]
+    },
+    {
+      "id": "manifold_steer_L18_random_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.1100736692123007,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L18_random_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": [
+        "/rows/*/traj/random/0/phase",
+        "/rows/*/traj/random/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 0.004509247111770365,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L18_manifold_exceeds_linear_count",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj",
+      "value": 22,
+      "derivation": "count(path_length_manifold > path_length_linear)"
+    },
+    {
+      "id": "manifold_steer_L18_manifold_exceeds_linear_fraction",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj",
+      "value": 0.9166666666666666,
+      "derivation": "success count divided by n cells"
+    },
+    {
+      "id": "manifold_steer_L18_one_sided_sign_test_p",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/traj",
+      "value": 1.7940998077392578e-05,
+      "derivation": "scipy.stats.binomtest(success_count,n,0.5,alternative=\"greater\")",
+      "caveats": [
+        "These reproduce the manuscript p-values. They are not Wilcoxon p-values."
+      ]
+    },
+    {
+      "id": "manifold_steer_L18_gate_R_diff",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": [
+        "/rows/*/traj/manifold/0/phase",
+        "/rows/*/src"
+      ],
+      "value": 0.7815709570687334,
+      "derivation": "abs(mean(exp(i*(baseline_readout-centers[src]))))",
+      "caveats": [
+        "The stored circular-correlation gate is unreliable because true source phases are exactly balanced."
+      ],
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L18_source_phase_resultant",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/rows/*/src",
+      "value": 7.459086818853016e-17,
+      "derivation": "abs(mean(exp(i*centers[src])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L18_stored_circular_gate",
+      "status": "invalid_instrument_statistic",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "pointer": "/summary/_instrument/readout_vs_true_circ_corr",
+      "value": 0.7386587746831772,
+      "caveats": [
+        "Circular source mean is not defined for the balanced source-bin design; do not treat this number as reproducible calibration."
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_matched_n_cells",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows",
+      "value": 24,
+      "derivation": "len(rows)",
+      "caveats": [
+        "All three retained runs have24 rows; the note claiming32 matched-run cells is unsupported."
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_matched_manifold_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 2.28697319724155,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        2.9367849312131353,
+        1.5295428439732572,
+        0.8299919691760786,
+        3.0409905194225217,
+        2.4704487233327077,
+        2.7220727260088253,
+        1.979701366154452,
+        1.2779250360879217,
+        4.517079064272645,
+        3.9300099036320892,
+        3.5225071438373234,
+        5.2088908796571936,
+        2.130764640536704,
+        1.5942085840142752,
+        1.2920776191095689,
+        1.6380545327697726,
+        1.5847739461782178,
+        2.290329608392252,
+        1.139559247930681,
+        4.172734125674713,
+        0.7501064984581012,
+        0.9892379984330049,
+        1.8542224091576118,
+        1.4853424163741398
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_matched_manifold_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 1.2321225250026546,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L21_matched_manifold_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": [
+        "/rows/*/traj/manifold/0/phase",
+        "/rows/*/traj/manifold/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 1.218940258013032,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_matched_linear_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 1.3191782803669934,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        2.936784931213135,
+        1.5295428439732581,
+        0.16129103305007764,
+        1.3748227129728616,
+        1.4480962678248117,
+        3.1432644781414485,
+        0.9027898215722523,
+        0.831250835717924,
+        1.775463401278516,
+        2.3531754035474965,
+        1.6626406653936847,
+        1.63682705908351,
+        1.3940022056726202,
+        1.6572392693534113,
+        0.5257891714200591,
+        0.35086489750711536,
+        0.3787142634081091,
+        2.2903296083922533,
+        1.139559247930681,
+        1.119762565562369,
+        0.2399296429766098,
+        0.9892379984330049,
+        0.5372315728235573,
+        1.2816688315590694
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_matched_linear_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.8002549518763242,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L21_matched_linear_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": [
+        "/rows/*/traj/linear/0/phase",
+        "/rows/*/traj/linear/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": 1.218940258013032,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_matched_random_path_length_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.25407038377938435,
+      "derivation": "mean over cells of sum(abs(wrap(diff(readout phases))))",
+      "per_cell_values": [
+        0.27768464168846974,
+        0.25873275902960646,
+        0.08819597938929213,
+        0.1650016632777178,
+        0.20876950026046837,
+        0.19144859796876812,
+        0.10776122489505413,
+        0.09578951383987766,
+        0.15572000487317705,
+        0.4204521715101426,
+        0.5391355495731522,
+        0.16608217076021248,
+        0.13730142571041304,
+        0.2011238243724769,
+        0.14621119821135142,
+        0.17248052933652325,
+        0.04896944518516655,
+        0.35248261599488373,
+        0.17840918943903983,
+        1.4405925647265452,
+        0.11730183893982993,
+        0.11081481554957762,
+        0.3762920812082635,
+        0.14093590496521546
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_matched_random_path_length_sample_sd",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.27833547208255743,
+      "derivation": "sample SD across per-cell path lengths, ddof=1"
+    },
+    {
+      "id": "manifold_steer_L21_matched_random_target_progress_mean",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": [
+        "/rows/*/traj/random/0/phase",
+        "/rows/*/traj/random/-1/phase",
+        "/rows/*/tgt"
+      ],
+      "value": -0.018922993667537618,
+      "derivation": "mean(abs(wrap(phi_initial-centers[tgt])) - abs(wrap(phi_final-centers[tgt])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_matched_manifold_exceeds_linear_count",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj",
+      "value": 18,
+      "derivation": "count(path_length_manifold > path_length_linear)"
+    },
+    {
+      "id": "manifold_steer_L21_matched_manifold_exceeds_linear_fraction",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj",
+      "value": 0.75,
+      "derivation": "success count divided by n cells"
+    },
+    {
+      "id": "manifold_steer_L21_matched_one_sided_sign_test_p",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/traj",
+      "value": 0.011327922344207764,
+      "derivation": "scipy.stats.binomtest(success_count,n,0.5,alternative=\"greater\")",
+      "caveats": [
+        "These reproduce the manuscript p-values. They are not Wilcoxon p-values."
+      ]
+    },
+    {
+      "id": "manifold_steer_L21_matched_gate_R_diff",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": [
+        "/rows/*/traj/manifold/0/phase",
+        "/rows/*/src"
+      ],
+      "value": 0.7124101816765142,
+      "derivation": "abs(mean(exp(i*(baseline_readout-centers[src]))))",
+      "caveats": [
+        "The stored circular-correlation gate is unreliable because true source phases are exactly balanced."
+      ],
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_matched_source_phase_resultant",
+      "status": "verified_derived",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/rows/*/src",
+      "value": 7.459086818853016e-17,
+      "derivation": "abs(mean(exp(i*centers[src])))",
+      "auxiliary_artifact": "route_genemanifold_c2s/results/manifold_knots_cc.npz",
+      "npz_key": "centers"
+    },
+    {
+      "id": "manifold_steer_L21_matched_stored_circular_gate",
+      "status": "invalid_instrument_statistic",
+      "artifact": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "pointer": "/summary/_instrument/readout_vs_true_circ_corr",
+      "value": 0.7891061054309434,
+      "caveats": [
+        "Circular source mean is not defined for the balanced source-bin design; do not treat this number as reproducible calibration."
+      ]
+    },
+    {
+      "id": "three_run_manifold_path_mean",
+      "status": "verified_derived",
+      "artifact": null,
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 1.7283700676640887,
+      "derivation": "mean of the three per-run mean path lengths",
+      "caveats": [
+        "This is an across-run descriptive mean, not an L21-only value. Runs reuse the same24 source cells and are not independent biological replicates."
+      ],
+      "source_artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json"
+      ]
+    },
+    {
+      "id": "three_run_manifold_path_population_sd",
+      "status": "verified_derived",
+      "artifact": null,
+      "pointer": "/rows/*/traj/manifold/*/phase",
+      "value": 0.579309208491301,
+      "derivation": "population SD of three per-run means, ddof=0",
+      "source_artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json"
+      ]
+    },
+    {
+      "id": "three_run_linear_path_mean",
+      "status": "verified_derived",
+      "artifact": null,
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.9129320922978094,
+      "derivation": "mean of the three per-run mean path lengths",
+      "caveats": [
+        "This is an across-run descriptive mean, not an L21-only value. Runs reuse the same24 source cells and are not independent biological replicates."
+      ],
+      "source_artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json"
+      ]
+    },
+    {
+      "id": "three_run_linear_path_population_sd",
+      "status": "verified_derived",
+      "artifact": null,
+      "pointer": "/rows/*/traj/linear/*/phase",
+      "value": 0.34562731540077546,
+      "derivation": "population SD of three per-run means, ddof=0",
+      "source_artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json"
+      ]
+    },
+    {
+      "id": "three_run_random_path_mean",
+      "status": "verified_derived",
+      "artifact": null,
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.19400076593043933,
+      "derivation": "mean of the three per-run mean path lengths",
+      "caveats": [
+        "This is an across-run descriptive mean, not an L21-only value. Runs reuse the same24 source cells and are not independent biological replicates."
+      ],
+      "source_artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json"
+      ]
+    },
+    {
+      "id": "three_run_random_path_population_sd",
+      "status": "verified_derived",
+      "artifact": null,
+      "pointer": "/rows/*/traj/random/*/phase",
+      "value": 0.047163000848860596,
+      "derivation": "population SD of three per-run means, ddof=0",
+      "source_artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json"
+      ]
+    },
+    {
+      "id": "name_residualised_AUROC_0.908",
+      "status": "unsupported_saved_numeric_provenance",
+      "artifact": "route_genemanifold_c2s/RESULTS_transfer_and_names.md",
+      "pointer": null,
+      "value": 0.908,
+      "caveats": [
+        "Found only in a Markdown note; no saved numeric residualisation result or implementing analysis was found in the inspected saved JSON and surface_forms.py."
+      ]
+    },
+    {
+      "id": "name_context",
+      "status": "interpretation_limit",
+      "artifact": "route_genemanifold_c2s/surface_forms.py",
+      "pointer": null,
+      "value": "Each symbol was inserted at fixed rank into shared real-cell backbones after curated cycle genes were removed. The assay is not literally context-free."
+    },
+    {
+      "id": "control_identity",
+      "status": "interpretation_limit",
+      "artifact": "route_genemanifold_c2s/surface_forms.py",
+      "pointer": null,
+      "value": "Near-miss/anagram collisions were checked against available K562/RPE1 panels, not the complete human gene-symbol universe."
+    },
+    {
+      "id": "mouse_form",
+      "status": "interpretation_limit",
+      "artifact": "route_genemanifold_c2s/surface_forms.py",
+      "pointer": null,
+      "value": "The mouse arm is capitalize() spelling; it is not a mouse-orthologue experiment."
+    },
+    {
+      "id": "steering_mean_caption",
+      "status": "interpretation_limit",
+      "artifact": null,
+      "pointer": null,
+      "value": "The old figure means1.728/.913/.194 with SD .58/.35/.05 agree with across-three-run summaries. L21-only bars require the corresponding caption change."
+    }
+  ],
+  "source_sha256": {
+    "route_genemanifold_c2s/results/surface_forms.json": "f4bfa491b8f472ad57b2c6fcfc2b79badfdea2d353ae70425a112e264f89f31b",
+    "paper_cbc_rev1/experiments/results/surface_form_retrieval.json": "3681601955a2251280b8d0cb4251449b3ec2771984950865b76d8964dbe342e1",
+    "route_genemanifold_c2s/results/manifold_knots_cc.npz": "5c6f0cbc8bbb82eb4cd836cdaeb18d211c327c71d0eba7825de3e7a3edd9f37e",
+    "route_genemanifold_c2s/results/manifold_steer_L21.json": "378fecc4b4c932eb15aefb71433117c0d9caf5f0db1376fba8309c08f4075379",
+    "route_genemanifold_c2s/results/manifold_steer_L18.json": "03ec603097662e12e496627fa994b0d845ec59ac6628843b4e117a112d45e985",
+    "route_genemanifold_c2s/results/manifold_steer_L21_matched.json": "cabfe1716ff74f67007945ee907de736336510ff74c36e549ea9d32f529abd2c"
+  },
+  "independent_checks": [
+    "All5 AUROC/AP recomputed from saved labels/scores.",
+    "Retrieval source SHA matches surface_forms.json.",
+    "Steering means/progress/sign tests recomputed from saved per-cell trajectories."
+  ],
+  "scope": "No original artefact or manuscript changes; no model/GPU calls."
+}

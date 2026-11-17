@@ -1,0 +1,23 @@
+{
+  "schema": "public-numeric-artifact-scan-v1",
+  "passed": true,
+  "file_scope": "This compact directory; excludes report content values from output",
+  "patterns_checked": [
+    "private_key",
+    "service_token",
+    "password_assignment",
+    "pod_proxy",
+    "personal_home",
+    "personal_volume",
+    "private_ipv4"
+  ],
+  "findings": [],
+  "intentional_binary_files": [
+    "audits/annotation_2b_L00.dense_pq.npz",
+    "audits/annotation_27b_x4_L00.dense_pq.npz"
+  ],
+  "git_add_force_required": [
+    "results/revision/audits/annotation_2b_L00.dense_pq.npz",
+    "results/revision/audits/annotation_27b_x4_L00.dense_pq.npz"
+  ]
+}

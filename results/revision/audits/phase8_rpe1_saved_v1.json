@@ -1,0 +1,953 @@
+{
+  "audit": "V1 independent saved phase8 arithmetic/provenance",
+  "passed": true,
+  "n_checks": 38444,
+  "findings": [],
+  "pending_files": [],
+  "results": {
+    "n_groups": 181,
+    "n_genes": 8749,
+    "n_representation_layer_families": 5,
+    "n_records": 905,
+    "exact_row_provenance_checked": true,
+    "raw_feature_test_sample": {
+      "8": {
+        "n_conditions": 181,
+        "maximum_features_per_condition": 12,
+        "control_alive_features": 8734,
+        "all_group_eligible_features": 9194
+      },
+      "16": {
+        "n_conditions": 181,
+        "maximum_features_per_condition": 12,
+        "control_alive_features": 8312,
+        "all_group_eligible_features": 9159
+      },
+      "22": {
+        "n_conditions": 181,
+        "maximum_features_per_condition": 12,
+        "control_alive_features": 8502,
+        "all_group_eligible_features": 9188
+      }
+    },
+    "in_silico": {
+      "available": true,
+      "n_tfs": 103,
+      "n_layers": 3
+    },
+    "summary": [
+      {
+        "representation": "expression",
+        "layer": null,
+        "n_tfs": 121,
+        "n_tfs_screened": 121,
+        "n_tfs_evaluable": 102,
+        "n_tfs_unevaluable": 19,
+        "target_coverage_sensitivity": {
+          "min_1_eligible_target_genes": {
+            "n_tfs_evaluable": 102,
+            "n_specific_full_family_bh": 2
+          },
+          "min_3_eligible_target_genes": {
+            "n_tfs_evaluable": 51,
+            "n_specific_full_family_bh": 2
+          },
+          "min_5_eligible_target_genes": {
+            "n_tfs_evaluable": 32,
+            "n_specific_full_family_bh": 2
+          }
+        },
+        "n_specific": 2,
+        "n_responding_groups": 153,
+        "n_groups": 181,
+        "gene_retrieval": {
+          "n_tfs_evaluable": 102,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.006240486768690787,
+          "mean_average_precision_ci95": [
+            0.0034368670830210927,
+            0.010119069442765237
+          ],
+          "mean_auroc": 0.589588111453027,
+          "mean_auroc_ci95": [
+            0.5464224607124636,
+            0.6353612839327913
+          ],
+          "mean_ap_lift": 13.439187293567356,
+          "mean_ap_lift_ci95": [
+            7.445746787451061,
+            21.00845814005874
+          ],
+          "mean_prevalence": 0.0008483611446369382,
+          "mean_prevalence_ci95": [
+            0.0004714675896972582,
+            0.0014772420122135675
+          ],
+          "mean_prevalence_lift": 13.439187293567356,
+          "mean_prevalence_lift_ci95": [
+            7.711205805148427,
+            20.227608639947338
+          ],
+          "mean_random_label_expected_ap": 0.0018368571379469094,
+          "mean_random_label_expected_ap_ci95": [
+            0.001443825341320169,
+            0.0023668236194954737
+          ],
+          "mean_lift_over_random_expected_ap": 3.234060722984678,
+          "mean_lift_over_random_expected_ap_ci95": [
+            1.8852179631165158,
+            5.236198473741269
+          ]
+        },
+        "feature_retrieval": {
+          "n_tfs_evaluable": 0,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": null,
+          "mean_average_precision_ci95": null,
+          "mean_auroc": null,
+          "mean_auroc_ci95": null,
+          "mean_ap_lift": null,
+          "mean_ap_lift_ci95": null,
+          "mean_prevalence": null,
+          "mean_prevalence_ci95": null,
+          "mean_prevalence_lift": null,
+          "mean_prevalence_lift_ci95": null,
+          "mean_random_label_expected_ap": null,
+          "mean_random_label_expected_ap_ci95": null,
+          "mean_lift_over_random_expected_ap": null,
+          "mean_lift_over_random_expected_ap_ci95": null
+        },
+        "pseudo_controls": [
+          {
+            "group": "pseudo_00",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_01",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_02",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_03",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_04",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_05",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_06",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_07",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_08",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_09",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_10",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_11",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_12",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_13",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_14",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_15",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_16",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_17",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_18",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_19",
+            "n_responding": 0
+          }
+        ]
+      },
+      {
+        "representation": "input",
+        "layer": null,
+        "n_tfs": 121,
+        "n_tfs_screened": 121,
+        "n_tfs_evaluable": 99,
+        "n_tfs_unevaluable": 22,
+        "target_coverage_sensitivity": {
+          "min_1_eligible_target_genes": {
+            "n_tfs_evaluable": 99,
+            "n_specific_full_family_bh": 0
+          },
+          "min_3_eligible_target_genes": {
+            "n_tfs_evaluable": 48,
+            "n_specific_full_family_bh": 0
+          },
+          "min_5_eligible_target_genes": {
+            "n_tfs_evaluable": 31,
+            "n_specific_full_family_bh": 0
+          }
+        },
+        "n_specific": 0,
+        "n_responding_groups": 147,
+        "n_groups": 181,
+        "gene_retrieval": {
+          "n_tfs_evaluable": 102,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.003327676989043567,
+          "mean_average_precision_ci95": [
+            0.0021636585161368344,
+            0.004930331656766948
+          ],
+          "mean_auroc": 0.6283755230863964,
+          "mean_auroc_ci95": [
+            0.5899766535967056,
+            0.6680125710284383
+          ],
+          "mean_ap_lift": 7.008465373753509,
+          "mean_ap_lift_ci95": [
+            4.9421103830540165,
+            9.552580149701283
+          ],
+          "mean_prevalence": 0.0008483611446369382,
+          "mean_prevalence_ci95": [
+            0.0004714675896972582,
+            0.0014772420122135675
+          ],
+          "mean_prevalence_lift": 7.008465373753509,
+          "mean_prevalence_lift_ci95": [
+            4.946099360249921,
+            9.679676884432993
+          ],
+          "mean_random_label_expected_ap": 0.001823833851892257,
+          "mean_random_label_expected_ap_ci95": [
+            0.0014307499758327196,
+            0.002353804377970821
+          ],
+          "mean_lift_over_random_expected_ap": 1.6612160125865962,
+          "mean_lift_over_random_expected_ap_ci95": [
+            1.1156206072105954,
+            2.479513748345065
+          ]
+        },
+        "feature_retrieval": {
+          "n_tfs_evaluable": 0,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": null,
+          "mean_average_precision_ci95": null,
+          "mean_auroc": null,
+          "mean_auroc_ci95": null,
+          "mean_ap_lift": null,
+          "mean_ap_lift_ci95": null,
+          "mean_prevalence": null,
+          "mean_prevalence_ci95": null,
+          "mean_prevalence_lift": null,
+          "mean_prevalence_lift_ci95": null,
+          "mean_random_label_expected_ap": null,
+          "mean_random_label_expected_ap_ci95": null,
+          "mean_lift_over_random_expected_ap": null,
+          "mean_lift_over_random_expected_ap_ci95": null
+        },
+        "pseudo_controls": [
+          {
+            "group": "pseudo_00",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_01",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_02",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_03",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_04",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_05",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_06",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_07",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_08",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_09",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_10",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_11",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_12",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_13",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_14",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_15",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_16",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_17",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_18",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_19",
+            "n_responding": 0
+          }
+        ]
+      },
+      {
+        "representation": "model",
+        "layer": 8,
+        "n_tfs": 121,
+        "n_tfs_screened": 121,
+        "n_tfs_evaluable": 85,
+        "n_tfs_unevaluable": 36,
+        "target_coverage_sensitivity": {
+          "min_1_eligible_target_genes": {
+            "n_tfs_evaluable": 85,
+            "n_specific_full_family_bh": 1
+          },
+          "min_3_eligible_target_genes": {
+            "n_tfs_evaluable": 37,
+            "n_specific_full_family_bh": 1
+          },
+          "min_5_eligible_target_genes": {
+            "n_tfs_evaluable": 16,
+            "n_specific_full_family_bh": 0
+          }
+        },
+        "n_specific": 1,
+        "n_responding_groups": 155,
+        "n_groups": 181,
+        "gene_retrieval": {
+          "n_tfs_evaluable": 102,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.0010996553847601785,
+          "mean_average_precision_ci95": [
+            0.0007052636153598696,
+            0.0017487001133893504
+          ],
+          "mean_auroc": 0.46044776320717146,
+          "mean_auroc_ci95": [
+            0.4269255562794259,
+            0.49495637845329876
+          ],
+          "mean_ap_lift": 2.179890262220155,
+          "mean_ap_lift_ci95": [
+            1.5915520859026149,
+            2.786208140642019
+          ],
+          "mean_prevalence": 0.0008483611446369382,
+          "mean_prevalence_ci95": [
+            0.0004714675896972582,
+            0.0014772420122135675
+          ],
+          "mean_prevalence_lift": 2.179890262220155,
+          "mean_prevalence_lift_ci95": [
+            1.6967062619342748,
+            2.9059943211150427
+          ],
+          "mean_random_label_expected_ap": 0.0018206744253582026,
+          "mean_random_label_expected_ap_ci95": [
+            0.0014306884585920155,
+            0.0023527396398119937
+          ],
+          "mean_lift_over_random_expected_ap": 0.48461719692757466,
+          "mean_lift_over_random_expected_ap_ci95": [
+            0.40884653388685527,
+            0.5653281384436554
+          ]
+        },
+        "feature_retrieval": {
+          "n_tfs_evaluable": 85,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.02325917851185487,
+          "mean_average_precision_ci95": [
+            0.013533233123899134,
+            0.03331346470616306
+          ],
+          "mean_auroc": 0.5130921091781522,
+          "mean_auroc_ci95": [
+            0.5007488238859272,
+            0.5249475460084199
+          ],
+          "mean_ap_lift": 1.1589526486418054,
+          "mean_ap_lift_ci95": [
+            1.0960725063539731,
+            1.2359284117811975
+          ],
+          "mean_prevalence": 0.022741173911374434,
+          "mean_prevalence_ci95": [
+            0.0127824412340529,
+            0.03517732152682697
+          ],
+          "mean_prevalence_lift": 1.1589526486418054,
+          "mean_prevalence_lift_ci95": [
+            1.0963825084745142,
+            1.2342003383855762
+          ],
+          "mean_random_label_expected_ap": 0.023666281551233487,
+          "mean_random_label_expected_ap_ci95": [
+            0.014026634637634155,
+            0.036831358639446934
+          ],
+          "mean_lift_over_random_expected_ap": 0.9718486969186759,
+          "mean_lift_over_random_expected_ap_ci95": [
+            0.9171819752122109,
+            1.0229089526455202
+          ]
+        },
+        "pseudo_controls": [
+          {
+            "group": "pseudo_00",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_01",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_02",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_03",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_04",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_05",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_06",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_07",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_08",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_09",
+            "n_responding": 2
+          },
+          {
+            "group": "pseudo_10",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_11",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_12",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_13",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_14",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_15",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_16",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_17",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_18",
+            "n_responding": 2
+          },
+          {
+            "group": "pseudo_19",
+            "n_responding": 0
+          }
+        ]
+      },
+      {
+        "representation": "model",
+        "layer": 16,
+        "n_tfs": 121,
+        "n_tfs_screened": 121,
+        "n_tfs_evaluable": 85,
+        "n_tfs_unevaluable": 36,
+        "target_coverage_sensitivity": {
+          "min_1_eligible_target_genes": {
+            "n_tfs_evaluable": 85,
+            "n_specific_full_family_bh": 0
+          },
+          "min_3_eligible_target_genes": {
+            "n_tfs_evaluable": 37,
+            "n_specific_full_family_bh": 0
+          },
+          "min_5_eligible_target_genes": {
+            "n_tfs_evaluable": 16,
+            "n_specific_full_family_bh": 0
+          }
+        },
+        "n_specific": 0,
+        "n_responding_groups": 157,
+        "n_groups": 181,
+        "gene_retrieval": {
+          "n_tfs_evaluable": 102,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.0011257025836105806,
+          "mean_average_precision_ci95": [
+            0.0007624845350149501,
+            0.0018161030838862746
+          ],
+          "mean_auroc": 0.4611256623074569,
+          "mean_auroc_ci95": [
+            0.429087324797933,
+            0.5005584239560559
+          ],
+          "mean_ap_lift": 2.44323974382068,
+          "mean_ap_lift_ci95": [
+            1.8664614711367191,
+            3.307772460337126
+          ],
+          "mean_prevalence": 0.0008483611446369382,
+          "mean_prevalence_ci95": [
+            0.0004714675896972582,
+            0.0014772420122135675
+          ],
+          "mean_prevalence_lift": 2.44323974382068,
+          "mean_prevalence_lift_ci95": [
+            1.7810865715333275,
+            3.242747554620861
+          ],
+          "mean_random_label_expected_ap": 0.0018173435343472612,
+          "mean_random_label_expected_ap_ci95": [
+            0.001426585801741008,
+            0.002347389432022383
+          ],
+          "mean_lift_over_random_expected_ap": 0.5120152498904306,
+          "mean_lift_over_random_expected_ap_ci95": [
+            0.4339649480628403,
+            0.5938070543228445
+          ]
+        },
+        "feature_retrieval": {
+          "n_tfs_evaluable": 85,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.02344983641545361,
+          "mean_average_precision_ci95": [
+            0.013638681632223787,
+            0.033173958955029254
+          ],
+          "mean_auroc": 0.5239144642609893,
+          "mean_auroc_ci95": [
+            0.5070877968766238,
+            0.5373740665403538
+          ],
+          "mean_ap_lift": 1.308057812901138,
+          "mean_ap_lift_ci95": [
+            1.187925026218725,
+            1.455961709698526
+          ],
+          "mean_prevalence": 0.022808809078823142,
+          "mean_prevalence_ci95": [
+            0.012564048220008606,
+            0.03527475385830717
+          ],
+          "mean_prevalence_lift": 1.308057812901138,
+          "mean_prevalence_lift_ci95": [
+            1.1944318250699306,
+            1.44854327413936
+          ],
+          "mean_random_label_expected_ap": 0.023736670823592612,
+          "mean_random_label_expected_ap_ci95": [
+            0.01365485878090775,
+            0.03754518076869671
+          ],
+          "mean_lift_over_random_expected_ap": 0.9768391631463929,
+          "mean_lift_over_random_expected_ap_ci95": [
+            0.9224904391617361,
+            1.0370094325073107
+          ]
+        },
+        "pseudo_controls": [
+          {
+            "group": "pseudo_00",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_01",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_02",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_03",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_04",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_05",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_06",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_07",
+            "n_responding": 3
+          },
+          {
+            "group": "pseudo_08",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_09",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_10",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_11",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_12",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_13",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_14",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_15",
+            "n_responding": 2
+          },
+          {
+            "group": "pseudo_16",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_17",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_18",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_19",
+            "n_responding": 0
+          }
+        ]
+      },
+      {
+        "representation": "model",
+        "layer": 22,
+        "n_tfs": 121,
+        "n_tfs_screened": 121,
+        "n_tfs_evaluable": 85,
+        "n_tfs_unevaluable": 36,
+        "target_coverage_sensitivity": {
+          "min_1_eligible_target_genes": {
+            "n_tfs_evaluable": 85,
+            "n_specific_full_family_bh": 1
+          },
+          "min_3_eligible_target_genes": {
+            "n_tfs_evaluable": 37,
+            "n_specific_full_family_bh": 1
+          },
+          "min_5_eligible_target_genes": {
+            "n_tfs_evaluable": 16,
+            "n_specific_full_family_bh": 0
+          }
+        },
+        "n_specific": 1,
+        "n_responding_groups": 153,
+        "n_groups": 181,
+        "gene_retrieval": {
+          "n_tfs_evaluable": 102,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.0011012285980249279,
+          "mean_average_precision_ci95": [
+            0.0007415865289757726,
+            0.0018129680530753196
+          ],
+          "mean_auroc": 0.47971301090757074,
+          "mean_auroc_ci95": [
+            0.4432468568395009,
+            0.5164344183017853
+          ],
+          "mean_ap_lift": 2.1811823646108293,
+          "mean_ap_lift_ci95": [
+            1.813263971262285,
+            2.644948566432886
+          ],
+          "mean_prevalence": 0.0008483611446369382,
+          "mean_prevalence_ci95": [
+            0.0004714675896972582,
+            0.0014772420122135675
+          ],
+          "mean_prevalence_lift": 2.1811823646108293,
+          "mean_prevalence_lift_ci95": [
+            1.8170029450087168,
+            2.62885968959018
+          ],
+          "mean_random_label_expected_ap": 0.0018158119143854344,
+          "mean_random_label_expected_ap_ci95": [
+            0.0014207318359290128,
+            0.002343312635391625
+          ],
+          "mean_lift_over_random_expected_ap": 0.4821749969973446,
+          "mean_lift_over_random_expected_ap_ci95": [
+            0.4241538878294693,
+            0.52934081931
+          ]
+        },
+        "feature_retrieval": {
+          "n_tfs_evaluable": 85,
+          "bootstrap_unit": "transcription factors",
+          "mean_average_precision": 0.022018965842975437,
+          "mean_average_precision_ci95": [
+            0.012696452071279424,
+            0.03146103730118468
+          ],
+          "mean_auroc": 0.5339191800276244,
+          "mean_auroc_ci95": [
+            0.5218141700273317,
+            0.5470890920306835
+          ],
+          "mean_ap_lift": 1.338600955562982,
+          "mean_ap_lift_ci95": [
+            1.2356407554702808,
+            1.4626679467214843
+          ],
+          "mean_prevalence": 0.021421803375246483,
+          "mean_prevalence_ci95": [
+            0.011143435171195166,
+            0.03321311045097186
+          ],
+          "mean_prevalence_lift": 1.338600955562982,
+          "mean_prevalence_lift_ci95": [
+            1.227925539478112,
+            1.4676389538066377
+          ],
+          "mean_random_label_expected_ap": 0.02234854498405211,
+          "mean_random_label_expected_ap_ci95": [
+            0.012363485933875455,
+            0.03611670504653013
+          ],
+          "mean_lift_over_random_expected_ap": 1.0019331242583511,
+          "mean_lift_over_random_expected_ap_ci95": [
+            0.930333351196457,
+            1.0831587881043812
+          ]
+        },
+        "pseudo_controls": [
+          {
+            "group": "pseudo_00",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_01",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_02",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_03",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_04",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_05",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_06",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_07",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_08",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_09",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_10",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_11",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_12",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_13",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_14",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_15",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_16",
+            "n_responding": 1
+          },
+          {
+            "group": "pseudo_17",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_18",
+            "n_responding": 0
+          },
+          {
+            "group": "pseudo_19",
+            "n_responding": 0
+          }
+        ]
+      }
+    ]
+  },
+  "source_sha256": {
+    "/workspace/rev1/results/phase8_rpe1/statistics/manifest.json": "17aafb82f2b23cd19140c75f53f62178baf94c3d7cf5f8c7745af64cbf75e694",
+    "/workspace/rev1/results/phase8_rpe1/statistics/regulatory_statistics.json": "e426a5e1969bf9da2c39fe4f5969af37ce6e933993d6cd0f50f9995a7d9a3994",
+    "/workspace/rev1/designs/phase8_rpe1.json": "22f61f3b671c802e837f6c0a2a92475cf96b0ba60d54c5fd4f194659ad2b0a3c",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/results/phase8_rpe1/rows.json": "d01c3b37ab6a59747aa0cd64495f8dfef45ae0e8a103c319f81f1ffa11185247",
+    "/workspace/rev1/scripts/rev_phase8_stats.py": "0571c151f8942eba59efa631518ae9e5972b60d1befa9ae760f0ae84698103cf",
+    "/workspace/rev1/results/phase8_rpe1/statistics/gene_statistics.npz": "5df2606047fd1c9fc2e0ffa189f016dffc66200dcb2f7799dafedb9b465bc7ba",
+    "/workspace/rev1/results/phase8_rpe1/statistics/feature_statistics_L08.npz": "f2d18cd70afe686293cbd110781b07f10d70b58f0c79b8605e029796a4fde2f8",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L08.json": "ff96caca804bef9ab18b5b12ac3db56cd55d497b023d49ef74e59d72ac5964ce",
+    "/workspace/rev1/results/phase8_rpe1/feat_L08.npz": "d2420acd8462163dec908de7580e5d1817e78588d6a3ffdc12b45b04ce28359f",
+    "/workspace/rev1/results/phase8_rpe1/statistics/feature_statistics_L16.npz": "12e1fbe9cbbdb95d6db14976c73b592b074b143aea844d01eca37ec11102475e",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L16.json": "ff93005e482889729f3da7e3352a9e11b0c7a05a1cb4227be247b8655b504883",
+    "/workspace/rev1/results/phase8_rpe1/feat_L16.npz": "0dcabc96bf9ddd31612bd58ee9365ee5e8226652e1552e5adfab038575ec6a82",
+    "/workspace/rev1/results/phase8_rpe1/statistics/feature_statistics_L22.npz": "54d6335ec0962c2607619daf106efa3e216e510092685ae17684dc6c1e162ceb",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L22.json": "9e2649694bff28952e563495f9b2c1d45e54d4f1be2093b881b16c4dc74dcd14",
+    "/workspace/rev1/results/phase8_rpe1/feat_L22.npz": "92609a3dbef73e50a828d0976152dee6c2fa0d5b9934e0cf020e89b594304138",
+    "/workspace/rev1/results/phase8_rpe1/insilico.npz": "5760450ffd39c0036c9a68263808cfe2052b013a487ba59b4acda2e202345b83",
+    "/workspace/rev1/results/phase8_rpe1/statistics/insilico_statistics.npz": "095e110838dc14c19674f0ffe92228886c7e348eb813613f62631410507b906b",
+    "/workspace/rev1/results/phase8_rpe1/insilico_meta.json": "67aeb94b9192ae6d13c4e0cd72303f85c379a3ea98ff36e25300a9fa9544d9d4",
+    "/workspace/rev1/results/phase8_rpe1/statistics/insilico_retrieval.json": "27d4b426f20e1de38159c700eab2451f96f5b69a2601917163226c0895c3c62d",
+    "/workspace/rev1/results/audits/audit_phase8_saved.py": "dd3064d27a0d7693b0c861ea27b7fb91a17b569dcc46fe080668ea09dac3ec08"
+  },
+  "peak_rss_bytes": 1113849856,
+  "limitations": [
+    "Full response BH uses retained p-values. For model features, up to12 strong/boundary/random columns per condition are independently recalculated from exact saved cell matrices; other raw response tests are not rerun.",
+    "No h5ad expression normalisation or raw cell/feature response tests are rerun.",
+    "Across-TF bootstrap means/intervals are reproduced. Per-item intervals are checked for finite ordered bounds only."
+  ]
+}

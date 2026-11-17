@@ -1,0 +1,89 @@
+{
+  "figure": "S3",
+  "synthetic_preview": false,
+  "source_sha256": {
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/2b/ann_v2_L00.json": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/2b/ann_v2_L22.json": "69cf7d4fd9ec029d3e49bd62ecd730e68108217291aff3165c8af39308c3ea92",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/2b_legacy/ann_v2_L00.json": "b4f0e86720b654dd98505b76c088a8863ee1101bd417c65c6b742c51f4f9c386",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/2b_legacy/ann_v2_L13.json": "6dde58b732a39f68951e2d425cc3c8c997a339e845a2dee9cd718c9cf70a21fd",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/2b_legacy/ann_v2_L22.json": "2a638cf5ac17eb7dc78d15535bd14fd283464735f8bd885a68faf01e1f43a4de",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/untrained_L00/ann_v2_L00.json": "bcfa4eec1219ae5953c2f32d375b2cba22c62549d765fb664047aa86523739d9",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/untrained_L13/ann_v2_L13.json": "8b5b440d960e8777f2c5c61c1ecbd1b19b4534b9c6a9e7917be7a9b5e9ba8a29",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/annotations/untrained_L22/ann_v2_L22.json": "c1d71a1c46cc6b87b73e3105b4957deb7171434337f5f90ff669a9c73f995be6"
+  },
+  "plotted_values": {
+    "library_annotations": {
+      "Full libraries": [
+        {
+          "layer": 0,
+          "rate": 0.5342881944444444,
+          "floor": 0.07895688657407407,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "layer": 13,
+          "rate": 0.6366102430555556,
+          "floor": 0.25614872685185186,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "layer": 22,
+          "rate": 0.7760416666666666,
+          "floor": 0.8065321180555557,
+          "n_alive": 9216,
+          "n_total": 9216
+        }
+      ],
+      "Legacy libraries": [
+        {
+          "layer": 0,
+          "rate": 0.12152777777777778,
+          "floor": 0.013527199074074075,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "layer": 13,
+          "rate": 0.12782118055555555,
+          "floor": 0.008933738425925925,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "layer": 22,
+          "rate": 0.0788845486111111,
+          "floor": 0.004231770833333333,
+          "n_alive": 9216,
+          "n_total": 9216
+        }
+      ]
+    },
+    "untrained_annotations": [
+      {
+        "layer": 0,
+        "rate": 0.36254239142325784,
+        "floor": 0.013273529519016884,
+        "n_alive": 9141,
+        "n_total": 9216
+      },
+      {
+        "layer": 13,
+        "rate": 0.7544487847222222,
+        "floor": 0.2982494212962963,
+        "n_alive": 9216,
+        "n_total": 9216
+      },
+      {
+        "layer": 22,
+        "rate": 0.7570529513888888,
+        "floor": 0.8286675347222223,
+        "n_alive": 9216,
+        "n_total": 9216
+      }
+    ]
+  },
+  "generator_sha256": "aed2797658b12b6184cb0b0ee7dcad8f16fddc9e37d53017748721a00787ea74"
+}

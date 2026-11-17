@@ -1,0 +1,50 @@
+{
+ "lines": [
+  "k562",
+  "rpe1"
+ ],
+ "layers": {
+  "0": {
+   "k562": {
+    "n_rows": 153600,
+    "variance_explained": 0.9772407512866406,
+    "share_features_firing": 0.9995659722222222,
+    "mu_shift_rel": 0.025075078010559082
+   },
+   "rpe1": {
+    "n_rows": 153600,
+    "variance_explained": 0.9548775329389436,
+    "share_features_firing": 0.9992404513888888,
+    "mu_shift_rel": 0.03596547245979309
+   }
+  },
+  "13": {
+   "k562": {
+    "n_rows": 153600,
+    "variance_explained": 0.8794355366470944,
+    "share_features_firing": 0.9738498263888888,
+    "mu_shift_rel": 0.14602985978126526
+   },
+   "rpe1": {
+    "n_rows": 153600,
+    "variance_explained": 0.8256095195963497,
+    "share_features_firing": 0.8666449652777778,
+    "mu_shift_rel": 0.25750866532325745
+   }
+  },
+  "22": {
+   "k562": {
+    "n_rows": 153600,
+    "variance_explained": 0.8130865348617307,
+    "share_features_firing": 0.9625651041666666,
+    "mu_shift_rel": 0.24125219881534576
+   },
+   "rpe1": {
+    "n_rows": 153600,
+    "variance_explained": 0.7046265569757928,
+    "share_features_firing": 0.8407118055555556,
+    "mu_shift_rel": 0.4164172410964966
+   }
+  }
+ }
+}

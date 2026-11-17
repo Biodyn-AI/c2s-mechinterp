@@ -1,0 +1,3510 @@
+{
+  "schema": "actual-atlas-reporting-v1",
+  "generated_utc": "2026-11-17T15:45:46.128949+00:00",
+  "status": "verified_counts",
+  "model": "vandijklab/C2S-Scale-Gemma-2-2B",
+  "n_layers": 26,
+  "layers": [
+    {
+      "layer": 0,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 1,
+      "n_novel_non_svd_aligned_alive": 9215,
+      "variance_explained_fresh": 0.9930632926817315,
+      "heldout_inactive_count": 24,
+      "heldout_inactive_fraction": 0.0026041666666666665,
+      "n_ontology": 4924,
+      "n_network_evidence": 4638,
+      "n_network_only": 659,
+      "n_ontology_and_network": 3979,
+      "n_any": 5583,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5342881944444444,
+      "ontology_rate_alive": 0.5342881944444444,
+      "any_rate_all_features": 0.6057942708333334,
+      "any_rate_alive": 0.6057942708333334,
+      "network_only_rate_all_features": 0.0715060763888889,
+      "n_by_source": {
+        "GO_BP": 4266,
+        "STRING": 4625,
+        "KEGG": 2955,
+        "Reactome": 4210,
+        "TRRUST": 173,
+        "TRRUST_pairs": 30,
+        "TF_membership": 22
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.07895688657407407,
+          "ontology_values_alive": [
+            0.07845052083333333,
+            0.0808376736111111,
+            0.07758246527777778
+          ],
+          "ontology_mean_all_features": 0.07895688657407407,
+          "ontology_values_all_features": [
+            0.07845052083333333,
+            0.0808376736111111,
+            0.07758246527777778
+          ],
+          "any_mean_alive": 0.1688006365740741,
+          "any_values_alive": [
+            0.1703559027777778,
+            0.16829427083333334,
+            0.1677517361111111
+          ],
+          "any_mean_all_features": 0.1688006365740741,
+          "any_values_all_features": [
+            0.1703559027777778,
+            0.16829427083333334,
+            0.1677517361111111
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.00831886574074074,
+          "ontology_values_alive": [
+            0.009982638888888888,
+            0.009006076388888888,
+            0.005967881944444444
+          ],
+          "ontology_mean_all_features": 0.00831886574074074,
+          "ontology_values_all_features": [
+            0.009982638888888888,
+            0.009006076388888888,
+            0.005967881944444444
+          ],
+          "any_mean_alive": 0.009150752314814813,
+          "any_values_alive": [
+            0.011176215277777778,
+            0.009982638888888888,
+            0.006293402777777778
+          ],
+          "any_mean_all_features": 0.009150752314814813,
+          "any_values_all_features": [
+            0.011176215277777778,
+            0.009982638888888888,
+            0.006293402777777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.45533130787037035,
+      "ontology_excess_over_freq_floor_alive": 0.45533130787037035,
+      "n_modules": 22,
+      "n_module_assigned": 7357,
+      "module_assigned_fraction_all_features": 0.7982855902777778,
+      "module_assigned_fraction_alive": 0.7982855902777778,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36952,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 1,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.98872682322503,
+      "heldout_inactive_count": 18,
+      "heldout_inactive_fraction": 0.001953125,
+      "n_ontology": 5384,
+      "n_network_evidence": 5324,
+      "n_network_only": 842,
+      "n_ontology_and_network": 4482,
+      "n_any": 6226,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5842013888888888,
+      "ontology_rate_alive": 0.5842013888888888,
+      "any_rate_all_features": 0.6755642361111112,
+      "any_rate_alive": 0.6755642361111112,
+      "network_only_rate_all_features": 0.09136284722222222,
+      "n_by_source": {
+        "Reactome": 4708,
+        "GO_BP": 4728,
+        "STRING": 5311,
+        "KEGG": 3366,
+        "TRRUST": 210,
+        "TRRUST_pairs": 34,
+        "TF_membership": 20
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.10423900462962964,
+          "ontology_values_alive": [
+            0.10221354166666667,
+            0.10405815972222222,
+            0.1064453125
+          ],
+          "ontology_mean_all_features": 0.10423900462962964,
+          "ontology_values_all_features": [
+            0.10221354166666667,
+            0.10405815972222222,
+            0.1064453125
+          ],
+          "any_mean_alive": 0.23365162037037038,
+          "any_values_alive": [
+            0.2338324652777778,
+            0.2329644097222222,
+            0.2341579861111111
+          ],
+          "any_mean_all_features": 0.23365162037037038,
+          "any_values_all_features": [
+            0.2338324652777778,
+            0.2329644097222222,
+            0.2341579861111111
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009331597222222222,
+          "ontology_values_alive": [
+            0.009548611111111112,
+            0.009223090277777778,
+            0.009223090277777778
+          ],
+          "ontology_mean_all_features": 0.009331597222222222,
+          "ontology_values_all_features": [
+            0.009548611111111112,
+            0.009223090277777778,
+            0.009223090277777778
+          ],
+          "any_mean_alive": 0.010380497685185184,
+          "any_values_alive": [
+            0.010199652777777778,
+            0.010959201388888888,
+            0.009982638888888888
+          ],
+          "any_mean_all_features": 0.010380497685185184,
+          "any_values_all_features": [
+            0.010199652777777778,
+            0.010959201388888888,
+            0.009982638888888888
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.4799623842592592,
+      "ontology_excess_over_freq_floor_alive": 0.4799623842592592,
+      "n_modules": 21,
+      "n_module_assigned": 6750,
+      "module_assigned_fraction_all_features": 0.732421875,
+      "module_assigned_fraction_alive": 0.732421875,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36950,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 2,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9856098209191224,
+      "heldout_inactive_count": 42,
+      "heldout_inactive_fraction": 0.004557291666666667,
+      "n_ontology": 5070,
+      "n_network_evidence": 4813,
+      "n_network_only": 785,
+      "n_ontology_and_network": 4028,
+      "n_any": 5855,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5501302083333334,
+      "ontology_rate_alive": 0.5501302083333334,
+      "any_rate_all_features": 0.6353081597222222,
+      "any_rate_alive": 0.6353081597222222,
+      "network_only_rate_all_features": 0.0851779513888889,
+      "n_by_source": {
+        "Reactome": 4249,
+        "GO_BP": 4402,
+        "STRING": 4801,
+        "KEGG": 2921,
+        "TRRUST": 209,
+        "TRRUST_pairs": 47,
+        "TF_membership": 31
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.055591724537037035,
+          "ontology_values_alive": [
+            0.052408854166666664,
+            0.059027777777777776,
+            0.055338541666666664
+          ],
+          "ontology_mean_all_features": 0.055591724537037035,
+          "ontology_values_all_features": [
+            0.052408854166666664,
+            0.059027777777777776,
+            0.055338541666666664
+          ],
+          "any_mean_alive": 0.1265914351851852,
+          "any_values_alive": [
+            0.1261935763888889,
+            0.1293402777777778,
+            0.1242404513888889
+          ],
+          "any_mean_all_features": 0.1265914351851852,
+          "any_values_all_features": [
+            0.1261935763888889,
+            0.1293402777777778,
+            0.1242404513888889
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009331597222222224,
+          "ontology_values_alive": [
+            0.008680555555555556,
+            0.010199652777777778,
+            0.009114583333333334
+          ],
+          "ontology_mean_all_features": 0.009331597222222224,
+          "ontology_values_all_features": [
+            0.008680555555555556,
+            0.010199652777777778,
+            0.009114583333333334
+          ],
+          "any_mean_alive": 0.010271990740740741,
+          "any_values_alive": [
+            0.009765625,
+            0.011067708333333334,
+            0.009982638888888888
+          ],
+          "any_mean_all_features": 0.010271990740740741,
+          "any_values_all_features": [
+            0.009765625,
+            0.011067708333333334,
+            0.009982638888888888
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.49453848379629634,
+      "ontology_excess_over_freq_floor_alive": 0.49453848379629634,
+      "n_modules": 23,
+      "n_module_assigned": 6741,
+      "module_assigned_fraction_all_features": 0.7314453125,
+      "module_assigned_fraction_alive": 0.7314453125,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36954,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 3,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9809802993561082,
+      "heldout_inactive_count": 36,
+      "heldout_inactive_fraction": 0.00390625,
+      "n_ontology": 4920,
+      "n_network_evidence": 4721,
+      "n_network_only": 861,
+      "n_ontology_and_network": 3860,
+      "n_any": 5781,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5338541666666666,
+      "ontology_rate_alive": 0.5338541666666666,
+      "any_rate_all_features": 0.6272786458333334,
+      "any_rate_alive": 0.6272786458333334,
+      "network_only_rate_all_features": 0.09342447916666667,
+      "n_by_source": {
+        "Reactome": 4030,
+        "GO_BP": 4344,
+        "STRING": 4708,
+        "KEGG": 2882,
+        "TRRUST": 216,
+        "TRRUST_pairs": 47,
+        "TF_membership": 32
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.04380063657407407,
+          "ontology_values_alive": [
+            0.041666666666666664,
+            0.046223958333333336,
+            0.043511284722222224
+          ],
+          "ontology_mean_all_features": 0.04380063657407407,
+          "ontology_values_all_features": [
+            0.041666666666666664,
+            0.046223958333333336,
+            0.043511284722222224
+          ],
+          "any_mean_alive": 0.10358796296296297,
+          "any_values_alive": [
+            0.10145399305555555,
+            0.10904947916666667,
+            0.10026041666666667
+          ],
+          "any_mean_all_features": 0.10358796296296297,
+          "any_values_all_features": [
+            0.10145399305555555,
+            0.10904947916666667,
+            0.10026041666666667
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.008355034722222222,
+          "ontology_values_alive": [
+            0.008680555555555556,
+            0.007595486111111111,
+            0.0087890625
+          ],
+          "ontology_mean_all_features": 0.008355034722222222,
+          "ontology_values_all_features": [
+            0.008680555555555556,
+            0.007595486111111111,
+            0.0087890625
+          ],
+          "any_mean_alive": 0.009295428240740741,
+          "any_values_alive": [
+            0.009548611111111112,
+            0.008572048611111112,
+            0.009765625
+          ],
+          "any_mean_all_features": 0.009295428240740741,
+          "any_values_all_features": [
+            0.009548611111111112,
+            0.008572048611111112,
+            0.009765625
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.49005353009259256,
+      "ontology_excess_over_freq_floor_alive": 0.49005353009259256,
+      "n_modules": 27,
+      "n_module_assigned": 6864,
+      "module_assigned_fraction_all_features": 0.7447916666666666,
+      "module_assigned_fraction_alive": 0.7447916666666666,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36962,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 4,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9811693493499859,
+      "heldout_inactive_count": 41,
+      "heldout_inactive_fraction": 0.004448784722222222,
+      "n_ontology": 4696,
+      "n_network_evidence": 4581,
+      "n_network_only": 914,
+      "n_ontology_and_network": 3667,
+      "n_any": 5610,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5095486111111112,
+      "ontology_rate_alive": 0.5095486111111112,
+      "any_rate_all_features": 0.6087239583333334,
+      "any_rate_alive": 0.6087239583333334,
+      "network_only_rate_all_features": 0.09917534722222222,
+      "n_by_source": {
+        "GO_BP": 4100,
+        "KEGG": 2799,
+        "STRING": 4564,
+        "Reactome": 3798,
+        "TRRUST_pairs": 58,
+        "TRRUST": 213,
+        "TF_membership": 40
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.034686053240740734,
+          "ontology_values_alive": [
+            0.035698784722222224,
+            0.03439670138888889,
+            0.03396267361111111
+          ],
+          "ontology_mean_all_features": 0.034686053240740734,
+          "ontology_values_all_features": [
+            0.035698784722222224,
+            0.03439670138888889,
+            0.03396267361111111
+          ],
+          "any_mean_alive": 0.0791015625,
+          "any_values_alive": [
+            0.07823350694444445,
+            0.07747395833333333,
+            0.08159722222222222
+          ],
+          "any_mean_all_features": 0.0791015625,
+          "any_values_all_features": [
+            0.07823350694444445,
+            0.07747395833333333,
+            0.08159722222222222
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.00951244212962963,
+          "ontology_values_alive": [
+            0.010633680555555556,
+            0.009657118055555556,
+            0.008246527777777778
+          ],
+          "ontology_mean_all_features": 0.00951244212962963,
+          "ontology_values_all_features": [
+            0.010633680555555556,
+            0.009657118055555556,
+            0.008246527777777778
+          ],
+          "any_mean_alive": 0.01048900462962963,
+          "any_values_alive": [
+            0.011610243055555556,
+            0.010416666666666666,
+            0.009440104166666666
+          ],
+          "any_mean_all_features": 0.01048900462962963,
+          "any_values_all_features": [
+            0.011610243055555556,
+            0.010416666666666666,
+            0.009440104166666666
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.4748625578703704,
+      "ontology_excess_over_freq_floor_alive": 0.4748625578703704,
+      "n_modules": 27,
+      "n_module_assigned": 6906,
+      "module_assigned_fraction_all_features": 0.7493489583333334,
+      "module_assigned_fraction_alive": 0.7493489583333334,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36962,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 5,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.976156562296644,
+      "heldout_inactive_count": 63,
+      "heldout_inactive_fraction": 0.0068359375,
+      "n_ontology": 4666,
+      "n_network_evidence": 4605,
+      "n_network_only": 943,
+      "n_ontology_and_network": 3662,
+      "n_any": 5609,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5062934027777778,
+      "ontology_rate_alive": 0.5062934027777778,
+      "any_rate_all_features": 0.6086154513888888,
+      "any_rate_alive": 0.6086154513888888,
+      "network_only_rate_all_features": 0.1023220486111111,
+      "n_by_source": {
+        "GO_BP": 4036,
+        "KEGG": 2735,
+        "STRING": 4586,
+        "Reactome": 3831,
+        "TRRUST": 227,
+        "TF_membership": 39,
+        "TRRUST_pairs": 55
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.038592303240740734,
+          "ontology_values_alive": [
+            0.03786892361111111,
+            0.041015625,
+            0.03689236111111111
+          ],
+          "ontology_mean_all_features": 0.038592303240740734,
+          "ontology_values_all_features": [
+            0.03786892361111111,
+            0.041015625,
+            0.03689236111111111
+          ],
+          "any_mean_alive": 0.09085648148148147,
+          "any_values_alive": [
+            0.0876736111111111,
+            0.09429253472222222,
+            0.0906032986111111
+          ],
+          "any_mean_all_features": 0.09085648148148147,
+          "any_values_all_features": [
+            0.0876736111111111,
+            0.09429253472222222,
+            0.0906032986111111
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009223090277777778,
+          "ontology_values_alive": [
+            0.009114583333333334,
+            0.009548611111111112,
+            0.009006076388888888
+          ],
+          "ontology_mean_all_features": 0.009223090277777778,
+          "ontology_values_all_features": [
+            0.009114583333333334,
+            0.009548611111111112,
+            0.009006076388888888
+          ],
+          "any_mean_alive": 0.009910300925925925,
+          "any_values_alive": [
+            0.009874131944444444,
+            0.010416666666666666,
+            0.009440104166666666
+          ],
+          "any_mean_all_features": 0.009910300925925925,
+          "any_values_all_features": [
+            0.009874131944444444,
+            0.010416666666666666,
+            0.009440104166666666
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.46770109953703703,
+      "ontology_excess_over_freq_floor_alive": 0.46770109953703703,
+      "n_modules": 25,
+      "n_module_assigned": 6477,
+      "module_assigned_fraction_all_features": 0.7027994791666666,
+      "module_assigned_fraction_alive": 0.7027994791666666,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36958,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 6,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9725038032433448,
+      "heldout_inactive_count": 55,
+      "heldout_inactive_fraction": 0.005967881944444444,
+      "n_ontology": 5035,
+      "n_network_evidence": 5160,
+      "n_network_only": 1015,
+      "n_ontology_and_network": 4145,
+      "n_any": 6050,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5463324652777778,
+      "ontology_rate_alive": 0.5463324652777778,
+      "any_rate_all_features": 0.6564670138888888,
+      "any_rate_alive": 0.6564670138888888,
+      "network_only_rate_all_features": 0.1101345486111111,
+      "n_by_source": {
+        "GO_BP": 4409,
+        "Reactome": 4215,
+        "STRING": 5148,
+        "KEGG": 3059,
+        "TRRUST": 217,
+        "TRRUST_pairs": 45,
+        "TF_membership": 40
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.0572193287037037,
+          "ontology_values_alive": [
+            0.056966145833333336,
+            0.055338541666666664,
+            0.05935329861111111
+          ],
+          "ontology_mean_all_features": 0.0572193287037037,
+          "ontology_values_all_features": [
+            0.056966145833333336,
+            0.055338541666666664,
+            0.05935329861111111
+          ],
+          "any_mean_alive": 0.14601417824074073,
+          "any_values_alive": [
+            0.1467013888888889,
+            0.146484375,
+            0.14485677083333334
+          ],
+          "any_mean_all_features": 0.14601417824074073,
+          "any_values_all_features": [
+            0.1467013888888889,
+            0.146484375,
+            0.14485677083333334
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009259259259259259,
+          "ontology_values_alive": [
+            0.010199652777777778,
+            0.009006076388888888,
+            0.008572048611111112
+          ],
+          "ontology_mean_all_features": 0.009259259259259259,
+          "ontology_values_all_features": [
+            0.010199652777777778,
+            0.009006076388888888,
+            0.008572048611111112
+          ],
+          "any_mean_alive": 0.010054976851851851,
+          "any_values_alive": [
+            0.011067708333333334,
+            0.009874131944444444,
+            0.009223090277777778
+          ],
+          "any_mean_all_features": 0.010054976851851851,
+          "any_values_all_features": [
+            0.011067708333333334,
+            0.009874131944444444,
+            0.009223090277777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.48911313657407407,
+      "ontology_excess_over_freq_floor_alive": 0.48911313657407407,
+      "n_modules": 26,
+      "n_module_assigned": 6124,
+      "module_assigned_fraction_all_features": 0.6644965277777778,
+      "module_assigned_fraction_alive": 0.6644965277777778,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36960,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 7,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9670171167211435,
+      "heldout_inactive_count": 60,
+      "heldout_inactive_fraction": 0.006510416666666667,
+      "n_ontology": 5065,
+      "n_network_evidence": 5393,
+      "n_network_only": 1186,
+      "n_ontology_and_network": 4207,
+      "n_any": 6251,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5495876736111112,
+      "ontology_rate_alive": 0.5495876736111112,
+      "any_rate_all_features": 0.6782769097222222,
+      "any_rate_alive": 0.6782769097222222,
+      "network_only_rate_all_features": 0.1286892361111111,
+      "n_by_source": {
+        "Reactome": 4258,
+        "GO_BP": 4299,
+        "STRING": 5382,
+        "KEGG": 2983,
+        "TRRUST": 249,
+        "TRRUST_pairs": 47,
+        "TF_membership": 36
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.06629774305555557,
+          "ontology_values_alive": [
+            0.068359375,
+            0.06749131944444445,
+            0.06304253472222222
+          ],
+          "ontology_mean_all_features": 0.06629774305555557,
+          "ontology_values_all_features": [
+            0.068359375,
+            0.06749131944444445,
+            0.06304253472222222
+          ],
+          "any_mean_alive": 0.1868851273148148,
+          "any_values_alive": [
+            0.1863064236111111,
+            0.1896701388888889,
+            0.18467881944444445
+          ],
+          "any_mean_all_features": 0.1868851273148148,
+          "any_values_all_features": [
+            0.1863064236111111,
+            0.1896701388888889,
+            0.18467881944444445
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.00857204861111111,
+          "ontology_values_alive": [
+            0.008029513888888888,
+            0.009006076388888888,
+            0.008680555555555556
+          ],
+          "ontology_mean_all_features": 0.00857204861111111,
+          "ontology_values_all_features": [
+            0.008029513888888888,
+            0.009006076388888888,
+            0.008680555555555556
+          ],
+          "any_mean_alive": 0.009476273148148149,
+          "any_values_alive": [
+            0.0087890625,
+            0.009982638888888888,
+            0.009657118055555556
+          ],
+          "any_mean_all_features": 0.009476273148148149,
+          "any_values_all_features": [
+            0.0087890625,
+            0.009982638888888888,
+            0.009657118055555556
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.4832899305555556,
+      "ontology_excess_over_freq_floor_alive": 0.4832899305555556,
+      "n_modules": 24,
+      "n_module_assigned": 5816,
+      "module_assigned_fraction_all_features": 0.6310763888888888,
+      "module_assigned_fraction_alive": 0.6310763888888888,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36956,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 8,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9588209522495632,
+      "heldout_inactive_count": 74,
+      "heldout_inactive_fraction": 0.008029513888888888,
+      "n_ontology": 5168,
+      "n_network_evidence": 5510,
+      "n_network_only": 1195,
+      "n_ontology_and_network": 4315,
+      "n_any": 6363,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5607638888888888,
+      "ontology_rate_alive": 0.5607638888888888,
+      "any_rate_all_features": 0.6904296875,
+      "any_rate_alive": 0.6904296875,
+      "network_only_rate_all_features": 0.1296657986111111,
+      "n_by_source": {
+        "Reactome": 4396,
+        "GO_BP": 4400,
+        "STRING": 5492,
+        "KEGG": 3055,
+        "TF_membership": 37,
+        "TRRUST": 271,
+        "TRRUST_pairs": 47
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.08217592592592593,
+          "ontology_values_alive": [
+            0.07779947916666667,
+            0.08539496527777778,
+            0.08333333333333333
+          ],
+          "ontology_mean_all_features": 0.08217592592592593,
+          "ontology_values_all_features": [
+            0.07779947916666667,
+            0.08539496527777778,
+            0.08333333333333333
+          ],
+          "any_mean_alive": 0.212890625,
+          "any_values_alive": [
+            0.21180555555555555,
+            0.21451822916666666,
+            0.2123480902777778
+          ],
+          "any_mean_all_features": 0.212890625,
+          "any_values_all_features": [
+            0.21180555555555555,
+            0.21451822916666666,
+            0.2123480902777778
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.0087890625,
+          "ontology_values_alive": [
+            0.007921006944444444,
+            0.009874131944444444,
+            0.008572048611111112
+          ],
+          "ontology_mean_all_features": 0.0087890625,
+          "ontology_values_all_features": [
+            0.007921006944444444,
+            0.009874131944444444,
+            0.008572048611111112
+          ],
+          "any_mean_alive": 0.009367766203703705,
+          "any_values_alive": [
+            0.008355034722222222,
+            0.010525173611111112,
+            0.009223090277777778
+          ],
+          "any_mean_all_features": 0.009367766203703705,
+          "any_values_all_features": [
+            0.008355034722222222,
+            0.010525173611111112,
+            0.009223090277777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.4785879629629629,
+      "ontology_excess_over_freq_floor_alive": 0.4785879629629629,
+      "n_modules": 20,
+      "n_module_assigned": 5564,
+      "module_assigned_fraction_all_features": 0.6037326388888888,
+      "module_assigned_fraction_alive": 0.6037326388888888,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36948,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 9,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9544757309366422,
+      "heldout_inactive_count": 78,
+      "heldout_inactive_fraction": 0.008463541666666666,
+      "n_ontology": 5133,
+      "n_network_evidence": 5677,
+      "n_network_only": 1300,
+      "n_ontology_and_network": 4377,
+      "n_any": 6433,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5569661458333334,
+      "ontology_rate_alive": 0.5569661458333334,
+      "any_rate_all_features": 0.6980251736111112,
+      "any_rate_alive": 0.6980251736111112,
+      "network_only_rate_all_features": 0.1410590277777778,
+      "n_by_source": {
+        "GO_BP": 4389,
+        "KEGG": 3107,
+        "STRING": 5660,
+        "Reactome": 4367,
+        "TRRUST": 258,
+        "TRRUST_pairs": 43,
+        "TF_membership": 31
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.08937355324074074,
+          "ontology_values_alive": [
+            0.08778211805555555,
+            0.09092881944444445,
+            0.08940972222222222
+          ],
+          "ontology_mean_all_features": 0.08937355324074074,
+          "ontology_values_all_features": [
+            0.08778211805555555,
+            0.09092881944444445,
+            0.08940972222222222
+          ],
+          "any_mean_alive": 0.24479166666666666,
+          "any_values_alive": [
+            0.2429470486111111,
+            0.2521701388888889,
+            0.2392578125
+          ],
+          "any_mean_all_features": 0.24479166666666666,
+          "any_values_all_features": [
+            0.2429470486111111,
+            0.2521701388888889,
+            0.2392578125
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.00998263888888889,
+          "ontology_values_alive": [
+            0.008680555555555556,
+            0.010525173611111112,
+            0.0107421875
+          ],
+          "ontology_mean_all_features": 0.00998263888888889,
+          "ontology_values_all_features": [
+            0.008680555555555556,
+            0.010525173611111112,
+            0.0107421875
+          ],
+          "any_mean_alive": 0.0107421875,
+          "any_values_alive": [
+            0.009440104166666666,
+            0.011067708333333334,
+            0.01171875
+          ],
+          "any_mean_all_features": 0.0107421875,
+          "any_values_all_features": [
+            0.009440104166666666,
+            0.011067708333333334,
+            0.01171875
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.4675925925925926,
+      "ontology_excess_over_freq_floor_alive": 0.4675925925925926,
+      "n_modules": 22,
+      "n_module_assigned": 5346,
+      "module_assigned_fraction_all_features": 0.580078125,
+      "module_assigned_fraction_alive": 0.580078125,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36952,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 10,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9516637923227861,
+      "heldout_inactive_count": 76,
+      "heldout_inactive_fraction": 0.008246527777777778,
+      "n_ontology": 5016,
+      "n_network_evidence": 5594,
+      "n_network_only": 1370,
+      "n_ontology_and_network": 4224,
+      "n_any": 6386,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5442708333333334,
+      "ontology_rate_alive": 0.5442708333333334,
+      "any_rate_all_features": 0.6929253472222222,
+      "any_rate_alive": 0.6929253472222222,
+      "network_only_rate_all_features": 0.1486545138888889,
+      "n_by_source": {
+        "STRING": 5580,
+        "Reactome": 4242,
+        "GO_BP": 4263,
+        "KEGG": 2932,
+        "TF_membership": 23,
+        "TRRUST": 244,
+        "TRRUST_pairs": 41
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.0890480324074074,
+          "ontology_values_alive": [
+            0.09114583333333333,
+            0.08951822916666667,
+            0.08648003472222222
+          ],
+          "ontology_mean_all_features": 0.0890480324074074,
+          "ontology_values_all_features": [
+            0.09114583333333333,
+            0.08951822916666667,
+            0.08648003472222222
+          ],
+          "any_mean_alive": 0.2543041087962963,
+          "any_values_alive": [
+            0.2596571180555556,
+            0.2542317708333333,
+            0.2490234375
+          ],
+          "any_mean_all_features": 0.2543041087962963,
+          "any_values_all_features": [
+            0.2596571180555556,
+            0.2542317708333333,
+            0.2490234375
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009331597222222222,
+          "ontology_values_alive": [
+            0.009006076388888888,
+            0.010308159722222222,
+            0.008680555555555556
+          ],
+          "ontology_mean_all_features": 0.009331597222222222,
+          "ontology_values_all_features": [
+            0.009006076388888888,
+            0.010308159722222222,
+            0.008680555555555556
+          ],
+          "any_mean_alive": 0.010127314814814816,
+          "any_values_alive": [
+            0.009657118055555556,
+            0.011176215277777778,
+            0.009548611111111112
+          ],
+          "any_mean_all_features": 0.010127314814814816,
+          "any_values_all_features": [
+            0.009657118055555556,
+            0.011176215277777778,
+            0.009548611111111112
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.455222800925926,
+      "ontology_excess_over_freq_floor_alive": 0.455222800925926,
+      "n_modules": 22,
+      "n_module_assigned": 5106,
+      "module_assigned_fraction_all_features": 0.5540364583333334,
+      "module_assigned_fraction_alive": 0.5540364583333334,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36952,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 11,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9400247549999751,
+      "heldout_inactive_count": 92,
+      "heldout_inactive_fraction": 0.009982638888888888,
+      "n_ontology": 5441,
+      "n_network_evidence": 6161,
+      "n_network_only": 1397,
+      "n_ontology_and_network": 4764,
+      "n_any": 6838,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.5903862847222222,
+      "ontology_rate_alive": 0.5903862847222222,
+      "any_rate_all_features": 0.7419704861111112,
+      "any_rate_alive": 0.7419704861111112,
+      "network_only_rate_all_features": 0.1515842013888889,
+      "n_by_source": {
+        "Reactome": 4725,
+        "GO_BP": 4648,
+        "STRING": 6148,
+        "KEGG": 3351,
+        "TRRUST": 298,
+        "TF_membership": 33,
+        "TRRUST_pairs": 47
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.14539930555555555,
+          "ontology_values_alive": [
+            0.1450737847222222,
+            0.15028211805555555,
+            0.1408420138888889
+          ],
+          "ontology_mean_all_features": 0.14539930555555555,
+          "ontology_values_all_features": [
+            0.1450737847222222,
+            0.15028211805555555,
+            0.1408420138888889
+          ],
+          "any_mean_alive": 0.38375289351851855,
+          "any_values_alive": [
+            0.3822699652777778,
+            0.3833550347222222,
+            0.3856336805555556
+          ],
+          "any_mean_all_features": 0.38375289351851855,
+          "any_values_all_features": [
+            0.3822699652777778,
+            0.3833550347222222,
+            0.3856336805555556
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.008608217592592593,
+          "ontology_values_alive": [
+            0.009440104166666666,
+            0.007595486111111111,
+            0.0087890625
+          ],
+          "ontology_mean_all_features": 0.008608217592592593,
+          "ontology_values_all_features": [
+            0.009440104166666666,
+            0.007595486111111111,
+            0.0087890625
+          ],
+          "any_mean_alive": 0.009476273148148149,
+          "any_values_alive": [
+            0.009982638888888888,
+            0.008897569444444444,
+            0.009548611111111112
+          ],
+          "any_mean_all_features": 0.009476273148148149,
+          "any_values_all_features": [
+            0.009982638888888888,
+            0.008897569444444444,
+            0.009548611111111112
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.44498697916666663,
+      "ontology_excess_over_freq_floor_alive": 0.44498697916666663,
+      "n_modules": 19,
+      "n_module_assigned": 4831,
+      "module_assigned_fraction_all_features": 0.5241970486111112,
+      "module_assigned_fraction_alive": 0.5241970486111112,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36946,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 12,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9360958896167122,
+      "heldout_inactive_count": 71,
+      "heldout_inactive_fraction": 0.007703993055555556,
+      "n_ontology": 5540,
+      "n_network_evidence": 6188,
+      "n_network_only": 1280,
+      "n_ontology_and_network": 4908,
+      "n_any": 6820,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.6011284722222222,
+      "ontology_rate_alive": 0.6011284722222222,
+      "any_rate_all_features": 0.7400173611111112,
+      "any_rate_alive": 0.7400173611111112,
+      "network_only_rate_all_features": 0.1388888888888889,
+      "n_by_source": {
+        "Reactome": 4863,
+        "GO_BP": 4748,
+        "STRING": 6176,
+        "KEGG": 3532,
+        "TF_membership": 32,
+        "TRRUST": 300,
+        "TRRUST_pairs": 44
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.18344907407407407,
+          "ontology_values_alive": [
+            0.18739149305555555,
+            0.1872829861111111,
+            0.17567274305555555
+          ],
+          "ontology_mean_all_features": 0.18344907407407407,
+          "ontology_values_all_features": [
+            0.18739149305555555,
+            0.1872829861111111,
+            0.17567274305555555
+          ],
+          "any_mean_alive": 0.4235026041666667,
+          "any_values_alive": [
+            0.4338107638888889,
+            0.4276258680555556,
+            0.4090711805555556
+          ],
+          "any_mean_all_features": 0.4235026041666667,
+          "any_values_all_features": [
+            0.4338107638888889,
+            0.4276258680555556,
+            0.4090711805555556
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.01001880787037037,
+          "ontology_values_alive": [
+            0.0107421875,
+            0.009223090277777778,
+            0.010091145833333334
+          ],
+          "ontology_mean_all_features": 0.01001880787037037,
+          "ontology_values_all_features": [
+            0.0107421875,
+            0.009223090277777778,
+            0.010091145833333334
+          ],
+          "any_mean_alive": 0.01099537037037037,
+          "any_values_alive": [
+            0.011610243055555556,
+            0.010308159722222222,
+            0.011067708333333334
+          ],
+          "any_mean_all_features": 0.01099537037037037,
+          "any_values_all_features": [
+            0.011610243055555556,
+            0.010308159722222222,
+            0.011067708333333334
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.41767939814814814,
+      "ontology_excess_over_freq_floor_alive": 0.41767939814814814,
+      "n_modules": 16,
+      "n_module_assigned": 4606,
+      "module_assigned_fraction_all_features": 0.4997829861111111,
+      "module_assigned_fraction_alive": 0.4997829861111111,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36940,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 13,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9246504624954273,
+      "heldout_inactive_count": 158,
+      "heldout_inactive_fraction": 0.017144097222222224,
+      "n_ontology": 5867,
+      "n_network_evidence": 6658,
+      "n_network_only": 1304,
+      "n_ontology_and_network": 5354,
+      "n_any": 7171,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.6366102430555556,
+      "ontology_rate_alive": 0.6366102430555556,
+      "any_rate_all_features": 0.7781032986111112,
+      "any_rate_alive": 0.7781032986111112,
+      "network_only_rate_all_features": 0.14149305555555555,
+      "n_by_source": {
+        "Reactome": 5244,
+        "GO_BP": 5104,
+        "STRING": 6653,
+        "KEGG": 3962,
+        "TRRUST": 309,
+        "TRRUST_pairs": 39,
+        "TF_membership": 24
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.25614872685185186,
+          "ontology_values_alive": [
+            0.2532552083333333,
+            0.2575954861111111,
+            0.2575954861111111
+          ],
+          "ontology_mean_all_features": 0.25614872685185186,
+          "ontology_values_all_features": [
+            0.2532552083333333,
+            0.2575954861111111,
+            0.2575954861111111
+          ],
+          "any_mean_alive": 0.5398582175925927,
+          "any_values_alive": [
+            0.5368923611111112,
+            0.5438368055555556,
+            0.5388454861111112
+          ],
+          "any_mean_all_features": 0.5398582175925927,
+          "any_values_all_features": [
+            0.5368923611111112,
+            0.5438368055555556,
+            0.5388454861111112
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.008897569444444444,
+          "ontology_values_alive": [
+            0.009114583333333334,
+            0.007595486111111111,
+            0.009982638888888888
+          ],
+          "ontology_mean_all_features": 0.008897569444444444,
+          "ontology_values_all_features": [
+            0.009114583333333334,
+            0.007595486111111111,
+            0.009982638888888888
+          ],
+          "any_mean_alive": 0.009837962962962963,
+          "any_values_alive": [
+            0.009982638888888888,
+            0.008572048611111112,
+            0.010959201388888888
+          ],
+          "any_mean_all_features": 0.009837962962962963,
+          "any_values_all_features": [
+            0.009982638888888888,
+            0.008572048611111112,
+            0.010959201388888888
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.3804615162037037,
+      "ontology_excess_over_freq_floor_alive": 0.3804615162037037,
+      "n_modules": 20,
+      "n_module_assigned": 4132,
+      "module_assigned_fraction_all_features": 0.4483506944444444,
+      "module_assigned_fraction_alive": 0.4483506944444444,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36948,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 14,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9166470775552442,
+      "heldout_inactive_count": 147,
+      "heldout_inactive_fraction": 0.015950520833333332,
+      "n_ontology": 6155,
+      "n_network_evidence": 6985,
+      "n_network_only": 1276,
+      "n_ontology_and_network": 5709,
+      "n_any": 7431,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.6678602430555556,
+      "ontology_rate_alive": 0.6678602430555556,
+      "any_rate_all_features": 0.8063151041666666,
+      "any_rate_alive": 0.8063151041666666,
+      "network_only_rate_all_features": 0.1384548611111111,
+      "n_by_source": {
+        "GO_BP": 5453,
+        "STRING": 6974,
+        "Reactome": 5595,
+        "KEGG": 4316,
+        "TRRUST": 308,
+        "TF_membership": 34,
+        "TRRUST_pairs": 56
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.3607132523148148,
+          "ontology_values_alive": [
+            0.3621961805555556,
+            0.3670789930555556,
+            0.3528645833333333
+          ],
+          "ontology_mean_all_features": 0.3607132523148148,
+          "ontology_values_all_features": [
+            0.3621961805555556,
+            0.3670789930555556,
+            0.3528645833333333
+          ],
+          "any_mean_alive": 0.6515480324074073,
+          "any_values_alive": [
+            0.6452907986111112,
+            0.6598307291666666,
+            0.6495225694444444
+          ],
+          "any_mean_all_features": 0.6515480324074073,
+          "any_values_all_features": [
+            0.6452907986111112,
+            0.6598307291666666,
+            0.6495225694444444
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009150752314814815,
+          "ontology_values_alive": [
+            0.010308159722222222,
+            0.008463541666666666,
+            0.008680555555555556
+          ],
+          "ontology_mean_all_features": 0.009150752314814815,
+          "ontology_values_all_features": [
+            0.010308159722222222,
+            0.008463541666666666,
+            0.008680555555555556
+          ],
+          "any_mean_alive": 0.010199652777777778,
+          "any_values_alive": [
+            0.011284722222222222,
+            0.009223090277777778,
+            0.010091145833333334
+          ],
+          "any_mean_all_features": 0.010199652777777778,
+          "any_values_all_features": [
+            0.011284722222222222,
+            0.009223090277777778,
+            0.010091145833333334
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.30714699074074076,
+      "ontology_excess_over_freq_floor_alive": 0.30714699074074076,
+      "n_modules": 18,
+      "n_module_assigned": 3959,
+      "module_assigned_fraction_all_features": 0.4295789930555556,
+      "module_assigned_fraction_alive": 0.4295789930555556,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36944,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 15,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.914433079000477,
+      "heldout_inactive_count": 273,
+      "heldout_inactive_fraction": 0.029622395833333332,
+      "n_ontology": 6482,
+      "n_network_evidence": 7217,
+      "n_network_only": 1116,
+      "n_ontology_and_network": 6101,
+      "n_any": 7598,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7033420138888888,
+      "ontology_rate_alive": 0.7033420138888888,
+      "any_rate_all_features": 0.8244357638888888,
+      "any_rate_alive": 0.8244357638888888,
+      "network_only_rate_all_features": 0.12109375,
+      "n_by_source": {
+        "Reactome": 5972,
+        "GO_BP": 5817,
+        "STRING": 7209,
+        "KEGG": 4652,
+        "TF_membership": 27,
+        "TRRUST": 350,
+        "TRRUST_pairs": 48
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.46943721064814814,
+          "ontology_values_alive": [
+            0.4672309027777778,
+            0.4729817708333333,
+            0.4680989583333333
+          ],
+          "ontology_mean_all_features": 0.46943721064814814,
+          "ontology_values_all_features": [
+            0.4672309027777778,
+            0.4729817708333333,
+            0.4680989583333333
+          ],
+          "any_mean_alive": 0.7449725115740741,
+          "any_values_alive": [
+            0.7384982638888888,
+            0.7489149305555556,
+            0.7475043402777778
+          ],
+          "any_mean_all_features": 0.7449725115740741,
+          "any_values_all_features": [
+            0.7384982638888888,
+            0.7489149305555556,
+            0.7475043402777778
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009114583333333334,
+          "ontology_values_alive": [
+            0.009114583333333334,
+            0.007378472222222222,
+            0.010850694444444444
+          ],
+          "ontology_mean_all_features": 0.009114583333333334,
+          "ontology_values_all_features": [
+            0.009114583333333334,
+            0.007378472222222222,
+            0.010850694444444444
+          ],
+          "any_mean_alive": 0.00951244212962963,
+          "any_values_alive": [
+            0.009548611111111112,
+            0.0078125,
+            0.011176215277777778
+          ],
+          "any_mean_all_features": 0.00951244212962963,
+          "any_values_all_features": [
+            0.009548611111111112,
+            0.0078125,
+            0.011176215277777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.2339048032407407,
+      "ontology_excess_over_freq_floor_alive": 0.2339048032407407,
+      "n_modules": 18,
+      "n_module_assigned": 3812,
+      "module_assigned_fraction_all_features": 0.4136284722222222,
+      "module_assigned_fraction_alive": 0.4136284722222222,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36944,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 16,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9048636369808423,
+      "heldout_inactive_count": 339,
+      "heldout_inactive_fraction": 0.036783854166666664,
+      "n_ontology": 6514,
+      "n_network_evidence": 7311,
+      "n_network_only": 1148,
+      "n_ontology_and_network": 6163,
+      "n_any": 7662,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7068142361111112,
+      "ontology_rate_alive": 0.7068142361111112,
+      "any_rate_all_features": 0.8313802083333334,
+      "any_rate_alive": 0.8313802083333334,
+      "network_only_rate_all_features": 0.12456597222222222,
+      "n_by_source": {
+        "Reactome": 6033,
+        "GO_BP": 5852,
+        "STRING": 7302,
+        "KEGG": 4776,
+        "TRRUST": 303,
+        "TRRUST_pairs": 46,
+        "TF_membership": 20
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.5222439236111112,
+          "ontology_values_alive": [
+            0.5248480902777778,
+            0.5227864583333334,
+            0.5190972222222222
+          ],
+          "ontology_mean_all_features": 0.5222439236111112,
+          "ontology_values_all_features": [
+            0.5248480902777778,
+            0.5227864583333334,
+            0.5190972222222222
+          ],
+          "any_mean_alive": 0.7859881365740741,
+          "any_values_alive": [
+            0.7864583333333334,
+            0.7829861111111112,
+            0.7885199652777778
+          ],
+          "any_mean_all_features": 0.7859881365740741,
+          "any_values_all_features": [
+            0.7864583333333334,
+            0.7829861111111112,
+            0.7885199652777778
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.0087890625,
+          "ontology_values_alive": [
+            0.0087890625,
+            0.007703993055555556,
+            0.009874131944444444
+          ],
+          "ontology_mean_all_features": 0.0087890625,
+          "ontology_values_all_features": [
+            0.0087890625,
+            0.007703993055555556,
+            0.009874131944444444
+          ],
+          "any_mean_alive": 0.009367766203703705,
+          "any_values_alive": [
+            0.009223090277777778,
+            0.008138020833333334,
+            0.0107421875
+          ],
+          "any_mean_all_features": 0.009367766203703705,
+          "any_values_all_features": [
+            0.009223090277777778,
+            0.008138020833333334,
+            0.0107421875
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.1845703125,
+      "ontology_excess_over_freq_floor_alive": 0.1845703125,
+      "n_modules": 18,
+      "n_module_assigned": 3384,
+      "module_assigned_fraction_all_features": 0.3671875,
+      "module_assigned_fraction_alive": 0.3671875,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36944,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 17,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9069657054281096,
+      "heldout_inactive_count": 299,
+      "heldout_inactive_fraction": 0.03244357638888889,
+      "n_ontology": 6659,
+      "n_network_evidence": 7361,
+      "n_network_only": 1043,
+      "n_ontology_and_network": 6318,
+      "n_any": 7702,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7225477430555556,
+      "ontology_rate_alive": 0.7225477430555556,
+      "any_rate_all_features": 0.8357204861111112,
+      "any_rate_alive": 0.8357204861111112,
+      "network_only_rate_all_features": 0.11317274305555555,
+      "n_by_source": {
+        "Reactome": 6216,
+        "GO_BP": 6006,
+        "STRING": 7354,
+        "KEGG": 4979,
+        "TRRUST": 293,
+        "TF_membership": 22,
+        "TRRUST_pairs": 40
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.5765697337962963,
+          "ontology_values_alive": [
+            0.5806206597222222,
+            0.5840928819444444,
+            0.5649956597222222
+          ],
+          "ontology_mean_all_features": 0.5765697337962963,
+          "ontology_values_all_features": [
+            0.5806206597222222,
+            0.5840928819444444,
+            0.5649956597222222
+          ],
+          "any_mean_alive": 0.820095486111111,
+          "any_values_alive": [
+            0.8213975694444444,
+            0.81640625,
+            0.8224826388888888
+          ],
+          "any_mean_all_features": 0.820095486111111,
+          "any_values_all_features": [
+            0.8213975694444444,
+            0.81640625,
+            0.8224826388888888
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009150752314814813,
+          "ontology_values_alive": [
+            0.008680555555555556,
+            0.008355034722222222,
+            0.010416666666666666
+          ],
+          "ontology_mean_all_features": 0.009150752314814813,
+          "ontology_values_all_features": [
+            0.008680555555555556,
+            0.008355034722222222,
+            0.010416666666666666
+          ],
+          "any_mean_alive": 0.009765625,
+          "any_values_alive": [
+            0.009223090277777778,
+            0.008897569444444444,
+            0.011176215277777778
+          ],
+          "any_mean_all_features": 0.009765625,
+          "any_values_all_features": [
+            0.009223090277777778,
+            0.008897569444444444,
+            0.011176215277777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.1459780092592593,
+      "ontology_excess_over_freq_floor_alive": 0.1459780092592593,
+      "n_modules": 19,
+      "n_module_assigned": 3484,
+      "module_assigned_fraction_all_features": 0.3780381944444444,
+      "module_assigned_fraction_alive": 0.3780381944444444,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36946,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 18,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9021736836968837,
+      "heldout_inactive_count": 230,
+      "heldout_inactive_fraction": 0.024956597222222224,
+      "n_ontology": 6894,
+      "n_network_evidence": 7612,
+      "n_network_only": 1018,
+      "n_ontology_and_network": 6594,
+      "n_any": 7912,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.748046875,
+      "ontology_rate_alive": 0.748046875,
+      "any_rate_all_features": 0.8585069444444444,
+      "any_rate_alive": 0.8585069444444444,
+      "network_only_rate_all_features": 0.11046006944444445,
+      "n_by_source": {
+        "Reactome": 6443,
+        "GO_BP": 6293,
+        "STRING": 7607,
+        "KEGG": 5225,
+        "TRRUST": 258,
+        "TRRUST_pairs": 36,
+        "TF_membership": 15
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.6498842592592593,
+          "ontology_values_alive": [
+            0.6439887152777778,
+            0.6571180555555556,
+            0.6485460069444444
+          ],
+          "ontology_mean_all_features": 0.6498842592592593,
+          "ontology_values_all_features": [
+            0.6439887152777778,
+            0.6571180555555556,
+            0.6485460069444444
+          ],
+          "any_mean_alive": 0.8752893518518517,
+          "any_values_alive": [
+            0.8741319444444444,
+            0.8779296875,
+            0.8738064236111112
+          ],
+          "any_mean_all_features": 0.8752893518518517,
+          "any_values_all_features": [
+            0.8741319444444444,
+            0.8779296875,
+            0.8738064236111112
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.00857204861111111,
+          "ontology_values_alive": [
+            0.008463541666666666,
+            0.008029513888888888,
+            0.009223090277777778
+          ],
+          "ontology_mean_all_features": 0.00857204861111111,
+          "ontology_values_all_features": [
+            0.008463541666666666,
+            0.008029513888888888,
+            0.009223090277777778
+          ],
+          "any_mean_alive": 0.00954861111111111,
+          "any_values_alive": [
+            0.009440104166666666,
+            0.0087890625,
+            0.010416666666666666
+          ],
+          "any_mean_all_features": 0.00954861111111111,
+          "any_values_all_features": [
+            0.009440104166666666,
+            0.0087890625,
+            0.010416666666666666
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.0981626157407407,
+      "ontology_excess_over_freq_floor_alive": 0.0981626157407407,
+      "n_modules": 21,
+      "n_module_assigned": 3464,
+      "module_assigned_fraction_all_features": 0.3758680555555556,
+      "module_assigned_fraction_alive": 0.3758680555555556,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36950,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 19,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.9024615240703668,
+      "heldout_inactive_count": 144,
+      "heldout_inactive_fraction": 0.015625,
+      "n_ontology": 6971,
+      "n_network_evidence": 7629,
+      "n_network_only": 967,
+      "n_ontology_and_network": 6662,
+      "n_any": 7938,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7564019097222222,
+      "ontology_rate_alive": 0.7564019097222222,
+      "any_rate_all_features": 0.861328125,
+      "any_rate_alive": 0.861328125,
+      "network_only_rate_all_features": 0.10492621527777778,
+      "n_by_source": {
+        "Reactome": 6552,
+        "GO_BP": 6413,
+        "STRING": 7627,
+        "KEGG": 5382,
+        "TRRUST": 271,
+        "TRRUST_pairs": 35,
+        "TF_membership": 14
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.6905743634259259,
+          "ontology_values_alive": [
+            0.6897786458333334,
+            0.6930338541666666,
+            0.6889105902777778
+          ],
+          "ontology_mean_all_features": 0.6905743634259259,
+          "ontology_values_all_features": [
+            0.6897786458333334,
+            0.6930338541666666,
+            0.6889105902777778
+          ],
+          "any_mean_alive": 0.8914568865740741,
+          "any_values_alive": [
+            0.8892144097222222,
+            0.8911675347222222,
+            0.8939887152777778
+          ],
+          "any_mean_all_features": 0.8914568865740741,
+          "any_values_all_features": [
+            0.8892144097222222,
+            0.8911675347222222,
+            0.8939887152777778
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009910300925925925,
+          "ontology_values_alive": [
+            0.010416666666666666,
+            0.008355034722222222,
+            0.010959201388888888
+          ],
+          "ontology_mean_all_features": 0.009910300925925925,
+          "ontology_values_all_features": [
+            0.010416666666666666,
+            0.008355034722222222,
+            0.010959201388888888
+          ],
+          "any_mean_alive": 0.011031539351851851,
+          "any_values_alive": [
+            0.011176215277777778,
+            0.009765625,
+            0.012152777777777778
+          ],
+          "any_mean_all_features": 0.011031539351851851,
+          "any_values_all_features": [
+            0.011176215277777778,
+            0.009765625,
+            0.012152777777777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.06582754629629628,
+      "ontology_excess_over_freq_floor_alive": 0.06582754629629628,
+      "n_modules": 23,
+      "n_module_assigned": 3603,
+      "module_assigned_fraction_all_features": 0.3909505208333333,
+      "module_assigned_fraction_alive": 0.3909505208333333,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36954,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 20,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.8934321244504982,
+      "heldout_inactive_count": 126,
+      "heldout_inactive_fraction": 0.013671875,
+      "n_ontology": 6955,
+      "n_network_evidence": 7637,
+      "n_network_only": 1004,
+      "n_ontology_and_network": 6633,
+      "n_any": 7959,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7546657986111112,
+      "ontology_rate_alive": 0.7546657986111112,
+      "any_rate_all_features": 0.8636067708333334,
+      "any_rate_alive": 0.8636067708333334,
+      "network_only_rate_all_features": 0.10894097222222222,
+      "n_by_source": {
+        "Reactome": 6540,
+        "GO_BP": 6358,
+        "STRING": 7633,
+        "KEGG": 5410,
+        "TRRUST": 260,
+        "TF_membership": 12,
+        "TRRUST_pairs": 33
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.7223668981481483,
+          "ontology_values_alive": [
+            0.7196180555555556,
+            0.7248263888888888,
+            0.72265625
+          ],
+          "ontology_mean_all_features": 0.7223668981481483,
+          "ontology_values_all_features": [
+            0.7196180555555556,
+            0.7248263888888888,
+            0.72265625
+          ],
+          "any_mean_alive": 0.9070095486111112,
+          "any_values_alive": [
+            0.9057074652777778,
+            0.9076605902777778,
+            0.9076605902777778
+          ],
+          "any_mean_all_features": 0.9070095486111112,
+          "any_values_all_features": [
+            0.9057074652777778,
+            0.9076605902777778,
+            0.9076605902777778
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.010127314814814813,
+          "ontology_values_alive": [
+            0.009223090277777778,
+            0.009765625,
+            0.011393229166666666
+          ],
+          "ontology_mean_all_features": 0.010127314814814813,
+          "ontology_values_all_features": [
+            0.009223090277777778,
+            0.009765625,
+            0.011393229166666666
+          ],
+          "any_mean_alive": 0.010886863425925925,
+          "any_values_alive": [
+            0.010308159722222222,
+            0.010199652777777778,
+            0.012152777777777778
+          ],
+          "any_mean_all_features": 0.010886863425925925,
+          "any_values_all_features": [
+            0.010308159722222222,
+            0.010199652777777778,
+            0.012152777777777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.03229890046296291,
+      "ontology_excess_over_freq_floor_alive": 0.03229890046296291,
+      "n_modules": 21,
+      "n_module_assigned": 3591,
+      "module_assigned_fraction_all_features": 0.3896484375,
+      "module_assigned_fraction_alive": 0.3896484375,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36950,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 21,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.8932563087723193,
+      "heldout_inactive_count": 82,
+      "heldout_inactive_fraction": 0.008897569444444444,
+      "n_ontology": 7046,
+      "n_network_evidence": 7741,
+      "n_network_only": 995,
+      "n_ontology_and_network": 6746,
+      "n_any": 8041,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7645399305555556,
+      "ontology_rate_alive": 0.7645399305555556,
+      "any_rate_all_features": 0.8725043402777778,
+      "any_rate_alive": 0.8725043402777778,
+      "network_only_rate_all_features": 0.10796440972222222,
+      "n_by_source": {
+        "Reactome": 6657,
+        "GO_BP": 6469,
+        "STRING": 7737,
+        "KEGG": 5492,
+        "TRRUST": 248,
+        "TF_membership": 15,
+        "TRRUST_pairs": 23
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.7467809606481483,
+          "ontology_values_alive": [
+            0.7437065972222222,
+            0.7446831597222222,
+            0.751953125
+          ],
+          "ontology_mean_all_features": 0.7467809606481483,
+          "ontology_values_all_features": [
+            0.7437065972222222,
+            0.7446831597222222,
+            0.751953125
+          ],
+          "any_mean_alive": 0.9206814236111112,
+          "any_values_alive": [
+            0.9192708333333334,
+            0.9211154513888888,
+            0.9216579861111112
+          ],
+          "any_mean_all_features": 0.9206814236111112,
+          "any_values_all_features": [
+            0.9192708333333334,
+            0.9211154513888888,
+            0.9216579861111112
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.008572048611111112,
+          "ontology_values_alive": [
+            0.008138020833333334,
+            0.008572048611111112,
+            0.009006076388888888
+          ],
+          "ontology_mean_all_features": 0.008572048611111112,
+          "ontology_values_all_features": [
+            0.008138020833333334,
+            0.008572048611111112,
+            0.009006076388888888
+          ],
+          "any_mean_alive": 0.009620949074074072,
+          "any_values_alive": [
+            0.009440104166666666,
+            0.009982638888888888,
+            0.009440104166666666
+          ],
+          "any_mean_all_features": 0.009620949074074072,
+          "any_values_all_features": [
+            0.009440104166666666,
+            0.009982638888888888,
+            0.009440104166666666
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.01775896990740733,
+      "ontology_excess_over_freq_floor_alive": 0.01775896990740733,
+      "n_modules": 26,
+      "n_module_assigned": 3613,
+      "module_assigned_fraction_all_features": 0.3920355902777778,
+      "module_assigned_fraction_alive": 0.3920355902777778,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36960,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 22,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.8795684395835222,
+      "heldout_inactive_count": 72,
+      "heldout_inactive_fraction": 0.0078125,
+      "n_ontology": 7152,
+      "n_network_evidence": 7920,
+      "n_network_only": 1010,
+      "n_ontology_and_network": 6910,
+      "n_any": 8162,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7760416666666666,
+      "ontology_rate_alive": 0.7760416666666666,
+      "any_rate_all_features": 0.8856336805555556,
+      "any_rate_alive": 0.8856336805555556,
+      "network_only_rate_all_features": 0.1095920138888889,
+      "n_by_source": {
+        "STRING": 7915,
+        "Reactome": 6792,
+        "GO_BP": 6573,
+        "KEGG": 5701,
+        "TRRUST": 250,
+        "TRRUST_pairs": 35,
+        "TF_membership": 17
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.8065321180555557,
+          "ontology_values_alive": [
+            0.8018663194444444,
+            0.8054470486111112,
+            0.8122829861111112
+          ],
+          "ontology_mean_all_features": 0.8065321180555557,
+          "ontology_values_all_features": [
+            0.8018663194444444,
+            0.8054470486111112,
+            0.8122829861111112
+          ],
+          "any_mean_alive": 0.9478081597222222,
+          "any_values_alive": [
+            0.9488932291666666,
+            0.9446614583333334,
+            0.9498697916666666
+          ],
+          "any_mean_all_features": 0.9478081597222222,
+          "any_values_all_features": [
+            0.9488932291666666,
+            0.9446614583333334,
+            0.9498697916666666
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009223090277777778,
+          "ontology_values_alive": [
+            0.008246527777777778,
+            0.009657118055555556,
+            0.009765625
+          ],
+          "ontology_mean_all_features": 0.009223090277777778,
+          "ontology_values_all_features": [
+            0.008246527777777778,
+            0.009657118055555556,
+            0.009765625
+          ],
+          "any_mean_alive": 0.009946469907407407,
+          "any_values_alive": [
+            0.008680555555555556,
+            0.0107421875,
+            0.010416666666666666
+          ],
+          "any_mean_all_features": 0.009946469907407407,
+          "any_values_all_features": [
+            0.008680555555555556,
+            0.0107421875,
+            0.010416666666666666
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": -0.03049045138888906,
+      "ontology_excess_over_freq_floor_alive": -0.03049045138888906,
+      "n_modules": 24,
+      "n_module_assigned": 3504,
+      "module_assigned_fraction_all_features": 0.3802083333333333,
+      "module_assigned_fraction_alive": 0.3802083333333333,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36956,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 23,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.874637552217216,
+      "heldout_inactive_count": 55,
+      "heldout_inactive_fraction": 0.005967881944444444,
+      "n_ontology": 6900,
+      "n_network_evidence": 7715,
+      "n_network_only": 1069,
+      "n_ontology_and_network": 6646,
+      "n_any": 7969,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7486979166666666,
+      "ontology_rate_alive": 0.7486979166666666,
+      "any_rate_all_features": 0.8646918402777778,
+      "any_rate_alive": 0.8646918402777778,
+      "network_only_rate_all_features": 0.1159939236111111,
+      "n_by_source": {
+        "Reactome": 6494,
+        "GO_BP": 6333,
+        "STRING": 7711,
+        "KEGG": 5410,
+        "TRRUST": 281,
+        "TF_membership": 22,
+        "TRRUST_pairs": 31
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.7704716435185185,
+          "ontology_values_alive": [
+            0.7681206597222222,
+            0.7723524305555556,
+            0.7709418402777778
+          ],
+          "ontology_mean_all_features": 0.7704716435185185,
+          "ontology_values_all_features": [
+            0.7681206597222222,
+            0.7723524305555556,
+            0.7709418402777778
+          ],
+          "any_mean_alive": 0.9337022569444445,
+          "any_values_alive": [
+            0.9365234375,
+            0.9333767361111112,
+            0.9312065972222222
+          ],
+          "any_mean_all_features": 0.9337022569444445,
+          "any_values_all_features": [
+            0.9365234375,
+            0.9333767361111112,
+            0.9312065972222222
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009331597222222222,
+          "ontology_values_alive": [
+            0.009874131944444444,
+            0.0087890625,
+            0.009331597222222222
+          ],
+          "ontology_mean_all_features": 0.009331597222222222,
+          "ontology_values_all_features": [
+            0.009874131944444444,
+            0.0087890625,
+            0.009331597222222222
+          ],
+          "any_mean_alive": 0.010235821759259259,
+          "any_values_alive": [
+            0.0107421875,
+            0.009765625,
+            0.010199652777777778
+          ],
+          "any_mean_all_features": 0.010235821759259259,
+          "any_values_all_features": [
+            0.0107421875,
+            0.009765625,
+            0.010199652777777778
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": -0.02177372685185186,
+      "ontology_excess_over_freq_floor_alive": -0.02177372685185186,
+      "n_modules": 26,
+      "n_module_assigned": 3360,
+      "module_assigned_fraction_all_features": 0.3645833333333333,
+      "module_assigned_fraction_alive": 0.3645833333333333,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36960,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 24,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 0,
+      "n_novel_non_svd_aligned_alive": 9216,
+      "variance_explained_fresh": 0.8730340804657964,
+      "heldout_inactive_count": 83,
+      "heldout_inactive_fraction": 0.009006076388888888,
+      "n_ontology": 6779,
+      "n_network_evidence": 7575,
+      "n_network_only": 1086,
+      "n_ontology_and_network": 6489,
+      "n_any": 7865,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.7355685763888888,
+      "ontology_rate_alive": 0.7355685763888888,
+      "any_rate_all_features": 0.8534071180555556,
+      "any_rate_alive": 0.8534071180555556,
+      "network_only_rate_all_features": 0.11783854166666667,
+      "n_by_source": {
+        "Reactome": 6389,
+        "GO_BP": 6164,
+        "STRING": 7573,
+        "KEGG": 5203,
+        "TRRUST": 289,
+        "TF_membership": 11,
+        "TRRUST_pairs": 22
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.7179181134259259,
+          "ontology_values_alive": [
+            0.7113715277777778,
+            0.7240668402777778,
+            0.7183159722222222
+          ],
+          "ontology_mean_all_features": 0.7179181134259259,
+          "ontology_values_all_features": [
+            0.7113715277777778,
+            0.7240668402777778,
+            0.7183159722222222
+          ],
+          "any_mean_alive": 0.9150028935185186,
+          "any_values_alive": [
+            0.9111328125,
+            0.9182942708333334,
+            0.9155815972222222
+          ],
+          "any_mean_all_features": 0.9150028935185186,
+          "any_values_all_features": [
+            0.9111328125,
+            0.9182942708333334,
+            0.9155815972222222
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009331597222222224,
+          "ontology_values_alive": [
+            0.008680555555555556,
+            0.009223090277777778,
+            0.010091145833333334
+          ],
+          "ontology_mean_all_features": 0.009331597222222224,
+          "ontology_values_all_features": [
+            0.008680555555555556,
+            0.009223090277777778,
+            0.010091145833333334
+          ],
+          "any_mean_alive": 0.00998263888888889,
+          "any_values_alive": [
+            0.009440104166666666,
+            0.009874131944444444,
+            0.010633680555555556
+          ],
+          "any_mean_all_features": 0.00998263888888889,
+          "any_values_all_features": [
+            0.009440104166666666,
+            0.009874131944444444,
+            0.010633680555555556
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.01765046296296291,
+      "ontology_excess_over_freq_floor_alive": 0.01765046296296291,
+      "n_modules": 24,
+      "n_module_assigned": 3027,
+      "module_assigned_fraction_all_features": 0.3284505208333333,
+      "module_assigned_fraction_alive": 0.3284505208333333,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36956,
+        "n_failed": 0,
+        "examples": []
+      }
+    },
+    {
+      "layer": 25,
+      "n_features": 9216,
+      "n_alive": 9216,
+      "catalogue_inactive_count": 0,
+      "catalogue_inactive_fraction": 0.0,
+      "n_svd_aligned": 1,
+      "n_novel_non_svd_aligned_alive": 9215,
+      "variance_explained_fresh": 0.8839805413373716,
+      "heldout_inactive_count": 107,
+      "heldout_inactive_fraction": 0.011610243055555556,
+      "n_ontology": 6350,
+      "n_network_evidence": 7085,
+      "n_network_only": 1119,
+      "n_ontology_and_network": 5966,
+      "n_any": 7469,
+      "n_annotation_rows": 9216,
+      "ontology_rate_all_features": 0.6890190972222222,
+      "ontology_rate_alive": 0.6890190972222222,
+      "any_rate_all_features": 0.8104383680555556,
+      "any_rate_alive": 0.8104383680555556,
+      "network_only_rate_all_features": 0.12141927083333333,
+      "n_by_source": {
+        "Reactome": 5896,
+        "GO_BP": 5767,
+        "STRING": 7083,
+        "KEGG": 4637,
+        "TRRUST": 223,
+        "TF_membership": 8,
+        "TRRUST_pairs": 24
+      },
+      "floors": {
+        "freq": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.5785590277777778,
+          "ontology_values_alive": [
+            0.5795355902777778,
+            0.5806206597222222,
+            0.5755208333333334
+          ],
+          "ontology_mean_all_features": 0.5785590277777778,
+          "ontology_values_all_features": [
+            0.5795355902777778,
+            0.5806206597222222,
+            0.5755208333333334
+          ],
+          "any_mean_alive": 0.8308738425925926,
+          "any_values_alive": [
+            0.8332248263888888,
+            0.8315972222222222,
+            0.8277994791666666
+          ],
+          "any_mean_all_features": 0.8308738425925926,
+          "any_values_all_features": [
+            0.8332248263888888,
+            0.8315972222222222,
+            0.8277994791666666
+          ]
+        },
+        "uniform": {
+          "n_seeds": 3,
+          "ontology_mean_alive": 0.009259259259259259,
+          "ontology_values_alive": [
+            0.008572048611111112,
+            0.008897569444444444,
+            0.010308159722222222
+          ],
+          "ontology_mean_all_features": 0.009259259259259259,
+          "ontology_values_all_features": [
+            0.008572048611111112,
+            0.008897569444444444,
+            0.010308159722222222
+          ],
+          "any_mean_alive": 0.010344328703703705,
+          "any_values_alive": [
+            0.009548611111111112,
+            0.010091145833333334,
+            0.011393229166666666
+          ],
+          "any_mean_all_features": 0.010344328703703705,
+          "any_values_all_features": [
+            0.009548611111111112,
+            0.010091145833333334,
+            0.011393229166666666
+          ]
+        }
+      },
+      "ontology_excess_over_freq_floor_all_features": 0.11046006944444442,
+      "ontology_excess_over_freq_floor_alive": 0.11046006944444442,
+      "n_modules": 25,
+      "n_module_assigned": 2881,
+      "module_assigned_fraction_all_features": 0.3126085069444444,
+      "module_assigned_fraction_alive": 0.3126085069444444,
+      "n_positions_module_reported": 614400,
+      "checks": {
+        "n_checks": 36958,
+        "n_failed": 0,
+        "examples": []
+      }
+    }
+  ],
+  "pooled_totals": {
+    "n_features": 239616,
+    "n_alive": 239616,
+    "catalogue_inactive_count": 0,
+    "heldout_inactive_count": 2845,
+    "n_ontology": 152782,
+    "n_any": 180684,
+    "n_network_evidence": 164811,
+    "n_network_only": 27902,
+    "n_ontology_and_network": 136909,
+    "n_modules": 577,
+    "n_module_assigned": 124302,
+    "n_svd_aligned": 2,
+    "n_novel_non_svd_aligned_alive": 239614,
+    "ontology_rate_all_features": 0.6376118456196581,
+    "ontology_rate_alive": 0.6376118456196581,
+    "any_rate_all_features": 0.7540564903846154,
+    "any_rate_alive": 0.7540564903846154,
+    "heldout_inactive_fraction": 0.011873163728632478,
+    "catalogue_inactive_fraction": 0.0,
+    "module_assigned_fraction_all_features": 0.5187550080128205,
+    "module_assigned_fraction_alive": 0.5187550080128205,
+    "floors": {
+      "freq": {
+        "ontology_expected_count_mean": 82363.66666666667,
+        "ontology_mean_all_features": 0.3437319155092593,
+        "ontology_mean_alive": 0.3437319155092593,
+        "any_expected_count_mean": 123669.66666666667,
+        "any_mean_all_features": 0.5161160634793448,
+        "any_mean_alive": 0.5161160634793448
+      },
+      "uniform": {
+        "ontology_expected_count_mean": 2194.0,
+        "ontology_mean_all_features": 0.009156316773504274,
+        "ontology_mean_alive": 0.009156316773504274,
+        "any_expected_count_mean": 2396.3333333333335,
+        "any_mean_all_features": 0.010000723379629631,
+        "any_mean_alive": 0.010000723379629631
+      }
+    }
+  },
+  "unweighted_layer_summaries": {
+    "variance_explained_fresh": {
+      "n_layers": 26,
+      "mean": 0.932938938614341,
+      "minimum": 0.8730340804657964,
+      "maximum": 0.9930632926817315,
+      "minimum_layers": [
+        24
+      ],
+      "maximum_layers": [
+        0
+      ]
+    },
+    "heldout_inactive_count": {
+      "n_layers": 26,
+      "mean": 109.42307692307692,
+      "minimum": 18,
+      "maximum": 339,
+      "minimum_layers": [
+        1
+      ],
+      "maximum_layers": [
+        16
+      ]
+    },
+    "heldout_inactive_fraction": {
+      "n_layers": 26,
+      "mean": 0.011873163728632478,
+      "minimum": 0.001953125,
+      "maximum": 0.036783854166666664,
+      "minimum_layers": [
+        1
+      ],
+      "maximum_layers": [
+        16
+      ]
+    },
+    "catalogue_inactive_count": {
+      "n_layers": 26,
+      "mean": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "minimum_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "maximum_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    "catalogue_inactive_fraction": {
+      "n_layers": 26,
+      "mean": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "minimum_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "maximum_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    "ontology_rate_all_features": {
+      "n_layers": 26,
+      "mean": 0.6376118456196581,
+      "minimum": 0.5062934027777778,
+      "maximum": 0.7760416666666666,
+      "minimum_layers": [
+        5
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "ontology_rate_alive": {
+      "n_layers": 26,
+      "mean": 0.6376118456196581,
+      "minimum": 0.5062934027777778,
+      "maximum": 0.7760416666666666,
+      "minimum_layers": [
+        5
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "any_rate_all_features": {
+      "n_layers": 26,
+      "mean": 0.7540564903846154,
+      "minimum": 0.6057942708333334,
+      "maximum": 0.8856336805555556,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "any_rate_alive": {
+      "n_layers": 26,
+      "mean": 0.7540564903846154,
+      "minimum": 0.6057942708333334,
+      "maximum": 0.8856336805555556,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "network_only_rate_all_features": {
+      "n_layers": 26,
+      "mean": 0.11644464476495726,
+      "minimum": 0.0715060763888889,
+      "maximum": 0.1515842013888889,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        11
+      ]
+    },
+    "n_modules": {
+      "n_layers": 26,
+      "mean": 22.192307692307693,
+      "minimum": 16,
+      "maximum": 27,
+      "minimum_layers": [
+        12
+      ],
+      "maximum_layers": [
+        3,
+        4
+      ]
+    },
+    "n_module_assigned": {
+      "n_layers": 26,
+      "mean": 4780.846153846154,
+      "minimum": 2881,
+      "maximum": 7357,
+      "minimum_layers": [
+        25
+      ],
+      "maximum_layers": [
+        0
+      ]
+    },
+    "module_assigned_fraction_all_features": {
+      "n_layers": 26,
+      "mean": 0.5187550080128205,
+      "minimum": 0.3126085069444444,
+      "maximum": 0.7982855902777778,
+      "minimum_layers": [
+        25
+      ],
+      "maximum_layers": [
+        0
+      ]
+    },
+    "module_assigned_fraction_alive": {
+      "n_layers": 26,
+      "mean": 0.5187550080128205,
+      "minimum": 0.3126085069444444,
+      "maximum": 0.7982855902777778,
+      "minimum_layers": [
+        25
+      ],
+      "maximum_layers": [
+        0
+      ]
+    },
+    "n_svd_aligned": {
+      "n_layers": 26,
+      "mean": 0.07692307692307693,
+      "minimum": 0,
+      "maximum": 1,
+      "minimum_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "maximum_layers": [
+        0,
+        25
+      ]
+    },
+    "ontology_excess_over_freq_floor_all_features": {
+      "n_layers": 26,
+      "mean": 0.29387993011039887,
+      "minimum": -0.03049045138888906,
+      "maximum": 0.49453848379629634,
+      "minimum_layers": [
+        22
+      ],
+      "maximum_layers": [
+        2
+      ]
+    },
+    "ontology_excess_over_freq_floor_alive": {
+      "n_layers": 26,
+      "mean": 0.29387993011039887,
+      "minimum": -0.03049045138888906,
+      "maximum": 0.49453848379629634,
+      "minimum_layers": [
+        22
+      ],
+      "maximum_layers": [
+        2
+      ]
+    },
+    "ontology_freq_floor_alive": {
+      "n_layers": 26,
+      "mean": 0.3437319155092593,
+      "minimum": 0.034686053240740734,
+      "maximum": 0.8065321180555557,
+      "minimum_layers": [
+        4
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "ontology_freq_floor_all_features": {
+      "n_layers": 26,
+      "mean": 0.3437319155092593,
+      "minimum": 0.034686053240740734,
+      "maximum": 0.8065321180555557,
+      "minimum_layers": [
+        4
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "any_freq_floor_alive": {
+      "n_layers": 26,
+      "mean": 0.5161160634793447,
+      "minimum": 0.0791015625,
+      "maximum": 0.9478081597222222,
+      "minimum_layers": [
+        4
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "any_freq_floor_all_features": {
+      "n_layers": 26,
+      "mean": 0.5161160634793447,
+      "minimum": 0.0791015625,
+      "maximum": 0.9478081597222222,
+      "minimum_layers": [
+        4
+      ],
+      "maximum_layers": [
+        22
+      ]
+    },
+    "ontology_uniform_floor_alive": {
+      "n_layers": 26,
+      "mean": 0.009156316773504274,
+      "minimum": 0.00831886574074074,
+      "maximum": 0.010127314814814813,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        20
+      ]
+    },
+    "ontology_uniform_floor_all_features": {
+      "n_layers": 26,
+      "mean": 0.009156316773504274,
+      "minimum": 0.00831886574074074,
+      "maximum": 0.010127314814814813,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        20
+      ]
+    },
+    "any_uniform_floor_alive": {
+      "n_layers": 26,
+      "mean": 0.01000072337962963,
+      "minimum": 0.009150752314814813,
+      "maximum": 0.011031539351851851,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        19
+      ]
+    },
+    "any_uniform_floor_all_features": {
+      "n_layers": 26,
+      "mean": 0.01000072337962963,
+      "minimum": 0.009150752314814813,
+      "maximum": 0.011031539351851851,
+      "minimum_layers": [
+        0
+      ],
+      "maximum_layers": [
+        19
+      ]
+    }
+  },
+  "checks": {
+    "n_checks": 960762,
+    "n_failed": 0
+  },
+  "input_files": {
+    "runs/2b_atlas/feature_catalog_L00.json": {
+      "bytes": 26424781,
+      "sha256": "8959a6590974e532d4edacf386a863130728084e0587e2e233af1a1cb683fbc4"
+    },
+    "results/2b_eval_L00.json": {
+      "bytes": 839,
+      "sha256": "a4f1ace68fb57f7ad57a6d19b1418df5b13d080affdb28087ec3818890e1530e"
+    },
+    "results/annotations/2b/ann_v2_L00.json": {
+      "bytes": 49904553,
+      "sha256": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452"
+    },
+    "runs/2b_atlas/coactivation_modules_L00.json": {
+      "bytes": 225439,
+      "sha256": "15ae1572acce523731bc6859bf5d98aafb482f595cb0a650334b150688fda2ea"
+    },
+    "runs/2b_atlas/feature_catalog_L01.json": {
+      "bytes": 26469637,
+      "sha256": "73df35aa85314470e4e2a29c7b4927029ee5eb8b1ecab39dd8f9122bdac1e05b"
+    },
+    "results/2b_eval_L01.json": {
+      "bytes": 837,
+      "sha256": "13d9d33b6841dc2c9427f3e0903645bff7ff25d16d8b6eff4ecb63a6f622a8c1"
+    },
+    "results/annotations/2b/ann_v2_L01.json": {
+      "bytes": 53979943,
+      "sha256": "af48401f67eb32d2cff623ed0809a94f0e5ae81473da40439eb9abfbfde7a70c"
+    },
+    "runs/2b_atlas/coactivation_modules_L01.json": {
+      "bytes": 207267,
+      "sha256": "0d166ec629ade15bd7aaa78ba223e6b0b65599325379659008b6c208540e831c"
+    },
+    "runs/2b_atlas/feature_catalog_L02.json": {
+      "bytes": 26415825,
+      "sha256": "87d0a63298b8783768c3112bcc9a72a651c3a065903bf83b6e8a72ccdb81c61e"
+    },
+    "results/2b_eval_L02.json": {
+      "bytes": 845,
+      "sha256": "ed454062e9d4b64eb12f2b17c2be264fa420b8b8c21eae99c12723a65a5caf66"
+    },
+    "results/annotations/2b/ann_v2_L02.json": {
+      "bytes": 46498370,
+      "sha256": "ed56f8c111b677a61396b3b1ca75b6c11ee04fc79bf349cd790306ba5d949816"
+    },
+    "runs/2b_atlas/coactivation_modules_L02.json": {
+      "bytes": 207783,
+      "sha256": "ae2b17db314dff1bb0041653515fe04e7f130bda48bfd9d2b288a009a0687572"
+    },
+    "runs/2b_atlas/feature_catalog_L03.json": {
+      "bytes": 26457512,
+      "sha256": "68ac63d6930bb0ec9b2305eb8f2d356749374411c052ba7cd7555c8c14b807d1"
+    },
+    "results/2b_eval_L03.json": {
+      "bytes": 827,
+      "sha256": "c3524249249d82f380da03530b169c618c6ebdd4992100ece94f9559f41dfa90"
+    },
+    "results/annotations/2b/ann_v2_L03.json": {
+      "bytes": 45926811,
+      "sha256": "9c68b8efa49e9ae8f5d078410af26a6458e225ce58c697fb216273b998ddd5ac"
+    },
+    "runs/2b_atlas/coactivation_modules_L03.json": {
+      "bytes": 212257,
+      "sha256": "908d0b772ed02c4b9e5e42d23e117565493147e8a98d78b6fcba5c3b399fb866"
+    },
+    "runs/2b_atlas/feature_catalog_L04.json": {
+      "bytes": 26439929,
+      "sha256": "4ec5219676f12220138c0897dfb5c4a85ebf165bfab2ce5b020eadc3e21cc13e"
+    },
+    "results/2b_eval_L04.json": {
+      "bytes": 839,
+      "sha256": "276e11533e584cc3068324b8c282756542616338a3fce655def5a6a40d3977a8"
+    },
+    "results/annotations/2b/ann_v2_L04.json": {
+      "bytes": 40906852,
+      "sha256": "2ec2d33e4935aa6cae1be158ab70601b4d4eb7c2d891967792696c57daef3574"
+    },
+    "runs/2b_atlas/coactivation_modules_L04.json": {
+      "bytes": 213549,
+      "sha256": "ffd20448e1caae2473ea81cb2abbc01081d794f79f6f929beed9470fb2731a0b"
+    },
+    "runs/2b_atlas/feature_catalog_L05.json": {
+      "bytes": 26431887,
+      "sha256": "5fb8fe9fbc2dfee5d451ab72ffcff80dbdbf04588f6d2a755c3f460c8474c081"
+    },
+    "results/2b_eval_L05.json": {
+      "bytes": 835,
+      "sha256": "0c55fefa45009103abdeae7b9963dd274d7460b08b9a18dd190d4fb306822471"
+    },
+    "results/annotations/2b/ann_v2_L05.json": {
+      "bytes": 41126089,
+      "sha256": "0ef17f7e5211d86506ad9f682f398b02118310b36f5ad232e9a716afbf92306c"
+    },
+    "runs/2b_atlas/coactivation_modules_L05.json": {
+      "bytes": 200527,
+      "sha256": "f7a7a6f5815ef646cda1a7893027bccd67d60f14d7ac032f0b67a4db74e496f9"
+    },
+    "runs/2b_atlas/feature_catalog_L06.json": {
+      "bytes": 26420060,
+      "sha256": "352e519bdc0e74f9a52c0f1b255de96dc6c214460203ca216866ad73a6ff361e"
+    },
+    "results/2b_eval_L06.json": {
+      "bytes": 825,
+      "sha256": "f19ee7a6509c7699fdbe1b5f15dff0e1f710ba91e99d6117f8fc922908cbcd63"
+    },
+    "results/annotations/2b/ann_v2_L06.json": {
+      "bytes": 48087310,
+      "sha256": "e0d3e218277c910b6c6b1b2b0eb52bd8145136229219e81a50b8f1a2fc96751b"
+    },
+    "runs/2b_atlas/coactivation_modules_L06.json": {
+      "bytes": 190390,
+      "sha256": "296ed414365a94d4a02511423a074157f38880c90acdeface0b3d65ba33f286c"
+    },
+    "runs/2b_atlas/feature_catalog_L07.json": {
+      "bytes": 26456789,
+      "sha256": "655e79a566652277715683ecf3b48d682d63aad08baab5d22b1b59de1364bc90"
+    },
+    "results/2b_eval_L07.json": {
+      "bytes": 836,
+      "sha256": "bf83ba6b094903d018e6431dd01011966ff6dc8dbeb0cb53dc42467973698638"
+    },
+    "results/annotations/2b/ann_v2_L07.json": {
+      "bytes": 46551656,
+      "sha256": "13003566263e6e84f73ce82cae76cd4ed462687f2e72fc416fdbd9ef356ad842"
+    },
+    "runs/2b_atlas/coactivation_modules_L07.json": {
+      "bytes": 180905,
+      "sha256": "d44c7ce4db1b4fe13c82709e87246a5e407afb7b0cb3075426ca070d3d2cd4db"
+    },
+    "runs/2b_atlas/feature_catalog_L08.json": {
+      "bytes": 26462941,
+      "sha256": "ff96caca804bef9ab18b5b12ac3db56cd55d497b023d49ef74e59d72ac5964ce"
+    },
+    "results/2b_eval_L08.json": {
+      "bytes": 833,
+      "sha256": "7fd1f0f68390d042e1e3bafe956c0bb0bbe6f6235f772a58ec98bfc165827115"
+    },
+    "results/annotations/2b/ann_v2_L08.json": {
+      "bytes": 50661665,
+      "sha256": "b2b2e098bd360348f3ec6059ca5d95987368f28a8157584c1c66d243157e5ea1"
+    },
+    "runs/2b_atlas/coactivation_modules_L08.json": {
+      "bytes": 172441,
+      "sha256": "bd5da9484e29857389642f47580488e2e39ad1486cfbdc12bf2f3de7c5790f1d"
+    },
+    "runs/2b_atlas/feature_catalog_L09.json": {
+      "bytes": 26441788,
+      "sha256": "5800de243c71a8cef3e32b44c6884664625e73dcb8871bfe77201f3674e936bd"
+    },
+    "results/2b_eval_L09.json": {
+      "bytes": 835,
+      "sha256": "49b6ba6c25cfeff35e67d2ebb1b25626f97ac6604622e810cdeb7fa7caaf3df0"
+    },
+    "results/annotations/2b/ann_v2_L09.json": {
+      "bytes": 50411119,
+      "sha256": "5f01db25eeb465ae7879228dde74af13760edd4b5f18d0d21e1803463c4fbf02"
+    },
+    "runs/2b_atlas/coactivation_modules_L09.json": {
+      "bytes": 166717,
+      "sha256": "b150ba47c75cdf045ea7089640df4e543631f3e82937c1e3e4ca8dfd64c26a76"
+    },
+    "runs/2b_atlas/feature_catalog_L10.json": {
+      "bytes": 26445568,
+      "sha256": "898774dee8d16c1dd776a22310f1a39c7c3ddf0cb4d685d7e867c3f8cac73c52"
+    },
+    "results/2b_eval_L10.json": {
+      "bytes": 832,
+      "sha256": "7a543c1b906eef52bcf9c442c105a0fd9df15c7d10f6f5236ecb11c48ae84900"
+    },
+    "results/annotations/2b/ann_v2_L10.json": {
+      "bytes": 44879419,
+      "sha256": "49ba44fffb0e6c22802c71f70587e788882ece34a011af0b75c6ee47ebb8ced5"
+    },
+    "runs/2b_atlas/coactivation_modules_L10.json": {
+      "bytes": 159480,
+      "sha256": "9222efc4b4cc4ebd591d967a4a6ce5ff1aa46ceec97ce48c3b3d449edb4ebf2b"
+    },
+    "runs/2b_atlas/feature_catalog_L11.json": {
+      "bytes": 26434761,
+      "sha256": "fbdf13df2ebf3a3dd103ca4ccb2e16ebdc1d432da63b312740b46c15e2195c72"
+    },
+    "results/2b_eval_L11.json": {
+      "bytes": 829,
+      "sha256": "e401bf53d6a5f7d61c5e799328b863b2d1c2b83a7ee3af240158509166fd61be"
+    },
+    "results/annotations/2b/ann_v2_L11.json": {
+      "bytes": 54307443,
+      "sha256": "6a16e91f573bfaec69667174d0f2be8691ef55d86879580d6f8b40d3a3953312"
+    },
+    "runs/2b_atlas/coactivation_modules_L11.json": {
+      "bytes": 150742,
+      "sha256": "68dd5fcd21ca8cdc4967abfd3336433b8c5e49fb3c8612c9f66e8dbc696a18cd"
+    },
+    "runs/2b_atlas/feature_catalog_L12.json": {
+      "bytes": 26438791,
+      "sha256": "0a06f6e76e3aa2a2698dcae815165d7aee16cc44244bc09ac0dbf8c8dd9940be"
+    },
+    "results/2b_eval_L12.json": {
+      "bytes": 834,
+      "sha256": "644299fdfdf15d71d81cdcf239bf2d1b1442a99b8cf57507a529265538af70f5"
+    },
+    "results/annotations/2b/ann_v2_L12.json": {
+      "bytes": 61216355,
+      "sha256": "9571e2605d562994e714b5fb1e11452254d1359ad883e133295ba42380547d97"
+    },
+    "runs/2b_atlas/coactivation_modules_L12.json": {
+      "bytes": 143302,
+      "sha256": "8ca1e6a9996778614619273ce51d878fd53352c5e24f7c85924c800b1cdcde63"
+    },
+    "runs/2b_atlas/feature_catalog_L13.json": {
+      "bytes": 26342432,
+      "sha256": "7f4f6a678816e1b47dcd4352769c4100f022c9a5de3c78e239496a91494e50f4"
+    },
+    "results/2b_eval_L13.json": {
+      "bytes": 841,
+      "sha256": "d8c8cb2ec7090c922a872dc3924159914d271f34be0ee678403b6f0425e29b38"
+    },
+    "results/annotations/2b/ann_v2_L13.json": {
+      "bytes": 66203659,
+      "sha256": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f"
+    },
+    "runs/2b_atlas/coactivation_modules_L13.json": {
+      "bytes": 130741,
+      "sha256": "da5926be6406585d97994ccee307d074e5a9056ae436b902833f19aa357266bd"
+    },
+    "runs/2b_atlas/feature_catalog_L14.json": {
+      "bytes": 26342196,
+      "sha256": "6f73b53a721878e491acf5daa184a48107ee099960da4b02ab29eb7105d4eb5b"
+    },
+    "results/2b_eval_L14.json": {
+      "bytes": 842,
+      "sha256": "b3cd08417eff264e659659e483feb23a00aa48dece02260a58c115cfd73d8253"
+    },
+    "results/annotations/2b/ann_v2_L14.json": {
+      "bytes": 74746669,
+      "sha256": "849fab7961951a8d889d75cb89bb838ae3f7e4aaccac3b445fe16d8525785c57"
+    },
+    "runs/2b_atlas/coactivation_modules_L14.json": {
+      "bytes": 125206,
+      "sha256": "97caa66f1f34ebdb9afe43462c157c21315f5f3faca5694ce836f8985ab12003"
+    },
+    "runs/2b_atlas/feature_catalog_L15.json": {
+      "bytes": 26169316,
+      "sha256": "100a04c49af3d442f442b1d0d57c0daff9034d91fa28c0db8b42b6a4323f1fd7"
+    },
+    "results/2b_eval_L15.json": {
+      "bytes": 834,
+      "sha256": "2e8272115167576dbd0e5af94addefde8509cbd3f35fe91ad6975859fff3f0cc"
+    },
+    "results/annotations/2b/ann_v2_L15.json": {
+      "bytes": 83477803,
+      "sha256": "165df7c82ff5f43113b92ff48f8f260b136cb474d732a3660f86e75f361599fa"
+    },
+    "runs/2b_atlas/coactivation_modules_L15.json": {
+      "bytes": 121013,
+      "sha256": "9a95f118d7ea83a20a36f6318953883cbf439f4e023cd22fc16d29f97e080270"
+    },
+    "runs/2b_atlas/feature_catalog_L16.json": {
+      "bytes": 26009951,
+      "sha256": "ff93005e482889729f3da7e3352a9e11b0c7a05a1cb4227be247b8655b504883"
+    },
+    "results/2b_eval_L16.json": {
+      "bytes": 837,
+      "sha256": "4e728c4184787860bed5c72d2f8e889d7efeb9d400604a280ddc0ef2f486747f"
+    },
+    "results/annotations/2b/ann_v2_L16.json": {
+      "bytes": 84760000,
+      "sha256": "8f20dafdcb6020d22d57ca37f9f7754742be147e212f79ca9da43eacc0b72b19"
+    },
+    "runs/2b_atlas/coactivation_modules_L16.json": {
+      "bytes": 108563,
+      "sha256": "57e7d26949d0750efb206cd5b9f516119cc3df81abdeb607a88407fb08b228a9"
+    },
+    "runs/2b_atlas/feature_catalog_L17.json": {
+      "bytes": 26138792,
+      "sha256": "6982c570f2528c5e729fc97bfa12bbd98d43f4a094a759655c087d111feb7d28"
+    },
+    "results/2b_eval_L17.json": {
+      "bytes": 830,
+      "sha256": "32162e1fbf3e416c200ff730fce328670acac968fdc8e84ebacabd3ff9e5fdd6"
+    },
+    "results/annotations/2b/ann_v2_L17.json": {
+      "bytes": 91316479,
+      "sha256": "0fd5cda9432b3149f8a4b288143d183e516f637076610f747588470ed43ae02d"
+    },
+    "runs/2b_atlas/coactivation_modules_L17.json": {
+      "bytes": 111738,
+      "sha256": "13efd4ca7fd0b98ea2c1fc07515436abf14974bce0d5a93f23b1df7fdb2036d2"
+    },
+    "runs/2b_atlas/feature_catalog_L18.json": {
+      "bytes": 26286242,
+      "sha256": "ccc579cedded0c3ec6e622b37ca4055b8070d30c34a55fca6a42dd3fb308ecea"
+    },
+    "results/2b_eval_L18.json": {
+      "bytes": 845,
+      "sha256": "b847cf6f5db9d5b7f7ad8cf5a6afd8365d174f99d8e07da513b6abb5bb1e12e3"
+    },
+    "results/annotations/2b/ann_v2_L18.json": {
+      "bytes": 95139509,
+      "sha256": "6cb576f11fc7fe2319aefd49d5a5d0d728f715b1a1da37c5553b3d3e7272d32a"
+    },
+    "runs/2b_atlas/coactivation_modules_L18.json": {
+      "bytes": 111693,
+      "sha256": "b6d15a43d3b6db6b8d12bdfd1c4a6574eb8b64292c7588251eb9040da47371a9"
+    },
+    "runs/2b_atlas/feature_catalog_L19.json": {
+      "bytes": 26375042,
+      "sha256": "6a6435cf615b3064aa0d44cda260998a6076cbef5f6ce3bf932e997dca725576"
+    },
+    "results/2b_eval_L19.json": {
+      "bytes": 822,
+      "sha256": "9c40fb54c1213ed4281f10895e2940d4822e7e1b07705675fc15fd43e8d3c049"
+    },
+    "results/annotations/2b/ann_v2_L19.json": {
+      "bytes": 97400473,
+      "sha256": "4a0b0d1ec267aa20cc6407ea81bc45fea5bc260bc6d88c5d470e8ce9ef515558"
+    },
+    "runs/2b_atlas/coactivation_modules_L19.json": {
+      "bytes": 116149,
+      "sha256": "0fbbd8217f41a574ef7633f49dbedec23ed7841fe0f04cc39b56347b4e698f8d"
+    },
+    "runs/2b_atlas/feature_catalog_L20.json": {
+      "bytes": 26416864,
+      "sha256": "b9cab8420f1350eadd886d91a6623af77f2512d73ca91b4c3afe8d062190543d"
+    },
+    "results/2b_eval_L20.json": {
+      "bytes": 832,
+      "sha256": "c7a542f907b88d2eb4e7d6c47ec0cd3e99a68257040af75102b1f58095f161f1"
+    },
+    "results/annotations/2b/ann_v2_L20.json": {
+      "bytes": 97390793,
+      "sha256": "24c200634300062d6e474a8273ad89d5105f67c3c10f22bd79bacbf58a5138c8"
+    },
+    "runs/2b_atlas/coactivation_modules_L20.json": {
+      "bytes": 115424,
+      "sha256": "b08401294eeb60687b13211a4d8ae10ae5d2797a1e9635737477ea4a3da11143"
+    },
+    "runs/2b_atlas/feature_catalog_L21.json": {
+      "bytes": 26464426,
+      "sha256": "63cda0f25fd53a5515680b7981b87a5f751adea0a9f9b68c215c669c6aac4bc7"
+    },
+    "results/2b_eval_L21.json": {
+      "bytes": 835,
+      "sha256": "c470ea5cad81b2036627d1ee494475e8aa103b8a14c26f8cc839850e8e86348a"
+    },
+    "results/annotations/2b/ann_v2_L21.json": {
+      "bytes": 101239833,
+      "sha256": "49106b88846087f75c0bc5326f4e4f3cedb262fa0372edaa4a52221b76bb5087"
+    },
+    "runs/2b_atlas/coactivation_modules_L21.json": {
+      "bytes": 117246,
+      "sha256": "b9bc66c19afd25b360c51b1d26cf71c60c2b8f9f61097a97c8509bf263d0daf3"
+    },
+    "runs/2b_atlas/feature_catalog_L22.json": {
+      "bytes": 26467009,
+      "sha256": "9e2649694bff28952e563495f9b2c1d45e54d4f1be2093b881b16c4dc74dcd14"
+    },
+    "results/2b_eval_L22.json": {
+      "bytes": 836,
+      "sha256": "ee2c30469f2e3611d3e90f7c3702be2fc9c259a00c6f192068ecfd7808fd8acd"
+    },
+    "results/annotations/2b/ann_v2_L22.json": {
+      "bytes": 104485693,
+      "sha256": "69cf7d4fd9ec029d3e49bd62ecd730e68108217291aff3165c8af39308c3ea92"
+    },
+    "runs/2b_atlas/coactivation_modules_L22.json": {
+      "bytes": 113570,
+      "sha256": "bcfb665c862adb28797ccd9744a3a494f5e079c3cd868fba42fd65d548ac9029"
+    },
+    "runs/2b_atlas/feature_catalog_L23.json": {
+      "bytes": 26452622,
+      "sha256": "9d63c409a15f98ca4760f1b1480b0b3c8aef1a091b150f172c2a6b6bb0b56c0d"
+    },
+    "results/2b_eval_L23.json": {
+      "bytes": 834,
+      "sha256": "1a874368629e43bb02937380c34b7d16892ed6944f41a56c69f6a1a771db4b18"
+    },
+    "results/annotations/2b/ann_v2_L23.json": {
+      "bytes": 98538333,
+      "sha256": "f62a98f71cfdf04f898150f34e86928180d1053651625dc73ae85c5406de5b80"
+    },
+    "runs/2b_atlas/coactivation_modules_L23.json": {
+      "bytes": 109644,
+      "sha256": "d5bc1df126c65f64987f78ba22c5255fddccb3f2a54062779c3ca1ac8e328cca"
+    },
+    "runs/2b_atlas/feature_catalog_L24.json": {
+      "bytes": 26427803,
+      "sha256": "38eb0516296f188a0d4c75469e556b9b1118df6fecb5eb45ec755b9a4222c086"
+    },
+    "results/2b_eval_L24.json": {
+      "bytes": 836,
+      "sha256": "19d8518b603b375ab6183fafcf58050bcfe28d91b4a6afc239f4d31bcd45f679"
+    },
+    "results/annotations/2b/ann_v2_L24.json": {
+      "bytes": 95192351,
+      "sha256": "877becd04075b53264a44f4508a2de1406ba5c2708a4404f04586914b883e5f6"
+    },
+    "runs/2b_atlas/coactivation_modules_L24.json": {
+      "bytes": 99578,
+      "sha256": "bb45b75d557e59b68e97d44444ff8855436de51dafe74de0b6c19fae9bffdc41"
+    },
+    "runs/2b_atlas/feature_catalog_L25.json": {
+      "bytes": 26401204,
+      "sha256": "e6677e90c6c5c3f47d4fd7a6d13564bdbb536148c4d7844e2cf4182f88153ffb"
+    },
+    "results/2b_eval_L25.json": {
+      "bytes": 829,
+      "sha256": "c61064f24db1c35eba1981aa4068fcfbe41bff970bed1be291825afd5dc3081f"
+    },
+    "results/annotations/2b/ann_v2_L25.json": {
+      "bytes": 81803758,
+      "sha256": "d2e61d2c26fcd01f2304c403d54a776f570b961417e71136e7908839fcadb852"
+    },
+    "runs/2b_atlas/coactivation_modules_L25.json": {
+      "bytes": 95505,
+      "sha256": "8692ea75d4ed0ca936631fe334dd3f041cc82a6e53696ee3ee38cb1c9eba2f04"
+    }
+  },
+  "units": {
+    "counts": "Dictionary elements or module communities, counted separately at each layer; these are not unique biological programmes across layers.",
+    "pooled_rates": "Summed feature counts divided by summed dictionary or catalogue-alive counts, as named.",
+    "unweighted_layer_summaries": "Arithmetic mean and range across 26 layer values, with each layer weighted equally.",
+    "floors": "Saved random-set null means/values among alive features; all-feature values rescale by n_alive/n_features. Pooled floors weight alive-set nulls by alive counts.",
+    "reconstruction": "Fresh variance_explained_reextracted and dead_val_reextracted, not training-file metrics. VE is not pooled across layer variances.",
+    "module_coverage": "Assigned features divided by dictionary total or catalogue-alive count as named.",
+    "independence": "No term test or model inference was rerun. Counts/IDs/summary fields and module memberships were independently recounted; floor means were checked against saved seed values."
+  },
+  "runtime_seconds": 22.894419109914452,
+  "peak_process_rss_bytes": 615174144
+}

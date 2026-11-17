@@ -1,0 +1,18 @@
+{
+ "layer": 13,
+ "mean": {
+  "sae_variance_explained": 0.9256298246926328
+ },
+ "first": {
+  "row_cosine_with_mean_pool_mean": 0.8326463103294373,
+  "row_cosine_with_mean_pool_p05": 0.745731770992279,
+  "gene_similarity_matrix_correlation": 0.7449969352697134,
+  "sae_variance_explained": 0.7189206603891749
+ },
+ "last": {
+  "row_cosine_with_mean_pool_mean": 0.7915966510772705,
+  "row_cosine_with_mean_pool_p05": 0.7078512907028198,
+  "gene_similarity_matrix_correlation": 0.49565707475219495,
+  "sae_variance_explained": 0.5486077966972178
+ }
+}

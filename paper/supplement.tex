@@ -1,0 +1,300 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{graphicx,booktabs,longtable,array,amsmath}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thesection}{S\arabic{section}}
+\setlength{\LTcapwidth}{\linewidth}
+% Leave room for six- and seven-column tables without reducing the 11pt type.
+\setlength{\tabcolsep}{3pt}
+\newif\ifSupplementComplete
+\SupplementCompletefalse
+\newcommand{\SupplementPending}[1]{\par\noindent\textcolor{red}{\textbf{PENDING ARTIFACT:} #1}\par}
+\IfFileExists{supplement_generated/status.tex}{\input{supplement_generated/status.tex}}{}
+
+\begin{document}
+\RaggedRight
+\setlength{\emergencystretch}{3em}
+\begin{center}
+{\Large\bfseries Supplementary material}\par\medskip
+Same ceiling, different machinery: mechanistic interpretability of a text language model trained to read cells as sentences
+\end{center}
+\ifSupplementComplete\else
+\begin{center}\color{red}\bfseries INCOMPLETE ASSEMBLY: pending artifacts must be supplied before submission.\end{center}
+\fi
+
+\section{Input handling and statistical units}
+
+Each cell is represented by positive-expression gene symbols in descending expression order.
+Ties retain the gene-panel order. The selected symbols are taken from the full measured panel
+before restricting a predictor to genes shared between datasets. This order matters: selecting
+from the shared panel first can change both membership and rank weights. Expression magnitudes
+are absent from a cell sentence. Prompt text identifies the organism and explains the rank order.
+
+Gene-token analyses use character offsets to identify subword pieces that overlap a gene symbol.
+The primary gene representation is the arithmetic mean of those pieces; prompt and separator
+tokens are excluded. First-piece and last-piece rules provide pooling sensitivity checks.
+Cell-summary probes instead read the final sentence-token residual state. A layer index denotes
+the output of that transformer block: layer zero is the first block output, not the raw embedding.
+
+\input{supplement_generated/tokenization.tex}
+
+Gene-token positions, cells, genes, transcription factors (TFs), source features and transformer
+layers are different statistical units. An uncertainty interval for one unit does not quantify
+variation across the others. In particular, a bootstrap of fixed cell predictions does not refit
+the predictor, and a TF bootstrap does not resample the cells used to estimate each response.
+
+\section{Dictionary learning and biological annotation}
+
+TopK autoencoders retain a fixed number of encoder activations per input position and minimise
+mean squared reconstruction error. The baseline uses 9\,216 dictionary elements, sparsity
+$k=32$, six training epochs, batches of 4\,096, learning rate $3\times10^{-4}$ and seed zero.
+The sparsity grid is $k\in\{8,16,32,64,128\}$ at layers zero and thirteen. At layer thirteen,
+dictionary expansion is also tested at twofold, fourfold and eightfold width while retaining
+$k=32$. The held-out reconstruction statistic is one minus residual variance divided by input
+variance. A feature that never fires on all atlas positions is distinct from a feature that
+does not fire on the held-out subset.
+
+The gene universe comprises the symbols present in the saved atlas sentences. Reference sets
+are restricted to that universe, and sets with five to five hundred genes are retained. Each
+feature is tested against every eligible ontology or regulon set, including zero-overlap tests.
+One-sided hypergeometric probabilities are adjusted by the Benjamini--Hochberg procedure within
+the complete test family of that feature. The family also contains STRING and TRRUST pair-count
+tests using a Poisson approximation to universe pair density, and a hypergeometric test of TF
+membership. A discovery has an adjusted probability below 0.05.
+
+An ontology/regulon annotation requires a named significant gene set. Pair-count and TF-membership
+discoveries are separate evidence types; two features passing the same network test do not
+therefore share an ontology term. Uniform and gene-frequency-weighted random gene sets retain
+the observed feature-set sizes and pass through the same scorer. The observed rate and its
+floor always use the same denominator. The sidecars retain alive-feature counts and total
+dictionary counts so each plotted rate can be interpreted using its stated axis unit.
+
+The untrained dictionary control has norm-matched encoder directions, the trained encoder bias
+and no optimisation steps. It measures effects of the residual distribution and sparse selection
+without learned encoder directions. Biological category assignments use significant named terms;
+categories can overlap and do not partition the dictionary.
+
+\input{supplement_generated/databases.tex}
+\clearpage
+\input{supplement_generated/software.tex}
+
+\begin{figure}[p]
+\centering\input{supplement_generated/figure_S1.tex}
+\caption{Dictionary sparsity and expansion. Panels a--e compare held-out reconstruction, held-out
+inactive fraction, median firing frequency, sampled absolute decoder cosine and ontology/regulon
+annotation excess across the sparsity grid at two layers. Panel f compares reconstruction across
+dictionary widths. Annotation excess subtracts the matching frequency-weighted random-set floor.
+Annotation rates and floors use catalogue-active features; held-out inactivity has its separate
+evaluation denominator.
+Each point represents a saved dictionary setting; these curves do not supply training-seed uncertainty.}
+\label{fig:sparsity}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering\input{supplement_generated/figure_S2.tex}
+\caption{Subword pooling at layer thirteen. Panel a measures agreement of first-piece and last-piece
+gene-similarity matrices with mean pooling. Panel b applies the mean-trained dictionary to each
+pooling rule. Panel c compares ontology/regulon annotation with its matching random-set floor.
+Panel c uses features active anywhere in each pooling rule's catalogue, rather than all dictionary
+features; the numerical tables also give the all-feature rates.
+These are changes to residual pooling; the cell-sentence order is held fixed.}
+\label{fig:pooling}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering\input{supplement_generated/figure_S3.tex}
+\caption{Reference-library and dictionary controls. Panel a compares full versioned reference
+libraries with archived snapshots using the same complete test-family scorer. Panel b compares
+trained and untrained dictionary directions. Each observed ontology/regulon rate is accompanied
+by the frequency-weighted random-set floor for that setting. Rates and floors use catalogue-active
+features, whose number can differ across settings.}
+\label{fig:libraries}
+\end{figure}
+\clearpage
+
+\section{Perturbation controls and cell-line transfer}
+
+Measured knockdowns are compared with non-targeting controls on exactly the extracted cells.
+The expression arm uses log-transformed counts scaled to ten thousand counts per cell. The input
+arm uses sentence rank weights and assigns zero to absent genes. The model arm averages sparse
+feature activations over the gene positions in each cell. Response testing uses two-sided
+Mann--Whitney tests, false-discovery adjustment across all columns and absolute standardised
+effect greater than 0.5. The effect denominator is the square root of the mean group variances,
+using population-variance normalisation.
+
+TF-target specificity uses one-sided Fisher enrichment and false-discovery adjustment across
+the full screened TF family, separately by representation and layer. Gene-level analyses remove
+the perturbed gene itself, including autoregulation. Coverage counts retain TFs with sparse or
+absent eligible targets rather than selecting TFs according to their outcomes. Average precision
+(stepwise area under the precision--recall curve) and AUROC rank absolute response strength.
+Gene scores from the model average feature effects over catalogue memberships; genes with no
+membership receive zero. Prevalence is the positive-class fraction in each retrieval universe.
+The exact finite random-label AP expectation is recorded separately because score ties and
+finite target counts can make it differ from prevalence. These are descriptive reference
+quantities rather than significance tests.
+Within-factor intervals condition on the observed cell sample; aggregate intervals resample TFs.
+Deleting a name in model text is kept separate from a measured biological knockdown.
+
+The same K562 dictionaries are applied to RPE1 and THP1 residual states. The THP1 cohort pools
+cells by perturbation target across observed guides. Reconstruction and firing are assessed on
+each substrate before interpreting a difference in biological responses.
+
+\input{supplement_generated/reconstruction.tex}
+\input{supplement_generated/regulatory.tex}
+\input{supplement_generated/guide_coverage.tex}
+
+The selected K562 measured-knockdown groups have limited guide replication. Multiple cells
+carrying one guide provide cell-level observations conditional on that guide. They do not supply
+independent guide-level replicates. The guide counts above should therefore accompany
+interpretation of the cell-level response tests and their uncertainty.
+
+The text-name deletion assay screens TF names that occur in control-cell sentences. Its factors
+are distinct from the measured-knockdown target family. For each TF--cell pair, the contrast is
+the downstream cosine-distance change after deleting the TF name minus the change after deleting
+a nearby name. The nearby control is not matched for subword token length. Gene-level retrieval
+uses downstream genes observed in at least five pairs and excludes the deleted factor itself.
+The eligible downstream universe varies by factor and cell line. Macro retrieval averages only
+factors with both target and nontarget genes; TF bootstrap intervals hold the saved responses fixed.
+This assay measures sensitivity to model text and does not establish biological regulation.
+
+\input{supplement_generated/text_deletion.tex}
+
+\section{Input-matched cell-cycle probes}
+
+The within-K562 analysis and frozen K562-to-RPE1 transfer use different preprocessing and scores.
+Their expression predictors use the supplied h5ad expression matrix without a second normalisation.
+Within K562, each expression arm and the model states are reduced to fifty principal components
+and standardised using the whole cohort before five-fold cosine/sine Ridge regression with
+$\alpha=10$. This is transductive preprocessing: the unsupervised transform sees covariates from
+all folds. The reported points use fixed out-of-fold predictions. Paired bootstrap draws resample
+cohort cells and the circular-loss reference denominator while keeping those predictions fixed.
+They do not refit PCA or the readout. Constant and random phase references use the same score.
+
+For transfer, StandardScaler and cosine/sine Ridge regression with $\alpha=1\,000$ are fitted
+using K562 only, then frozen on RPE1. No PCA is used in this assay. The selected genes and rank
+weights come from full-panel top-gene ranking before projection onto shared gene identities.
+Expression predictors use shared genes, while the model may receive nonshared identities.
+The paired transfer interval resamples target cells with the source fits held fixed.
+
+Within-cohort circular $R^2$ is one minus circular prediction loss divided by the circular-mean
+reference loss. Transfer uses
+$R_{\mathrm{diff}}=|n^{-1}\sum_j \exp\{i(\widehat\theta_j-\theta_j)\}|$,
+the concentration of angular residuals, which is invariant to a common rotation. These metrics
+have different definitions and must not be substituted for each other. Phase labels are derived
+from marker expression, which gives expression predictors a definitional advantage. An interval
+spanning zero is an unresolved difference; no equivalence margin or equivalence test is specified.
+
+\input{supplement_generated/phase_probes.tex}
+
+Cached cell-summary states are checked by deterministic row sampling and fresh model extraction
+on the supplied expression substrate. The validation records include source, state and row-map
+hashes, vector agreement criteria and nearest cached-row identity checks. Coverage is limited to
+the sampled rows shown below. The archived cache manifest lacks source-expression hashes and
+cell names, so these checks do not prove historical cohort linkage or correctness for every row.
+
+\input{supplement_generated/sampled_cache.tex}
+
+Name-only probes insert symbol surface forms at a fixed rank in shared, phase-neutralised real-cell
+backbones to retrieve the saved G2/M labels. These lexical probes have a different input and
+statistical unit from cell-summary phase prediction.
+Their gene-item intervals do not account for dependence within gene families.
+
+\input{supplement_generated/surface_forms.tex}
+
+\section{Matched scale and coordinate-removal controls}
+
+The paired dictionaries have 9 216 features, TopK sparsity 32 and six training epochs, using the
+same saved sentences. Annotation rates and empirical floors are supplied on both all-feature and
+catalogue-active denominators. Held-out inactivity is distinct from inactivity over all positions.
+Residual statistics cover all 26 and 46 taps; dictionary metrics for 27B are available at the seven
+prespecified relative-depth taps. Layer correlations are descriptive because the observations
+share cells and weights. Removing high-RMS coordinates changes the reconstruction target, so
+variance explained before and after projection uses different input-variance references.
+
+\input{supplement_generated/scaling.tex}
+\input{supplement_generated/residuals.tex}
+\input{supplement_generated/dimension_ablation.tex}
+
+\section{Circuit sensitivity and dimensionality controls}
+
+The circuit intervention removes one source feature contribution and propagates the residual
+through downstream blocks. An edge requires absolute standardised mean effect greater than 0.5
+and a common effect sign in more than 70\% of active source cells. This is an edge rule rather
+than a conventional multiple-tested edgewise significance claim. A source feature is the
+bootstrap unit for edge counts and biological overlap. The primary shared-term null keeps the
+source fixed and draws an annotated target in the same target layer. Network-pair and membership
+tests are excluded from shared-term labels. The sensitivity curves condition on normal cellwise
+deltas and a specified active-cell count; they are not a distribution-free power guarantee.
+
+The saved browser graph caps effects per source feature and target layer. Full measured edge
+counts, stored graph edges and the smaller browser display are distinct quantities. Stability
+comparisons use the complete saved statistic vectors from the matched cell-count runs.
+The nested 50- and 100-cell panels use uncapped rule-passing effects. All-tested effect
+correlations include zero and nonpassing effects; shared-passing correlations condition on
+selection in both panels. The original browser graph's storage cap does not apply to this
+cell-count comparison.
+
+\input{supplement_generated/circuit_stability.tex}
+
+Participation ratio is $(\mathrm{tr}\,C)^2/\mathrm{tr}(C^2)$ for centred covariance $C$.
+TwoNN uses ratios of the first two non-self Euclidean neighbour distances and excludes zero
+or tied distances. Expression controls use the same selected cells as their model gene vectors.
+Within-gene cell shuffling preserves expression marginals; independent normal matrices preserve
+the matrix shape. A global covariance statistic and a local dimension estimator need not agree.
+
+\input{supplement_generated/dimensions.tex}
+
+\begin{figure}[p]
+\centering\input{supplement_generated/figure_S4.tex}
+\caption{Circuit stability and conditional edge-rule sensitivity. Panel a compares the same fifteen
+layer-seven sources on nested fifty- and hundred-cell panels, with uncapped rule-passing effects,
+shared effects and Jaccard overlap. Panel b shows the probability
+that the edge rule passes under normal deltas as a function of the population mean divided by
+standard deviation and the active-cell count. The simulation assumptions limit its power interpretation.}
+\label{fig:circuitsensitivity}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+\centering\input{supplement_generated/figure_S5.tex}
+\caption{CD34+ gene-vector dimensionality. Panels a and b show covariance participation ratio and
+TwoNN dimension for expression, model representations and shape-matched nulls, on logarithmic
+horizontal axes. Matrix dimensions
+and the treatment of tied neighbours are retained in the saved dimension records.}
+\label{fig:dimensions}
+\end{figure}
+\clearpage
+
+\section{Computational resources and figure provenance}
+
+Stage timing includes the recorded executable interval. Device-memory monitoring samples the
+whole GPU, including concurrent jobs; it is not exclusive memory allocated to one stage.
+Host memory covers the stage process tree. Filesystem disk changes can include concurrent work
+and are not an exclusive measure of stage output. Allocation accounting includes resource
+duration and the saved charging basis; costs cannot be inferred by summing overlapping stage times.
+
+\input{supplement_generated/resources.tex}
+\input{supplement_generated/costs.tex}
+
+\begin{figure}[p]
+\centering\input{supplement_generated/figure_S6.tex}
+\caption{Measured computational resources for the twelve longest completed executable stages.
+Panels a--c show wall time, device-wide peak GPU memory and peak process-tree host memory.
+Concurrent jobs can contribute to the device-memory value. Stages without executable commands
+are excluded; missing measurements are not reconstructed from file dates.}
+\label{fig:resources}
+\end{figure}
+\clearpage
+
+\clearpage
+\input{supplement_generated/provenance.tex}
+\end{document}

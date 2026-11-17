@@ -17,16 +17,18 @@ way it is trained on text. This repository opens that model up and asks what it 
 
 ## What the study found
 
-| | Result |
+| Analysis | Result |
 |---|---|
-| ✅ **Interpretable features** | 68% of sparse-autoencoder features per layer carry a significant ontology annotation; 119,808 features released in the public atlas |
-| ✅ **Features persist across depth** | 50.4% of layer-0 features are still recoverable at layer 25 (cosine 0.88) — against 2–3% for an encoder-style model under the identical pipeline |
-| ✅ **Coherent causal circuits** | 27,633 significant cross-layer edges; 85.2% join features that share an ontology term |
-| ✅ **Geometry beyond co-expression** | functionally related genes are closer than a co-expression-matched permutation null predicts (z = 3.9–6.6) |
-| ✅ **Causally used** | steering along internal directions moves the model's own predictions; norm-matched random directions do not |
-| ❌ **No regulatory logic** | 96.7% of gene knockdowns are detected, but only 2.1% of transcription factors give a target-specific response |
-| ❌ **Scale hurts legibility** | at matched dictionary capacity the 27B model has 31× more dead features and 19 points lower annotation than the 2B |
-| ❌ **No gain over the input** | on cell-level tasks the model sits within 0.007 of a linear readout of its own input encoding |
+| Biological labels | 152,782 of 239,616 features (63.8%) carry named ontology/regulon terms, against a 34.4% frequency-matched floor; two late layers fall below their floors |
+| Decoder persistence | 50.4% of layer-0 directions match layer 25 at absolute cosine ≥0.7; target reuse is allowed |
+| Model-intervention circuits | 27,633 stored, capped edges; 83.2% of annotated edges share a term versus 61.3% for same-source random targets, an excess of 21.9 percentage points |
+| Gene geometry | Functional alignment exceeds a co-expression-matched permutation null at three sampled layers (z = 3.86–6.57) |
+| Steering | Internal interventions change the model's gene readout; a longer curved path does not improve endpoint progress over the linear path |
+| Curated-target recovery | K562 expression recovers 0/48 factors, RPE1 2/121, and THP1 3/12; transferred feature dictionaries recover targets unevenly. This unsigned assay does not establish regulatory direction or absence of regulatory information |
+| Dictionary design | Sparsity, token pooling, untrained directions and database coverage materially affect reconstruction and annotation; see the sensitivity results |
+| Matched model sizes | 27B has higher held-out inactivity and lower raw annotation at all seven matched depths; its excess above matched annotation floors is higher at the three late pairs |
+| Frozen phase readout | K562→RPE1 model minus rank-input phase agreement R_diff = −0.0011, paired 95% interval −0.0132 to 0.0111; no resolved gain |
+| Public atlas | All 26 2B layers, 239,616 feature records and 577 co-activation modules, with complete per-feature details and separate ontology/network evidence |
 
 Full provenance for every number: [`docs/05-results.md`](docs/05-results.md).
 
@@ -40,13 +42,13 @@ a cell  ─►  top-512 gene names, ranked      (expression values discarded)
             │
    ┌────────┼─────────┬──────────────┬─────────────┐
    ▼        ▼         ▼              ▼             ▼
-Stage 1   Stage 2   Regulatory     Stage 3      Stage 4
-feature   circuit   logic test     geometry     public
+Stage 1   Stage 2   Target-set     Stage 3      Stage 4
+feature   circuit   assay          geometry     public
 atlas     tracing   (perturbation) + steering   atlas
 ```
 
-Every model claim is judged against **three controls** — see [`docs/02-controls.md`](docs/02-controls.md).
-They are the methodological core of the paper, and each one changed a conclusion.
+The protocol uses **three controls**, wherever the design allows — see [`docs/02-controls.md`](docs/02-controls.md).
+The controls available in each experiment define the scope of its inference.
 
 ## Install
 
@@ -57,10 +59,14 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Version pins that matter (both cost us a day):
+For the controlled paper analyses, use the recorded Python 3.12 / PyTorch 2.8 CUDA environment in
+[`docs/04-reproduce.md`](docs/04-reproduce.md) and `revision/requirements.txt`. The root requirements
+retain the earlier core-pipeline bounds.
+
+Tokenizer and model-loading dependencies:
 
 * `transformers==4.46.3` — 5.x breaks against torch 2.4 with a `DTensor` import error.
-* `tiktoken` + `protobuf` are required for the Gemma-2 tokenizer.
+* The tested tokenizer uses `sentencepiece` and `protobuf`; `tiktoken` was absent in the recorded successful run.
 
 A GPU is needed for extraction, circuit tracing and steering. The 2B model runs on a 24 GB card
 (RTX 4090 / A5000); the 27B model needs 80 GB for forward passes, though its **sparse autoencoders
@@ -80,10 +86,32 @@ python -m c2s_mechinterp.train_sae --run runs/demo --layer 16 --expansion 4 --k 
 
 # 3. catalogue and annotate the features
 python -m c2s_mechinterp.feature_catalog  --run runs/demo --layer 16
-python -m c2s_mechinterp.annotate_features --run runs/demo --layer 16 --ontology-dir data/ontologies
+python -m c2s_mechinterp.annotate_features --run runs/demo --layer 16 \
+    --ontology-dir data/ontologies_v2 --universe runs/demo/row_gene_names.json
 ```
 
-Full commands for every result in the paper: [`docs/04-reproduce.md`](docs/04-reproduce.md).
+Full commands for controlled analyses: [`docs/04-reproduce.md`](docs/04-reproduce.md).
+
+The annotation command uses the **full observed gene universe**. It applies BH correction within
+one feature across every eligible ontology/regulon term and the three network/membership tests.
+Terms with fewer than two overlapping genes remain in the correction family with p = 1.
+Uniform and gene-frequency-matched random sets provide chance floors by default. A snapshot
+library can be selected with `--library-layout snapshot`; that changes file names, not the scorer.
+Network evidence is saved separately from named ontology terms.
+
+## Controlled analysis modules
+
+[`revision/`](revision/) contains extraction replay, pooling and sparsity controls, complete circuit
+effects, measured-expression/input positive controls, target retrieval metrics, residual-spectrum
+summaries, biological categories, dimensionality nulls and atlas staging export. The modules use
+public model/data inputs. They contain no cloud access credentials or resource-management commands.
+
+```bash
+# Synthetic statistical, extraction-guard, adapter and queue checks; no model download or GPU.
+python -m unittest discover -s revision -p 'test_*.py'
+```
+
+See [`revision/README.md`](revision/README.md) for the workspace contract and command map.
 
 ## Repository map
 
@@ -96,13 +124,16 @@ Full commands for every result in the paper: [`docs/04-reproduce.md`](docs/04-re
 | `results/` | Result write-ups and the small JSON artefacts the paper's numbers are read from |
 | `scripts/` | Smoke tests and unit checks (e.g. sub-word→gene attribution) |
 | `docs/` | Protocol, controls, data, reproduction and results documentation |
+| `revision/` | Controlled analysis modules, annotation scorer, resumable queue and synthetic tests |
 
 `manifold/_ported_from_encoder_routes/` holds reference implementations ported from earlier
 encoder-model studies, kept verbatim for comparability; they are not part of the C2S pipeline.
 
 ## Data
 
-No primary data is redistributed here. All datasets are public — see
+The [versioned numerical release](https://github.com/Biodyn-AI/c2s-mechinterp/releases/tag/controlled-analysis-2026-11) supplies complete saved outputs and member checksums; see [artifact paths and extraction](docs/06-artifacts.md). The current paper and supplementary sources are in [paper/](paper/).
+
+No primary count matrices are redistributed here. Saved numerical results and provenance are released separately from large reproducible activation intermediates. All datasets are public — see
 [`docs/03-data.md`](docs/03-data.md) for accessions and preparation steps.
 
 ## Related repositories

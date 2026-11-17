@@ -1,0 +1,48 @@
+\begin{longtable}{@{}L{0.48\linewidth}L{0.19\linewidth}L{0.2\linewidth}@{}}
+\caption{Dimensionality cohorts. Every expression, model and random-control row within a cohort uses these same common gene identities. Genes, rather than cells, are the objects whose dimensionality is estimated.}\\
+\toprule
+Cohort & Sampled cells & Common genes \\
+\midrule
+\endfirsthead
+\toprule
+Cohort & Sampled cells & Common genes \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+CD34+ & 4~000 & 6~633 \\
+K562 matched-cell replication & 1~200 & 1~905 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.14\linewidth}L{0.27\linewidth}L{0.12\linewidth}L{0.1\linewidth}L{0.1\linewidth}L{0.15\linewidth}@{}}
+\caption{Raw-coordinate gene-vector dimensionality and shape-matched controls. Participation ratio centres coordinate columns. TwoNN uses original Euclidean distances and excludes zero or tied nearest-neighbour distances. Valid/excluded counts describe genes, not biological replicates.}\\
+\toprule
+Cohort & Representation & Coordinates & PR & TwoNN & Valid / excluded genes \\
+\midrule
+\endfirsthead
+\toprule
+Cohort & Representation & Coordinates & PR & TwoNN & Valid / excluded genes \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+CD34+ & Log1p counts per 10~000 & 4~000 & 11.092 & 236.115 & 6~633 / 0 \\
+CD34+ & Within-gene cell shuffle & 4~000 & 11.8436 & 346.217 & 6~633 / 0 \\
+CD34+ & Expression-shape Gaussian & 4~000 & 2494.66 & 406.646 & 6~633 / 0 \\
+CD34+ & Model L9 & 2~304 & 111.451 & 4.64451 & 6~633 / 0 \\
+CD34+ & Model L9 Gaussian & 2~304 & 1709.95 & 309.637 & 6~633 / 0 \\
+CD34+ & Model L13 & 2~304 & 71.8884 & 4.7368 & 6~633 / 0 \\
+CD34+ & Model L13 Gaussian & 2~304 & 1709.68 & 298.66 & 6~633 / 0 \\
+CD34+ & Model L17 & 2~304 & 67.2624 & 4.07132 & 6~633 / 0 \\
+CD34+ & Model L17 Gaussian & 2~304 & 1709.84 & 301.961 & 6~633 / 0 \\
+K562 & Log1p counts per 10~000 & 1~200 & 1.92838 & 94.9163 & 1~905 / 0 \\
+K562 & Within-gene cell shuffle & 1~200 & 1.94697 & 124.177 & 1~905 / 0 \\
+K562 & Expression-shape Gaussian & 1~200 & 735.781 & 210.942 & 1~905 / 0 \\
+K562 & Model L9 & 2~304 & 94.4397 & 4.93107 & 1~905 / 0 \\
+K562 & Model L9 Gaussian & 2~304 & 1042.28 & 289.398 & 1~905 / 0 \\
+K562 & Model L13 & 2~304 & 62.7239 & 4.73007 & 1~905 / 0 \\
+K562 & Model L13 Gaussian & 2~304 & 1042.76 & 276.58 & 1~905 / 0 \\
+K562 & Model L17 & 2~304 & 61.8806 & 3.64899 & 1~905 / 0 \\
+K562 & Model L17 Gaussian & 2~304 & 1042.6 & 283.074 & 1~905 / 0 \\
+\end{longtable}

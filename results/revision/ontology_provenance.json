@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "kind": "legacy",
+      "name": "go_bp_gene_sets.json",
+      "bytes": 233433,
+      "sha256": "36ebdf5c7c7f05237acc37b6007ab3da1a71d5862aadc170a6fe8110397aaef6"
+    },
+    {
+      "kind": "legacy",
+      "name": "kegg_gene_sets.json",
+      "bytes": 40567,
+      "sha256": "6deba1a07e93b17e0884f49c730c69620e558b08b6588e99cd73c21db7bee677"
+    },
+    {
+      "kind": "legacy",
+      "name": "reactome_gene_sets.json",
+      "bytes": 191888,
+      "sha256": "ce41f0f52b0390b4133e8d0d2a50c179aa00fc66f32639123091ef5dd3879e11"
+    },
+    {
+      "kind": "legacy",
+      "name": "string_ppi_edges.json",
+      "bytes": 91141,
+      "sha256": "20cb0e636db323c88489cb5a21bbf958b8c4a93acccfa6e3126dbf3bb8cb5ea6"
+    },
+    {
+      "kind": "legacy",
+      "name": "trrust_human.tsv",
+      "bytes": 297659,
+      "sha256": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed"
+    },
+    {
+      "kind": "versioned",
+      "name": "VERSIONS.json",
+      "bytes": 1849,
+      "sha256": "82b59ad563227b8e5ca2c23f8d7fbeff93ae1560a8f1583232f0df9e9ee92ba9"
+    },
+    {
+      "kind": "versioned",
+      "name": "go_bp.json",
+      "bytes": 2046429,
+      "sha256": "79fef7443c64c0d6f5b596a06fe02d626755b1602d26ce4baa5ae946a5fb4913"
+    },
+    {
+      "kind": "versioned",
+      "name": "kegg.json",
+      "bytes": 331345,
+      "sha256": "c13fb526879e678f8aaa9e00f7d7dd409a9e7989c66c0fe6c94dd12870c7d245"
+    },
+    {
+      "kind": "versioned",
+      "name": "reactome.json",
+      "bytes": 1285881,
+      "sha256": "657a6e1cf3ace1ca8996d336050123cfd0c4e3c2d253905854b37c00c8e39356"
+    },
+    {
+      "kind": "versioned",
+      "name": "string_v12.5_score700_pairs.tsv.gz",
+      "bytes": 907553,
+      "sha256": "ff9ad8e80caf1bcbb7a18215126a7411098b525534a8edbc3baf25810fbbdf7e"
+    },
+    {
+      "kind": "versioned",
+      "name": "trrust_human.tsv",
+      "bytes": 297659,
+      "sha256": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed"
+    }
+  ],
+  "legacy_description": "Enrichr GO_Biological_Process_2023, KEGG_2021_Human and Reactome_2022 restricted by the inherited pipeline to an older HVG panel; upstream exact release dates were not recorded. STRING v12.0; TRRUSTv2.",
+  "producer_script": "src/15_biological/02_biological_characterization.py",
+  "pinned_commit": "40e6da0ae21a768dbbcb2bfa62539845f0ef7c88",
+  "pinned_date": "2026-04-14",
+  "origin": "https://github.com/Biodyn-AI/biomechinterp-framework",
+  "producer_sha256": "d912a0126a34f6ff909bf3728fbe0f57857a9bbace47ae8fd03e85a09243844b"
+}

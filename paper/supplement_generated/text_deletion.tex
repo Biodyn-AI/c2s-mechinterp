@@ -1,0 +1,56 @@
+\begin{longtable}{@{}L{0.08\linewidth}L{0.06\linewidth}L{0.13\linewidth}L{0.29\linewidth}L{0.29\linewidth}@{}}
+\caption{Text-name deletion target retrieval. Points are unweighted means across evaluable factors; parentheses show 95\% intervals from 5~000 TF bootstrap draws with per-factor retrieval fixed. Screened TF names come from control sentences and differ from the measured-knockdown family. This is a model-text assay, not biological regulatory validation.}\\
+\toprule
+Line & Layer & Evaluable / named TFs & Mean AP (95\% interval) & Mean AUROC (95\% interval) \\
+\midrule
+\endfirsthead
+\toprule
+Line & Layer & Evaluable / named TFs & Mean AP (95\% interval) & Mean AUROC (95\% interval) \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+K562 & 8 & 20/73 & 0.0811717 (0.012792 to 0.192952) & 0.623201 (0.498899 to 0.747189) \\
+K562 & 16 & 20/73 & 0.0945932 (0.0195996 to 0.206101) & 0.567653 (0.432212 to 0.707266) \\
+K562 & 22 & 20/73 & 0.0842098 (0.013511 to 0.194211) & 0.616025 (0.491308 to 0.735719) \\
+RPE1 & 8 & 16/103 & 0.0755562 (0.00917262 to 0.201859) & 0.540393 (0.391066 to 0.686588) \\
+RPE1 & 16 & 16/103 & 0.0958387 (0.0136987 to 0.230278) & 0.567449 (0.427683 to 0.700713) \\
+RPE1 & 22 & 16/103 & 0.0356677 (0.00883091 to 0.0799469) & 0.544919 (0.447144 to 0.654302) \\
+\end{longtable}
+\begin{longtable}{@{}L{0.08\linewidth}L{0.06\linewidth}L{0.27\linewidth}L{0.29\linewidth}L{0.15\linewidth}@{}}
+\caption{Text-deletion retrieval references and downstream coverage. Each reference is an unweighted mean over the same evaluable factors, with a TF bootstrap interval. Finite random-label expected AP preserves the saved score ties and is distinct from prevalence. Downstream gene universes differ across factors and cell lines. The nearby deletion control is not matched for subword token length.}\\
+\toprule
+Line & Layer & Target prevalence (95\% interval) & Finite expected AP (95\% interval) & Downstream genes, range \\
+\midrule
+\endfirsthead
+\toprule
+Line & Layer & Target prevalence (95\% interval) & Finite expected AP (95\% interval) & Downstream genes, range \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+K562 & 8 & 0.0039472 (0.00237541 to 0.00597381) & 0.016863 (0.0132749 to 0.0211982) & 114 to 910 \\
+K562 & 16 & 0.0039472 (0.00237541 to 0.00597381) & 0.0168651 (0.0132779 to 0.0212002) & 114 to 910 \\
+K562 & 22 & 0.0039472 (0.00237541 to 0.00597381) & 0.0168653 (0.0132781 to 0.0212004) & 114 to 910 \\
+RPE1 & 8 & 0.00456706 (0.00298633 to 0.00666429) & 0.0182683 (0.0148834 to 0.0222094) & 167 to 882 \\
+RPE1 & 16 & 0.00456706 (0.00298633 to 0.00666429) & 0.0182693 (0.0148843 to 0.0222088) & 167 to 882 \\
+RPE1 & 22 & 0.00456706 (0.00298633 to 0.00666429) & 0.0182671 (0.0148841 to 0.0222069) & 167 to 882 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.08\linewidth}L{0.1\linewidth}L{0.13\linewidth}L{0.14\linewidth}L{0.19\linewidth}L{0.2\linewidth}@{}}
+\caption{Text-deletion cohort and numerical noise. Pairs are TF-cell pairs. The final columns are the mean and maximum of per-pair maximum pre-deletion cosine distances at the first sampled layer (layer eight), restricted to deletions after rank five. They measure numerical agreement before the deleted name, not a biological response.}\\
+\toprule
+Line & Named TFs & TF-cell pairs & Named gene universe & Mean pre-deletion maximum & Maximum pre-deletion distance \\
+\midrule
+\endfirsthead
+\toprule
+Line & Named TFs & TF-cell pairs & Named gene universe & Mean pre-deletion maximum & Maximum pre-deletion distance \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+K562 & 73 & 2~489 & 3~970 & \mbox{1.39317e-05} & \mbox{4.27961e-05} \\
+RPE1 & 103 & 3~445 & 5~146 & \mbox{1.46261e-05} & \mbox{6.50287e-05} \\
+\end{longtable}

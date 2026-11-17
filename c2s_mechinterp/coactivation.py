@@ -27,13 +27,10 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import sys
 import time
 
 import numpy as np
 from scipy import sparse
-
-SAE_CODE_DIR = "/Volumes/Crucial X6/MacBook/Code/biomi_automation/projects/c2s-scale/code"
 
 # Reference parameters (repos/bio-sae/src/07_feature_coactivation.py) — kept faithfully.
 PMI_THRESHOLD = 2.0       # retain feature-feature edges with PMI > threshold
@@ -62,12 +59,14 @@ def parse_args():
 
 
 def main():
+    args = parse_args()
     import torch
 
-    sys.path.insert(0, SAE_CODE_DIR)
-    from sae_topk import TopKSAE
+    try:  # Support both package invocation and direct execution of this script.
+        from .sae_topk import TopKSAE
+    except ImportError:
+        from sae_topk import TopKSAE
 
-    args = parse_args()
     L = args.layer
     run = args.run
     device = "cuda" if torch.cuda.is_available() else "cpu"

@@ -1,0 +1,74 @@
+\begin{longtable}{@{}L{0.4\linewidth}L{0.16\linewidth}L{0.15\linewidth}L{0.15\linewidth}@{}}
+\caption{Circuit stability for the same source-layer-7 feature panel at 50 and 100 sampled cells. All-tested correlations include every common tested downstream layer/feature effect, including zeros and nonpassing effects. The shared-passing comparison conditions on passing the rule in both runs. Passing sets contain 11~293 and 10~719 effects, with 10~121 shared and Jaccard 0.851148. These are rule-passing effects, not counts after a graph storage cap or FDR discoveries.}\\
+\toprule
+Effect family & Effect pairs & Pearson & Spearman \\
+\midrule
+\endfirsthead
+\toprule
+Effect family & Effect pairs & Pearson & Spearman \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+All common tested effects & 2~488~320 & 0.98242 & 0.772979 \\
+Shared passing effects only & 10~121 & 0.990578 & 0.983135 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.1\linewidth}L{0.17\linewidth}L{0.12\linewidth}L{0.12\linewidth}L{0.13\linewidth}L{0.12\linewidth}L{0.13\linewidth}@{}}
+\caption{Per-source activity and passing-effect counts. Active cells are source-active observations, not the nominal sampled cell count. Tested pairs enumerate the full common downstream family for each source.}\\
+\toprule
+Source feature & Active cells 50 / 100 & Passing 50 & Passing 100 & Shared passing & Jaccard & All tested pairs \\
+\midrule
+\endfirsthead
+\toprule
+Source feature & Active cells 50 / 100 & Passing 50 & Passing 100 & Shared passing & Jaccard & All tested pairs \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+142 & 50 / 100 & 534 & 474 & 461 & 0.842779 & 165~888 \\
+211 & 50 / 100 & 532 & 510 & 479 & 0.850799 & 165~888 \\
+254 & 50 / 100 & 1~181 & 1~107 & 1~072 & 0.881579 & 165~888 \\
+272 & 50 / 100 & 1~177 & 1~135 & 1~083 & 0.881204 & 165~888 \\
+1220 & 50 / 100 & 515 & 503 & 475 & 0.87477 & 165~888 \\
+2307 & 50 / 100 & 464 & 440 & 429 & 0.903158 & 165~888 \\
+2505 & 50 / 100 & 520 & 501 & 474 & 0.866545 & 165~888 \\
+4243 & 50 / 100 & 1~042 & 868 & 814 & 0.742701 & 165~888 \\
+4413 & 50 / 100 & 561 & 553 & 516 & 0.862876 & 165~888 \\
+4471 & 50 / 100 & 1~186 & 1~100 & 1~051 & 0.851012 & 165~888 \\
+6418 & 50 / 100 & 1~219 & 1~217 & 1~097 & 0.819268 & 165~888 \\
+7533 & 50 / 100 & 490 & 455 & 438 & 0.863905 & 165~888 \\
+7725 & 50 / 100 & 503 & 497 & 469 & 0.883239 & 165~888 \\
+8136 & 50 / 100 & 807 & 793 & 736 & 0.851852 & 165~888 \\
+9184 & 50 / 100 & 562 & 566 & 527 & 0.876872 & 165~888 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.11\linewidth}L{0.19\linewidth}L{0.19\linewidth}L{0.19\linewidth}L{0.19\linewidth}@{}}
+\caption{Per-source effect correlations. All-tested and shared-passing columns have different selection conditions; shared-passing correlations are not substitutes for full-family stability. Stored float32 effects are used without recomputing model interventions.}\\
+\toprule
+Source feature & All-tested Pearson & All-tested Spearman & Shared-passing Pearson & Shared-passing Spearman \\
+\midrule
+\endfirsthead
+\toprule
+Source feature & All-tested Pearson & All-tested Spearman & Shared-passing Pearson & Shared-passing Spearman \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+142 & 0.982443 & 0.743885 & 0.988221 & 0.980817 \\
+211 & 0.990719 & 0.74772 & 0.994824 & 0.990863 \\
+254 & 0.976149 & 0.794164 & 0.987997 & 0.981017 \\
+272 & 0.979353 & 0.77337 & 0.990272 & 0.982489 \\
+1220 & 0.990683 & 0.774526 & 0.99291 & 0.991284 \\
+2307 & 0.970021 & 0.790853 & 0.994317 & 0.990028 \\
+2505 & 0.985394 & 0.775688 & 0.98638 & 0.986743 \\
+4243 & 0.900289 & 0.772224 & 0.989581 & 0.92449 \\
+4413 & 0.993517 & 0.775622 & 0.995833 & 0.991364 \\
+4471 & 0.975759 & 0.776651 & 0.988629 & 0.976255 \\
+6418 & 0.943042 & 0.778716 & 0.971738 & 0.943696 \\
+7533 & 0.973719 & 0.753065 & 0.992608 & 0.987021 \\
+7725 & 0.988405 & 0.798548 & 0.990307 & 0.988277 \\
+8136 & 0.977299 & 0.781913 & 0.990654 & 0.987517 \\
+9184 & 0.992179 & 0.770861 & 0.993242 & 0.986512 \\
+\end{longtable}

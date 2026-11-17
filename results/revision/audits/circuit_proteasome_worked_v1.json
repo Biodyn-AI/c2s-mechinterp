@@ -1,0 +1,303 @@
+{
+  "audit": "Named proteasome circuit saved-edge and dense endpoint annotation audit",
+  "passed": true,
+  "n_checks": 19,
+  "findings": [],
+  "edge": {
+    "source_layer": 7,
+    "source_feature": 254,
+    "source_label": "Proteasomal Protein Catabolic Process (GO:0010498)",
+    "target_layer": 9,
+    "target_feature": 254,
+    "cohens_d": -12.34479248276759,
+    "consistency": 1.0,
+    "mean_delta": -2.1381657892899706
+  },
+  "endpoints": [
+    {
+      "layer": 7,
+      "feature": 254,
+      "top_genes": [
+        {
+          "gene_name": "PSMA3",
+          "mean_activation": 19.101200696800937,
+          "fire_count": 595
+        },
+        {
+          "gene_name": "PSMA4",
+          "mean_activation": 17.985099497920512,
+          "fire_count": 654
+        },
+        {
+          "gene_name": "PSMA5",
+          "mean_activation": 16.680736960026255,
+          "fire_count": 627
+        },
+        {
+          "gene_name": "PSMA1",
+          "mean_activation": 16.285622705064533,
+          "fire_count": 449
+        },
+        {
+          "gene_name": "PSMA2",
+          "mean_activation": 15.324960037300594,
+          "fire_count": 662
+        },
+        {
+          "gene_name": "PSMA7",
+          "mean_activation": 14.56987884817223,
+          "fire_count": 1148
+        },
+        {
+          "gene_name": "PSMA6",
+          "mean_activation": 14.028816562840799,
+          "fire_count": 831
+        },
+        {
+          "gene_name": "PSMD5",
+          "mean_activation": 13.45677661895752,
+          "fire_count": 3
+        },
+        {
+          "gene_name": "PSMD2",
+          "mean_activation": 13.366449079593691,
+          "fire_count": 476
+        },
+        {
+          "gene_name": "PSMD7",
+          "mean_activation": 13.194904185831547,
+          "fire_count": 384
+        },
+        {
+          "gene_name": "PSMD1",
+          "mean_activation": 13.092941556658063,
+          "fire_count": 238
+        },
+        {
+          "gene_name": "PSMD3",
+          "mean_activation": 12.993786755730124,
+          "fire_count": 17
+        },
+        {
+          "gene_name": "PSMD4",
+          "mean_activation": 12.838854003439144,
+          "fire_count": 245
+        },
+        {
+          "gene_name": "PSMD6",
+          "mean_activation": 12.771785142286769,
+          "fire_count": 106
+        },
+        {
+          "gene_name": "PSME3",
+          "mean_activation": 12.473398327827454,
+          "fire_count": 8
+        },
+        {
+          "gene_name": "PSMD8",
+          "mean_activation": 12.393130830618052,
+          "fire_count": 650
+        },
+        {
+          "gene_name": "PSMD9",
+          "mean_activation": 12.201997490490184,
+          "fire_count": 68
+        },
+        {
+          "gene_name": "PSMA3-AS1",
+          "mean_activation": 12.144203344980875,
+          "fire_count": 6
+        },
+        {
+          "gene_name": "PSMD11",
+          "mean_activation": 11.699385643005371,
+          "fire_count": 148
+        },
+        {
+          "gene_name": "PSMG3",
+          "mean_activation": 11.579013474782307,
+          "fire_count": 30
+        }
+      ],
+      "proteasome_term": {
+        "source": "GO_BP",
+        "term": "Proteasomal Protein Catabolic Process (GO:0010498)",
+        "k": 15,
+        "K": 177,
+        "n": 20,
+        "fold": 23.991525423728813,
+        "p": 1.9924035137102972e-19,
+        "q": 7.20089143931517e-18,
+        "genes": [
+          "PSMA1",
+          "PSMA2",
+          "PSMA3",
+          "PSMA4",
+          "PSMA5",
+          "PSMA6",
+          "PSMA7",
+          "PSMD1",
+          "PSMD11",
+          "PSMD2",
+          "PSMD3",
+          "PSMD4",
+          "PSMD6",
+          "PSMD7",
+          "PSMD8"
+        ]
+      },
+      "full_tests_per_feature": 4590
+    },
+    {
+      "layer": 9,
+      "feature": 254,
+      "top_genes": [
+        {
+          "gene_name": "PSMA3",
+          "mean_activation": 24.548149894265567,
+          "fire_count": 595
+        },
+        {
+          "gene_name": "PSMA4",
+          "mean_activation": 22.90289161402151,
+          "fire_count": 654
+        },
+        {
+          "gene_name": "PSMA5",
+          "mean_activation": 21.13157080691397,
+          "fire_count": 627
+        },
+        {
+          "gene_name": "PSMA2",
+          "mean_activation": 20.77623966309239,
+          "fire_count": 662
+        },
+        {
+          "gene_name": "PSMA7",
+          "mean_activation": 19.905031019802294,
+          "fire_count": 1148
+        },
+        {
+          "gene_name": "PSMA6",
+          "mean_activation": 19.851871134715534,
+          "fire_count": 831
+        },
+        {
+          "gene_name": "PSMA1",
+          "mean_activation": 19.38403823274812,
+          "fire_count": 449
+        },
+        {
+          "gene_name": "PSME3",
+          "mean_activation": 17.148069143295288,
+          "fire_count": 8
+        },
+        {
+          "gene_name": "PSMD1",
+          "mean_activation": 16.76693765656287,
+          "fire_count": 238
+        },
+        {
+          "gene_name": "PSME2",
+          "mean_activation": 16.46533753120736,
+          "fire_count": 292
+        },
+        {
+          "gene_name": "PSMD2",
+          "mean_activation": 16.067157599104554,
+          "fire_count": 476
+        },
+        {
+          "gene_name": "PSMD6",
+          "mean_activation": 15.7691242289993,
+          "fire_count": 106
+        },
+        {
+          "gene_name": "PSMD4",
+          "mean_activation": 15.703634312688088,
+          "fire_count": 245
+        },
+        {
+          "gene_name": "PSMD8",
+          "mean_activation": 15.573022261399489,
+          "fire_count": 650
+        },
+        {
+          "gene_name": "PSMD7",
+          "mean_activation": 15.35499511907498,
+          "fire_count": 384
+        },
+        {
+          "gene_name": "PSMA3-AS1",
+          "mean_activation": 15.318821748097738,
+          "fire_count": 6
+        },
+        {
+          "gene_name": "PSMD5",
+          "mean_activation": 15.154332796732584,
+          "fire_count": 3
+        },
+        {
+          "gene_name": "PSMD14",
+          "mean_activation": 14.546807487805685,
+          "fire_count": 192
+        },
+        {
+          "gene_name": "PSMD3",
+          "mean_activation": 14.161609537461224,
+          "fire_count": 17
+        },
+        {
+          "gene_name": "PSMD9",
+          "mean_activation": 14.15603689586415,
+          "fire_count": 68
+        }
+      ],
+      "proteasome_term": {
+        "source": "GO_BP",
+        "term": "Proteasomal Protein Catabolic Process (GO:0010498)",
+        "k": 15,
+        "K": 177,
+        "n": 20,
+        "fold": 23.991525423728813,
+        "p": 1.9924035137102972e-19,
+        "q": 7.14463447494552e-18,
+        "genes": [
+          "PSMA1",
+          "PSMA2",
+          "PSMA3",
+          "PSMA4",
+          "PSMA5",
+          "PSMA6",
+          "PSMA7",
+          "PSMD1",
+          "PSMD14",
+          "PSMD2",
+          "PSMD3",
+          "PSMD4",
+          "PSMD6",
+          "PSMD7",
+          "PSMD8"
+        ]
+      },
+      "full_tests_per_feature": 4590
+    }
+  ],
+  "n_complete_shared_named_terms": 197,
+  "source_sha256": {
+    "/workspace/rev1/results/circuit_baseline.json": "d0f1e4087c24a41a6cf18ebba95ecb44c54656e251f4ca61709387eb8e055634",
+    "/workspace/rev1/runs/2b_atlas/circuit_graph.json": "86480ad7bfd4c2217a5e3575c09916ca94a33dd73c3cbc8f76707e730116e88b",
+    "/workspace/rev1/runs/2b_atlas/row_gene_names.json": "75dfb40cdc3356ca9218fa19a909a9e92774885eb6b2ea68109b25ee6a78a4e6",
+    "/workspace/rev1/ontologies_v2/go_bp.json": "79fef7443c64c0d6f5b596a06fe02d626755b1602d26ce4baa5ae946a5fb4913",
+    "/workspace/rev1/ontologies_v2/kegg.json": "c13fb526879e678f8aaa9e00f7d7dd409a9e7989c66c0fe6c94dd12870c7d245",
+    "/workspace/rev1/ontologies_v2/reactome.json": "657a6e1cf3ace1ca8996d336050123cfd0c4e3c2d253905854b37c00c8e39356",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/ontologies_v2/string_v12.5_score700_pairs.tsv.gz": "ff9ad8e80caf1bcbb7a18215126a7411098b525534a8edbc3baf25810fbbdf7e",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L07.json": "13003566263e6e84f73ce82cae76cd4ed462687f2e72fc416fdbd9ef356ad842",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L07.json": "655e79a566652277715683ecf3b48d682d63aad08baab5d22b1b59de1364bc90",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L09.json": "5f01db25eeb465ae7879228dde74af13760edd4b5f18d0d21e1803463c4fbf02",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L09.json": "5800de243c71a8cef3e32b44c6884664625e73dcb8871bfe77201f3674e936bd",
+    "/workspace/rev1/results/audits/audit_circuit_worked.py": "3aad25daf2d7a70472aa27f02298412972a26ffbdd90cc64e6075645641e8f48"
+  },
+  "scope": "Model feature ablation in a saved capped graph; ontology labels describe endpoint gene sets. No external pathway, TF-direction or organism-level mechanism is established."
+}

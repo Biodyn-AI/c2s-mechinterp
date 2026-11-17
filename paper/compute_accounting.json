@@ -1,0 +1,31 @@
+{
+  "status": "reported_billing_lagged_resources_terminated",
+  "as_of_utc": "2026-11-17T17:42:40.460237+00:00",
+  "allocations": [
+    {
+      "gpu": "RTX PRO 6000 96 GB (startup failed)",
+      "hourly_usd": 2.69,
+      "billed_seconds": 4718.0739986852195,
+      "cost_usd": 3.593158069998026,
+      "gpu_cost_usd": 3.525449737906456,
+      "disk_cost_usd": 0.0677083320915699,
+      "billing_source": "billing_failed_final.json",
+      "billing_source_sha256": "9367df1c2085788456742635f2adb56f383e1de6e2bd457b84a60cb43081632a"
+    },
+    {
+      "gpu": "RTX PRO 6000 96 GB (experiments)",
+      "hourly_usd": 1.69,
+      "billed_seconds": 10145.491023035444,
+      "cost_usd": 4.900475875474513,
+      "gpu_cost_usd": 4.7627443969249725,
+      "disk_cost_usd": 0.13773147854954004,
+      "billing_source": "billing_success_final.json",
+      "billing_source_sha256": "513f0efc81e1ae49951c8361c03e03a405917ad4d73db48a2510531c9a17164e"
+    }
+  ],
+  "total_cost_usd": 8.493633945472538,
+  "budget_cap_usd": 75,
+  "billing_lag_possible": true,
+  "conservative_combined_lifetime_estimate_usd": 10.190015619854137,
+  "basis": "RunPod hourly billing retrieved 17 November 2026 at 17:42 UTC; reported charges include GPU and disk for both owned allocations, including the failed startup. GPU-billed hours are GPU charges divided by the listed GPU rate. Billing is delayed and these reported charges exclude some final usage; both pods are deleted. The saved accounting file separately records a conservative full-lifetime cost estimate."
+}

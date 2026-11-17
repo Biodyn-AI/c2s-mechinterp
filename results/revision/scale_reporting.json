@@ -1,0 +1,1232 @@
+{
+  "schema": "c2s-scale-reporting-v1",
+  "audit": "Independent seven-layer matched-capacity annotation/metric audit",
+  "passed": true,
+  "n_checks": 894928,
+  "findings": [],
+  "n_pairs": 7,
+  "pairs": [
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 0,
+        "relative_depth": 0.0,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 24,
+        "heldout_inactive_fraction": 0.0026041666666666665,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.9930632926817315,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.018557002767920494,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            8.138020833333333e-05,
+            0.00020345052083333334,
+            0.0010034179687499999,
+            0.006986490885416667,
+            0.034193196614583574
+          ],
+          "share_features_firing_gt_10pct": 0.002170138888888889,
+          "share_features_firing_lt_1e-4": 0.018229166666666668
+        },
+        "n_ontology": 4924,
+        "n_any_evidence": 5583,
+        "ontology_all_features": 0.5342881944444444,
+        "ontology_catalogue_active": 0.5342881944444444,
+        "any_evidence_all_features": 0.6057942708333334,
+        "ontology_frequency_floor_all_features": 0.07895688657407407,
+        "ontology_frequency_floor_catalogue_active": 0.07895688657407407,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.009150752314814813,
+            "ontology_alive": 0.00831886574074074,
+            "any_all_features": 0.009150752314814813,
+            "ontology_all_features": 0.00831886574074074
+          },
+          "freq": {
+            "any_alive": 0.1688006365740741,
+            "ontology_alive": 0.07895688657407407,
+            "any_all_features": 0.1688006365740741,
+            "ontology_all_features": 0.07895688657407407
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          205,
+          1580,
+          1727,
+          2174,
+          6311,
+          6776
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 0,
+        "relative_depth": 0.0,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 9164,
+        "n_catalogue_inactive": 52,
+        "heldout_inactive": 1288,
+        "heldout_inactive_fraction": 0.13975694444444445,
+        "all_row_inactive_fraction": 0.005642361111111111,
+        "heldout_variance_explained": 0.9899046128269549,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.015788879245519638,
+        "firing": {
+          "dead_all_rows": 52,
+          "dead_frac_all_rows": 0.005642361111111111,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            3.2552083333333335e-06,
+            2.1158854166666667e-05,
+            0.00019856770833333334,
+            0.007678548177083334,
+            0.03964474283854249
+          ],
+          "share_features_firing_gt_10pct": 0.0030381944444444445,
+          "share_features_firing_lt_1e-4": 0.3930121527777778
+        },
+        "n_ontology": 3571,
+        "n_any_evidence": 4099,
+        "ontology_all_features": 0.3874782986111111,
+        "ontology_catalogue_active": 0.3896769969445657,
+        "any_evidence_all_features": 0.4447699652777778,
+        "ontology_frequency_floor_all_features": 0.035083912037037035,
+        "ontology_frequency_floor_catalogue_active": 0.03528299141568456,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.008147824821766332,
+            "ontology_alive": 0.007638585770405936,
+            "any_all_features": 0.008101851851851851,
+            "ontology_all_features": 0.007595486111111111
+          },
+          "freq": {
+            "any_alive": 0.07671322566564819,
+            "ontology_alive": 0.03528299141568456,
+            "any_all_features": 0.07628038194444445,
+            "ontology_all_features": 0.035083912037037035
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          163,
+          426,
+          1581,
+          2174,
+          6315,
+          7793
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.14680989583333331,
+      "ontology_excess_gap_27b_minus_2b": -0.10293692129629628,
+      "heldout_inactive_gap_27b_minus_2b": 0.1371527777777778,
+      "all_row_inactive_gap_27b_minus_2b": 0.005642361111111111
+    },
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 4,
+        "relative_depth": 0.16,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 41,
+        "heldout_inactive_fraction": 0.004448784722222222,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.9811693493499859,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.02005651779472828,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            7.486979166666666e-05,
+            0.00015787760416666665,
+            0.0015869140625,
+            0.007099609375,
+            0.02644775390625009
+          ],
+          "share_features_firing_gt_10pct": 0.0016276041666666667,
+          "share_features_firing_lt_1e-4": 0.026801215277777776
+        },
+        "n_ontology": 4696,
+        "n_any_evidence": 5610,
+        "ontology_all_features": 0.5095486111111112,
+        "ontology_catalogue_active": 0.5095486111111112,
+        "any_evidence_all_features": 0.6087239583333334,
+        "ontology_frequency_floor_all_features": 0.034686053240740734,
+        "ontology_frequency_floor_catalogue_active": 0.034686053240740734,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.01048900462962963,
+            "ontology_alive": 0.00951244212962963,
+            "any_all_features": 0.01048900462962963,
+            "ontology_all_features": 0.00951244212962963
+          },
+          "freq": {
+            "any_alive": 0.0791015625,
+            "ontology_alive": 0.034686053240740734,
+            "any_all_features": 0.0791015625,
+            "ontology_all_features": 0.034686053240740734
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          342,
+          806,
+          1581,
+          2174,
+          6311,
+          6990
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 7,
+        "relative_depth": 0.15555555555555556,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 9136,
+        "n_catalogue_inactive": 80,
+        "heldout_inactive": 1841,
+        "heldout_inactive_fraction": 0.1997612847222222,
+        "all_row_inactive_fraction": 0.008680555555555556,
+        "heldout_variance_explained": 0.9828029408932063,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.014517698436975479,
+        "firing": {
+          "dead_all_rows": 80,
+          "dead_frac_all_rows": 0.008680555555555556,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            1.3020833333333334e-05,
+            0.00012369791666666668,
+            0.008060709635416666,
+            0.03894824218749997
+          ],
+          "share_features_firing_gt_10pct": 0.002495659722222222,
+          "share_features_firing_lt_1e-4": 0.4731987847222222
+        },
+        "n_ontology": 3623,
+        "n_any_evidence": 4085,
+        "ontology_all_features": 0.3931206597222222,
+        "ontology_catalogue_active": 0.3965630472854641,
+        "any_evidence_all_features": 0.4432508680555556,
+        "ontology_frequency_floor_all_features": 0.04007523148148148,
+        "ontology_frequency_floor_catalogue_active": 0.040426152948044365,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.009449795680093404,
+            "ontology_alive": 0.008938995913601868,
+            "any_all_features": 0.009367766203703705,
+            "ontology_all_features": 0.008861400462962962
+          },
+          "freq": {
+            "any_alive": 0.08990075890251022,
+            "ontology_alive": 0.040426152948044365,
+            "any_all_features": 0.08912037037037038,
+            "ontology_all_features": 0.04007523148148148
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          33,
+          280,
+          892,
+          1577,
+          2170,
+          6310
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.11642795138888895,
+      "ontology_excess_gap_27b_minus_2b": -0.1218171296296297,
+      "heldout_inactive_gap_27b_minus_2b": 0.1953125,
+      "all_row_inactive_gap_27b_minus_2b": 0.008680555555555556
+    },
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 8,
+        "relative_depth": 0.32,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 74,
+        "heldout_inactive_fraction": 0.008029513888888888,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.9588209522495632,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.020625239238142967,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            6.022135416666667e-05,
+            0.000107421875,
+            0.0012223307291666667,
+            0.006795247395833334,
+            0.03248885091145836
+          ],
+          "share_features_firing_gt_10pct": 0.0030381944444444445,
+          "share_features_firing_lt_1e-4": 0.07964409722222222
+        },
+        "n_ontology": 5168,
+        "n_any_evidence": 6363,
+        "ontology_all_features": 0.5607638888888888,
+        "ontology_catalogue_active": 0.5607638888888888,
+        "any_evidence_all_features": 0.6904296875,
+        "ontology_frequency_floor_all_features": 0.08217592592592593,
+        "ontology_frequency_floor_catalogue_active": 0.08217592592592593,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.009367766203703705,
+            "ontology_alive": 0.0087890625,
+            "any_all_features": 0.009367766203703705,
+            "ontology_all_features": 0.0087890625
+          },
+          "freq": {
+            "any_alive": 0.212890625,
+            "ontology_alive": 0.08217592592592593,
+            "any_all_features": 0.212890625,
+            "ontology_all_features": 0.08217592592592593
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          643,
+          997,
+          1581,
+          2174,
+          2781,
+          6312
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 14,
+        "relative_depth": 0.3111111111111111,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 8997,
+        "n_catalogue_inactive": 219,
+        "heldout_inactive": 3057,
+        "heldout_inactive_fraction": 0.3317057291666667,
+        "all_row_inactive_fraction": 0.023763020833333332,
+        "heldout_variance_explained": 0.9744818098289478,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.014100722968578339,
+        "firing": {
+          "dead_all_rows": 219,
+          "dead_frac_all_rows": 0.023763020833333332,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            6.510416666666667e-06,
+            4.2317708333333335e-05,
+            0.0072076822916666726,
+            0.04977317708333327
+          ],
+          "share_features_firing_gt_10pct": 0.004774305555555556,
+          "share_features_firing_lt_1e-4": 0.6323784722222222
+        },
+        "n_ontology": 3241,
+        "n_any_evidence": 3595,
+        "ontology_all_features": 0.3516710069444444,
+        "ontology_catalogue_active": 0.3602311881738357,
+        "any_evidence_all_features": 0.39008246527777773,
+        "ontology_frequency_floor_all_features": 0.07338686342592593,
+        "ontology_frequency_floor_catalogue_active": 0.07517320588344263,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.007446926753362232,
+            "ontology_alive": 0.007150531658701048,
+            "any_all_features": 0.007269965277777778,
+            "ontology_all_features": 0.006980613425925926
+          },
+          "freq": {
+            "any_alive": 0.1451224482234819,
+            "ontology_alive": 0.07517320588344263,
+            "any_all_features": 0.14167390046296294,
+            "ontology_all_features": 0.07338686342592593
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          12,
+          170,
+          1254,
+          1579,
+          2162,
+          6315
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.20909288194444442,
+      "ontology_excess_gap_27b_minus_2b": -0.20030381944444442,
+      "heldout_inactive_gap_27b_minus_2b": 0.3236762152777778,
+      "all_row_inactive_gap_27b_minus_2b": 0.023763020833333332
+    },
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 13,
+        "relative_depth": 0.52,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 158,
+        "heldout_inactive_fraction": 0.017144097222222224,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.9246504624954273,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.020548304542899132,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            3.767903645833334e-05,
+            6.510416666666667e-05,
+            0.00016438802083333333,
+            0.00689697265625,
+            0.04606152343750038
+          ],
+          "share_features_firing_gt_10pct": 0.0037977430555555555,
+          "share_features_firing_lt_1e-4": 0.3090277777777778
+        },
+        "n_ontology": 5867,
+        "n_any_evidence": 7171,
+        "ontology_all_features": 0.6366102430555556,
+        "ontology_catalogue_active": 0.6366102430555556,
+        "any_evidence_all_features": 0.7781032986111112,
+        "ontology_frequency_floor_all_features": 0.25614872685185186,
+        "ontology_frequency_floor_catalogue_active": 0.25614872685185186,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.009837962962962963,
+            "ontology_alive": 0.008897569444444444,
+            "any_all_features": 0.009837962962962963,
+            "ontology_all_features": 0.008897569444444444
+          },
+          "freq": {
+            "any_alive": 0.5398582175925927,
+            "ontology_alive": 0.25614872685185186,
+            "any_all_features": 0.5398582175925927,
+            "ontology_all_features": 0.25614872685185186
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          218,
+          1580,
+          1781,
+          2174,
+          3774,
+          6312
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 24,
+        "relative_depth": 0.5333333333333333,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 7603,
+        "n_catalogue_inactive": 1613,
+        "heldout_inactive": 6194,
+        "heldout_inactive_fraction": 0.6720920138888888,
+        "all_row_inactive_fraction": 0.1750217013888889,
+        "heldout_variance_explained": 0.9452253996207621,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.013901076279580593,
+        "firing": {
+          "dead_all_rows": 1613,
+          "dead_frac_all_rows": 0.1750217013888889,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            1.6276041666666668e-06,
+            8.138020833333333e-06,
+            0.0070390625,
+            0.09370442708333326
+          ],
+          "share_features_firing_gt_10pct": 0.007486979166666667,
+          "share_features_firing_lt_1e-4": 0.6872829861111112
+        },
+        "n_ontology": 1916,
+        "n_any_evidence": 2055,
+        "ontology_all_features": 0.20789930555555555,
+        "ontology_catalogue_active": 0.2520057871892674,
+        "any_evidence_all_features": 0.22298177083333334,
+        "ontology_frequency_floor_all_features": 0.046223958333333336,
+        "ontology_frequency_floor_catalogue_active": 0.056030514270682626,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.004734973036959095,
+            "ontology_alive": 0.004734973036959095,
+            "any_all_features": 0.003906249999999999,
+            "ontology_all_features": 0.003906249999999999
+          },
+          "freq": {
+            "any_alive": 0.10715068613266693,
+            "ontology_alive": 0.056030514270682626,
+            "any_all_features": 0.08839699074074074,
+            "ontology_all_features": 0.046223958333333336
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          0,
+          217,
+          1569,
+          2168,
+          4011,
+          6350
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.4287109375,
+      "ontology_excess_gap_27b_minus_2b": -0.2187861689814815,
+      "heldout_inactive_gap_27b_minus_2b": 0.6549479166666666,
+      "all_row_inactive_gap_27b_minus_2b": 0.1750217013888889
+    },
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 17,
+        "relative_depth": 0.68,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 299,
+        "heldout_inactive_fraction": 0.03244357638888889,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.9069657054281096,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.01994992420077324,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            2.7669270833333332e-05,
+            4.8828125e-05,
+            0.0001123046875,
+            0.00608642578125,
+            0.05551359049479217
+          ],
+          "share_features_firing_gt_10pct": 0.005642361111111111,
+          "share_features_firing_lt_1e-4": 0.4530164930555556
+        },
+        "n_ontology": 6659,
+        "n_any_evidence": 7702,
+        "ontology_all_features": 0.7225477430555556,
+        "ontology_catalogue_active": 0.7225477430555556,
+        "any_evidence_all_features": 0.8357204861111112,
+        "ontology_frequency_floor_all_features": 0.5765697337962963,
+        "ontology_frequency_floor_catalogue_active": 0.5765697337962963,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.009765625,
+            "ontology_alive": 0.009150752314814813,
+            "any_all_features": 0.009765625,
+            "ontology_all_features": 0.009150752314814813
+          },
+          "freq": {
+            "any_alive": 0.820095486111111,
+            "ontology_alive": 0.5765697337962963,
+            "any_all_features": 0.820095486111111,
+            "ontology_all_features": 0.5765697337962963
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          24,
+          299,
+          1581,
+          2174,
+          4787,
+          6312
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 31,
+        "relative_depth": 0.6888888888888889,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 9143,
+        "n_catalogue_inactive": 73,
+        "heldout_inactive": 3240,
+        "heldout_inactive_fraction": 0.3515625,
+        "all_row_inactive_fraction": 0.007921006944444444,
+        "heldout_variance_explained": 0.9313335762940739,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.014535914175212383,
+        "firing": {
+          "dead_all_rows": 73,
+          "dead_frac_all_rows": 0.007921006944444444,
+          "mean_active_per_position": 31.999999999999996,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            8.138020833333333e-06,
+            2.9296875e-05,
+            0.0059147135416666935,
+            0.06591572265624995
+          ],
+          "share_features_firing_gt_10pct": 0.006184895833333333,
+          "share_features_firing_lt_1e-4": 0.7450086805555556
+        },
+        "n_ontology": 4418,
+        "n_any_evidence": 4928,
+        "ontology_all_features": 0.4793836805555556,
+        "ontology_catalogue_active": 0.4832111998250027,
+        "any_evidence_all_features": 0.5347222222222222,
+        "ontology_frequency_floor_all_features": 0.1646050347222222,
+        "ontology_frequency_floor_catalogue_active": 0.16591928251121077,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.00776550366400525,
+            "ontology_alive": 0.007437383790878268,
+            "any_all_features": 0.007703993055555556,
+            "ontology_all_features": 0.007378472222222222
+          },
+          "freq": {
+            "any_alive": 0.28524554303839,
+            "ontology_alive": 0.16591928251121077,
+            "any_all_features": 0.2829861111111111,
+            "ontology_all_features": 0.1646050347222222
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          6,
+          212,
+          1582,
+          2176,
+          6313,
+          8620
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.2431640625,
+      "ontology_excess_gap_27b_minus_2b": 0.16880063657407407,
+      "heldout_inactive_gap_27b_minus_2b": 0.3191189236111111,
+      "all_row_inactive_gap_27b_minus_2b": 0.007921006944444444
+    },
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 21,
+        "relative_depth": 0.84,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 82,
+        "heldout_inactive_fraction": 0.008897569444444444,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.8932563087723193,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.01971006765961647,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            4.2317708333333335e-05,
+            6.8359375e-05,
+            0.00015299479166666668,
+            0.005515950520833333,
+            0.06704842122395838
+          ],
+          "share_features_firing_gt_10pct": 0.007052951388888889,
+          "share_features_firing_lt_1e-4": 0.2901475694444444
+        },
+        "n_ontology": 7046,
+        "n_any_evidence": 8041,
+        "ontology_all_features": 0.7645399305555556,
+        "ontology_catalogue_active": 0.7645399305555556,
+        "any_evidence_all_features": 0.8725043402777778,
+        "ontology_frequency_floor_all_features": 0.7467809606481483,
+        "ontology_frequency_floor_catalogue_active": 0.7467809606481483,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.009620949074074072,
+            "ontology_alive": 0.008572048611111112,
+            "any_all_features": 0.009620949074074072,
+            "ontology_all_features": 0.008572048611111112
+          },
+          "freq": {
+            "any_alive": 0.9206814236111112,
+            "ontology_alive": 0.7467809606481483,
+            "any_all_features": 0.9206814236111112,
+            "ontology_all_features": 0.7467809606481483
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          206,
+          1580,
+          1790,
+          2174,
+          4394,
+          6312
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 38,
+        "relative_depth": 0.8444444444444444,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 969,
+        "heldout_inactive_fraction": 0.10514322916666667,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.9138824814592102,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.014893565326929092,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.46484375e-05,
+            3.092447916666667e-05,
+            8.463541666666667e-05,
+            0.005840657552083333,
+            0.06795556640625079
+          ],
+          "share_features_firing_gt_10pct": 0.006727430555555556,
+          "share_features_firing_lt_1e-4": 0.5565321180555556
+        },
+        "n_ontology": 5930,
+        "n_any_evidence": 6778,
+        "ontology_all_features": 0.6434461805555556,
+        "ontology_catalogue_active": 0.6434461805555556,
+        "any_evidence_all_features": 0.7354600694444444,
+        "ontology_frequency_floor_all_features": 0.3175636574074074,
+        "ontology_frequency_floor_catalogue_active": 0.3175636574074074,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.00998263888888889,
+            "ontology_alive": 0.009150752314814816,
+            "any_all_features": 0.00998263888888889,
+            "ontology_all_features": 0.009150752314814816
+          },
+          "freq": {
+            "any_alive": 0.5637659143518517,
+            "ontology_alive": 0.3175636574074074,
+            "any_all_features": 0.5637659143518517,
+            "ontology_all_features": 0.3175636574074074
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          127,
+          1580,
+          2173,
+          2682,
+          4766,
+          6312
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.12109375,
+      "ontology_excess_gap_27b_minus_2b": 0.30812355324074087,
+      "heldout_inactive_gap_27b_minus_2b": 0.09624565972222222,
+      "all_row_inactive_gap_27b_minus_2b": 0.0
+    },
+    {
+      "2b": {
+        "model": "2b",
+        "layer": 25,
+        "relative_depth": 1.0,
+        "d_model": 2304,
+        "n_features": 9216,
+        "expansion": 4.0,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "heldout_inactive": 107,
+        "heldout_inactive_fraction": 0.011610243055555556,
+        "all_row_inactive_fraction": 0.0,
+        "heldout_variance_explained": 0.8839805413373716,
+        "variance_metric_source": "fresh 2B re-evaluation",
+        "mean_decoder_cos": 0.019955547526478767,
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            4.0690104166666664e-05,
+            6.673177083333333e-05,
+            0.00013671875,
+            0.00477294921875,
+            0.08543221028645848
+          ],
+          "share_features_firing_gt_10pct": 0.008246527777777778,
+          "share_features_firing_lt_1e-4": 0.3177083333333333
+        },
+        "n_ontology": 6350,
+        "n_any_evidence": 7469,
+        "ontology_all_features": 0.6890190972222222,
+        "ontology_catalogue_active": 0.6890190972222222,
+        "any_evidence_all_features": 0.8104383680555556,
+        "ontology_frequency_floor_all_features": 0.5785590277777778,
+        "ontology_frequency_floor_catalogue_active": 0.5785590277777778,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.010344328703703705,
+            "ontology_alive": 0.009259259259259259,
+            "any_all_features": 0.010344328703703705,
+            "ontology_all_features": 0.009259259259259259
+          },
+          "freq": {
+            "any_alive": 0.8308738425925926,
+            "ontology_alive": 0.5785590277777778,
+            "any_all_features": 0.8308738425925926,
+            "ontology_all_features": 0.5785590277777778
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          151,
+          1580,
+          2173,
+          2542,
+          3085,
+          6312
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": null,
+          "lr": null,
+          "batch_size": null,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "27b_matched": {
+        "model": "27b_matched",
+        "layer": 45,
+        "relative_depth": 1.0,
+        "d_model": 4608,
+        "n_features": 9216,
+        "expansion": 2.0,
+        "n_catalogue_active": 9152,
+        "n_catalogue_inactive": 64,
+        "heldout_inactive": 2842,
+        "heldout_inactive_fraction": 0.3083767361111111,
+        "all_row_inactive_fraction": 0.006944444444444444,
+        "heldout_variance_explained": 0.9361878169384606,
+        "variance_metric_source": "new matched-capacity training heldout",
+        "mean_decoder_cos": 0.013735984452068806,
+        "firing": {
+          "dead_all_rows": 64,
+          "dead_frac_all_rows": 0.006944444444444444,
+          "mean_active_per_position": 32.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            8.138020833333333e-06,
+            3.743489583333333e-05,
+            0.000302734375,
+            0.0843657063802083
+          ],
+          "share_features_firing_gt_10pct": 0.009223090277777778,
+          "share_features_firing_lt_1e-4": 0.7734375
+        },
+        "n_ontology": 3934,
+        "n_any_evidence": 4615,
+        "ontology_all_features": 0.4268663194444444,
+        "ontology_catalogue_active": 0.4298513986013986,
+        "any_evidence_all_features": 0.5007595486111112,
+        "ontology_frequency_floor_all_features": 0.22974537037037038,
+        "ontology_frequency_floor_catalogue_active": 0.23135198135198135,
+        "floors": {
+          "uniform": {
+            "any_alive": 0.007539335664335664,
+            "ontology_alive": 0.006920163170163171,
+            "any_all_features": 0.007486979166666667,
+            "ontology_all_features": 0.0068721064814814825
+          },
+          "freq": {
+            "any_alive": 0.4075976107226107,
+            "ontology_alive": 0.23135198135198135,
+            "any_all_features": 0.40476707175925924,
+            "ontology_all_features": 0.22974537037037038
+          }
+        },
+        "full_tests_per_feature": 4590,
+        "dense_sample_feature_ids": [
+          1,
+          233,
+          1577,
+          2172,
+          6311,
+          6545
+        ],
+        "training_configuration": {
+          "epochs": 6,
+          "seed": 0,
+          "lr": 0.0003,
+          "batch_size": 4096,
+          "k": 32,
+          "n_rows": 614400
+        }
+      },
+      "ontology_gap_27b_minus_2b": -0.2621527777777778,
+      "ontology_excess_gap_27b_minus_2b": 0.08666087962962962,
+      "heldout_inactive_gap_27b_minus_2b": 0.2967664930555555,
+      "all_row_inactive_gap_27b_minus_2b": 0.006944444444444444
+    }
+  ],
+  "optional_e4": {
+    "status": "saved optional comparator read",
+    "records": [
+      {
+        "layer": 24,
+        "status": "complete",
+        "removed_dimensions": [
+          458,
+          1306,
+          2350,
+          2367,
+          2416,
+          2479,
+          2730,
+          2924,
+          2962,
+          2994,
+          3055,
+          3246,
+          3320,
+          3589,
+          3662,
+          3776,
+          4140,
+          4156,
+          4525,
+          4530
+        ],
+        "dead_heldout_original": 0.6720920138888888,
+        "dead_heldout_projected": 0.474609375,
+        "dead_heldout_difference_projected_minus_original": -0.19748263888888884,
+        "dead_all_rows_original": 0.1750217013888889,
+        "dead_all_rows_projected": 0.03439670138888889,
+        "dead_all_rows_difference_projected_minus_original": -0.140625,
+        "variance_explained_projected_reference": 0.9176373605850988
+      },
+      {
+        "layer": 38,
+        "status": "complete",
+        "removed_dimensions": [
+          3246,
+          4140,
+          4530
+        ],
+        "dead_heldout_original": 0.10514322916666667,
+        "dead_heldout_projected": 0.07389322916666667,
+        "dead_heldout_difference_projected_minus_original": -0.03125,
+        "dead_all_rows_original": 0.0,
+        "dead_all_rows_projected": 0.00010850694444444444,
+        "dead_all_rows_difference_projected_minus_original": 0.00010850694444444444,
+        "variance_explained_projected_reference": 0.9093127569832211
+      }
+    ],
+    "producer_comparison": {
+      "experiment": "E4",
+      "layers": [
+        {
+          "layer": 24,
+          "status": "compared",
+          "input_projection": {
+            "mode": "zero_selected_columns",
+            "original_width": 4608,
+            "removed_dimensions": [
+              458,
+              1306,
+              2350,
+              2367,
+              2416,
+              2479,
+              2730,
+              2924,
+              2962,
+              2994,
+              3055,
+              3246,
+              3320,
+              3589,
+              3662,
+              3776,
+              4140,
+              4156,
+              4525,
+              4530
+            ],
+            "variance_reference": "projected input after zeroing selected columns",
+            "retained_input_dimensions": 4588,
+            "preset_file": "/workspace/rev1/results/dropmassive_dimensions/dimensions_L24.json",
+            "preset_sha256": "2f347dd679d6f26e224f4f480ec7a1c06525664e4efe98d8253b2e0730266e90"
+          },
+          "training_recipe": {
+            "n_features": 9216,
+            "k": 32,
+            "epochs": 6,
+            "seed": 0
+          },
+          "dead_fraction_heldout_original": 0.6720920138888888,
+          "dead_fraction_heldout_projected": 0.474609375,
+          "dead_fraction_heldout_delta": -0.19748263888888884,
+          "dead_fraction_all_rows_original": 0.1750217013888889,
+          "dead_fraction_all_rows_projected": 0.03439670138888889,
+          "dead_fraction_all_rows_delta": -0.140625,
+          "variance_explained_original_input": 0.9452253996207621,
+          "variance_explained_projected_input": 0.9176373605850988,
+          "interpretation": "Different input variance references; variance explained is not a like-for-like contrast"
+        },
+        {
+          "layer": 38,
+          "status": "compared",
+          "input_projection": {
+            "mode": "zero_selected_columns",
+            "original_width": 4608,
+            "removed_dimensions": [
+              3246,
+              4140,
+              4530
+            ],
+            "variance_reference": "projected input after zeroing selected columns",
+            "retained_input_dimensions": 4605,
+            "preset_file": "/workspace/rev1/results/dropmassive_dimensions/dimensions_L38.json",
+            "preset_sha256": "2b988fed8ff3f97a508c233d3d2f6ce399da521f9925cca3697f2e49c331b8eb"
+          },
+          "training_recipe": {
+            "n_features": 9216,
+            "k": 32,
+            "epochs": 6,
+            "seed": 0
+          },
+          "dead_fraction_heldout_original": 0.10514322916666667,
+          "dead_fraction_heldout_projected": 0.07389322916666667,
+          "dead_fraction_heldout_delta": -0.03125,
+          "dead_fraction_all_rows_original": 0.0,
+          "dead_fraction_all_rows_projected": 0.00010850694444444444,
+          "dead_fraction_all_rows_delta": 0.00010850694444444444,
+          "variance_explained_original_input": 0.9138824814592102,
+          "variance_explained_projected_input": 0.9093127569832211,
+          "interpretation": "Different input variance references; variance explained is not a like-for-like contrast"
+        }
+      ],
+      "source_sha256": {
+        "/workspace/rev1/runs/27b_matched/sae/train_L24.json": "b93cba7d56a54a06c9f3b583c24d026e4107f40d18a9e1e7072a632dd20e1e18",
+        "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L24.json": "84348922a4d87c66fc10a6425781915435a3396063aaac870f4a733e38ff24d8",
+        "/workspace/rev1/runs/27b_matched/sae/train_L38.json": "3ef41bc4e453cede6da4200b5d33edba48602a27b8b6debcfd74dba1dfb35790",
+        "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L38.json": "ceaeec36c0b9931ab988b7e53cec074826fdcd4bd19bc7659524639b161dd42a"
+      },
+      "definition": "Dimension ablation using original-width, capacity-matched, identically seeded dictionaries; dead-fraction contrasts only"
+    },
+    "variance_caveat": "Projected-input VE and original-input VE use different variance references."
+  },
+  "source_sha256": {
+    "/workspace/rev1/runs/2b_atlas/row_gene_names.json": "75dfb40cdc3356ca9218fa19a909a9e92774885eb6b2ea68109b25ee6a78a4e6",
+    "/workspace/rev1/ontologies_v2/go_bp.json": "79fef7443c64c0d6f5b596a06fe02d626755b1602d26ce4baa5ae946a5fb4913",
+    "/workspace/rev1/ontologies_v2/kegg.json": "c13fb526879e678f8aaa9e00f7d7dd409a9e7989c66c0fe6c94dd12870c7d245",
+    "/workspace/rev1/ontologies_v2/reactome.json": "657a6e1cf3ace1ca8996d336050123cfd0c4e3c2d253905854b37c00c8e39356",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/ontologies_v2/string_v12.5_score700_pairs.tsv.gz": "ff9ad8e80caf1bcbb7a18215126a7411098b525534a8edbc3baf25810fbbdf7e",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L00.json": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L00.json": "8959a6590974e532d4edacf386a863130728084e0587e2e233af1a1cb683fbc4",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L00.json": "cd20a3f48c856d8b03473a9e38f98780c8db1a890e57e269f0639c251170a2f9",
+    "/workspace/rev1/results/2b_eval_L00.json": "a4f1ace68fb57f7ad57a6d19b1418df5b13d080affdb28087ec3818890e1530e",
+    "/workspace/rev1/runs/2b_atlas/row_cell_ids.npy": "60e0ef5ca5798e51e71d76d8f001dd4b8231ea0080cb98da224c050a5f72ce1b",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L00.json": "e88f00d15cf8a1ec5a2b2d16c49bc5cf739173eb62817063c6803f44b3172cdc",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L00.json": "cd8aab6664ad8c47a1c0a0fdd480bfcc3147b90083f9e1450e809259a9cb50a0",
+    "/workspace/rev1/runs/27b_matched/sae/train_L00.json": "5355cf03c0dffb8f1e3e9cfd5b2b93d016472e7b6c363a680f7aceec139da01b",
+    "/workspace/rev1/runs/27b_matched/row_gene_names.json": "75dfb40cdc3356ca9218fa19a909a9e92774885eb6b2ea68109b25ee6a78a4e6",
+    "/workspace/rev1/runs/27b_matched/row_cell_ids.npy": "60e0ef5ca5798e51e71d76d8f001dd4b8231ea0080cb98da224c050a5f72ce1b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L04.json": "2ec2d33e4935aa6cae1be158ab70601b4d4eb7c2d891967792696c57daef3574",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L04.json": "4ec5219676f12220138c0897dfb5c4a85ebf165bfab2ce5b020eadc3e21cc13e",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L04.json": "ccc8d7c10310c7bb68252501b3f23b8316575980af233fc7fd156a39d707e485",
+    "/workspace/rev1/results/2b_eval_L04.json": "276e11533e584cc3068324b8c282756542616338a3fce655def5a6a40d3977a8",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L07.json": "8395bde737b5b23bf721feffab8dc707d3827c00899094e44c854e2898ea61ae",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L07.json": "aa48f595c28ee6c3918b3868964914040d41229a3b8669b2c4e0fe8c1b2420c2",
+    "/workspace/rev1/runs/27b_matched/sae/train_L07.json": "58f2918a49bd60f59bf008f00b006c0613263d3079857bacd04eb66472a83957",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L08.json": "b2b2e098bd360348f3ec6059ca5d95987368f28a8157584c1c66d243157e5ea1",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L08.json": "ff96caca804bef9ab18b5b12ac3db56cd55d497b023d49ef74e59d72ac5964ce",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L08.json": "50784a929c731a5f522370913489020be19ba354b4dc09dea3fdc84fb93b31ec",
+    "/workspace/rev1/results/2b_eval_L08.json": "7fd1f0f68390d042e1e3bafe956c0bb0bbe6f6235f772a58ec98bfc165827115",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L14.json": "64fb32338ccd2fecdaecd31d74e3400f41593852ae62e3d3fcf2bc3b48149fc7",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L14.json": "7bb85a70c38375451ca43cdbb117d2de4793435496f9172342c890be31f413df",
+    "/workspace/rev1/runs/27b_matched/sae/train_L14.json": "9f60615e3e8c5246b83b6bbe05c46f64cf5fae0fdbceb82745ba0db5dbc6c989",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L13.json": "7f4f6a678816e1b47dcd4352769c4100f022c9a5de3c78e239496a91494e50f4",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L13.json": "2d4561225c532811e33cce9ec1ad4ada3fa96ea74146e10193b16f79a09dab7b",
+    "/workspace/rev1/results/2b_eval_L13.json": "d8c8cb2ec7090c922a872dc3924159914d271f34be0ee678403b6f0425e29b38",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L24.json": "16963cdeab1516abf9e5e800bd237d0d1511d49b6e7e796b69ba0f1a9b11c8eb",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L24.json": "df9bee440e94c83b9de06460f7afde0d7d70137d2b952413e79227c4e071124f",
+    "/workspace/rev1/runs/27b_matched/sae/train_L24.json": "b93cba7d56a54a06c9f3b583c24d026e4107f40d18a9e1e7072a632dd20e1e18",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L17.json": "0fd5cda9432b3149f8a4b288143d183e516f637076610f747588470ed43ae02d",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L17.json": "6982c570f2528c5e729fc97bfa12bbd98d43f4a094a759655c087d111feb7d28",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L17.json": "b9bbc72cf5575e430ee4648c70e355eae15d64838541faf9d34c37dd1b77e29e",
+    "/workspace/rev1/results/2b_eval_L17.json": "32162e1fbf3e416c200ff730fce328670acac968fdc8e84ebacabd3ff9e5fdd6",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L31.json": "629e55d2e8782e4a8e4bfdc5f3861fa3fd409f7ae780ed99c6307feb13c358f7",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L31.json": "57c63bb4c377743e9ca1f588e5661e3da7e1cb93d7a8e3b51cb18fe4b365bd14",
+    "/workspace/rev1/runs/27b_matched/sae/train_L31.json": "acd8f870b28a7351800b8810cf13597f0efa7aaff915860da2a63f9478dba2ba",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L21.json": "49106b88846087f75c0bc5326f4e4f3cedb262fa0372edaa4a52221b76bb5087",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L21.json": "63cda0f25fd53a5515680b7981b87a5f751adea0a9f9b68c215c669c6aac4bc7",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L21.json": "97d16d189252ee8901991536e5d90ff9ffe80ce0e68b92e9f0a85771efe11d04",
+    "/workspace/rev1/results/2b_eval_L21.json": "c470ea5cad81b2036627d1ee494475e8aa103b8a14c26f8cc839850e8e86348a",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L38.json": "2b077e7b9d923bced3a15b66d18040a5cefbde58de07878f17fbe5f0731170fa",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L38.json": "4f31de0d8cc7fc62c94cd65559e725b7a4b3cdea852a007eda41d9b7a073af35",
+    "/workspace/rev1/runs/27b_matched/sae/train_L38.json": "3ef41bc4e453cede6da4200b5d33edba48602a27b8b6debcfd74dba1dfb35790",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L25.json": "d2e61d2c26fcd01f2304c403d54a776f570b961417e71136e7908839fcadb852",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L25.json": "e6677e90c6c5c3f47d4fd7a6d13564bdbb536148c4d7844e2cf4182f88153ffb",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L25.json": "7a1d3cd1c92089597b3ba7f3fa32bebd99c4a616d691f121fcebb7a08cfafd0e",
+    "/workspace/rev1/results/2b_eval_L25.json": "c61064f24db1c35eba1981aa4068fcfbe41bff970bed1be291825afd5dc3081f",
+    "/workspace/rev1/results/annotations/27b_matched/ann_v2_L45.json": "eb8b904c4ec23136615918a0e8df1470c4c368fb4e763c742a7fd4d5fb4a2d5a",
+    "/workspace/rev1/runs/27b_matched/feature_catalog_L45.json": "5b5ceed70a18a14333be281e6ce33c7b7a4040af592bc7f3cf54c04eaa3e5fe9",
+    "/workspace/rev1/runs/27b_matched/sae/train_L45.json": "9654a0e5aa98c8e52c8200e2cb5dc0a80e32b2de803d5a27f441d592d773fcad",
+    "/workspace/rev1/results/dropmassive_comparison.json": "e8516f00e653278b5eb86cbab13c7051ee7b64e432ac379036dcb9d8d450e83d",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L24.json": "84348922a4d87c66fc10a6425781915435a3396063aaac870f4a733e38ff24d8",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L38.json": "ceaeec36c0b9931ab988b7e53cec074826fdcd4bd19bc7659524639b161dd42a",
+    "/workspace/rev1/results/audits/audit_scale.py": "757a1f847cdb41168ebb285181c77ff8c994d1faf5f3128797d538c46427313a",
+    "/workspace/rev1/results/audits/audit_sensitivity.py": "36dfa1bc1fabaaff4bb15cf0f9dcbe38e0292bd89987a6d1be631dec7b8fa1b2"
+  },
+  "peak_rss_bytes": 785219584,
+  "units": {
+    "capacity": "9,216 dictionary features; expansion 4 for 2B, expansion 2 for 27B.",
+    "training": "Six saved epochs; original 2B optimizer/seed fields remain unreported where absent.",
+    "ontology_primary": "Complete named ontology/regulon IDs divided by all 9,216 features; active-only denominators are separately saved.",
+    "floor": "Saved frequency-null ontology rate rescaled by active/all-feature ratio.",
+    "inactivity": "Heldout inactive and never active across all 614,400 positions are distinct.",
+    "variance": "Heldout VE uses the residual-activation variance of each model; projected E4 uses projected-input variance."
+  },
+  "limitations": [
+    "Six deterministic features per annotation receive independent dense full-family p/q checks; all other rows receive complete-ID/count/denominator checks.",
+    "No SAE fits or reconstruction forwards are rerun; saved reconstruction statistics are reported.",
+    "Fixed absolute capacity, approximate relative depths and six epochs do not match every aspect of optimization or checkpoint training.",
+    "Floor draws and single model seeds do not establish between-training-run uncertainty."
+  ]
+}

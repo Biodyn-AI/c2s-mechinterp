@@ -1,13 +1,17 @@
-# Paper sources
+# Paper sources and figures
 
-`make_figures.py` regenerates Figures 1–5 and `make_graphical_abstract.py` the journal-format
-graphical abstract, both directly from the artefacts in `results/` and the atlas summary JSON.
-No number is hard-coded that is not traceable to a file.
+`manuscript.tex` and `manuscript.pdf` contain the current paper. `supplement.tex`,
+`supplement_generated/` and `supplement.pdf` contain the supplementary methods, all numerical
+tables, complete figure provenance and measured resource records. Figure 1 is a vector schematic;
+Figures 2–6 and S1–S6 are computed from saved artifacts. Every numerical figure has a
+`.provenance.json` sidecar with exact plotted values and source SHA256 hashes.
 
-```bash
-python paper/make_figures.py
-python paper/make_graphical_abstract.py
-latexmk -pdf manuscript.tex     # requires the elsarticle class (TeX Live)
-```
+`make_revision_figures.py`, `make_design_schematic.py` and `assemble_supplement.py` are the
+current build sources. See [reproduction commands](../docs/04-reproduce.md) and the
+[versioned numerical artifacts](https://github.com/Biodyn-AI/c2s-mechinterp/releases/tag/controlled-analysis-2026-11).
+The older `fig1_design.pdf` through `fig5_beyond_input.pdf` figures and
+`make_figures.py` and `make_graphical_abstract.py` are preserved historical sources;
+do not use them to regenerate the current figure set.
 
-Both scripts auto-fit label text to its box, so edited labels cannot overflow.
+Reviewer correspondence, cover letters and submitted administrative documents are not part of
+this public source directory. The clean source/upload package is maintained separately.

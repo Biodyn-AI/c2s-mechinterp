@@ -1,0 +1,663 @@
+{
+  "schema": "c2s-public-current-results-index-v1",
+  "primary_transfer_artifact": "selection_matched_transfer.json",
+  "claim_groups": [
+    {
+      "id": "atlas",
+      "title": "All-layer sparse-feature atlas",
+      "artifacts": [
+        "atlas_reporting.json",
+        "audits/experimental_saved_v1.json"
+      ],
+      "scope": "All dictionary features are the canonical annotation-rate denominator; catalogue activity and held-out inactivity are separate.",
+      "observations": [
+        {
+          "claim": "Dictionary features",
+          "artifact": "atlas_reporting.json",
+          "json_pointer": "/pooled_totals/n_features",
+          "saved_value": 239616
+        },
+        {
+          "claim": "Ontology/regulon annotated features",
+          "artifact": "atlas_reporting.json",
+          "json_pointer": "/pooled_totals/n_ontology",
+          "saved_value": 152782
+        },
+        {
+          "claim": "Any evidence features",
+          "artifact": "atlas_reporting.json",
+          "json_pointer": "/pooled_totals/n_any",
+          "saved_value": 180684
+        },
+        {
+          "claim": "Modules",
+          "artifact": "atlas_reporting.json",
+          "json_pointer": "/pooled_totals/n_modules",
+          "saved_value": 577
+        }
+      ],
+      "limits": [
+        "Named ontology/regulon terms are separate from network-pair and TF-membership evidence. Floors must match the displayed denominator."
+      ]
+    },
+    {
+      "id": "sensitivity",
+      "title": "Sparsity, expansion, pooling and library controls",
+      "artifacts": [
+        "sensitivity_reporting.json",
+        "pool_comparison.json",
+        "audits/sensitivity_saved_v1.json"
+      ],
+      "scope": "Ten newly trained settings plus two stored k32/expansion4 baselines; baseline reconstruction uses fresh evaluation.",
+      "observations": [
+        {
+          "claim": "Completed settings including baseline rows",
+          "artifact": "sensitivity_reporting.json",
+          "json_pointer": "/n_complete_sweeps_including_baselines",
+          "saved_value": 12
+        }
+      ],
+      "limits": [
+        "Saved random-floor replicates do not quantify independent training-seed variation. Untrained controls preserve trained bias and encoder-row norms."
+      ]
+    },
+    {
+      "id": "scale",
+      "title": "Matched relative-depth scaling and residual diagnostics",
+      "artifacts": [
+        "scale_reporting.json",
+        "residual_summary.json",
+        "dropmassive_comparison.json",
+        "audits/e4_saved_v1.json"
+      ],
+      "scope": "Seven 2B/27B pairs with 9216 dictionary features; held-out, catalogue-active and all-feature quantities retain their distinct units.",
+      "observations": [
+        {
+          "claim": "Matched layer pairs",
+          "artifact": "scale_reporting.json",
+          "json_pointer": "/n_pairs",
+          "saved_value": 7
+        }
+      ],
+      "limits": [
+        "Projected-input E4 reconstruction has a different input variance reference; no cross-input variance-explained gain is inferred."
+      ]
+    },
+    {
+      "id": "perturbations",
+      "title": "Measured perturbation controls",
+      "artifacts": [
+        "phase8_k562/statistics/regulatory_statistics.json",
+        "phase8_rpe1/statistics/regulatory_statistics.json",
+        "phase8_thp1_pooled/statistics/regulatory_statistics.json",
+        "phase8_thp1_pooled/statistics/guide_concordance.json",
+        "audits/phb2_worked_values.json"
+      ],
+      "scope": "Specificity retains the full screened TF family; macro retrieval uses evaluable TFs. AP, AUROC, prevalence and finite expected AP are separately named.",
+      "observations": [
+        {
+          "claim": "K562 expression specificity",
+          "artifact": "phase8_k562/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/0",
+          "saved_value": {
+            "representation": "expression",
+            "layer": null,
+            "n_specific": 0,
+            "n_tfs": 48
+          }
+        },
+        {
+          "claim": "K562 input specificity",
+          "artifact": "phase8_k562/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/1",
+          "saved_value": {
+            "representation": "input",
+            "layer": null,
+            "n_specific": 0,
+            "n_tfs": 48
+          }
+        },
+        {
+          "claim": "K562 model specificity",
+          "artifact": "phase8_k562/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/3",
+          "saved_value": {
+            "representation": "model",
+            "layer": 16,
+            "n_specific": 2,
+            "n_tfs": 48
+          }
+        },
+        {
+          "claim": "RPE1 expression specificity",
+          "artifact": "phase8_rpe1/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/0",
+          "saved_value": {
+            "representation": "expression",
+            "layer": null,
+            "n_specific": 2,
+            "n_tfs": 121
+          }
+        },
+        {
+          "claim": "RPE1 input specificity",
+          "artifact": "phase8_rpe1/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/1",
+          "saved_value": {
+            "representation": "input",
+            "layer": null,
+            "n_specific": 0,
+            "n_tfs": 121
+          }
+        },
+        {
+          "claim": "RPE1 model specificity",
+          "artifact": "phase8_rpe1/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/3",
+          "saved_value": {
+            "representation": "model",
+            "layer": 16,
+            "n_specific": 0,
+            "n_tfs": 121
+          }
+        },
+        {
+          "claim": "THP1 pooled expression specificity",
+          "artifact": "phase8_thp1_pooled/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/0",
+          "saved_value": {
+            "representation": "expression",
+            "layer": null,
+            "n_specific": 3,
+            "n_tfs": 12
+          }
+        },
+        {
+          "claim": "THP1 pooled input specificity",
+          "artifact": "phase8_thp1_pooled/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/1",
+          "saved_value": {
+            "representation": "input",
+            "layer": null,
+            "n_specific": 1,
+            "n_tfs": 12
+          }
+        },
+        {
+          "claim": "THP1 pooled model specificity",
+          "artifact": "phase8_thp1_pooled/statistics/regulatory_statistics.json",
+          "json_pointer": "/summary/3",
+          "saved_value": {
+            "representation": "model",
+            "layer": 16,
+            "n_specific": 1,
+            "n_tfs": 12
+          }
+        }
+      ],
+      "limits": [
+        "THP1 pools observed guides. Multiple cells from one guide are conditional cell observations, not independent guide replicates. Source response matrices remain in the release archives."
+      ]
+    },
+    {
+      "id": "text_deletion",
+      "title": "Model-text deletion retrieval",
+      "artifacts": [
+        "text_deletion_reporting.json"
+      ],
+      "scope": "TF-name deletion minus nearby-name deletion, ranked over eligible downstream genes; macro intervals resample TFs.",
+      "observations": [
+        {
+          "claim": "k562 Named factors",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/k562/n_screened_named_tfs",
+          "saved_value": 73
+        },
+        {
+          "claim": "k562 TF-cell pairs",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/k562/n_pairs",
+          "saved_value": 2489
+        },
+        {
+          "claim": "k562 L16 mean AP",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/k562/layers/1/mean_average_precision",
+          "saved_value": 0.09459317057878644
+        },
+        {
+          "claim": "k562 L16 finite expected AP",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/k562/layers/1/mean_random_label_expected_ap",
+          "saved_value": 0.016865079265479022
+        },
+        {
+          "claim": "k562 L16 mean AUROC",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/k562/layers/1/mean_auroc",
+          "saved_value": 0.56765291200538
+        },
+        {
+          "claim": "rpe1 Named factors",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/rpe1/n_screened_named_tfs",
+          "saved_value": 103
+        },
+        {
+          "claim": "rpe1 TF-cell pairs",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/rpe1/n_pairs",
+          "saved_value": 3445
+        },
+        {
+          "claim": "rpe1 L16 mean AP",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/rpe1/layers/1/mean_average_precision",
+          "saved_value": 0.09583867147998557
+        },
+        {
+          "claim": "rpe1 L16 finite expected AP",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/rpe1/layers/1/mean_random_label_expected_ap",
+          "saved_value": 0.018269312078502988
+        },
+        {
+          "claim": "rpe1 L16 mean AUROC",
+          "artifact": "text_deletion_reporting.json",
+          "json_pointer": "/lines/rpe1/layers/1/mean_auroc",
+          "saved_value": 0.5674494205731639
+        }
+      ],
+      "limits": [
+        "The named-factor family differs from measured knockdowns. Downstream universes differ across factors and lines. The nearby control is not matched for subword length. This is a model-text assay."
+      ]
+    },
+    {
+      "id": "biology",
+      "title": "Categories, examples and line-specific activity",
+      "artifacts": [
+        "biology.json",
+        "lines2.json",
+        "audits/biology_lines_v1.json",
+        "runs/2b_atlas/cross_layer_tracking.json"
+      ],
+      "scope": "Significant named-term categories can overlap. SVD nonalignment alone does not establish a novel biological concept.",
+      "observations": [],
+      "limits": [
+        "Line activity applies the fixed K562 dictionary to separate line controls; annotation and firing are distinct measurements."
+      ]
+    },
+    {
+      "id": "circuits",
+      "title": "Stored circuits and full-family stability",
+      "artifacts": [
+        "circuit_baseline.json",
+        "circuit_stability.json",
+        "circuit_stability_full.json",
+        "audits/circuit_storage_counts.json",
+        "audits/circuits_exact_join_v1.json",
+        "audits/circuit_proteasome_worked_v1.json"
+      ],
+      "scope": "Stored capped graph counts, shared-term baselines and source-feature bootstrap intervals are distinct from newly tested full-family effects.",
+      "observations": [
+        {
+          "claim": "Common eligible source features",
+          "artifact": "circuit_stability_full.json",
+          "json_pointer": "/n_common_eligible_source_features",
+          "saved_value": 15
+        },
+        {
+          "claim": "All-tested effect comparison",
+          "artifact": "circuit_stability_full.json",
+          "json_pointer": "/pooled_all_tested",
+          "saved_value": {
+            "n_effect_pairs": 2488320,
+            "pearson": 0.9824201765607051,
+            "spearman": 0.7729787893565037
+          }
+        }
+      ],
+      "limits": [
+        "Shared passing edges condition on the rule; full-tested-family agreement is reported separately. Biological joins use complete ontology/regulon IDs."
+      ]
+    },
+    {
+      "id": "dimensions",
+      "title": "Coordinate-specific geometry controls",
+      "artifacts": [
+        "cd34_dimensions.json",
+        "k562_replication_dimensions.json",
+        "geometry/gene_manifold_null.json",
+        "geometry/results/cell_state_gpu.json",
+        "audits/dimensions_cd34_v1.json",
+        "audits/dimensions_k562_replication_v1.json",
+        "audits/dimensions_standardized_reference_v1.json"
+      ],
+      "scope": "Current matched-cohort dimension controls use raw coordinates. The retained gene-manifold reference uses standardized coordinates.",
+      "observations": [],
+      "limits": [
+        "Coordinate conventions and cell/gene cohorts differ; values from the retained standardized reference are not substituted for the raw-coordinate controls."
+      ]
+    },
+    {
+      "id": "phase_probes",
+      "title": "Current input-matched phase probes",
+      "artifacts": [
+        "within_k562_cellcycle.json",
+        "selection_matched_transfer.json",
+        "cache_validation_k562.json",
+        "cache_validation_rpe1.json",
+        "route_genemanifold_c2s/results/cc_benchmark_c2s.json",
+        "audits/retained_saved_v1.json"
+      ],
+      "scope": "Within K562: circular R-squared, whole-cohort PCA50/scaling, Ridge10 and fixed OOF predictions. Frozen transfer: source-only scaling, Ridge1000, no PCA, R-diff.",
+      "observations": [
+        {
+          "claim": "Within-cohort model circular R-squared",
+          "artifact": "within_k562_cellcycle.json",
+          "json_pointer": "/point/model/circular_r2",
+          "saved_value": 0.8738924617980373
+        },
+        {
+          "claim": "Within-cohort rank-input circular R-squared",
+          "artifact": "within_k562_cellcycle.json",
+          "json_pointer": "/point/expression_topk_rank/circular_r2",
+          "saved_value": 0.8678630626880015
+        },
+        {
+          "claim": "Frozen model R-diff",
+          "artifact": "selection_matched_transfer.json",
+          "json_pointer": "/point/model/R_diff",
+          "saved_value": 0.7894431304153311
+        },
+        {
+          "claim": "Frozen full-panel rank-input R-diff",
+          "artifact": "selection_matched_transfer.json",
+          "json_pointer": "/point/expression_topk_rank_fullpanel/R_diff",
+          "saved_value": 0.7905348627975286
+        },
+        {
+          "claim": "Primary paired transfer interval",
+          "artifact": "selection_matched_transfer.json",
+          "json_pointer": "/contrasts/model_minus_expression_topk_rank_fullpanel/ci95",
+          "saved_value": [
+            -0.013244760525181181,
+            0.011112183780582435
+          ]
+        }
+      ],
+      "limits": [
+        "Phase labels are expression-derived. An interval spanning zero is an unresolved difference, not equivalence. Cache checks cover 20 sampled rows per line; unsampled identity is not established. The primary transfer file is selection_matched_transfer.json."
+      ]
+    },
+    {
+      "id": "name_probes",
+      "title": "Name-only phase retrieval",
+      "artifacts": [
+        "surface_form_retrieval.json",
+        "route_genemanifold_c2s/results/surface_forms.json"
+      ],
+      "scope": "The same 87 saved genes and G2/M labels are evaluated across five symbol surface forms.",
+      "observations": [
+        {
+          "claim": "human average_precision",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/human/average_precision",
+          "saved_value": 0.9931168395791586
+        },
+        {
+          "claim": "human auroc",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/human/auroc",
+          "saved_value": 0.9886486486486487
+        },
+        {
+          "claim": "nearmiss average_precision",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/nearmiss/average_precision",
+          "saved_value": 0.7726445596369185
+        },
+        {
+          "claim": "nearmiss auroc",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/nearmiss/auroc",
+          "saved_value": 0.6854054054054054
+        },
+        {
+          "claim": "lower average_precision",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/lower/average_precision",
+          "saved_value": 0.8272733858486694
+        },
+        {
+          "claim": "lower auroc",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/lower/auroc",
+          "saved_value": 0.7670270270270271
+        },
+        {
+          "claim": "mouse average_precision",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/mouse/average_precision",
+          "saved_value": 0.8345003579033765
+        },
+        {
+          "claim": "mouse auroc",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/mouse/auroc",
+          "saved_value": 0.7816216216216216
+        },
+        {
+          "claim": "anagram average_precision",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/anagram/average_precision",
+          "saved_value": 0.6065529252333978
+        },
+        {
+          "claim": "anagram auroc",
+          "artifact": "surface_form_retrieval.json",
+          "json_pointer": "/forms/anagram/auroc",
+          "saved_value": 0.5113513513513513
+        }
+      ],
+      "limits": [
+        "Saved intervals resample stratified gene items and do not model dependence within gene families. Mouse-style symbols are not guaranteed unseen subwords."
+      ]
+    },
+    {
+      "id": "steering",
+      "title": "Retained steering numerical readouts",
+      "artifacts": [
+        "route_genemanifold_c2s/results/manifold_steer_L18.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21.json",
+        "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+        "retained_steering_audit.json",
+        "route_genemanifold_c2s/results/ring_analysis.json",
+        "figure_provenance/Figure_6.provenance.json"
+      ],
+      "scope": "Saved trajectories and readout diagnostics for 24 source cells per steering condition; exact plotted path lengths are in the figure sidecar.",
+      "observations": [
+        {
+          "claim": "Figure6 steering path lengths",
+          "artifact": "figure_provenance/Figure_6.provenance.json",
+          "json_pointer": "/plotted_values/steering_path_lengths",
+          "saved_value": {
+            "manifold": [
+              5.354117510206884,
+              1.1838722338557304,
+              0.47360866664260115,
+              3.7678117344025397,
+              2.3146087134480697,
+              1.733554710681859,
+              1.6490510103076876,
+              1.2896799845893727,
+              1.4995050680416093,
+              2.8350302680117587,
+              4.197898225618928,
+              1.3614344197979258,
+              1.5993118383983518,
+              0.8437445566766062,
+              1.742602382922719,
+              0.8154861579389836,
+              1.020901226659758,
+              3.8641563875103264,
+              1.6650582549357082,
+              3.202947360089503,
+              0.4258453781179945,
+              0.9141540441939728,
+              2.1493546635560676,
+              1.330132305873351
+            ],
+            "linear": [
+              1.3671219562136838,
+              0.15462108185171886,
+              0.11350316960680829,
+              2.5153735727770474,
+              1.1590263351757601,
+              0.9834923487101941,
+              0.5966360238025858,
+              0.550621895116802,
+              0.3011846066544739,
+              3.0396603354867735,
+              1.624145486777601,
+              0.33805941457163025,
+              0.6030063473083245,
+              0.8437445566766062,
+              0.7115452520892349,
+              0.13657205692900387,
+              0.3486720893868389,
+              2.2512605391974767,
+              1.6650582549357082,
+              1.0732817126542855,
+              0.20459497375672875,
+              0.9141540441939728,
+              0.5608354963305275,
+              0.6287030844850139
+            ],
+            "random": [
+              0.08569709807952286,
+              0.09977002726120343,
+              0.04116603926480966,
+              0.1450414358171619,
+              0.28133056937424994,
+              0.0890568617883103,
+              0.11420428659441972,
+              0.08442626769953288,
+              0.06723581007214996,
+              0.32836210264946075,
+              0.3220446665628852,
+              0.15218742309286482,
+              0.12947735605045096,
+              0.12467095066912837,
+              0.44679839546246036,
+              0.10302448062724867,
+              0.1301980791448658,
+              0.4221209872278813,
+              0.26365074722144666,
+              0.43063275789072186,
+              0.11674663375026118,
+              0.08597769240299957,
+              0.373221705725345,
+              0.10065710780804693
+            ]
+          }
+        }
+      ],
+      "limits": [
+        "Steering changes model readouts; it does not establish a biological intervention. Different summary scores retain their own definitions."
+      ]
+    },
+    {
+      "id": "inputs_and_resources",
+      "title": "Tokenization, reference provenance and resources",
+      "artifacts": [
+        "tokenization.json",
+        "ontology_provenance.json",
+        "environment.json",
+        "environment_dependencies.json",
+        "figure_provenance/Figure_S6.provenance.json"
+      ],
+      "scope": "Tokenization statistics and source checksums are saved; stage resources use completed-stage records.",
+      "observations": [
+        {
+          "claim": "Gene occurrences",
+          "artifact": "tokenization.json",
+          "json_pointer": "/n_gene_occurrences",
+          "saved_value": 614400
+        },
+        {
+          "claim": "Cells",
+          "artifact": "tokenization.json",
+          "json_pointer": "/n_cells",
+          "saved_value": 1200
+        }
+      ],
+      "limits": [
+        "GPU peaks are device-wide across concurrent jobs; host memory is the stage process tree. Provider billing is separate from overlapping stage durations. Incomplete accounting files are excluded."
+      ]
+    }
+  ],
+  "hash_policy": {
+    "source_sha256": "Original source bytes before portability changes. For listed immutable_archive_sources, this is the original archive-member hash.",
+    "destination_sha256": "Exact public-view bytes in this directory; use these hashes to verify Git files.",
+    "path_portability": "Only known personal filesystem prefixes are replaced. Generic historical runtime paths are preserved. Numeric scalars retain exact integer values and IEEE754 float bits; structure and nonpath strings are checked.",
+    "archive_layout": "Release workspace results/* corresponds to the cited paper experiments/results/*. Project-relative geometry, route and run paths are retained.",
+    "coverage": "Original archive coverage is recorded per file. Figure sidecars and local generated summaries without such coverage are published as portable Git views."
+  },
+  "excluded_artifacts": [
+    "full feature catalogues/annotations",
+    "raw count matrices",
+    "activation matrices",
+    "model/SAE weights",
+    "credentials/access/tools",
+    "partial reports",
+    "review/editorial documents",
+    "route_genemanifold_c2s/results/encoding_matched_transfer.json"
+  ],
+  "figure_numeric_provenance": [
+    {
+      "path": "figure_provenance/Figure_2.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_3.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_4.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_5.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_6.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_S1.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_S2.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_S3.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_S4.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_S5.provenance.json",
+      "generator_matches_current_source": true
+    },
+    {
+      "path": "figure_provenance/Figure_S6.provenance.json",
+      "generator_matches_current_source": true
+    }
+  ]
+}

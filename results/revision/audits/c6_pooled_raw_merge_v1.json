@@ -1,0 +1,77 @@
+{
+  "audit": "Independent C6 C2ORF15 raw-column identity and merge check",
+  "passed": true,
+  "n_checks": 8,
+  "findings": [],
+  "source_symbols": [
+    "C2orf15",
+    "C2ORF15"
+  ],
+  "source_columns": [
+    2453,
+    2454
+  ],
+  "ensembl_id": "ENSG00000273045",
+  "prepared_column": 2453,
+  "all_original_cells": {
+    "n_cells": 20729,
+    "identical_vectors": false,
+    "n_cells_different": 17,
+    "n_cells_both_nonzero": 0,
+    "n_nonzero_by_column": [
+      10,
+      7
+    ],
+    "total_counts_by_column": [
+      10.0,
+      7.0
+    ]
+  },
+  "selected_prepared_cohort": {
+    "n_cells": 1384,
+    "identical_vectors": false,
+    "n_cells_different": 2,
+    "n_cells_both_nonzero": 0,
+    "n_nonzero_by_column": [
+      2,
+      0
+    ],
+    "total_counts_by_column": [
+      2.0,
+      0.0
+    ]
+  },
+  "merged_total_count": 2.0,
+  "maximum_absolute_merge_error": 0.0,
+  "nonzero_prepared_cells": [
+    {
+      "prepared_cell": 483,
+      "source_cell": 3253,
+      "source_counts": [
+        1.0,
+        0.0
+      ],
+      "prepared_count": 1.0
+    },
+    {
+      "prepared_cell": 1363,
+      "source_cell": 9298,
+      "source_counts": [
+        1.0,
+        0.0
+      ],
+      "prepared_count": 1.0
+    }
+  ],
+  "source_sha256": {
+    "work/data/papalexi/c6_pooled_rep1tx/provenance.json": "063c0801bf310625febf475146c6d9aecd749b016bf733ccf566076babc3e957",
+    "work/data/papalexi/PapalexiSatija2021_eccite_RNA.h5ad": "03e9602d124c261281936717d5795445805e6e704a52b0310bcde94225aa0929",
+    "work/data/papalexi/c6_pooled_rep1tx/counts_cleaned.h5ad": "ee8bf3c0a2611508bb2f0b0418e6f98e3e7a5270ed00f80c86e59452f127c6c9",
+    "paper_cbc_rev1/experiments/audit_c6_merge.py": "ef8f57cf0c835030f56dc73edaed5dbc15fd170ee57e755063d533940fdde46c"
+  },
+  "peak_rss_bytes": 121225216,
+  "limitations": [
+    "Equality or inequality of observed count vectors does not establish molecular independence.",
+    "The explicit summation policy is checked; no model fits or experimental outputs were changed."
+  ]
+}

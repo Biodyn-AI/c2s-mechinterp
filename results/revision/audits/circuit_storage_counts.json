@@ -1,0 +1,30 @@
+{
+  "n_stored_edges": 27633,
+  "n_source_features": 45,
+  "n_distinct_target_layer_feature_pairs": 7959,
+  "n_stored_L00_to_L01": 746,
+  "source_layers": {
+    "0": {
+      "n_all_rule_passing_effects": 17146,
+      "n_all_next_layer_effects": 1275,
+      "n_actual_forward_passes": 800
+    },
+    "7": {
+      "n_all_rule_passing_effects": 10732,
+      "n_all_next_layer_effects": 1027,
+      "n_actual_forward_passes": 800
+    },
+    "16": {
+      "n_all_rule_passing_effects": 5192,
+      "n_all_next_layer_effects": 765,
+      "n_actual_forward_passes": 799
+    }
+  },
+  "input_sha256": {
+    "circuit_L00_features.json": "7df126ad7eb6c965ad4927c2f961b0cd9c1b3ffed8fbaffc76ac4e73cec3b3e2",
+    "circuit_L07_features.json": "e592a6be0f89659b2abf858d30263ee2b5161acbebbd47acdc98ea8929d048c8",
+    "circuit_L16_features.json": "48320ee24c5ae5bbe1ee633e477177575e4999f24a547a473e85b35ea9f66a7f",
+    "circuit_graph.json": "86480ad7bfd4c2217a5e3575c09916ca94a33dd73c3cbc8f76707e730116e88b"
+  },
+  "n_all_rule_passing_effects": 33070
+}

@@ -1,7 +1,6 @@
 # The three controls
 
-These are the methodological contribution of the paper. Each one changed a conclusion in this study;
-one reversed it. They transfer to any biomedical foundation model.
+Each result is evaluated against controls that preserve the relevant input, dependence structure or dictionary capacity. These checks delimit the inference that the measurement supports.
 
 ## 1. Information-matched baselines
 **Encode the baseline with exactly the information the model receives.**
@@ -10,17 +9,19 @@ A C2S cell sentence is the top-512 genes *in rank order, without magnitudes*. Co
 against the full expression vector charges the model for its own tokenizer; comparing it against a
 carelessly encoded subset flatters it.
 
-What this cost us: an early analysis appeared to show the model sharpening a biological signal
-~3× over its own input. That gap was an artefact of the baseline encoding (1/rank weighting collapsed
-the baseline's PCA onto a few genes). Encoding the baseline properly reduced the model's advantage to
-**0.007**. Report the whole ladder — full expression, top-512 with values, top-512 as a binary set,
-top-512 set plus rank — so the cost of tokenisation is separated from the contribution of the model.
+Report the whole ladder: full expression, top-512 with values, top-512 as a binary set,
+and top-512 with rank. On the saved within-K562 cohort, model minus rank-input circular R² is
+0.0060 with paired 95% interval −0.0048 to 0.0170. On frozen K562→RPE1 transfer, the difference
+is −0.0011 with interval −0.0132 to 0.0111. Neither contrast resolves a gain; these intervals
+also do not establish equivalence. The within-K562 PCA/scaling is transductive, whereas the
+transfer preprocessing and readout are fitted only on source cells.
 
 Also match the **selection procedure**, not just the encoding: if the sentence picks its top-512 from
 the cell's full panel, the baseline must too.
 
-Implementation: `manifold/encoding_matched_transfer.py`, `manifold/input_null.py`,
-`manifold/selection_matched_arm.py`.
+Implementation: `revision/rev_within_cellcycle.py` and
+`revision/rev_selection_matched_transfer.py`; results are `within_k562_cellcycle.json` and
+`selection_matched_transfer.json` in the numerical release.
 
 ## 2. Co-expression-matched nulls
 **The null must preserve the dominant correlation structure of the data.**
@@ -43,9 +44,31 @@ same number of positions, so its features are systematically under-trained. Comp
 4× dictionary (18,432 features, ~33 positions/feature) against a 2B model's 4× dictionary (9,216
 features, ~67 positions/feature) confounds scale with under-training.
 
-Retraining the 27B autoencoders at 2× expansion — same absolute dictionary, same positions per
-feature — recovered ~10 points on each interpretability measure. That part was artefact. The
-remaining gap (31× more dead features, 19 points lower annotation) was real.
+The controlled comparison fixes dictionary size at 9,216 features, TopK at 32, training at six
+epochs, the input sentences, and relative depth across the full models. Held-out inactivity and
+inactivity across all catalogue positions are reported separately. Annotation is compared with
+a dictionary-specific frequency-matched random-gene floor. A raw annotation rate alone is not
+a measure of biological specificity.
 
-Implementation: `c2s_mechinterp/train_sae.py --expansion 2 --sae-subdir sae_matched_x2`, compared
-with `c2s_mechinterp/compare_scaling.py`.
+Implementation: `revision/run_revision.py --only 'scale-*' --include-optional` after the saved
+atlas inputs and extraction are available. See the reproduction guide for the complete order.
+
+
+## Annotation, perturbation and scaling validation
+
+The active annotation entry point delegates to `revision/annotate_v2.py`. All eligible terms stay
+in each feature's BH family. Database snapshot sensitivity changes only the library files;
+it never restores overlap-selected correction. Report both annotation rate and its matched
+random-gene floor. Pair-count and TF-membership discoveries are evidence types, not shared terms.
+
+The controlled perturbation workflow tests measured expression, ranked input and model features
+on identical cells. Specificity is unsigned target-set association; known-target coverage and
+positive-control performance limit interpretation. The complete screened TF family remains in
+the correction, including factors with poor target coverage. RPE1 repeats the assay with the
+same dictionaries, and its reconstruction quality is recorded before interpretation.
+
+The active scaling workflow matches relative depth across the full models and fixes both
+dictionary size and training epochs: 9,216 features, k = 32 and six epochs. The depth mapping is
+2B {0,4,8,13,17,21,25} to 27B {0,7,14,24,31,38,45}. Float32 activation storage prevents overflow.
+Residual spectra, large-coordinate magnitudes and feature firing are measured rather than
+inferred from reconstruction quality. The seven matched depth pairs are the primary scale comparison; the older 26-layer 27B atlas covers only part of that model and is a separate analysis.

@@ -1,0 +1,63 @@
+{
+  "schema": "c2s-paper-build-artifacts-v1",
+  "manuscript_pages": 57,
+  "supplement_pages": 41,
+  "source_pdf_visual_qa": "Every page inspected; zero undefined references, missing glyphs, overfull boxes or LaTeX warnings. Resource accounting is explicitly timestamped and distinguishes reported versus conservative full-lifetime costs.",
+  "files": {
+    "manuscript.tex": {
+      "sha256": "5dfcf005e046204608c64fd8106ef15388210c76521f3d9b56fc91db0e087635",
+      "bytes": 115342
+    },
+    "manuscript.pdf": {
+      "sha256": "2299e30b266768261d85b4df5c9b05d1081253c8519625bd34f0aa4ef5848886",
+      "bytes": 727737
+    },
+    "supplement.tex": {
+      "sha256": "b8b48e830c5a89956ccb3e21c41fab101f72f4e102ede7e2394d99635a8c3505",
+      "bytes": 18075
+    },
+    "supplement.pdf": {
+      "sha256": "4bf8ee9b499b2515ed230f6570c81298f7d9ecb1d9a671b35084f7fd7e30f111",
+      "bytes": 299542
+    },
+    "assemble_supplement.py": {
+      "sha256": "388d0fc9d83cf87606eae33314765555c9d2ddddf8d3b09e906e080f1416693b",
+      "bytes": 50791
+    },
+    "make_design_schematic.py": {
+      "sha256": "33056abd87101baf39c567cc72281143808b75b6357027fb731cf1ac54aba618",
+      "bytes": 9757
+    },
+    "make_revision_figures.py": {
+      "sha256": "aed2797658b12b6184cb0b0ee7dcad8f16fddc9e37d53017748721a00787ea74",
+      "bytes": 51516
+    },
+    "highlights.md": {
+      "sha256": "f463e245ee8677fa0049b68477931545f57b2fb5e85cc1e0ba3288a22e8e9321",
+      "bytes": 372
+    },
+    "title_abstract_keywords.txt": {
+      "sha256": "e6bdda6e37a7e7dfa6e3f85d57d83fe377321fffbcd2e3259797b0c25135c4ea",
+      "bytes": 2010
+    }
+  },
+  "figures": {
+    "Figure_1.pdf": "60e6c12c9d63e6eb0f19c7887c98bfe8eac0264d262fccd8d8d97d87bea1b0a5",
+    "Figure_1_schematic.pdf": "60e6c12c9d63e6eb0f19c7887c98bfe8eac0264d262fccd8d8d97d87bea1b0a5",
+    "Figure_2.pdf": "1c2d18cfcbc55fb76afc1a83ce459bda785974c530dcb11ed6cca0b45fff59b4",
+    "Figure_3.pdf": "b60e2ee33c1f32261b9f82027ca0604a3fb3167a29eeb878a9292a377434c0f3",
+    "Figure_4.pdf": "9620e6e630256ecd37e31e0c26ab7c0f469923741260907e977050765a7d93ff",
+    "Figure_5.pdf": "9cff76ca495e1fac4738dbc27ccee943654140e834a450555451d3d9ff5126d0",
+    "Figure_6.pdf": "6f1bb0072e59541d192797c95ee257d6e02a0e18e6c65289556914d1adb1e48c",
+    "Figure_S1.pdf": "ca1310a02600e0fd3215a4f2f49d2c7b8d5c1b93a2aba7da72fa8c368a752071",
+    "Figure_S2.pdf": "679c0168c0a10f336d53ea14838e00375dedbb3a368f65191c21188de5bd524c",
+    "Figure_S3.pdf": "5445b25aeb000f7ac3abdff2b40ef07590c892e18ce0496073dc494480158d8a",
+    "Figure_S4.pdf": "6047829e4e6f33d9973372f665484bcdcaf11df4bf96c1ddd20549d8522a9730",
+    "Figure_S5.pdf": "78803e2fa39b2eccac313835d4cbde12275592e488bac49951a10f94139100f5",
+    "Figure_S6.pdf": "366b6f8e1e1c5c7c8f855bc8f093cbcc25595f40c591d90c993a79e879b00275"
+  },
+  "generated_table_count": 30,
+  "supplement_complete": true,
+  "atlas_commit": "d74f5c8cf28459339f7869bb4d64e12de369ce43",
+  "numerical_release": "controlled-analysis-2026-11"
+}

@@ -1,0 +1,3509 @@
+{
+  "created_utc": "2026-11-17T16:31:56.790345+00:00",
+  "library_sensitivity": [
+    {
+      "full": {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": false,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 101257,
+            "terms_by_source": {
+              "GO_BP": 2762,
+              "KEGG": 308,
+              "Reactome": 1414,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 4590,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.1688006365740741,
+                "any_values": [
+                  0.1703559027777778,
+                  0.16829427083333334,
+                  0.1677517361111111
+                ],
+                "ontology_mean": 0.07895688657407407,
+                "ontology_values": [
+                  0.07845052083333333,
+                  0.0808376736111111,
+                  0.07758246527777778
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.1688006365740741,
+                "any_values": [
+                  0.1703559027777778,
+                  0.16829427083333334,
+                  0.1677517361111111
+                ],
+                "ontology_mean": 0.07895688657407407,
+                "ontology_values": [
+                  0.07845052083333333,
+                  0.0808376736111111,
+                  0.07758246527777778
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.009150752314814813,
+                "any_values": [
+                  0.011176215277777778,
+                  0.009982638888888888,
+                  0.006293402777777778
+                ],
+                "ontology_mean": 0.00831886574074074,
+                "ontology_values": [
+                  0.009982638888888888,
+                  0.009006076388888888,
+                  0.005967881944444444
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.009150752314814813,
+                "any_values": [
+                  0.011176215277777778,
+                  0.009982638888888888,
+                  0.006293402777777778
+                ],
+                "ontology_mean": 0.00831886574074074,
+                "ontology_values": [
+                  0.009982638888888888,
+                  0.009006076388888888,
+                  0.005967881944444444
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 5583,
+          "n_catalogue_active": 9216,
+          "n_catalogue_inactive": 0,
+          "n_features": 9216,
+          "n_network_evidence": 4638,
+          "n_network_only": 659,
+          "n_ontology": 4924,
+          "n_testable": 9216,
+          "rates_all_features": {
+            "any": 0.6057942708333334,
+            "ontology": 0.5342881944444444
+          },
+          "rates_catalogue_active": {
+            "any": 0.6057942708333334,
+            "ontology": 0.5342881944444444
+          },
+          "source_counts": {
+            "GO_BP": 4266,
+            "KEGG": 2955,
+            "Reactome": 4210,
+            "STRING": 4625,
+            "TF_membership": 22,
+            "TRRUST": 173,
+            "TRRUST_pairs": 30
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 0,
+        "name": "full",
+        "sources": [
+          "runs/2b_atlas/feature_catalog_L00.json",
+          "results/annotations/2b/ann_v2_L00.json"
+        ],
+        "status": "complete"
+      },
+      "layer": 0,
+      "legacy": {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": true,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 2747,
+            "terms_by_source": {
+              "GO_BP": 1276,
+              "KEGG": 228,
+              "Reactome": 763,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 2373,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.013671875,
+                "any_values": [
+                  0.013563368055555556,
+                  0.012586805555555556,
+                  0.014865451388888888
+                ],
+                "ontology_mean": 0.013527199074074075,
+                "ontology_values": [
+                  0.013237847222222222,
+                  0.012586805555555556,
+                  0.014756944444444444
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.013671875,
+                "any_values": [
+                  0.013563368055555556,
+                  0.012586805555555556,
+                  0.014865451388888888
+                ],
+                "ontology_mean": 0.013527199074074075,
+                "ontology_values": [
+                  0.013237847222222222,
+                  0.012586805555555556,
+                  0.014756944444444444
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.008680555555555554,
+                "any_values": [
+                  0.009657118055555556,
+                  0.009006076388888888,
+                  0.007378472222222222
+                ],
+                "ontology_mean": 0.008608217592592593,
+                "ontology_values": [
+                  0.009657118055555556,
+                  0.0087890625,
+                  0.007378472222222222
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.008680555555555554,
+                "any_values": [
+                  0.009657118055555556,
+                  0.009006076388888888,
+                  0.007378472222222222
+                ],
+                "ontology_mean": 0.008608217592592593,
+                "ontology_values": [
+                  0.009657118055555556,
+                  0.0087890625,
+                  0.007378472222222222
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 1263,
+          "n_catalogue_active": 9216,
+          "n_catalogue_inactive": 0,
+          "n_features": 9216,
+          "n_network_evidence": 848,
+          "n_network_only": 143,
+          "n_ontology": 1120,
+          "n_testable": 9216,
+          "rates_all_features": {
+            "any": 0.13704427083333334,
+            "ontology": 0.12152777777777778
+          },
+          "rates_catalogue_active": {
+            "any": 0.13704427083333334,
+            "ontology": 0.12152777777777778
+          },
+          "source_counts": {
+            "GO_BP": 925,
+            "KEGG": 605,
+            "Reactome": 742,
+            "STRING": 818,
+            "TF_membership": 18,
+            "TRRUST": 81,
+            "TRRUST_pairs": 19
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 0,
+        "name": "legacy",
+        "sources": [
+          "runs/2b_atlas/feature_catalog_L00.json",
+          "results/annotations/2b_legacy/ann_v2_L00.json"
+        ],
+        "status": "complete"
+      },
+      "status": "complete"
+    },
+    {
+      "full": {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": false,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 101257,
+            "terms_by_source": {
+              "GO_BP": 2762,
+              "KEGG": 308,
+              "Reactome": 1414,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 4590,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.5398582175925927,
+                "any_values": [
+                  0.5368923611111112,
+                  0.5438368055555556,
+                  0.5388454861111112
+                ],
+                "ontology_mean": 0.25614872685185186,
+                "ontology_values": [
+                  0.2532552083333333,
+                  0.2575954861111111,
+                  0.2575954861111111
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.5398582175925927,
+                "any_values": [
+                  0.5368923611111112,
+                  0.5438368055555556,
+                  0.5388454861111112
+                ],
+                "ontology_mean": 0.25614872685185186,
+                "ontology_values": [
+                  0.2532552083333333,
+                  0.2575954861111111,
+                  0.2575954861111111
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.009837962962962963,
+                "any_values": [
+                  0.009982638888888888,
+                  0.008572048611111112,
+                  0.010959201388888888
+                ],
+                "ontology_mean": 0.008897569444444444,
+                "ontology_values": [
+                  0.009114583333333334,
+                  0.007595486111111111,
+                  0.009982638888888888
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.009837962962962963,
+                "any_values": [
+                  0.009982638888888888,
+                  0.008572048611111112,
+                  0.010959201388888888
+                ],
+                "ontology_mean": 0.008897569444444444,
+                "ontology_values": [
+                  0.009114583333333334,
+                  0.007595486111111111,
+                  0.009982638888888888
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 7171,
+          "n_catalogue_active": 9216,
+          "n_catalogue_inactive": 0,
+          "n_features": 9216,
+          "n_network_evidence": 6658,
+          "n_network_only": 1304,
+          "n_ontology": 5867,
+          "n_testable": 9216,
+          "rates_all_features": {
+            "any": 0.7781032986111112,
+            "ontology": 0.6366102430555556
+          },
+          "rates_catalogue_active": {
+            "any": 0.7781032986111112,
+            "ontology": 0.6366102430555556
+          },
+          "source_counts": {
+            "GO_BP": 5104,
+            "KEGG": 3962,
+            "Reactome": 5244,
+            "STRING": 6653,
+            "TF_membership": 24,
+            "TRRUST": 309,
+            "TRRUST_pairs": 39
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 13,
+        "name": "full",
+        "sources": [
+          "runs/2b_atlas/feature_catalog_L13.json",
+          "results/annotations/2b/ann_v2_L13.json"
+        ],
+        "status": "complete"
+      },
+      "layer": 13,
+      "legacy": {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": true,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 2747,
+            "terms_by_source": {
+              "GO_BP": 1276,
+              "KEGG": 228,
+              "Reactome": 763,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 2373,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.009114583333333334,
+                "any_values": [
+                  0.0078125,
+                  0.009548611111111112,
+                  0.009982638888888888
+                ],
+                "ontology_mean": 0.008933738425925925,
+                "ontology_values": [
+                  0.007486979166666667,
+                  0.009440104166666666,
+                  0.009874131944444444
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.009114583333333334,
+                "any_values": [
+                  0.0078125,
+                  0.009548611111111112,
+                  0.009982638888888888
+                ],
+                "ontology_mean": 0.008933738425925925,
+                "ontology_values": [
+                  0.007486979166666667,
+                  0.009440104166666666,
+                  0.009874131944444444
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.007486979166666667,
+                "any_values": [
+                  0.006944444444444444,
+                  0.005967881944444444,
+                  0.009548611111111112
+                ],
+                "ontology_mean": 0.007306134259259259,
+                "ontology_values": [
+                  0.0068359375,
+                  0.005750868055555556,
+                  0.009331597222222222
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.007486979166666667,
+                "any_values": [
+                  0.006944444444444444,
+                  0.005967881944444444,
+                  0.009548611111111112
+                ],
+                "ontology_mean": 0.007306134259259259,
+                "ontology_values": [
+                  0.0068359375,
+                  0.005750868055555556,
+                  0.009331597222222222
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 1308,
+          "n_catalogue_active": 9216,
+          "n_catalogue_inactive": 0,
+          "n_features": 9216,
+          "n_network_evidence": 856,
+          "n_network_only": 130,
+          "n_ontology": 1178,
+          "n_testable": 9216,
+          "rates_all_features": {
+            "any": 0.14192708333333334,
+            "ontology": 0.12782118055555555
+          },
+          "rates_catalogue_active": {
+            "any": 0.14192708333333334,
+            "ontology": 0.12782118055555555
+          },
+          "source_counts": {
+            "GO_BP": 956,
+            "KEGG": 660,
+            "Reactome": 820,
+            "STRING": 821,
+            "TF_membership": 17,
+            "TRRUST": 137,
+            "TRRUST_pairs": 28
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 13,
+        "name": "legacy",
+        "sources": [
+          "runs/2b_atlas/feature_catalog_L13.json",
+          "results/annotations/2b_legacy/ann_v2_L13.json"
+        ],
+        "status": "complete"
+      },
+      "status": "complete"
+    },
+    {
+      "full": {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": false,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 101257,
+            "terms_by_source": {
+              "GO_BP": 2762,
+              "KEGG": 308,
+              "Reactome": 1414,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 4590,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.9478081597222222,
+                "any_values": [
+                  0.9488932291666666,
+                  0.9446614583333334,
+                  0.9498697916666666
+                ],
+                "ontology_mean": 0.8065321180555557,
+                "ontology_values": [
+                  0.8018663194444444,
+                  0.8054470486111112,
+                  0.8122829861111112
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.9478081597222222,
+                "any_values": [
+                  0.9488932291666666,
+                  0.9446614583333334,
+                  0.9498697916666666
+                ],
+                "ontology_mean": 0.8065321180555557,
+                "ontology_values": [
+                  0.8018663194444444,
+                  0.8054470486111112,
+                  0.8122829861111112
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.009946469907407407,
+                "any_values": [
+                  0.008680555555555556,
+                  0.0107421875,
+                  0.010416666666666666
+                ],
+                "ontology_mean": 0.009223090277777778,
+                "ontology_values": [
+                  0.008246527777777778,
+                  0.009657118055555556,
+                  0.009765625
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.009946469907407407,
+                "any_values": [
+                  0.008680555555555556,
+                  0.0107421875,
+                  0.010416666666666666
+                ],
+                "ontology_mean": 0.009223090277777778,
+                "ontology_values": [
+                  0.008246527777777778,
+                  0.009657118055555556,
+                  0.009765625
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 8162,
+          "n_catalogue_active": 9216,
+          "n_catalogue_inactive": 0,
+          "n_features": 9216,
+          "n_network_evidence": 7920,
+          "n_network_only": 1010,
+          "n_ontology": 7152,
+          "n_testable": 9216,
+          "rates_all_features": {
+            "any": 0.8856336805555556,
+            "ontology": 0.7760416666666666
+          },
+          "rates_catalogue_active": {
+            "any": 0.8856336805555556,
+            "ontology": 0.7760416666666666
+          },
+          "source_counts": {
+            "GO_BP": 6573,
+            "KEGG": 5701,
+            "Reactome": 6792,
+            "STRING": 7915,
+            "TF_membership": 17,
+            "TRRUST": 250,
+            "TRRUST_pairs": 35
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 22,
+        "name": "full",
+        "sources": [
+          "runs/2b_atlas/feature_catalog_L22.json",
+          "results/annotations/2b/ann_v2_L22.json"
+        ],
+        "status": "complete"
+      },
+      "layer": 22,
+      "legacy": {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": true,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 2747,
+            "terms_by_source": {
+              "GO_BP": 1276,
+              "KEGG": 228,
+              "Reactome": 763,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 2373,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.004448784722222223,
+                "any_values": [
+                  0.0048828125,
+                  0.004665798611111111,
+                  0.0037977430555555555
+                ],
+                "ontology_mean": 0.004231770833333333,
+                "ontology_values": [
+                  0.004665798611111111,
+                  0.004557291666666667,
+                  0.003472222222222222
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.004448784722222223,
+                "any_values": [
+                  0.0048828125,
+                  0.004665798611111111,
+                  0.0037977430555555555
+                ],
+                "ontology_mean": 0.004231770833333333,
+                "ontology_values": [
+                  0.004665798611111111,
+                  0.004557291666666667,
+                  0.003472222222222222
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.008174189814814816,
+                "any_values": [
+                  0.008572048611111112,
+                  0.007703993055555556,
+                  0.008246527777777778
+                ],
+                "ontology_mean": 0.007957175925925925,
+                "ontology_values": [
+                  0.008355034722222222,
+                  0.007486979166666667,
+                  0.008029513888888888
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.008174189814814816,
+                "any_values": [
+                  0.008572048611111112,
+                  0.007703993055555556,
+                  0.008246527777777778
+                ],
+                "ontology_mean": 0.007957175925925925,
+                "ontology_values": [
+                  0.008355034722222222,
+                  0.007486979166666667,
+                  0.008029513888888888
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 828,
+          "n_catalogue_active": 9216,
+          "n_catalogue_inactive": 0,
+          "n_features": 9216,
+          "n_network_evidence": 603,
+          "n_network_only": 101,
+          "n_ontology": 727,
+          "n_testable": 9216,
+          "rates_all_features": {
+            "any": 0.08984375,
+            "ontology": 0.0788845486111111
+          },
+          "rates_catalogue_active": {
+            "any": 0.08984375,
+            "ontology": 0.0788845486111111
+          },
+          "source_counts": {
+            "GO_BP": 586,
+            "KEGG": 424,
+            "Reactome": 532,
+            "STRING": 588,
+            "TF_membership": 5,
+            "TRRUST": 67,
+            "TRRUST_pairs": 17
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 22,
+        "name": "legacy",
+        "sources": [
+          "runs/2b_atlas/feature_catalog_L22.json",
+          "results/annotations/2b_legacy/ann_v2_L22.json"
+        ],
+        "status": "complete"
+      },
+      "status": "complete"
+    }
+  ],
+  "limitations": [
+    "Random-floor replicates describe the saved three seeded null draws; they are not independent trained models.",
+    "Only saved decisions and metrics are reported; no annotation rescoring, checkpoint loading, or training occurs.",
+    "Pooling/untrained entries remain explicitly pending until their required outputs exist; untrained reconstruction is not inferred."
+  ],
+  "n_complete_sweeps_including_baselines": 12,
+  "peak_process_rss_kib_linux": 926180,
+  "pooling": {
+    "comparison": {
+      "first": {
+        "gene_similarity_matrix_correlation": 0.7449969352697134,
+        "row_cosine_with_mean_pool_mean": 0.8326463103294373,
+        "row_cosine_with_mean_pool_p05": 0.745731770992279,
+        "sae_variance_explained": 0.7189206603891749
+      },
+      "last": {
+        "gene_similarity_matrix_correlation": 0.49565707475219495,
+        "row_cosine_with_mean_pool_mean": 0.7915966510772705,
+        "row_cosine_with_mean_pool_p05": 0.7078512907028198,
+        "sae_variance_explained": 0.5486077966972178
+      },
+      "layer": 13,
+      "mean": {
+        "sae_variance_explained": 0.9256298246926328
+      }
+    },
+    "entries": [
+      {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": false,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 101257,
+            "terms_by_source": {
+              "GO_BP": 2762,
+              "KEGG": 308,
+              "Reactome": 1414,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 4590,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.35434751157407407,
+                "any_values": [
+                  0.3538411458333333,
+                  0.35611979166666663,
+                  0.3530815972222222
+                ],
+                "ontology_mean": 0.22822627314814817,
+                "ontology_values": [
+                  0.22645399305555555,
+                  0.22981770833333334,
+                  0.22840711805555555
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.36816986095452836,
+                "any_values": [
+                  0.3676437429537768,
+                  0.37001127395715894,
+                  0.36685456595264937
+                ],
+                "ontology_mean": 0.23712889891018415,
+                "ontology_values": [
+                  0.23528748590755355,
+                  0.23878241262683203,
+                  0.23731679819616686
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.008969907407407409,
+                "any_values": [
+                  0.008029513888888888,
+                  0.010091145833333334,
+                  0.0087890625
+                ],
+                "ontology_mean": 0.008318865740740743,
+                "ontology_values": [
+                  0.007486979166666667,
+                  0.009440104166666666,
+                  0.008029513888888888
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.00931980458474258,
+                "any_values": [
+                  0.00834272829763247,
+                  0.0104847801578354,
+                  0.009131905298759865
+                ],
+                "ontology_mean": 0.008643367155204812,
+                "ontology_values": [
+                  0.007779030439684329,
+                  0.009808342728297632,
+                  0.00834272829763247
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 5828,
+          "n_catalogue_active": 8870,
+          "n_catalogue_inactive": 346,
+          "n_features": 9216,
+          "n_network_evidence": 5033,
+          "n_network_only": 307,
+          "n_ontology": 5521,
+          "n_testable": 8116,
+          "rates_all_features": {
+            "any": 0.6323784722222222,
+            "ontology": 0.5990668402777778
+          },
+          "rates_catalogue_active": {
+            "any": 0.6570462232243518,
+            "ontology": 0.6224351747463359
+          },
+          "source_counts": {
+            "GO_BP": 5036,
+            "KEGG": 3836,
+            "Reactome": 4960,
+            "STRING": 5026,
+            "TF_membership": 22,
+            "TRRUST": 252,
+            "TRRUST_pairs": 33
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 13,
+        "name": "pool_first",
+        "sources": [
+          "runs/pool_first/feature_catalog_L13.json",
+          "results/annotations/pool_first/ann_v2_L13.json"
+        ],
+        "status": "complete"
+      },
+      {
+        "annotation": {
+          "configuration": {
+            "alpha": 0.05,
+            "legacy_libraries": false,
+            "max_term": 500,
+            "median_set_size": 20.0,
+            "min_overlap": 2,
+            "min_term": 5,
+            "pair_null": "Poisson approximation using universe pair density",
+            "scorer_version": "3-plan-aligned",
+            "string_pairs_in_universe": 101257,
+            "terms_by_source": {
+              "GO_BP": 2762,
+              "KEGG": 308,
+              "Reactome": 1414,
+              "TRRUST": 103
+            },
+            "tests_per_feature": 4590,
+            "trrust_pairs_in_universe": 969,
+            "universe_size": 5662
+          },
+          "floors": {
+            "freq": {
+              "all_features": {
+                "any_mean": 0.4804687500000001,
+                "any_values": [
+                  0.4784071180555556,
+                  0.48828125,
+                  0.4747178819444444
+                ],
+                "ontology_mean": 0.3088469328703704,
+                "ontology_values": [
+                  0.3052300347222222,
+                  0.3111979166666667,
+                  0.3101128472222222
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.491563055062167,
+                "any_values": [
+                  0.4894538188277087,
+                  0.49955595026642985,
+                  0.4856793960923623
+                ],
+                "ontology_mean": 0.3159783895796329,
+                "ontology_values": [
+                  0.3122779751332149,
+                  0.31838365896980464,
+                  0.3172735346358792
+                ]
+              },
+              "n_seeds": 3
+            },
+            "uniform": {
+              "all_features": {
+                "any_mean": 0.008716724537037037,
+                "any_values": [
+                  0.009223090277777778,
+                  0.007921006944444444,
+                  0.009006076388888888
+                ],
+                "ontology_mean": 0.007993344907407407,
+                "ontology_values": [
+                  0.008246527777777778,
+                  0.007161458333333333,
+                  0.008572048611111112
+                ]
+              },
+              "catalogue_active": {
+                "any_mean": 0.008917998815867377,
+                "any_values": [
+                  0.009436056838365897,
+                  0.008103907637655417,
+                  0.009214031971580817
+                ],
+                "ontology_mean": 0.008177915926583778,
+                "ontology_values": [
+                  0.008436944937833037,
+                  0.007326820603907638,
+                  0.008769982238010657
+                ]
+              },
+              "n_seeds": 3
+            }
+          },
+          "n_any": 5057,
+          "n_catalogue_active": 9008,
+          "n_catalogue_inactive": 208,
+          "n_features": 9216,
+          "n_network_evidence": 4664,
+          "n_network_only": 924,
+          "n_ontology": 4133,
+          "n_testable": 8300,
+          "rates_all_features": {
+            "any": 0.5487196180555556,
+            "ontology": 0.4484592013888889
+          },
+          "rates_catalogue_active": {
+            "any": 0.5613898756660746,
+            "ontology": 0.4588143872113677
+          },
+          "source_counts": {
+            "GO_BP": 3521,
+            "KEGG": 2761,
+            "Reactome": 3789,
+            "STRING": 4664,
+            "TF_membership": 6,
+            "TRRUST": 215,
+            "TRRUST_pairs": 25
+          },
+          "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+        },
+        "layer": 13,
+        "name": "pool_last",
+        "sources": [
+          "runs/pool_last/feature_catalog_L13.json",
+          "results/annotations/pool_last/ann_v2_L13.json"
+        ],
+        "status": "complete"
+      }
+    ],
+    "status": "complete"
+  },
+  "reporter_sha256": "0c98eec78fcb7ad9d9a3fe01eebf33d6b6b2dcc2f92d7adbd94b892080b15e5a",
+  "runtime_seconds": 15.298470666166395,
+  "schema": "c2s-sensitivity-report-v1",
+  "sources": {
+    "results/2b_eval_L00.json": {
+      "bytes": 839,
+      "sha256": "a4f1ace68fb57f7ad57a6d19b1418df5b13d080affdb28087ec3818890e1530e"
+    },
+    "results/2b_eval_L13.json": {
+      "bytes": 841,
+      "sha256": "d8c8cb2ec7090c922a872dc3924159914d271f34be0ee678403b6f0425e29b38"
+    },
+    "results/annotations/2b/ann_v2_L00.json": {
+      "bytes": 49904553,
+      "sha256": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452"
+    },
+    "results/annotations/2b/ann_v2_L13.json": {
+      "bytes": 66203659,
+      "sha256": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f"
+    },
+    "results/annotations/2b/ann_v2_L22.json": {
+      "bytes": 104485693,
+      "sha256": "69cf7d4fd9ec029d3e49bd62ecd730e68108217291aff3165c8af39308c3ea92"
+    },
+    "results/annotations/2b_legacy/ann_v2_L00.json": {
+      "bytes": 9214317,
+      "sha256": "b4f0e86720b654dd98505b76c088a8863ee1101bd417c65c6b742c51f4f9c386"
+    },
+    "results/annotations/2b_legacy/ann_v2_L13.json": {
+      "bytes": 9040093,
+      "sha256": "6dde58b732a39f68951e2d425cc3c8c997a339e845a2dee9cd718c9cf70a21fd"
+    },
+    "results/annotations/2b_legacy/ann_v2_L22.json": {
+      "bytes": 6971620,
+      "sha256": "2a638cf5ac17eb7dc78d15535bd14fd283464735f8bd885a68faf01e1f43a4de"
+    },
+    "results/annotations/pool_first/ann_v2_L13.json": {
+      "bytes": 61047042,
+      "sha256": "65668ba725b464a2e7b9a365bba21fe3e3ef919a0529ac820371f12a3f6a149f"
+    },
+    "results/annotations/pool_last/ann_v2_L13.json": {
+      "bytes": 45071664,
+      "sha256": "d490f61428a01d52d7859e0bbe3e581dea19a73a25ac476315641821a9caf805"
+    },
+    "results/annotations/sweep_L00_k128_x4/ann_v2_L00.json": {
+      "bytes": 40111496,
+      "sha256": "0a0319f78acb42342c79b4dec22ff4d17de5dab3c9d733663f81eb910eda2bad"
+    },
+    "results/annotations/sweep_L00_k16_x4/ann_v2_L00.json": {
+      "bytes": 40471222,
+      "sha256": "fb2edc24ad6fc18797e6edfde0c165290c4e7fe6fcf856d211a12389dfc075e3"
+    },
+    "results/annotations/sweep_L00_k64_x4/ann_v2_L00.json": {
+      "bytes": 31402400,
+      "sha256": "18c4b5568f3fe45a3426fc7e43433d35e77624f85e4854de64d78ed944fa6746"
+    },
+    "results/annotations/sweep_L00_k8_x4/ann_v2_L00.json": {
+      "bytes": 16673165,
+      "sha256": "7f822d24727bea259b01a446756b11fdac8f9e3bd4066591f1b4e9b47572c32f"
+    },
+    "results/annotations/sweep_L13_k128_x4/ann_v2_L13.json": {
+      "bytes": 43498943,
+      "sha256": "de9126d36bbe3e0fbdea81bd78d6b753f50cf195596d3ad6d5b1f143e716ffe7"
+    },
+    "results/annotations/sweep_L13_k16_x4/ann_v2_L13.json": {
+      "bytes": 38690334,
+      "sha256": "706a183b8e76f733657431da7e47e5b15b3fd939329834989485375a2c1b99ef"
+    },
+    "results/annotations/sweep_L13_k32_x2/ann_v2_L13.json": {
+      "bytes": 31740877,
+      "sha256": "e7ba106c443b539fe3613d8f5f421e6ac73d390e8155bacecee7971ff9ba5d6c"
+    },
+    "results/annotations/sweep_L13_k32_x8/ann_v2_L13.json": {
+      "bytes": 139781369,
+      "sha256": "927c16aabd413a537a80bc286a9379b5c478b9c12018525b685d8a64ed8de91e"
+    },
+    "results/annotations/sweep_L13_k64_x4/ann_v2_L13.json": {
+      "bytes": 40489244,
+      "sha256": "6bbe1d78ba94e101b2bef0206151a031dad3cfd40f9eb4f0151fc066f214ea6f"
+    },
+    "results/annotations/sweep_L13_k8_x4/ann_v2_L13.json": {
+      "bytes": 14135599,
+      "sha256": "52c2ea40dc07e7053b694211c9073504cdc57c0f4fdff4012a65b1b8fc2d0a67"
+    },
+    "results/annotations/untrained_L00/ann_v2_L00.json": {
+      "bytes": 23969633,
+      "sha256": "bcfa4eec1219ae5953c2f32d375b2cba22c62549d765fb664047aa86523739d9"
+    },
+    "results/annotations/untrained_L13/ann_v2_L13.json": {
+      "bytes": 82162416,
+      "sha256": "8b5b440d960e8777f2c5c61c1ecbd1b19b4534b9c6a9e7917be7a9b5e9ba8a29"
+    },
+    "results/annotations/untrained_L22/ann_v2_L22.json": {
+      "bytes": 105264312,
+      "sha256": "c1d71a1c46cc6b87b73e3105b4957deb7171434337f5f90ff669a9c73f995be6"
+    },
+    "results/pool_comparison.json": {
+      "bytes": 545,
+      "sha256": "b56edec4cef92d24b6e21cb8c6edeb35c206578cefc6ffe03f73f5321dd9e0d0"
+    },
+    "runs/2b_atlas/feature_catalog_L00.json": {
+      "bytes": 26424781,
+      "sha256": "8959a6590974e532d4edacf386a863130728084e0587e2e233af1a1cb683fbc4"
+    },
+    "runs/2b_atlas/feature_catalog_L13.json": {
+      "bytes": 26342432,
+      "sha256": "7f4f6a678816e1b47dcd4352769c4100f022c9a5de3c78e239496a91494e50f4"
+    },
+    "runs/2b_atlas/feature_catalog_L22.json": {
+      "bytes": 26467009,
+      "sha256": "9e2649694bff28952e563495f9b2c1d45e54d4f1be2093b881b16c4dc74dcd14"
+    },
+    "runs/2b_atlas/sae/train_L00.json": {
+      "bytes": 251,
+      "sha256": "cd20a3f48c856d8b03473a9e38f98780c8db1a890e57e269f0639c251170a2f9"
+    },
+    "runs/2b_atlas/sae/train_L13.json": {
+      "bytes": 253,
+      "sha256": "2d4561225c532811e33cce9ec1ad4ada3fa96ea74146e10193b16f79a09dab7b"
+    },
+    "runs/pool_first/feature_catalog_L13.json": {
+      "bytes": 19741593,
+      "sha256": "d6f0e129807e2a6f6bb4b7e4eefb77a6ddf0663f8e6e5e981e96348a8240c66b"
+    },
+    "runs/pool_last/feature_catalog_L13.json": {
+      "bytes": 19127224,
+      "sha256": "6b91816454fa076437793a712d12402af591ff147b3d56f9228d642606226484"
+    },
+    "runs/sweep_L00_k128_x4/feature_catalog_L00.json": {
+      "bytes": 26531782,
+      "sha256": "5aca71a39e47e59501884cac7d724f79bcb041aeaa0515087b73ef2dc2cf3338"
+    },
+    "runs/sweep_L00_k128_x4/sae/train_L00.json": {
+      "bytes": 1223,
+      "sha256": "5e3fe72b590fb7ef85625d38dc82d18067e0635df3d8a29fc742b8d750d2eace"
+    },
+    "runs/sweep_L00_k16_x4/feature_catalog_L00.json": {
+      "bytes": 20234675,
+      "sha256": "56865377cfb10b9b0acc5a061703d1d14e00a4b94ab225b724f5c23072b2604e"
+    },
+    "runs/sweep_L00_k16_x4/sae/train_L00.json": {
+      "bytes": 1264,
+      "sha256": "4097bbd66afff596c73555b9518829dbd0cc2250f1cec1af1dd8a918d7c8a75a"
+    },
+    "runs/sweep_L00_k64_x4/feature_catalog_L00.json": {
+      "bytes": 26525448,
+      "sha256": "44e084c68b1af4634e8540ea3be531fdebfd654f5e8210f3581fda10f9cadd53"
+    },
+    "runs/sweep_L00_k64_x4/sae/train_L00.json": {
+      "bytes": 1221,
+      "sha256": "6c3b49f790d091d62985f4fb5fefba24cb7550abdb758f7d7a87dd846177138b"
+    },
+    "runs/sweep_L00_k8_x4/feature_catalog_L00.json": {
+      "bytes": 10311591,
+      "sha256": "d46a6a3120c748b8e6dac996402c1d10dfb789a5e7efc6e4105da2ab53d788ce"
+    },
+    "runs/sweep_L00_k8_x4/sae/train_L00.json": {
+      "bytes": 1265,
+      "sha256": "c835b3a858405ce043bfcf7ad6196092cd0ab3656698151104320c8f08596c82"
+    },
+    "runs/sweep_L13_k128_x4/feature_catalog_L13.json": {
+      "bytes": 26517689,
+      "sha256": "52e5c436d9a4c488f25f657b0474502eed7f0ffe5e988b533abf29e8dbc2d1a9"
+    },
+    "runs/sweep_L13_k128_x4/sae/train_L13.json": {
+      "bytes": 1214,
+      "sha256": "74ee1abce3d204867acea564baa3624bc9152df7489a9ff92f0645093afb3feb"
+    },
+    "runs/sweep_L13_k16_x4/feature_catalog_L13.json": {
+      "bytes": 16392463,
+      "sha256": "1bb8e6701f85a49ae47e5a032a38eaabb426114f0fd23a6d98b91db968f7ef5b"
+    },
+    "runs/sweep_L13_k16_x4/sae/train_L13.json": {
+      "bytes": 1256,
+      "sha256": "99fe4146db1d466f01109033b65c1f0cc14ce7f07ef7b1c819c6f2f338ea6022"
+    },
+    "runs/sweep_L13_k32_x2/feature_catalog_L13.json": {
+      "bytes": 13233441,
+      "sha256": "f3dbc6d95db38d17de99c508512edb3fdeb8cea68c7f3d90306f43c06e43df51"
+    },
+    "runs/sweep_L13_k32_x2/sae/train_L13.json": {
+      "bytes": 1238,
+      "sha256": "0cac03d264ea475327cdd87a06362942525b536c3e65b8257c7609357e640416"
+    },
+    "runs/sweep_L13_k32_x8/feature_catalog_L13.json": {
+      "bytes": 52070494,
+      "sha256": "4e9ab5c3ad8248ceb555a8a6799965227e334c72e3294de5db4971fd85d2583a"
+    },
+    "runs/sweep_L13_k32_x8/sae/train_L13.json": {
+      "bytes": 1251,
+      "sha256": "9a27853268ed246527505da785d485c16e6327e31e349a30c9b11dae073cbe9b"
+    },
+    "runs/sweep_L13_k64_x4/feature_catalog_L13.json": {
+      "bytes": 26487676,
+      "sha256": "1e35606a19ea0f4da32eb56ec53c8fcfb82d58621fc91f97fda7f6e07940eab6"
+    },
+    "runs/sweep_L13_k64_x4/sae/train_L13.json": {
+      "bytes": 1209,
+      "sha256": "6e993669a158957a84bdad46c69d0c741971a1bf607108acffd7b3aac9845559"
+    },
+    "runs/sweep_L13_k8_x4/feature_catalog_L13.json": {
+      "bytes": 8131927,
+      "sha256": "a317072d16cf0b0c7dad0bc9bc5d2541cfbb79ff1f03c5036a4520e4d3beb817"
+    },
+    "runs/sweep_L13_k8_x4/sae/train_L13.json": {
+      "bytes": 1260,
+      "sha256": "dd306fb33ac6b5bbd2b20667b02cee1989f2ad6bb9274e88a7b96f0935474019"
+    },
+    "runs/untrained_L00/feature_catalog_L00.json": {
+      "bytes": 20517316,
+      "sha256": "8690258d4e655a5daffa766116086abb6423a50f1a7a4d889f2f25901ff4e7c4"
+    },
+    "runs/untrained_L00/sae/untrained_L00.json": {
+      "bytes": 153,
+      "sha256": "0c535bf40613eff66c2874e463fa147ab6382eb2c44ffcd99c2e2ff0de2cf9ca"
+    },
+    "runs/untrained_L13/feature_catalog_L13.json": {
+      "bytes": 26330755,
+      "sha256": "b534bc8af3ed72f50fa3315b11f1d7724eaeb194f58a750254a0ea0d6ca38a22"
+    },
+    "runs/untrained_L13/sae/untrained_L13.json": {
+      "bytes": 154,
+      "sha256": "95a07f3ba7bffeefa322145c127d4e24c9d4cdbd58a564057178b2b9e79aad18"
+    },
+    "runs/untrained_L22/feature_catalog_L22.json": {
+      "bytes": 26371433,
+      "sha256": "ca4a0d35758bf140dfd82d3a60baeed88c87516cba1aaa90210aaa7910bd208a"
+    },
+    "runs/untrained_L22/sae/untrained_L22.json": {
+      "bytes": 154,
+      "sha256": "a9198e1ba0da3e471c07e9350ed54c11f659cc7cb9f87e47e6788bf9c96120a7"
+    }
+  },
+  "sweeps": [
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 4.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.05099826388888888,
+              "any_values": [
+                0.05284288194444445,
+                0.052300347222222224,
+                0.0478515625
+              ],
+              "ontology_mean": 0.029875578703703706,
+              "ontology_values": [
+                0.030490451388888888,
+                0.031575520833333336,
+                0.027560763888888888
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.05382501145213009,
+              "any_values": [
+                0.05577187356848374,
+                0.05519926706367384,
+                0.05050389372423271
+              ],
+              "ontology_mean": 0.031531531531531536,
+              "ontology_values": [
+                0.03218048557031608,
+                0.03332569857993587,
+                0.029088410444342648
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.006257233796296297,
+              "any_values": [
+                0.006293402777777778,
+                0.007486979166666667,
+                0.004991319444444444
+              ],
+              "ontology_mean": 0.006112557870370371,
+              "ontology_values": [
+                0.006076388888888889,
+                0.007378472222222222,
+                0.0048828125
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.0066040616888074525,
+              "any_values": [
+                0.006642235455794778,
+                0.007901969766376546,
+                0.005267979844251031
+              ],
+              "ontology_mean": 0.006451366620858146,
+              "ontology_values": [
+                0.00641319285387082,
+                0.007787448465414567,
+                0.005153458543289051
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 1901,
+        "n_catalogue_active": 8732,
+        "n_catalogue_inactive": 484,
+        "n_features": 9216,
+        "n_network_evidence": 1323,
+        "n_network_only": 132,
+        "n_ontology": 1769,
+        "n_testable": 6509,
+        "rates_all_features": {
+          "any": 0.2062717013888889,
+          "ontology": 0.1919487847222222
+        },
+        "rates_catalogue_active": {
+          "any": 0.21770499312872194,
+          "ontology": 0.20258818140174073
+        },
+        "source_counts": {
+          "GO_BP": 1562,
+          "KEGG": 1033,
+          "Reactome": 1448,
+          "STRING": 1321,
+          "TF_membership": 12,
+          "TRRUST": 64,
+          "TRRUST_pairs": 10
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 0,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 484,
+          "dead_frac_all_rows": 0.05251736111111111,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            4.8828125e-06,
+            2.9296875000000002e-05,
+            0.001891764322916673,
+            0.01274555664062502
+          ],
+          "fraction_variance_unexplained_all_rows": 0.022864353062012368,
+          "mean_active_per_position": 8.0,
+          "share_features_firing_gt_10pct": 0.0006510416666666666,
+          "share_features_firing_lt_1e-4": 0.7455512152777778
+        },
+        "heldout_inactive": 4021,
+        "heldout_inactive_fraction": 0.4363064236111111,
+        "mean_decoder_cos": 0.017503786832094193,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 8,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9771297962560539
+      },
+      "name": "sweep_L00_k8_x4",
+      "sources": [
+        "runs/sweep_L00_k8_x4/feature_catalog_L00.json",
+        "results/annotations/sweep_L00_k8_x4/ann_v2_L00.json",
+        "runs/sweep_L00_k8_x4/sae/train_L00.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 17.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.2228732638888889,
+              "any_values": [
+                0.21668836805555555,
+                0.2271050347222222,
+                0.2248263888888889
+              ],
+              "ontology_mean": 0.11378761574074076,
+              "ontology_values": [
+                0.11295572916666667,
+                0.11284722222222222,
+                0.11555989583333333
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.22297003907946156,
+              "any_values": [
+                0.21678245766391663,
+                0.22720364741641338,
+                0.22492401215805471
+              ],
+              "ontology_mean": 0.11383702417137069,
+              "ontology_values": [
+                0.11300477637863657,
+                0.11289622231871473,
+                0.11561007381676075
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.008825231481481483,
+              "any_values": [
+                0.0087890625,
+                0.0087890625,
+                0.008897569444444444
+              ],
+              "ontology_mean": 0.008463541666666666,
+              "ontology_values": [
+                0.008246527777777778,
+                0.008680555555555556,
+                0.008463541666666666
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.008829063540309741,
+              "any_values": [
+                0.008792878853669127,
+                0.008792878853669127,
+                0.008901432913590968
+              ],
+              "ontology_mean": 0.008467216673903604,
+              "ontology_values": [
+                0.008250108554059922,
+                0.008684324793747287,
+                0.008467216673903604
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 4623,
+        "n_catalogue_active": 9212,
+        "n_catalogue_inactive": 4,
+        "n_features": 9216,
+        "n_network_evidence": 3870,
+        "n_network_only": 578,
+        "n_ontology": 4045,
+        "n_testable": 9077,
+        "rates_all_features": {
+          "any": 0.5016276041666666,
+          "ontology": 0.4389105902777778
+        },
+        "rates_catalogue_active": {
+          "any": 0.5018454190186713,
+          "ontology": 0.43910117238384716
+        },
+        "source_counts": {
+          "GO_BP": 3564,
+          "KEGG": 2611,
+          "Reactome": 3508,
+          "STRING": 3863,
+          "TF_membership": 11,
+          "TRRUST": 128,
+          "TRRUST_pairs": 16
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 0,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 4,
+          "dead_frac_all_rows": 0.00043402777777777775,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            6.510416666666667e-06,
+            3.092447916666667e-05,
+            0.00013671875,
+            0.003944498697916664,
+            0.021570279947916476
+          ],
+          "fraction_variance_unexplained_all_rows": 0.010727427214899535,
+          "mean_active_per_position": 16.0,
+          "share_features_firing_gt_10pct": 0.001736111111111111,
+          "share_features_firing_lt_1e-4": 0.3947482638888889
+        },
+        "heldout_inactive": 1000,
+        "heldout_inactive_fraction": 0.10850694444444445,
+        "mean_decoder_cos": 0.01807638257741928,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 16,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9890151574716645
+      },
+      "name": "sweep_L00_k16_x4",
+      "sources": [
+        "runs/sweep_L00_k16_x4/feature_catalog_L00.json",
+        "results/annotations/sweep_L00_k16_x4/ann_v2_L00.json",
+        "runs/sweep_L00_k16_x4/sae/train_L00.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.1688006365740741,
+              "any_values": [
+                0.1703559027777778,
+                0.16829427083333334,
+                0.1677517361111111
+              ],
+              "ontology_mean": 0.07895688657407407,
+              "ontology_values": [
+                0.07845052083333333,
+                0.0808376736111111,
+                0.07758246527777778
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.1688006365740741,
+              "any_values": [
+                0.1703559027777778,
+                0.16829427083333334,
+                0.1677517361111111
+              ],
+              "ontology_mean": 0.07895688657407407,
+              "ontology_values": [
+                0.07845052083333333,
+                0.0808376736111111,
+                0.07758246527777778
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009150752314814813,
+              "any_values": [
+                0.011176215277777778,
+                0.009982638888888888,
+                0.006293402777777778
+              ],
+              "ontology_mean": 0.00831886574074074,
+              "ontology_values": [
+                0.009982638888888888,
+                0.009006076388888888,
+                0.005967881944444444
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.009150752314814813,
+              "any_values": [
+                0.011176215277777778,
+                0.009982638888888888,
+                0.006293402777777778
+              ],
+              "ontology_mean": 0.00831886574074074,
+              "ontology_values": [
+                0.009982638888888888,
+                0.009006076388888888,
+                0.005967881944444444
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 5583,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 4638,
+        "n_network_only": 659,
+        "n_ontology": 4924,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.6057942708333334,
+          "ontology": 0.5342881944444444
+        },
+        "rates_catalogue_active": {
+          "any": 0.6057942708333334,
+          "ontology": 0.5342881944444444
+        },
+        "source_counts": {
+          "GO_BP": 4266,
+          "KEGG": 2955,
+          "Reactome": 4210,
+          "STRING": 4625,
+          "TF_membership": 22,
+          "TRRUST": 173,
+          "TRRUST_pairs": 30
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 0,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "fresh_2b_evaluation",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            8.138020833333334e-05,
+            0.00020345052083333334,
+            0.00100341796875,
+            0.006986490885416667,
+            0.034193196614583574
+          ],
+          "fraction_variance_unexplained_all_rows": 0.006768737868851376,
+          "mean_active_per_position": 32.0,
+          "share_features_firing_gt_10pct": 0.002170138888888889,
+          "share_features_firing_lt_1e-4": 0.018229166666666668
+        },
+        "heldout_inactive": 24,
+        "heldout_inactive_fraction": 0.0026041666666666665,
+        "mean_decoder_cos": 0.018557002767920494,
+        "training_configuration": {
+          "batch_size": null,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 32,
+          "lr": null,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": null
+        },
+        "variance_explained": 0.9930632926817315
+      },
+      "name": "sweep_L00_k32_x4",
+      "sources": [
+        "runs/2b_atlas/feature_catalog_L00.json",
+        "results/annotations/2b/ann_v2_L00.json",
+        "runs/2b_atlas/sae/train_L00.json",
+        "results/2b_eval_L00.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.014793113425925923,
+              "any_values": [
+                0.013780381944444444,
+                0.015407986111111112,
+                0.015190972222222222
+              ],
+              "ontology_mean": 0.014431423611111112,
+              "ontology_values": [
+                0.013346354166666666,
+                0.015082465277777778,
+                0.014865451388888888
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.014793113425925925,
+              "any_values": [
+                0.013780381944444444,
+                0.015407986111111112,
+                0.015190972222222222
+              ],
+              "ontology_mean": 0.01443142361111111,
+              "ontology_values": [
+                0.013346354166666666,
+                0.015082465277777778,
+                0.014865451388888888
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.00882523148148148,
+              "any_values": [
+                0.009114583333333334,
+                0.007703993055555556,
+                0.009657118055555556
+              ],
+              "ontology_mean": 0.008246527777777778,
+              "ontology_values": [
+                0.008572048611111112,
+                0.007269965277777778,
+                0.008897569444444444
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.00882523148148148,
+              "any_values": [
+                0.009114583333333334,
+                0.007703993055555556,
+                0.009657118055555556
+              ],
+              "ontology_mean": 0.008246527777777778,
+              "ontology_values": [
+                0.008572048611111112,
+                0.007269965277777778,
+                0.008897569444444444
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 4331,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 2873,
+        "n_network_only": 197,
+        "n_ontology": 4134,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.4699435763888889,
+          "ontology": 0.4485677083333333
+        },
+        "rates_catalogue_active": {
+          "any": 0.4699435763888889,
+          "ontology": 0.4485677083333333
+        },
+        "source_counts": {
+          "GO_BP": 3721,
+          "KEGG": 2253,
+          "Reactome": 3193,
+          "STRING": 2843,
+          "TF_membership": 45,
+          "TRRUST": 204,
+          "TRRUST_pairs": 63
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 0,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            0.0005682779947916666,
+            0.0013777669270833336,
+            0.004081217447916667,
+            0.011807454427083334,
+            0.06056998697916675
+          ],
+          "fraction_variance_unexplained_all_rows": 0.00601772245514353,
+          "mean_active_per_position": 64.0,
+          "share_features_firing_gt_10pct": 0.004231770833333333,
+          "share_features_firing_lt_1e-4": 0.0
+        },
+        "heldout_inactive": 0,
+        "heldout_inactive_fraction": 0.0,
+        "mean_decoder_cos": 0.019459184259176254,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 64,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9937889532897825
+      },
+      "name": "sweep_L00_k64_x4",
+      "sources": [
+        "runs/sweep_L00_k64_x4/feature_catalog_L00.json",
+        "results/annotations/sweep_L00_k64_x4/ann_v2_L00.json",
+        "runs/sweep_L00_k64_x4/sae/train_L00.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.014105902777777778,
+              "any_values": [
+                0.013888888888888888,
+                0.012912326388888888,
+                0.015516493055555556
+              ],
+              "ontology_mean": 0.013599537037037037,
+              "ontology_values": [
+                0.012912326388888888,
+                0.012803819444444444,
+                0.015082465277777778
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.014105902777777776,
+              "any_values": [
+                0.013888888888888888,
+                0.012912326388888888,
+                0.015516493055555556
+              ],
+              "ontology_mean": 0.013599537037037037,
+              "ontology_values": [
+                0.012912326388888888,
+                0.012803819444444444,
+                0.015082465277777778
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.010054976851851851,
+              "any_values": [
+                0.009114583333333334,
+                0.009440104166666666,
+                0.011610243055555556
+              ],
+              "ontology_mean": 0.009150752314814815,
+              "ontology_values": [
+                0.008572048611111112,
+                0.008246527777777778,
+                0.010633680555555556
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.010054976851851851,
+              "any_values": [
+                0.009114583333333334,
+                0.009440104166666666,
+                0.011610243055555556
+              ],
+              "ontology_mean": 0.009150752314814815,
+              "ontology_values": [
+                0.008572048611111112,
+                0.008246527777777778,
+                0.010633680555555556
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 5428,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 3728,
+        "n_network_only": 228,
+        "n_ontology": 5200,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.5889756944444444,
+          "ontology": 0.5642361111111112
+        },
+        "rates_catalogue_active": {
+          "any": 0.5889756944444444,
+          "ontology": 0.5642361111111112
+        },
+        "source_counts": {
+          "GO_BP": 4769,
+          "KEGG": 2888,
+          "Reactome": 4088,
+          "STRING": 3688,
+          "TF_membership": 63,
+          "TRRUST": 259,
+          "TRRUST_pairs": 96
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 0,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            0.003229899088541667,
+            0.005564778645833334,
+            0.010521647135416666,
+            0.020765787760416668,
+            0.08437638346354182
+          ],
+          "fraction_variance_unexplained_all_rows": 0.0062622689585405174,
+          "mean_active_per_position": 128.0,
+          "share_features_firing_gt_10pct": 0.007486979166666667,
+          "share_features_firing_lt_1e-4": 0.0
+        },
+        "heldout_inactive": 0,
+        "heldout_inactive_fraction": 0.0,
+        "mean_decoder_cos": 0.019381562247872353,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 128,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9934897583568996
+      },
+      "name": "sweep_L00_k128_x4",
+      "sources": [
+        "runs/sweep_L00_k128_x4/feature_catalog_L00.json",
+        "results/annotations/sweep_L00_k128_x4/ann_v2_L00.json",
+        "runs/sweep_L00_k128_x4/sae/train_L00.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 3.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.06394675925925926,
+              "any_values": [
+                0.06532118055555555,
+                0.06391059027777778,
+                0.06260850694444445
+              ],
+              "ontology_mean": 0.035698784722222224,
+              "ontology_values": [
+                0.03689236111111111,
+                0.0361328125,
+                0.03407118055555555
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.07259587747392626,
+              "any_values": [
+                0.07415619610741563,
+                0.07255481645725548,
+                0.07107661985710766
+              ],
+              "ontology_mean": 0.04052722345405272,
+              "ontology_values": [
+                0.04188223700418822,
+                0.041019955654102,
+                0.03867947770386795
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.0047019675925925935,
+              "any_values": [
+                0.005099826388888889,
+                0.005099826388888889,
+                0.00390625
+              ],
+              "ontology_mean": 0.004593460648148149,
+              "ontology_values": [
+                0.0048828125,
+                0.005099826388888889,
+                0.0037977430555555555
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.005337932167200461,
+              "any_values": [
+                0.005789603350578961,
+                0.005789603350578961,
+                0.004434589800443459
+              ],
+              "ontology_mean": 0.005214749117188142,
+              "ontology_values": [
+                0.005543237250554324,
+                0.005789603350578961,
+                0.004311406750431141
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 1474,
+        "n_catalogue_active": 8118,
+        "n_catalogue_inactive": 1098,
+        "n_features": 9216,
+        "n_network_evidence": 1157,
+        "n_network_only": 109,
+        "n_ontology": 1365,
+        "n_testable": 4303,
+        "rates_all_features": {
+          "any": 0.1599392361111111,
+          "ontology": 0.14811197916666666
+        },
+        "rates_catalogue_active": {
+          "any": 0.18157181571815717,
+          "ontology": 0.1681448632668145
+        },
+        "source_counts": {
+          "GO_BP": 1204,
+          "KEGG": 894,
+          "Reactome": 1150,
+          "STRING": 1156,
+          "TF_membership": 7,
+          "TRRUST": 81,
+          "TRRUST_pairs": 9
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 1098,
+          "dead_frac_all_rows": 0.119140625,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            1.6276041666666668e-06,
+            1.6276041666666668e-06,
+            6.510416666666667e-06,
+            0.0021529947916666685,
+            0.017540592447916666
+          ],
+          "fraction_variance_unexplained_all_rows": 0.13994590923766995,
+          "mean_active_per_position": 8.0,
+          "share_features_firing_gt_10pct": 0.0008680555555555555,
+          "share_features_firing_lt_1e-4": 0.7565104166666666
+        },
+        "heldout_inactive": 6641,
+        "heldout_inactive_fraction": 0.7205946180555556,
+        "mean_decoder_cos": 0.017768925055861473,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 8,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.8601161750198412
+      },
+      "name": "sweep_L13_k8_x4",
+      "sources": [
+        "runs/sweep_L13_k8_x4/feature_catalog_L13.json",
+        "results/annotations/sweep_L13_k8_x4/ann_v2_L13.json",
+        "runs/sweep_L13_k8_x4/sae/train_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 10.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.23061342592592593,
+              "any_values": [
+                0.2318793402777778,
+                0.2282986111111111,
+                0.2316623263888889
+              ],
+              "ontology_mean": 0.12445746527777778,
+              "ontology_values": [
+                0.12803819444444445,
+                0.1203342013888889,
+                0.125
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.23103960575424867,
+              "any_values": [
+                0.2323078595499511,
+                0.22872051309924993,
+                0.23209044461354494
+              ],
+              "ontology_mean": 0.12468746602891619,
+              "ontology_values": [
+                0.12827481247961736,
+                0.1205565822371997,
+                0.1252310033699315
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.007740162037037037,
+              "any_values": [
+                0.007378472222222222,
+                0.008463541666666666,
+                0.007378472222222222
+              ],
+              "ontology_mean": 0.0074508101851851844,
+              "ontology_values": [
+                0.007161458333333333,
+                0.008029513888888888,
+                0.007161458333333333
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.0077544660651520094,
+              "any_values": [
+                0.007392107837808457,
+                0.008479182519839113,
+                0.007392107837808457
+              ],
+              "ontology_mean": 0.007464579483277167,
+              "ontology_values": [
+                0.007174692901402326,
+                0.00804435264702685,
+                0.007174692901402326
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 4208,
+        "n_catalogue_active": 9199,
+        "n_catalogue_inactive": 17,
+        "n_features": 9216,
+        "n_network_evidence": 3615,
+        "n_network_only": 602,
+        "n_ontology": 3606,
+        "n_testable": 8963,
+        "rates_all_features": {
+          "any": 0.4565972222222222,
+          "ontology": 0.3912760416666667
+        },
+        "rates_catalogue_active": {
+          "any": 0.45744102619849986,
+          "ontology": 0.39199913034025435
+        },
+        "source_counts": {
+          "GO_BP": 3197,
+          "KEGG": 2367,
+          "Reactome": 3192,
+          "STRING": 3610,
+          "TF_membership": 18,
+          "TRRUST": 184,
+          "TRRUST_pairs": 22
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 17,
+          "dead_frac_all_rows": 0.0018446180555555555,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            3.2552083333333335e-06,
+            9.765625e-06,
+            2.604166666666667e-05,
+            0.003971679687500002,
+            0.025222265625000236
+          ],
+          "fraction_variance_unexplained_all_rows": 0.09927048825943702,
+          "mean_active_per_position": 16.0,
+          "share_features_firing_gt_10pct": 0.001736111111111111,
+          "share_features_firing_lt_1e-4": 0.7542317708333334
+        },
+        "heldout_inactive": 3071,
+        "heldout_inactive_fraction": 0.3332248263888889,
+        "mean_decoder_cos": 0.0187960434705019,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 16,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9003113830281853
+      },
+      "name": "sweep_L13_k16_x4",
+      "sources": [
+        "runs/sweep_L13_k16_x4/feature_catalog_L13.json",
+        "results/annotations/sweep_L13_k16_x4/ann_v2_L13.json",
+        "runs/sweep_L13_k16_x4/sae/train_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.5398582175925927,
+              "any_values": [
+                0.5368923611111112,
+                0.5438368055555556,
+                0.5388454861111112
+              ],
+              "ontology_mean": 0.25614872685185186,
+              "ontology_values": [
+                0.2532552083333333,
+                0.2575954861111111,
+                0.2575954861111111
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.5398582175925927,
+              "any_values": [
+                0.5368923611111112,
+                0.5438368055555556,
+                0.5388454861111112
+              ],
+              "ontology_mean": 0.25614872685185186,
+              "ontology_values": [
+                0.2532552083333333,
+                0.2575954861111111,
+                0.2575954861111111
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009837962962962963,
+              "any_values": [
+                0.009982638888888888,
+                0.008572048611111112,
+                0.010959201388888888
+              ],
+              "ontology_mean": 0.008897569444444444,
+              "ontology_values": [
+                0.009114583333333334,
+                0.007595486111111111,
+                0.009982638888888888
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.009837962962962963,
+              "any_values": [
+                0.009982638888888888,
+                0.008572048611111112,
+                0.010959201388888888
+              ],
+              "ontology_mean": 0.008897569444444444,
+              "ontology_values": [
+                0.009114583333333334,
+                0.007595486111111111,
+                0.009982638888888888
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 7171,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 6658,
+        "n_network_only": 1304,
+        "n_ontology": 5867,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.7781032986111112,
+          "ontology": 0.6366102430555556
+        },
+        "rates_catalogue_active": {
+          "any": 0.7781032986111112,
+          "ontology": 0.6366102430555556
+        },
+        "source_counts": {
+          "GO_BP": 5104,
+          "KEGG": 3962,
+          "Reactome": 5244,
+          "STRING": 6653,
+          "TF_membership": 24,
+          "TRRUST": 309,
+          "TRRUST_pairs": 39
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "fresh_2b_evaluation",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            3.7679036458333344e-05,
+            6.510416666666667e-05,
+            0.00016438802083333333,
+            0.00689697265625,
+            0.04606152343750039
+          ],
+          "fraction_variance_unexplained_all_rows": 0.07438339562521504,
+          "mean_active_per_position": 32.0,
+          "share_features_firing_gt_10pct": 0.0037977430555555555,
+          "share_features_firing_lt_1e-4": 0.3090277777777778
+        },
+        "heldout_inactive": 158,
+        "heldout_inactive_fraction": 0.017144097222222224,
+        "mean_decoder_cos": 0.020548304542899132,
+        "training_configuration": {
+          "batch_size": null,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 32,
+          "lr": null,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": null
+        },
+        "variance_explained": 0.9246504624954273
+      },
+      "name": "sweep_L13_k32_x4",
+      "sources": [
+        "runs/2b_atlas/feature_catalog_L13.json",
+        "results/annotations/2b/ann_v2_L13.json",
+        "runs/2b_atlas/sae/train_L13.json",
+        "results/2b_eval_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.15339265046296294,
+              "any_values": [
+                0.1548394097222222,
+                0.1509331597222222,
+                0.15440538194444445
+              ],
+              "ontology_mean": 0.05754484953703703,
+              "ontology_values": [
+                0.05837673611111111,
+                0.057291666666666664,
+                0.056966145833333336
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.15339265046296294,
+              "any_values": [
+                0.1548394097222222,
+                0.1509331597222222,
+                0.15440538194444445
+              ],
+              "ontology_mean": 0.057544849537037035,
+              "ontology_values": [
+                0.05837673611111111,
+                0.057291666666666664,
+                0.056966145833333336
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.010923032407407407,
+              "any_values": [
+                0.009114583333333334,
+                0.012152777777777778,
+                0.011501736111111112
+              ],
+              "ontology_mean": 0.00972945601851852,
+              "ontology_values": [
+                0.008572048611111112,
+                0.010850694444444444,
+                0.009765625
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.010923032407407407,
+              "any_values": [
+                0.009114583333333334,
+                0.012152777777777778,
+                0.011501736111111112
+              ],
+              "ontology_mean": 0.00972945601851852,
+              "ontology_values": [
+                0.008572048611111112,
+                0.010850694444444444,
+                0.009765625
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 5795,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 4902,
+        "n_network_only": 1158,
+        "n_ontology": 4637,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.6287977430555556,
+          "ontology": 0.5031467013888888
+        },
+        "rates_catalogue_active": {
+          "any": 0.6287977430555556,
+          "ontology": 0.5031467013888888
+        },
+        "source_counts": {
+          "GO_BP": 4019,
+          "KEGG": 2738,
+          "Reactome": 3855,
+          "STRING": 4888,
+          "TF_membership": 40,
+          "TRRUST": 313,
+          "TRRUST_pairs": 57
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            0.0003173828125,
+            0.00047688802083333334,
+            0.0028019205729166666,
+            0.012106119791666668,
+            0.08376888020833352
+          ],
+          "fraction_variance_unexplained_all_rows": 0.061771284592463775,
+          "mean_active_per_position": 64.0,
+          "share_features_firing_gt_10pct": 0.008246527777777778,
+          "share_features_firing_lt_1e-4": 0.0
+        },
+        "heldout_inactive": 0,
+        "heldout_inactive_fraction": 0.0,
+        "mean_decoder_cos": 0.021843599155545235,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 64,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9371167980555406
+      },
+      "name": "sweep_L13_k64_x4",
+      "sources": [
+        "runs/sweep_L13_k64_x4/feature_catalog_L13.json",
+        "results/annotations/sweep_L13_k64_x4/ann_v2_L13.json",
+        "runs/sweep_L13_k64_x4/sae/train_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.025462962962962965,
+              "any_values": [
+                0.027560763888888888,
+                0.025716145833333332,
+                0.023111979166666668
+              ],
+              "ontology_mean": 0.02043547453703704,
+              "ontology_values": [
+                0.023003472222222224,
+                0.020290798611111112,
+                0.018012152777777776
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.025462962962962965,
+              "any_values": [
+                0.027560763888888888,
+                0.025716145833333332,
+                0.023111979166666668
+              ],
+              "ontology_mean": 0.02043547453703704,
+              "ontology_values": [
+                0.023003472222222224,
+                0.020290798611111112,
+                0.018012152777777776
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009367766203703705,
+              "any_values": [
+                0.009114583333333334,
+                0.009657118055555556,
+                0.009331597222222222
+              ],
+              "ontology_mean": 0.008680555555555556,
+              "ontology_values": [
+                0.008572048611111112,
+                0.0087890625,
+                0.008680555555555556
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.009367766203703705,
+              "any_values": [
+                0.009114583333333334,
+                0.009657118055555556,
+                0.009331597222222222
+              ],
+              "ontology_mean": 0.008680555555555556,
+              "ontology_values": [
+                0.008572048611111112,
+                0.0087890625,
+                0.008680555555555556
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 5153,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 3839,
+        "n_network_only": 243,
+        "n_ontology": 4910,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.5591362847222222,
+          "ontology": 0.5327690972222222
+        },
+        "rates_catalogue_active": {
+          "any": 0.5591362847222222,
+          "ontology": 0.5327690972222222
+        },
+        "source_counts": {
+          "GO_BP": 4469,
+          "KEGG": 3086,
+          "Reactome": 3960,
+          "STRING": 3816,
+          "TF_membership": 66,
+          "TRRUST": 393,
+          "TRRUST_pairs": 104
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            0.0019510904947916668,
+            0.0031892903645833336,
+            0.007652180989583333,
+            0.02239664713541667,
+            0.15587125651041675
+          ],
+          "fraction_variance_unexplained_all_rows": 0.05637436284853872,
+          "mean_active_per_position": 128.0,
+          "share_features_firing_gt_10pct": 0.015842013888888888,
+          "share_features_firing_lt_1e-4": 0.0
+        },
+        "heldout_inactive": 0,
+        "heldout_inactive_fraction": 0.0,
+        "mean_decoder_cos": 0.022301066666841507,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 128,
+          "lr": 0.0003,
+          "n_features": 9216,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9423529108982872
+      },
+      "name": "sweep_L13_k128_x4",
+      "sources": [
+        "runs/sweep_L13_k128_x4/feature_catalog_L13.json",
+        "results/annotations/sweep_L13_k128_x4/ann_v2_L13.json",
+        "runs/sweep_L13_k128_x4/sae/train_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.34396701388888884,
+              "any_values": [
+                0.3444010416666667,
+                0.3441840277777778,
+                0.3433159722222222
+              ],
+              "ontology_mean": 0.1417824074074074,
+              "ontology_values": [
+                0.1440972222222222,
+                0.13606770833333334,
+                0.14518229166666666
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.34396701388888884,
+              "any_values": [
+                0.3444010416666667,
+                0.3441840277777778,
+                0.3433159722222222
+              ],
+              "ontology_mean": 0.1417824074074074,
+              "ontology_values": [
+                0.1440972222222222,
+                0.13606770833333334,
+                0.14518229166666666
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009186921296296295,
+              "any_values": [
+                0.009765625,
+                0.007595486111111111,
+                0.010199652777777778
+              ],
+              "ontology_mean": 0.008391203703703705,
+              "ontology_values": [
+                0.008897569444444444,
+                0.007595486111111111,
+                0.008680555555555556
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.009186921296296295,
+              "any_values": [
+                0.009765625,
+                0.007595486111111111,
+                0.010199652777777778
+              ],
+              "ontology_mean": 0.008391203703703705,
+              "ontology_values": [
+                0.008897569444444444,
+                0.007595486111111111,
+                0.008680555555555556
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 3512,
+        "n_catalogue_active": 4608,
+        "n_catalogue_inactive": 0,
+        "n_features": 4608,
+        "n_network_evidence": 3157,
+        "n_network_only": 533,
+        "n_ontology": 2979,
+        "n_testable": 4608,
+        "rates_all_features": {
+          "any": 0.7621527777777778,
+          "ontology": 0.646484375
+        },
+        "rates_catalogue_active": {
+          "any": 0.7621527777777778,
+          "ontology": 0.646484375
+        },
+        "source_counts": {
+          "GO_BP": 2669,
+          "KEGG": 1968,
+          "Reactome": 2619,
+          "STRING": 3147,
+          "TF_membership": 18,
+          "TRRUST": 190,
+          "TRRUST_pairs": 35
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            5.045572916666667e-05,
+            8.789062500000001e-05,
+            0.0027197265625,
+            0.013362792968750013,
+            0.087236442057292
+          ],
+          "fraction_variance_unexplained_all_rows": 0.08028476546870777,
+          "mean_active_per_position": 32.0,
+          "share_features_firing_gt_10pct": 0.008029513888888888,
+          "share_features_firing_lt_1e-4": 0.1423611111111111
+        },
+        "heldout_inactive": 22,
+        "heldout_inactive_fraction": 0.004774305555555556,
+        "mean_decoder_cos": 0.023479368537664413,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 32,
+          "lr": 0.0003,
+          "n_features": 4608,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9189951993284093
+      },
+      "name": "sweep_L13_k32_x2",
+      "sources": [
+        "runs/sweep_L13_k32_x2/feature_catalog_L13.json",
+        "results/annotations/sweep_L13_k32_x2/ann_v2_L13.json",
+        "runs/sweep_L13_k32_x2/sae/train_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.6727430555555555,
+              "any_values": [
+                0.6778971354166666,
+                0.6686740451388888,
+                0.6716579861111112
+              ],
+              "ontology_mean": 0.3645833333333333,
+              "ontology_values": [
+                0.3688693576388889,
+                0.3628472222222222,
+                0.3620334201388889
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.6727430555555555,
+              "any_values": [
+                0.6778971354166666,
+                0.6686740451388888,
+                0.6716579861111112
+              ],
+              "ontology_mean": 0.3645833333333333,
+              "ontology_values": [
+                0.3688693576388889,
+                0.3628472222222222,
+                0.3620334201388889
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009910300925925925,
+              "any_values": [
+                0.010416666666666666,
+                0.009223090277777778,
+                0.010091145833333334
+              ],
+              "ontology_mean": 0.009331597222222222,
+              "ontology_values": [
+                0.009657118055555556,
+                0.008680555555555556,
+                0.009657118055555556
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.009910300925925925,
+              "any_values": [
+                0.010416666666666666,
+                0.009223090277777778,
+                0.010091145833333334
+              ],
+              "ontology_mean": 0.009331597222222222,
+              "ontology_values": [
+                0.009657118055555556,
+                0.008680555555555556,
+                0.009657118055555556
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 14462,
+        "n_catalogue_active": 18432,
+        "n_catalogue_inactive": 0,
+        "n_features": 18432,
+        "n_network_evidence": 13628,
+        "n_network_only": 2778,
+        "n_ontology": 11684,
+        "n_testable": 18432,
+        "rates_all_features": {
+          "any": 0.7846137152777778,
+          "ontology": 0.6338975694444444
+        },
+        "rates_catalogue_active": {
+          "any": 0.7846137152777778,
+          "ontology": 0.6338975694444444
+        },
+        "source_counts": {
+          "GO_BP": 10242,
+          "KEGG": 8042,
+          "Reactome": 10624,
+          "STRING": 13612,
+          "TF_membership": 40,
+          "TRRUST": 500,
+          "TRRUST_pairs": 72
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "layer": 13,
+      "metrics": {
+        "decoder_cos_source": "checkpoint-training JSON; fixed weights; mean absolute off-diagonal cosine",
+        "evaluation_source": "new_variant_training_metrics",
+        "firing": {
+          "dead_all_rows": 0,
+          "dead_frac_all_rows": 0.0,
+          "firing_freq_quantiles_1_10_50_90_99": [
+            2.9296875000000002e-05,
+            5.045572916666667e-05,
+            0.00010091145833333335,
+            0.003492838541666667,
+            0.024156526692708263
+          ],
+          "fraction_variance_unexplained_all_rows": 0.07163689639822307,
+          "mean_active_per_position": 32.0,
+          "share_features_firing_gt_10pct": 0.001681857638888889,
+          "share_features_firing_lt_1e-4": 0.4933810763888889
+        },
+        "heldout_inactive": 782,
+        "heldout_inactive_fraction": 0.042426215277777776,
+        "mean_decoder_cos": 0.018742427229881287,
+        "training_configuration": {
+          "batch_size": 4096,
+          "d_model": 2304,
+          "epochs": 6,
+          "k": 32,
+          "lr": 0.0003,
+          "n_features": 18432,
+          "n_rows": 614400,
+          "seed": 0
+        },
+        "variance_explained": 0.9271279755580228
+      },
+      "name": "sweep_L13_k32_x8",
+      "sources": [
+        "runs/sweep_L13_k32_x8/feature_catalog_L13.json",
+        "results/annotations/sweep_L13_k32_x8/ann_v2_L13.json",
+        "runs/sweep_L13_k32_x8/sae/train_L13.json"
+      ],
+      "status": "complete"
+    }
+  ],
+  "units": {
+    "baseline_metrics": "fresh re-extracted 2b_eval VE/inactivity/firing; decoder cosine from fixed-checkpoint training JSON",
+    "catalogue_active_denominator": "features firing at least once across all 614400 atlas gene-token positions",
+    "firing_quantiles": "1st/10th/50th/90th/99th percentiles among features active across all rows",
+    "floors": "saved rates over active gene sets, rescaled by n_catalogue_active/n_features for all-feature comparisons",
+    "heldout_inactive": "features not firing in saved held-out evaluation positions; distinct from catalogue inactivity",
+    "library_comparison": "full-family BH in both conditions; archival reduced library snapshot changes the tested term family, not the scorer",
+    "new_variant_metrics": "saved six-epoch new-variant training held-out VE/inactivity and all-row firing",
+    "primary_annotation_denominator": "all dictionary features",
+    "rare_firing_share": "active features with frequency <1e-4 divided by all dictionary features"
+  },
+  "untrained": [
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 19.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.015371817129629631,
+              "any_values": [
+                0.014973958333333334,
+                0.013888888888888888,
+                0.017252604166666668
+              ],
+              "ontology_mean": 0.01316550925925926,
+              "ontology_values": [
+                0.012261284722222222,
+                0.012261284722222222,
+                0.014973958333333334
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.015497939685665318,
+              "any_values": [
+                0.015096816540859863,
+                0.014002844327754074,
+                0.017394158188382015
+              ],
+              "ontology_mean": 0.013273529519016884,
+              "ontology_values": [
+                0.012361886008095395,
+                0.012361886008095395,
+                0.015096816540859863
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009223090277777778,
+              "any_values": [
+                0.008138020833333334,
+                0.0107421875,
+                0.0087890625
+              ],
+              "ontology_mean": 0.008644386574074075,
+              "ontology_values": [
+                0.007703993055555556,
+                0.010199652777777778,
+                0.008029513888888888
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.00929876381139919,
+              "any_values": [
+                0.008204791598293404,
+                0.010830324909747292,
+                0.008861174926156876
+              ],
+              "ontology_mean": 0.008715311964409438,
+              "ontology_values": [
+                0.007767202713051089,
+                0.0102833388031944,
+                0.008095394376982824
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 3487,
+        "n_catalogue_active": 9141,
+        "n_catalogue_inactive": 75,
+        "n_features": 9216,
+        "n_network_evidence": 2091,
+        "n_network_only": 173,
+        "n_ontology": 3314,
+        "n_testable": 8882,
+        "rates_all_features": {
+          "any": 0.3783637152777778,
+          "ontology": 0.3595920138888889
+        },
+        "rates_catalogue_active": {
+          "any": 0.381468110709988,
+          "ontology": 0.36254239142325784
+        },
+        "source_counts": {
+          "GO_BP": 2893,
+          "KEGG": 1662,
+          "Reactome": 2545,
+          "STRING": 2081,
+          "TF_membership": 8,
+          "TRRUST": 122,
+          "TRRUST_pairs": 14
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "initialization": {
+        "layer": 0,
+        "max_rel_row_norm_error": 2.746540133102826e-07,
+        "seed": 123,
+        "source": "/workspace/rev1/runs/2b_atlas/sae",
+        "zero_bias": false
+      },
+      "layer": 0,
+      "name": "untrained_L00",
+      "sources": [
+        "runs/untrained_L00/feature_catalog_L00.json",
+        "results/annotations/untrained_L00/ann_v2_L00.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.6155960648148148,
+              "any_values": [
+                0.6106770833333334,
+                0.6248914930555556,
+                0.6112196180555556
+              ],
+              "ontology_mean": 0.2982494212962963,
+              "ontology_values": [
+                0.3000217013888889,
+                0.3072916666666667,
+                0.2874348958333333
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.6155960648148148,
+              "any_values": [
+                0.6106770833333334,
+                0.6248914930555556,
+                0.6112196180555556
+              ],
+              "ontology_mean": 0.2982494212962963,
+              "ontology_values": [
+                0.3000217013888889,
+                0.3072916666666667,
+                0.2874348958333333
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.010633680555555554,
+              "any_values": [
+                0.0107421875,
+                0.009982638888888888,
+                0.011176215277777778
+              ],
+              "ontology_mean": 0.009403935185185184,
+              "ontology_values": [
+                0.009331597222222222,
+                0.008897569444444444,
+                0.009982638888888888
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.010633680555555554,
+              "any_values": [
+                0.0107421875,
+                0.009982638888888888,
+                0.011176215277777778
+              ],
+              "ontology_mean": 0.009403935185185184,
+              "ontology_values": [
+                0.009331597222222222,
+                0.008897569444444444,
+                0.009982638888888888
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 7691,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 7128,
+        "n_network_only": 738,
+        "n_ontology": 6953,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.8345269097222222,
+          "ontology": 0.7544487847222222
+        },
+        "rates_catalogue_active": {
+          "any": 0.8345269097222222,
+          "ontology": 0.7544487847222222
+        },
+        "source_counts": {
+          "GO_BP": 6075,
+          "KEGG": 4420,
+          "Reactome": 6270,
+          "STRING": 7116,
+          "TF_membership": 28,
+          "TRRUST": 787,
+          "TRRUST_pairs": 110
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "initialization": {
+        "layer": 13,
+        "max_rel_row_norm_error": 3.334548921429814e-07,
+        "seed": 123,
+        "source": "/workspace/rev1/runs/2b_atlas/sae",
+        "zero_bias": false
+      },
+      "layer": 13,
+      "name": "untrained_L13",
+      "sources": [
+        "runs/untrained_L13/feature_catalog_L13.json",
+        "results/annotations/untrained_L13/ann_v2_L13.json"
+      ],
+      "status": "complete"
+    },
+    {
+      "annotation": {
+        "configuration": {
+          "alpha": 0.05,
+          "legacy_libraries": false,
+          "max_term": 500,
+          "median_set_size": 20.0,
+          "min_overlap": 2,
+          "min_term": 5,
+          "pair_null": "Poisson approximation using universe pair density",
+          "scorer_version": "3-plan-aligned",
+          "string_pairs_in_universe": 101257,
+          "terms_by_source": {
+            "GO_BP": 2762,
+            "KEGG": 308,
+            "Reactome": 1414,
+            "TRRUST": 103
+          },
+          "tests_per_feature": 4590,
+          "trrust_pairs_in_universe": 969,
+          "universe_size": 5662
+        },
+        "floors": {
+          "freq": {
+            "all_features": {
+              "any_mean": 0.97265625,
+              "any_values": [
+                0.9708116319444444,
+                0.9739583333333334,
+                0.9731987847222222
+              ],
+              "ontology_mean": 0.8286675347222223,
+              "ontology_values": [
+                0.8256293402777778,
+                0.8319227430555556,
+                0.8284505208333334
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.97265625,
+              "any_values": [
+                0.9708116319444444,
+                0.9739583333333334,
+                0.9731987847222222
+              ],
+              "ontology_mean": 0.8286675347222223,
+              "ontology_values": [
+                0.8256293402777778,
+                0.8319227430555556,
+                0.8284505208333334
+              ]
+            },
+            "n_seeds": 3
+          },
+          "uniform": {
+            "all_features": {
+              "any_mean": 0.009874131944444442,
+              "any_values": [
+                0.010416666666666666,
+                0.0107421875,
+                0.008463541666666666
+              ],
+              "ontology_mean": 0.008897569444444446,
+              "ontology_values": [
+                0.009440104166666666,
+                0.009657118055555556,
+                0.007595486111111111
+              ]
+            },
+            "catalogue_active": {
+              "any_mean": 0.009874131944444442,
+              "any_values": [
+                0.010416666666666666,
+                0.0107421875,
+                0.008463541666666666
+              ],
+              "ontology_mean": 0.008897569444444446,
+              "ontology_values": [
+                0.009440104166666666,
+                0.009657118055555556,
+                0.007595486111111111
+              ]
+            },
+            "n_seeds": 3
+          }
+        },
+        "n_any": 7644,
+        "n_catalogue_active": 9216,
+        "n_catalogue_inactive": 0,
+        "n_features": 9216,
+        "n_network_evidence": 7289,
+        "n_network_only": 667,
+        "n_ontology": 6977,
+        "n_testable": 9216,
+        "rates_all_features": {
+          "any": 0.8294270833333334,
+          "ontology": 0.7570529513888888
+        },
+        "rates_catalogue_active": {
+          "any": 0.8294270833333334,
+          "ontology": 0.7570529513888888
+        },
+        "source_counts": {
+          "GO_BP": 6259,
+          "KEGG": 5142,
+          "Reactome": 6516,
+          "STRING": 7282,
+          "TF_membership": 19,
+          "TRRUST": 383,
+          "TRRUST_pairs": 29
+        },
+        "verification": "exact saved-ID/decision/numeric-detail/count/rate recount; no rescoring"
+      },
+      "initialization": {
+        "layer": 22,
+        "max_rel_row_norm_error": 2.956935816200712e-07,
+        "seed": 123,
+        "source": "/workspace/rev1/runs/2b_atlas/sae",
+        "zero_bias": false
+      },
+      "layer": 22,
+      "name": "untrained_L22",
+      "sources": [
+        "runs/untrained_L22/feature_catalog_L22.json",
+        "results/annotations/untrained_L22/ann_v2_L22.json"
+      ],
+      "status": "complete"
+    }
+  ]
+}

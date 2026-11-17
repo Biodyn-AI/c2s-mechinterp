@@ -1,0 +1,18 @@
+\begin{longtable}{@{}L{0.4\linewidth}L{0.16\linewidth}L{0.16\linewidth}L{0.15\linewidth}@{}}
+\caption{Compute allocation accounting. Basis: RunPod hourly billing retrieved 17 November 2026 at 17:42 UTC; reported charges include GPU and disk for both owned allocations, including the failed startup. GPU-billed hours are GPU charges divided by the listed GPU rate. Billing is delayed and these reported charges exclude some final usage; both pods are deleted. The saved accounting file separately records a conservative full-lifetime cost estimate.}\\
+\toprule
+Device & USD / hour & GPU-billed hours & USD \\
+\midrule
+\endfirsthead
+\toprule
+Device & USD / hour & GPU-billed hours & USD \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+RTX PRO 6000 96 GB (startup failed) & 2.69 & 1.31058 & 3.59316 \\
+RTX PRO 6000 96 GB (experiments) & 1.69 & 2.81819 & 4.90048 \\
+Reported total, all allocations & -- & -- & 8.49363 \\
+Conservative full-lifetime estimate & -- & -- & 10.19 \\
+\end{longtable}

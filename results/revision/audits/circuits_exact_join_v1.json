@@ -1,0 +1,411 @@
+{
+  "audit": "Independent exact circuit graph/complete-annotation join and source bootstrap",
+  "passed": true,
+  "n_checks": 395,
+  "findings": [],
+  "joined": {
+    "n_edges": 27633,
+    "n_annotated_edges": 20924,
+    "n_shared": 17399,
+    "n_source_clusters": 45,
+    "observed": 0.8315331676543682,
+    "same_source_random_target": 0.6125260418985594,
+    "fully_random_annotated_pair": 0.28930510939123344,
+    "excess": 0.2190071257558088,
+    "source_counts": [
+      {
+        "source_layer": 0,
+        "source_feature": 5618,
+        "shared": 483,
+        "eligible": 677,
+        "expected_shared": 382.4104961556818
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 6569,
+        "shared": 487,
+        "eligible": 543,
+        "expected_shared": 303.1180043101974
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 2195,
+        "shared": 774,
+        "eligible": 984,
+        "expected_shared": 589.7346454458483
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 6192,
+        "shared": 578,
+        "eligible": 640,
+        "expected_shared": 365.6393569827885
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 5817,
+        "shared": 502,
+        "eligible": 617,
+        "expected_shared": 344.57628419721016
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 5494,
+        "shared": 557,
+        "eligible": 924,
+        "expected_shared": 541.39208418278
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 4228,
+        "shared": 557,
+        "eligible": 780,
+        "expected_shared": 377.5577493297974
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 5859,
+        "shared": 482,
+        "eligible": 578,
+        "expected_shared": 316.9632781320631
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 310,
+        "shared": 565,
+        "eligible": 720,
+        "expected_shared": 410.09193817374575
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 7533,
+        "shared": 564,
+        "eligible": 626,
+        "expected_shared": 355.5485653258643
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 8468,
+        "shared": 547,
+        "eligible": 683,
+        "expected_shared": 405.5732299723203
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 2959,
+        "shared": 521,
+        "eligible": 617,
+        "expected_shared": 324.6108421380337
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 8046,
+        "shared": 543,
+        "eligible": 664,
+        "expected_shared": 374.8642110060875
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 5567,
+        "shared": 553,
+        "eligible": 675,
+        "expected_shared": 391.9369877251665
+      },
+      {
+        "source_layer": 0,
+        "source_feature": 5834,
+        "shared": 543,
+        "eligible": 601,
+        "expected_shared": 338.84459264331997
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 6418,
+        "shared": 565,
+        "eligible": 665,
+        "expected_shared": 450.9450049687123
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 4471,
+        "shared": 565,
+        "eligible": 662,
+        "expected_shared": 441.4238161999399
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 8136,
+        "shared": 518,
+        "eligible": 584,
+        "expected_shared": 381.25348293053406
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 272,
+        "shared": 653,
+        "eligible": 704,
+        "expected_shared": 465.1182099154688
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 4243,
+        "shared": 294,
+        "eligible": 538,
+        "expected_shared": 74.12120012994106
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 142,
+        "shared": 295,
+        "eligible": 370,
+        "expected_shared": 232.9137626504164
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 4413,
+        "shared": 383,
+        "eligible": 416,
+        "expected_shared": 267.63176920219763
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 211,
+        "shared": 340,
+        "eligible": 365,
+        "expected_shared": 232.2695863991838
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 1220,
+        "shared": 373,
+        "eligible": 409,
+        "expected_shared": 262.03027451742156
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 2307,
+        "shared": 298,
+        "eligible": 321,
+        "expected_shared": 204.443871338114
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 9184,
+        "shared": 388,
+        "eligible": 438,
+        "expected_shared": 281.60155411664306
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 7533,
+        "shared": 337,
+        "eligible": 369,
+        "expected_shared": 234.5368989529561
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 2505,
+        "shared": 380,
+        "eligible": 423,
+        "expected_shared": 273.1823126935215
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 7725,
+        "shared": 361,
+        "eligible": 394,
+        "expected_shared": 252.27980508258577
+      },
+      {
+        "source_layer": 7,
+        "source_feature": 254,
+        "shared": 614,
+        "eligible": 659,
+        "expected_shared": 431.80385454500663
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 7553,
+        "shared": 299,
+        "eligible": 359,
+        "expected_shared": 274.9909621146569
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 213,
+        "shared": 183,
+        "eligible": 200,
+        "expected_shared": 152.56574844786215
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 142,
+        "shared": 134,
+        "eligible": 156,
+        "expected_shared": 118.97011988093192
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 4870,
+        "shared": 189,
+        "eligible": 205,
+        "expected_shared": 156.79755160347918
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 1773,
+        "shared": 177,
+        "eligible": 188,
+        "expected_shared": 143.63585395855142
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 417,
+        "shared": 174,
+        "eligible": 188,
+        "expected_shared": 149.1408575972912
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 972,
+        "shared": 185,
+        "eligible": 201,
+        "expected_shared": 153.9421746998089
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 2476,
+        "shared": 169,
+        "eligible": 177,
+        "expected_shared": 149.77751190194752
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 8761,
+        "shared": 170,
+        "eligible": 191,
+        "expected_shared": 145.82102972970287
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 629,
+        "shared": 157,
+        "eligible": 223,
+        "expected_shared": 166.49507756465454
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 2513,
+        "shared": 226,
+        "eligible": 255,
+        "expected_shared": 194.436839086364
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 3708,
+        "shared": 279,
+        "eligible": 399,
+        "expected_shared": 303.89079297313504
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 272,
+        "shared": 262,
+        "eligible": 284,
+        "expected_shared": 217.11339981780748
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 4638,
+        "shared": 37,
+        "eligible": 104,
+        "expected_shared": 67.86156270634534
+      },
+      {
+        "source_layer": 16,
+        "source_feature": 9010,
+        "shared": 138,
+        "eligible": 148,
+        "expected_shared": 112.63774923937486
+      }
+    ]
+  },
+  "source_bootstrap": {
+    "observed": {
+      "estimate": 0.8315331676543682,
+      "ci95": [
+        0.7945552514408754,
+        0.8649351368256053
+      ]
+    },
+    "baseline": {
+      "estimate": 0.6125260418985594,
+      "ci95": [
+        0.577176293587464,
+        0.6433295726104805
+      ]
+    },
+    "excess": {
+      "estimate": 0.2190071257558088,
+      "ci95": [
+        0.18677252606195702,
+        0.2493487808088932
+      ]
+    }
+  },
+  "total_edge_count_source_bootstrap_ci95": [
+    24164.625,
+    31162.225
+  ],
+  "conditional_normal_sensitivity": [
+    {
+      "n_active_cells": 50,
+      "minimum_grid_effect_at_80pct": 0.725,
+      "null_call_probability": 0.0004,
+      "interpretation": "Conditional independent-normal sensitivity; not real-data MDE or FDR."
+    },
+    {
+      "n_active_cells": 100,
+      "minimum_grid_effect_at_80pct": 0.675,
+      "null_call_probability": 0.0,
+      "interpretation": "Conditional independent-normal sensitivity; not real-data MDE or FDR."
+    }
+  ],
+  "source_sha256": {
+    "/workspace/rev1/results/circuit_baseline.json": "d0f1e4087c24a41a6cf18ebba95ecb44c54656e251f4ca61709387eb8e055634",
+    "/workspace/rev1/runs/2b_atlas/circuit_graph.json": "86480ad7bfd4c2217a5e3575c09916ca94a33dd73c3cbc8f76707e730116e88b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L00.json": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L07.json": "13003566263e6e84f73ce82cae76cd4ed462687f2e72fc416fdbd9ef356ad842",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L16.json": "8f20dafdcb6020d22d57ca37f9f7754742be147e212f79ca9da43eacc0b72b19",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L01.json": "af48401f67eb32d2cff623ed0809a94f0e5ae81473da40439eb9abfbfde7a70c",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L02.json": "ed56f8c111b677a61396b3b1ca75b6c11ee04fc79bf349cd790306ba5d949816",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L03.json": "9c68b8efa49e9ae8f5d078410af26a6458e225ce58c697fb216273b998ddd5ac",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L04.json": "2ec2d33e4935aa6cae1be158ab70601b4d4eb7c2d891967792696c57daef3574",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L05.json": "0ef17f7e5211d86506ad9f682f398b02118310b36f5ad232e9a716afbf92306c",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L06.json": "e0d3e218277c910b6c6b1b2b0eb52bd8145136229219e81a50b8f1a2fc96751b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L08.json": "b2b2e098bd360348f3ec6059ca5d95987368f28a8157584c1c66d243157e5ea1",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L09.json": "5f01db25eeb465ae7879228dde74af13760edd4b5f18d0d21e1803463c4fbf02",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L10.json": "49ba44fffb0e6c22802c71f70587e788882ece34a011af0b75c6ee47ebb8ced5",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L11.json": "6a16e91f573bfaec69667174d0f2be8691ef55d86879580d6f8b40d3a3953312",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L12.json": "9571e2605d562994e714b5fb1e11452254d1359ad883e133295ba42380547d97",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L14.json": "849fab7961951a8d889d75cb89bb838ae3f7e4aaccac3b445fe16d8525785c57",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L15.json": "165df7c82ff5f43113b92ff48f8f260b136cb474d732a3660f86e75f361599fa",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L17.json": "0fd5cda9432b3149f8a4b288143d183e516f637076610f747588470ed43ae02d",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L18.json": "6cb576f11fc7fe2319aefd49d5a5d0d728f715b1a1da37c5553b3d3e7272d32a",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L19.json": "4a0b0d1ec267aa20cc6407ea81bc45fea5bc260bc6d88c5d470e8ce9ef515558",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L20.json": "24c200634300062d6e474a8273ad89d5105f67c3c10f22bd79bacbf58a5138c8",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L21.json": "49106b88846087f75c0bc5326f4e4f3cedb262fa0372edaa4a52221b76bb5087",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L22.json": "69cf7d4fd9ec029d3e49bd62ecd730e68108217291aff3165c8af39308c3ea92",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L23.json": "f62a98f71cfdf04f898150f34e86928180d1053651625dc73ae85c5406de5b80",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L24.json": "877becd04075b53264a44f4508a2de1406ba5c2708a4404f04586914b883e5f6",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L25.json": "d2e61d2c26fcd01f2304c403d54a776f570b961417e71136e7908839fcadb852",
+    "/workspace/rev1/results/audits/audit_circuits_saved.py": "fbaf3a265e3dc35f403eb0649665456f5cae0e7da5ccad820f66c9047c31fe8c"
+  },
+  "peak_rss_bytes": 862740480,
+  "limitations": [
+    "The saved capped graph is rejoined; omitted edges and model interventions are not regenerated.",
+    "Source features are bootstrap units; shared-source edges are not independent observations.",
+    "Normal sensitivity assumes every source is active and independent normal deltas; it is not a multiple-testing or empirical-power calculation."
+  ]
+}

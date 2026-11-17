@@ -13,7 +13,13 @@ Each stage is independent: you can run Stage 1 alone and stop, or point Stage 2 
    keeps memory bounded.
 3. **TopK SAE per layer.** Dictionary 4× the model width, k = 32, decoder columns unit-norm.
 4. **Catalogue** each feature: activation frequency, mean activation, top driving genes, SVD alignment.
-5. **Annotate** against GO BP, KEGG, Reactome, STRING and TRRUST (Fisher's exact + BH-FDR).
+5. **Annotate** against GO BP, KEGG, Reactome and TRRUST regulons using one-sided
+   hypergeometric tests. Each feature is corrected across **all** eligible terms and three
+   network/membership tests, including p = 1 for term overlaps below two genes. The universe is
+   the full observed extraction gene list, not the selected top-gene union. STRING and TRRUST
+   within-set pair counts use one-sided Poisson approximations based on universe pair density;
+   TF membership uses a hypergeometric test. Uniform and gene-frequency-matched random sets
+   quantify chance. Named terms and network evidence are stored separately.
 6. **Co-activation modules** by Leiden clustering; **cross-layer tracking** by decoder cosine matching.
 
 **Two implementation details that are load-bearing.** The unit-norm constraint must be applied along
@@ -26,8 +32,11 @@ non-finite.
 
 For each selected source feature: one clean forward pass, one ablated forward pass with the feature's
 contribution removed from the residual stream via a forward hook. Downstream feature activations are
-compared with online mean/variance accumulation; an edge is recorded when the standardised effect is
-significant and consistent across cells.
+compared with online mean/variance accumulation. The edge rule requires absolute standardised
+mean change greater than 0.5 and a majority sign in more than 70% of active cells. This is an
+effect/consistency rule, not a multiple-testing-corrected p-value test. `revision/rev_circuit.py`
+saves complete statistic vectors; circuit baselines hold the source fixed and sample annotated
+targets in the same layer. Confidence intervals resample source features.
 
 Cost scales as cells × features × layers with one unbatched pass per pair. The published run used a
 reduced but complete design (50 cells, 15 features, source layers 0/7/16 → 800 forward passes per
@@ -36,11 +45,19 @@ source layer). Batching the ablation loop is the obvious speed-up and is not yet
 ## Regulatory-logic test
 `c2s_mechinterp/perturbation_response.py`
 
-Does a feature encode the *direction* of regulation, or only association? For each transcription
-factor, knockdown cells are compared against non-targeting controls. A feature is **responding** if
-its activation shifts (Mann–Whitney U, BH-corrected). A factor is **specific** if the genes driving
-its responding features are enriched for that factor's known targets (Fisher's exact, BH across
-factors). High detection with null specificity means the model tracks co-expression, not regulation.
+The test measures **unsigned target-set association** after a factor knockdown. It does not
+identify activating versus repressing regulation. `revision/rev_phase8_extract.py` saves per-cell
+feature matrices. `revision/rev_phase8_stats.py` compares knockdowns with non-targeting controls
+using two-sided Mann–Whitney tests, BH within each response family, and absolute effect greater
+than 0.5. Specificity uses a one-sided Fisher test of known targets among responses and BH across
+all screened factors. The perturbed gene itself is excluded from downstream-target retrieval.
+
+Measured expression and the ranked input are tested on the **same cells** to establish whether the
+assay can recover downstream target association. Factors without measurable target coverage are
+reported as unevaluable, alongside coverage sensitivities. Average precision/AUPRC and AUROC are
+reported with target prevalence and finite-sample random-label average-precision expectations.
+RPE1 provides a second cell line; K562-trained SAE reconstruction is measured on those inputs.
+A negative model result is informative only within the assay's demonstrated sensitivity.
 
 ## Stage 3 — geometry, nulls and steering
 `geometry/`, `manifold/`
@@ -58,4 +75,6 @@ factors). High detection with null specificity means the model tracks co-express
 ## Stage 4 — public atlas
 Built and deployed from a separate repository: https://github.com/Biodyn-AI/c2s-atlas
 The generator converts Stage-1/2 artefacts into the atlas JSON schema and computes UMAP layouts from
-the SAE decoder directions.
+the SAE decoder directions. `revision/export_revision_atlas.py` writes a new staging directory,
+requires complete significant term IDs and their numeric details, and never overwrites the active
+browser data. Source checksums and annotation-family definitions accompany the export.

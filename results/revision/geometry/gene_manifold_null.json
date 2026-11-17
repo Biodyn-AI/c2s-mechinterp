@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "params": {
+      "run": "/root/c2s/runs/geo_gt",
+      "h5ad": "/root/c2s/data/setty19_cd34_bm.h5ad",
+      "onto": "/root/c2s/data/ontologies",
+      "layers": [
+        9,
+        13,
+        17
+      ],
+      "counts_layer": "spliced",
+      "occ_cap": 200,
+      "knn": 15,
+      "df_frac": 0.05,
+      "n_shuffle": 50,
+      "out": "/root/c2s/runs/geo_gt/gene_manifold_null.json",
+      "seed": 0
+    }
+  },
+  "layers": [
+    {
+      "layer": 9,
+      "n_genes": 11507,
+      "participation_ratio": 132.0624237060547,
+      "twonn_id": 5.281558276643001,
+      "raw": {
+        "nn_rate": 0.012780626285449436,
+        "base_rate": 0.0014801406133582691,
+        "enrichment": 8.634737922940756,
+        "z_vs_shuffle": 96.8851741434565
+      },
+      "nostop": {
+        "nn_rate": 0.011183210569390856,
+        "base_rate": 0.0013851246612195096,
+        "enrichment": 8.073793559884196,
+        "z_vs_shuffle": 74.65566405148351
+      },
+      "coexpr_matched": {
+        "within_bin_mean_cos_delta": 0.06186976160927778,
+        "n_bins_evaluated": 6,
+        "coexpr_null_mean": -0.000884837937520881,
+        "coexpr_null_std": 0.00954568987228437,
+        "z_coexpr_matched": 6.5741293065083415,
+        "p_perm_onesided": 0.005,
+        "n_perm": 199
+      }
+    },
+    {
+      "layer": 13,
+      "n_genes": 11507,
+      "participation_ratio": 95.58934783935547,
+      "twonn_id": 6.156661103364075,
+      "raw": {
+        "nn_rate": 0.012913878508733814,
+        "base_rate": 0.001485126235730037,
+        "enrichment": 8.695475305764694,
+        "z_vs_shuffle": 96.5168569992167
+      },
+      "nostop": {
+        "nn_rate": 0.011364433532094003,
+        "base_rate": 0.001335146866155277,
+        "enrichment": 8.511747898431066,
+        "z_vs_shuffle": 78.88739530728297
+      },
+      "coexpr_matched": {
+        "within_bin_mean_cos_delta": 0.04386134854070942,
+        "n_bins_evaluated": 3,
+        "coexpr_null_mean": 0.0012946392668547945,
+        "coexpr_null_std": 0.01101344941783459,
+        "z_coexpr_matched": 3.8649752366465138,
+        "p_perm_onesided": 0.004975124378109453,
+        "n_perm": 200
+      }
+    },
+    {
+      "layer": 17,
+      "n_genes": 11507,
+      "participation_ratio": 93.8647232055664,
+      "twonn_id": 5.003546728943291,
+      "raw": {
+        "nn_rate": 0.011482865502158107,
+        "base_rate": 0.0014751327619485753,
+        "enrichment": 7.784292911364687,
+        "z_vs_shuffle": 77.89627749394073
+      },
+      "nostop": {
+        "nn_rate": 0.009891266222378113,
+        "base_rate": 0.0014201278115030353,
+        "enrichment": 6.965053527054999,
+        "z_vs_shuffle": 71.09461326202113
+      },
+      "coexpr_matched": {
+        "within_bin_mean_cos_delta": 0.054729361566268446,
+        "n_bins_evaluated": 4,
+        "coexpr_null_mean": 0.0017121385281412228,
+        "coexpr_null_std": 0.011723782698501458,
+        "z_coexpr_matched": 4.522194277823123,
+        "p_perm_onesided": 0.009950248756218905,
+        "n_perm": 200
+      }
+    }
+  ]
+}

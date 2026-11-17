@@ -1,0 +1,3413 @@
+{
+  "audit": "V1 independent saved experimental arithmetic/provenance",
+  "mode": "final",
+  "arithmetic_passed": true,
+  "requested_components": [
+    "layers",
+    "circuits",
+    "residual",
+    "phase8"
+  ],
+  "requested_models": [
+    "2b",
+    "27b_x4"
+  ],
+  "requested_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "complete": true,
+  "passed": true,
+  "n_checks": 4789764,
+  "findings": [],
+  "pending_files": [],
+  "results": {
+    "layers": {
+      "2b": {
+        "n_layers_completed": 26,
+        "layers": [
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 5583,
+            "n_ontology": 4924,
+            "any_rate_alive": 0.6057942708333334,
+            "ontology_rate_alive": 0.5342881944444444,
+            "ontology_rate_all_features": 0.5342881944444444,
+            "frequency_ontology_floor_all_features": 0.07895688657407407,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009150752314814813,
+                "ontology_alive": 0.00831886574074074,
+                "any_all_features": 0.009150752314814813,
+                "ontology_all_features": 0.00831886574074074
+              },
+              "freq": {
+                "any_alive": 0.1688006365740741,
+                "ontology_alive": 0.07895688657407407,
+                "any_all_features": 0.1688006365740741,
+                "ontology_all_features": 0.07895688657407407
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 1,
+            "n_modules": 22,
+            "variance_explained_reextracted": 0.9930632926817315,
+            "dead_fraction_heldout": 0.0026041666666666665,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 0
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6226,
+            "n_ontology": 5384,
+            "any_rate_alive": 0.6755642361111112,
+            "ontology_rate_alive": 0.5842013888888888,
+            "ontology_rate_all_features": 0.5842013888888888,
+            "frequency_ontology_floor_all_features": 0.10423900462962964,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010380497685185184,
+                "ontology_alive": 0.009331597222222222,
+                "any_all_features": 0.010380497685185184,
+                "ontology_all_features": 0.009331597222222222
+              },
+              "freq": {
+                "any_alive": 0.23365162037037038,
+                "ontology_alive": 0.10423900462962964,
+                "any_all_features": 0.23365162037037038,
+                "ontology_all_features": 0.10423900462962964
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": 0.98872682322503,
+            "dead_fraction_heldout": 0.001953125,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 1
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 5855,
+            "n_ontology": 5070,
+            "any_rate_alive": 0.6353081597222222,
+            "ontology_rate_alive": 0.5501302083333334,
+            "ontology_rate_all_features": 0.5501302083333334,
+            "frequency_ontology_floor_all_features": 0.05559172453703703,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010271990740740741,
+                "ontology_alive": 0.009331597222222224,
+                "any_all_features": 0.010271990740740741,
+                "ontology_all_features": 0.009331597222222224
+              },
+              "freq": {
+                "any_alive": 0.1265914351851852,
+                "ontology_alive": 0.055591724537037035,
+                "any_all_features": 0.1265914351851852,
+                "ontology_all_features": 0.05559172453703703
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 23,
+            "variance_explained_reextracted": 0.9856098209191224,
+            "dead_fraction_heldout": 0.004557291666666667,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 2
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 5781,
+            "n_ontology": 4920,
+            "any_rate_alive": 0.6272786458333334,
+            "ontology_rate_alive": 0.5338541666666666,
+            "ontology_rate_all_features": 0.5338541666666666,
+            "frequency_ontology_floor_all_features": 0.04380063657407407,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009295428240740741,
+                "ontology_alive": 0.008355034722222222,
+                "any_all_features": 0.009295428240740741,
+                "ontology_all_features": 0.008355034722222222
+              },
+              "freq": {
+                "any_alive": 0.10358796296296297,
+                "ontology_alive": 0.04380063657407407,
+                "any_all_features": 0.10358796296296297,
+                "ontology_all_features": 0.04380063657407407
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 27,
+            "variance_explained_reextracted": 0.9809802993561082,
+            "dead_fraction_heldout": 0.00390625,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 3
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 5610,
+            "n_ontology": 4696,
+            "any_rate_alive": 0.6087239583333334,
+            "ontology_rate_alive": 0.5095486111111112,
+            "ontology_rate_all_features": 0.5095486111111112,
+            "frequency_ontology_floor_all_features": 0.034686053240740734,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.01048900462962963,
+                "ontology_alive": 0.00951244212962963,
+                "any_all_features": 0.01048900462962963,
+                "ontology_all_features": 0.00951244212962963
+              },
+              "freq": {
+                "any_alive": 0.0791015625,
+                "ontology_alive": 0.034686053240740734,
+                "any_all_features": 0.0791015625,
+                "ontology_all_features": 0.034686053240740734
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 27,
+            "variance_explained_reextracted": 0.9811693493499859,
+            "dead_fraction_heldout": 0.004448784722222222,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 4
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 5609,
+            "n_ontology": 4666,
+            "any_rate_alive": 0.6086154513888888,
+            "ontology_rate_alive": 0.5062934027777778,
+            "ontology_rate_all_features": 0.5062934027777778,
+            "frequency_ontology_floor_all_features": 0.038592303240740734,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009910300925925925,
+                "ontology_alive": 0.009223090277777778,
+                "any_all_features": 0.009910300925925925,
+                "ontology_all_features": 0.009223090277777778
+              },
+              "freq": {
+                "any_alive": 0.09085648148148147,
+                "ontology_alive": 0.038592303240740734,
+                "any_all_features": 0.09085648148148147,
+                "ontology_all_features": 0.038592303240740734
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 25,
+            "variance_explained_reextracted": 0.976156562296644,
+            "dead_fraction_heldout": 0.0068359375,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 5
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6050,
+            "n_ontology": 5035,
+            "any_rate_alive": 0.6564670138888888,
+            "ontology_rate_alive": 0.5463324652777778,
+            "ontology_rate_all_features": 0.5463324652777778,
+            "frequency_ontology_floor_all_features": 0.05721932870370369,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010054976851851851,
+                "ontology_alive": 0.009259259259259259,
+                "any_all_features": 0.010054976851851851,
+                "ontology_all_features": 0.009259259259259259
+              },
+              "freq": {
+                "any_alive": 0.14601417824074073,
+                "ontology_alive": 0.0572193287037037,
+                "any_all_features": 0.14601417824074073,
+                "ontology_all_features": 0.05721932870370369
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 26,
+            "variance_explained_reextracted": 0.9725038032433448,
+            "dead_fraction_heldout": 0.005967881944444444,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 6
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6251,
+            "n_ontology": 5065,
+            "any_rate_alive": 0.6782769097222222,
+            "ontology_rate_alive": 0.5495876736111112,
+            "ontology_rate_all_features": 0.5495876736111112,
+            "frequency_ontology_floor_all_features": 0.06629774305555557,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009476273148148149,
+                "ontology_alive": 0.00857204861111111,
+                "any_all_features": 0.009476273148148149,
+                "ontology_all_features": 0.00857204861111111
+              },
+              "freq": {
+                "any_alive": 0.1868851273148148,
+                "ontology_alive": 0.06629774305555557,
+                "any_all_features": 0.1868851273148148,
+                "ontology_all_features": 0.06629774305555557
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 24,
+            "variance_explained_reextracted": 0.9670171167211435,
+            "dead_fraction_heldout": 0.006510416666666667,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 7
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6363,
+            "n_ontology": 5168,
+            "any_rate_alive": 0.6904296875,
+            "ontology_rate_alive": 0.5607638888888888,
+            "ontology_rate_all_features": 0.5607638888888888,
+            "frequency_ontology_floor_all_features": 0.08217592592592593,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009367766203703705,
+                "ontology_alive": 0.0087890625,
+                "any_all_features": 0.009367766203703705,
+                "ontology_all_features": 0.0087890625
+              },
+              "freq": {
+                "any_alive": 0.212890625,
+                "ontology_alive": 0.08217592592592593,
+                "any_all_features": 0.212890625,
+                "ontology_all_features": 0.08217592592592593
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 20,
+            "variance_explained_reextracted": 0.9588209522495632,
+            "dead_fraction_heldout": 0.008029513888888888,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 8
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6433,
+            "n_ontology": 5133,
+            "any_rate_alive": 0.6980251736111112,
+            "ontology_rate_alive": 0.5569661458333334,
+            "ontology_rate_all_features": 0.5569661458333334,
+            "frequency_ontology_floor_all_features": 0.08937355324074074,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.0107421875,
+                "ontology_alive": 0.00998263888888889,
+                "any_all_features": 0.0107421875,
+                "ontology_all_features": 0.00998263888888889
+              },
+              "freq": {
+                "any_alive": 0.24479166666666666,
+                "ontology_alive": 0.08937355324074074,
+                "any_all_features": 0.24479166666666666,
+                "ontology_all_features": 0.08937355324074074
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 22,
+            "variance_explained_reextracted": 0.9544757309366422,
+            "dead_fraction_heldout": 0.008463541666666666,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 9
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6386,
+            "n_ontology": 5016,
+            "any_rate_alive": 0.6929253472222222,
+            "ontology_rate_alive": 0.5442708333333334,
+            "ontology_rate_all_features": 0.5442708333333334,
+            "frequency_ontology_floor_all_features": 0.0890480324074074,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010127314814814816,
+                "ontology_alive": 0.009331597222222222,
+                "any_all_features": 0.010127314814814816,
+                "ontology_all_features": 0.009331597222222222
+              },
+              "freq": {
+                "any_alive": 0.2543041087962963,
+                "ontology_alive": 0.0890480324074074,
+                "any_all_features": 0.2543041087962963,
+                "ontology_all_features": 0.0890480324074074
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 22,
+            "variance_explained_reextracted": 0.9516637923227861,
+            "dead_fraction_heldout": 0.008246527777777778,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 10
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6838,
+            "n_ontology": 5441,
+            "any_rate_alive": 0.7419704861111112,
+            "ontology_rate_alive": 0.5903862847222222,
+            "ontology_rate_all_features": 0.5903862847222222,
+            "frequency_ontology_floor_all_features": 0.14539930555555555,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009476273148148149,
+                "ontology_alive": 0.008608217592592593,
+                "any_all_features": 0.009476273148148149,
+                "ontology_all_features": 0.008608217592592593
+              },
+              "freq": {
+                "any_alive": 0.38375289351851855,
+                "ontology_alive": 0.14539930555555555,
+                "any_all_features": 0.38375289351851855,
+                "ontology_all_features": 0.14539930555555555
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 19,
+            "variance_explained_reextracted": 0.9400247549999751,
+            "dead_fraction_heldout": 0.009982638888888888,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 11
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 6820,
+            "n_ontology": 5540,
+            "any_rate_alive": 0.7400173611111112,
+            "ontology_rate_alive": 0.6011284722222222,
+            "ontology_rate_all_features": 0.6011284722222222,
+            "frequency_ontology_floor_all_features": 0.18344907407407407,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.01099537037037037,
+                "ontology_alive": 0.01001880787037037,
+                "any_all_features": 0.01099537037037037,
+                "ontology_all_features": 0.01001880787037037
+              },
+              "freq": {
+                "any_alive": 0.4235026041666667,
+                "ontology_alive": 0.18344907407407407,
+                "any_all_features": 0.4235026041666667,
+                "ontology_all_features": 0.18344907407407407
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 16,
+            "variance_explained_reextracted": 0.9360958896167122,
+            "dead_fraction_heldout": 0.007703993055555556,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 12
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7171,
+            "n_ontology": 5867,
+            "any_rate_alive": 0.7781032986111112,
+            "ontology_rate_alive": 0.6366102430555556,
+            "ontology_rate_all_features": 0.6366102430555556,
+            "frequency_ontology_floor_all_features": 0.25614872685185186,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009837962962962963,
+                "ontology_alive": 0.008897569444444444,
+                "any_all_features": 0.009837962962962963,
+                "ontology_all_features": 0.008897569444444444
+              },
+              "freq": {
+                "any_alive": 0.5398582175925927,
+                "ontology_alive": 0.25614872685185186,
+                "any_all_features": 0.5398582175925927,
+                "ontology_all_features": 0.25614872685185186
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 20,
+            "variance_explained_reextracted": 0.9246504624954273,
+            "dead_fraction_heldout": 0.017144097222222224,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 13
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7431,
+            "n_ontology": 6155,
+            "any_rate_alive": 0.8063151041666666,
+            "ontology_rate_alive": 0.6678602430555556,
+            "ontology_rate_all_features": 0.6678602430555556,
+            "frequency_ontology_floor_all_features": 0.3607132523148148,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010199652777777778,
+                "ontology_alive": 0.009150752314814815,
+                "any_all_features": 0.010199652777777778,
+                "ontology_all_features": 0.009150752314814815
+              },
+              "freq": {
+                "any_alive": 0.6515480324074073,
+                "ontology_alive": 0.3607132523148148,
+                "any_all_features": 0.6515480324074073,
+                "ontology_all_features": 0.3607132523148148
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": 0.9166470775552442,
+            "dead_fraction_heldout": 0.015950520833333332,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 14
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7598,
+            "n_ontology": 6482,
+            "any_rate_alive": 0.8244357638888888,
+            "ontology_rate_alive": 0.7033420138888888,
+            "ontology_rate_all_features": 0.7033420138888888,
+            "frequency_ontology_floor_all_features": 0.46943721064814814,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.00951244212962963,
+                "ontology_alive": 0.009114583333333334,
+                "any_all_features": 0.00951244212962963,
+                "ontology_all_features": 0.009114583333333334
+              },
+              "freq": {
+                "any_alive": 0.7449725115740741,
+                "ontology_alive": 0.46943721064814814,
+                "any_all_features": 0.7449725115740741,
+                "ontology_all_features": 0.46943721064814814
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": 0.914433079000477,
+            "dead_fraction_heldout": 0.029622395833333332,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 15
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7662,
+            "n_ontology": 6514,
+            "any_rate_alive": 0.8313802083333334,
+            "ontology_rate_alive": 0.7068142361111112,
+            "ontology_rate_all_features": 0.7068142361111112,
+            "frequency_ontology_floor_all_features": 0.5222439236111112,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009367766203703705,
+                "ontology_alive": 0.0087890625,
+                "any_all_features": 0.009367766203703705,
+                "ontology_all_features": 0.0087890625
+              },
+              "freq": {
+                "any_alive": 0.7859881365740741,
+                "ontology_alive": 0.5222439236111112,
+                "any_all_features": 0.7859881365740741,
+                "ontology_all_features": 0.5222439236111112
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": 0.9048636369808423,
+            "dead_fraction_heldout": 0.036783854166666664,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 16
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7702,
+            "n_ontology": 6659,
+            "any_rate_alive": 0.8357204861111112,
+            "ontology_rate_alive": 0.7225477430555556,
+            "ontology_rate_all_features": 0.7225477430555556,
+            "frequency_ontology_floor_all_features": 0.5765697337962963,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009765625,
+                "ontology_alive": 0.009150752314814813,
+                "any_all_features": 0.009765625,
+                "ontology_all_features": 0.009150752314814813
+              },
+              "freq": {
+                "any_alive": 0.820095486111111,
+                "ontology_alive": 0.5765697337962963,
+                "any_all_features": 0.820095486111111,
+                "ontology_all_features": 0.5765697337962963
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 19,
+            "variance_explained_reextracted": 0.9069657054281096,
+            "dead_fraction_heldout": 0.03244357638888889,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 17
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7912,
+            "n_ontology": 6894,
+            "any_rate_alive": 0.8585069444444444,
+            "ontology_rate_alive": 0.748046875,
+            "ontology_rate_all_features": 0.748046875,
+            "frequency_ontology_floor_all_features": 0.6498842592592593,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.00954861111111111,
+                "ontology_alive": 0.00857204861111111,
+                "any_all_features": 0.00954861111111111,
+                "ontology_all_features": 0.00857204861111111
+              },
+              "freq": {
+                "any_alive": 0.8752893518518517,
+                "ontology_alive": 0.6498842592592593,
+                "any_all_features": 0.8752893518518517,
+                "ontology_all_features": 0.6498842592592593
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": 0.9021736836968837,
+            "dead_fraction_heldout": 0.024956597222222224,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 18
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7938,
+            "n_ontology": 6971,
+            "any_rate_alive": 0.861328125,
+            "ontology_rate_alive": 0.7564019097222222,
+            "ontology_rate_all_features": 0.7564019097222222,
+            "frequency_ontology_floor_all_features": 0.6905743634259259,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.011031539351851851,
+                "ontology_alive": 0.009910300925925925,
+                "any_all_features": 0.011031539351851851,
+                "ontology_all_features": 0.009910300925925925
+              },
+              "freq": {
+                "any_alive": 0.8914568865740741,
+                "ontology_alive": 0.6905743634259259,
+                "any_all_features": 0.891456886574074,
+                "ontology_all_features": 0.6905743634259259
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 23,
+            "variance_explained_reextracted": 0.9024615240703668,
+            "dead_fraction_heldout": 0.015625,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 19
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7959,
+            "n_ontology": 6955,
+            "any_rate_alive": 0.8636067708333334,
+            "ontology_rate_alive": 0.7546657986111112,
+            "ontology_rate_all_features": 0.7546657986111112,
+            "frequency_ontology_floor_all_features": 0.7223668981481483,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010886863425925925,
+                "ontology_alive": 0.010127314814814813,
+                "any_all_features": 0.010886863425925925,
+                "ontology_all_features": 0.010127314814814813
+              },
+              "freq": {
+                "any_alive": 0.9070095486111112,
+                "ontology_alive": 0.7223668981481483,
+                "any_all_features": 0.9070095486111112,
+                "ontology_all_features": 0.7223668981481483
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": 0.8934321244504982,
+            "dead_fraction_heldout": 0.013671875,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 20
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 8041,
+            "n_ontology": 7046,
+            "any_rate_alive": 0.8725043402777778,
+            "ontology_rate_alive": 0.7645399305555556,
+            "ontology_rate_all_features": 0.7645399305555556,
+            "frequency_ontology_floor_all_features": 0.7467809606481483,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009620949074074072,
+                "ontology_alive": 0.008572048611111112,
+                "any_all_features": 0.009620949074074072,
+                "ontology_all_features": 0.008572048611111112
+              },
+              "freq": {
+                "any_alive": 0.9206814236111112,
+                "ontology_alive": 0.7467809606481483,
+                "any_all_features": 0.9206814236111112,
+                "ontology_all_features": 0.7467809606481483
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 26,
+            "variance_explained_reextracted": 0.8932563087723193,
+            "dead_fraction_heldout": 0.008897569444444444,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 21
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 8162,
+            "n_ontology": 7152,
+            "any_rate_alive": 0.8856336805555556,
+            "ontology_rate_alive": 0.7760416666666666,
+            "ontology_rate_all_features": 0.7760416666666666,
+            "frequency_ontology_floor_all_features": 0.8065321180555557,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.009946469907407407,
+                "ontology_alive": 0.009223090277777778,
+                "any_all_features": 0.009946469907407407,
+                "ontology_all_features": 0.009223090277777778
+              },
+              "freq": {
+                "any_alive": 0.9478081597222222,
+                "ontology_alive": 0.8065321180555557,
+                "any_all_features": 0.9478081597222222,
+                "ontology_all_features": 0.8065321180555557
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 24,
+            "variance_explained_reextracted": 0.8795684395835222,
+            "dead_fraction_heldout": 0.0078125,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 22
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7969,
+            "n_ontology": 6900,
+            "any_rate_alive": 0.8646918402777778,
+            "ontology_rate_alive": 0.7486979166666666,
+            "ontology_rate_all_features": 0.7486979166666666,
+            "frequency_ontology_floor_all_features": 0.7704716435185185,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010235821759259259,
+                "ontology_alive": 0.009331597222222222,
+                "any_all_features": 0.010235821759259259,
+                "ontology_all_features": 0.009331597222222222
+              },
+              "freq": {
+                "any_alive": 0.9337022569444445,
+                "ontology_alive": 0.7704716435185185,
+                "any_all_features": 0.9337022569444444,
+                "ontology_all_features": 0.7704716435185185
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 26,
+            "variance_explained_reextracted": 0.874637552217216,
+            "dead_fraction_heldout": 0.005967881944444444,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 23
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7865,
+            "n_ontology": 6779,
+            "any_rate_alive": 0.8534071180555556,
+            "ontology_rate_alive": 0.7355685763888888,
+            "ontology_rate_all_features": 0.7355685763888888,
+            "frequency_ontology_floor_all_features": 0.7179181134259259,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.00998263888888889,
+                "ontology_alive": 0.009331597222222224,
+                "any_all_features": 0.00998263888888889,
+                "ontology_all_features": 0.009331597222222224
+              },
+              "freq": {
+                "any_alive": 0.9150028935185186,
+                "ontology_alive": 0.7179181134259259,
+                "any_all_features": 0.9150028935185186,
+                "ontology_all_features": 0.7179181134259259
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 24,
+            "variance_explained_reextracted": 0.8730340804657964,
+            "dead_fraction_heldout": 0.009006076388888888,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 24
+          },
+          {
+            "n_features": 9216,
+            "n_alive": 9216,
+            "n_annotated": 7469,
+            "n_ontology": 6350,
+            "any_rate_alive": 0.8104383680555556,
+            "ontology_rate_alive": 0.6890190972222222,
+            "ontology_rate_all_features": 0.6890190972222222,
+            "frequency_ontology_floor_all_features": 0.5785590277777778,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.010344328703703705,
+                "ontology_alive": 0.009259259259259259,
+                "any_all_features": 0.010344328703703705,
+                "ontology_all_features": 0.009259259259259259
+              },
+              "freq": {
+                "any_alive": 0.8308738425925926,
+                "ontology_alive": 0.5785590277777778,
+                "any_all_features": 0.8308738425925926,
+                "ontology_all_features": 0.5785590277777778
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 1,
+            "n_modules": 25,
+            "variance_explained_reextracted": 0.8839805413373716,
+            "dead_fraction_heldout": 0.011610243055555556,
+            "dead_fraction_all_rows": 0.0,
+            "layer": 25
+          }
+        ]
+      },
+      "27b_x4": {
+        "n_layers_completed": 26,
+        "layers": [
+          {
+            "n_features": 18432,
+            "n_alive": 18075,
+            "n_annotated": 5874,
+            "n_ontology": 5160,
+            "any_rate_alive": 0.3249792531120332,
+            "ontology_rate_alive": 0.2854771784232365,
+            "ontology_rate_all_features": 0.2799479166666667,
+            "frequency_ontology_floor_all_features": 0.04020182291666666,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.007597971415398801,
+                "ontology_alive": 0.007192254495159059,
+                "any_all_features": 0.0074508101851851844,
+                "ontology_all_features": 0.007052951388888889
+              },
+              "freq": {
+                "any_alive": 0.07937298294144766,
+                "ontology_alive": 0.040995850622406634,
+                "any_all_features": 0.07783564814814814,
+                "ontology_all_features": 0.04020182291666666
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 1,
+            "n_modules": 21,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.01936848958333337,
+            "layer": 0
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17648,
+            "n_annotated": 4454,
+            "n_ontology": 4054,
+            "any_rate_alive": 0.25237987307343607,
+            "ontology_rate_alive": 0.22971441523118766,
+            "ontology_rate_all_features": 0.2199435763888889,
+            "frequency_ontology_floor_all_features": 0.026783130787037035,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006214113025083107,
+                "ontology_alive": 0.0059685705651254155,
+                "any_all_features": 0.005949797453703704,
+                "ontology_all_features": 0.005714699074074073
+              },
+              "freq": {
+                "any_alive": 0.051563916591115144,
+                "ontology_alive": 0.027972952553641583,
+                "any_all_features": 0.04937065972222223,
+                "ontology_all_features": 0.026783130787037035
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 20,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.04253472222222221,
+            "layer": 1
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17628,
+            "n_annotated": 4470,
+            "n_ontology": 4028,
+            "any_rate_alive": 0.25357385976855,
+            "ontology_rate_alive": 0.22850011345586566,
+            "ontology_rate_all_features": 0.2185329861111111,
+            "frequency_ontology_floor_all_features": 0.026891637731481486,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006996445049542395,
+                "ontology_alive": 0.006769533318205884,
+                "any_all_features": 0.006691261574074074,
+                "ontology_all_features": 0.0064742476851851844
+              },
+              "freq": {
+                "any_alive": 0.054023901369034115,
+                "ontology_alive": 0.028118145374782546,
+                "any_all_features": 0.0516673900462963,
+                "ontology_all_features": 0.026891637731481486
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 23,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.04361979166666663,
+            "layer": 2
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17702,
+            "n_annotated": 4931,
+            "n_ontology": 4461,
+            "any_rate_alive": 0.2785560953564569,
+            "ontology_rate_alive": 0.2520054231160321,
+            "ontology_rate_all_features": 0.24202473958333334,
+            "frequency_ontology_floor_all_features": 0.02965856481481481,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.00717433058411479,
+                "ontology_alive": 0.0068918766241102694,
+                "any_all_features": 0.006890190972222223,
+                "ontology_all_features": 0.00661892361111111
+              },
+              "freq": {
+                "any_alive": 0.059108198696945724,
+                "ontology_alive": 0.030881632960494104,
+                "any_all_features": 0.05676721643518518,
+                "ontology_all_features": 0.02965856481481481
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 22,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.03960503472222221,
+            "layer": 3
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17816,
+            "n_annotated": 5004,
+            "n_ontology": 4572,
+            "any_rate_alive": 0.2808711270767849,
+            "ontology_rate_alive": 0.2566232599910193,
+            "ontology_rate_all_features": 0.248046875,
+            "frequency_ontology_floor_all_features": 0.029803240740740738,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006829067504864541,
+                "ontology_alive": 0.006492291573117796,
+                "any_all_features": 0.00660083912037037,
+                "ontology_all_features": 0.006275318287037037
+              },
+              "freq": {
+                "any_alive": 0.05990869630294866,
+                "ontology_alive": 0.03083370752881305,
+                "any_all_features": 0.057906539351851846,
+                "ontology_all_features": 0.029803240740740738
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 23,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.03342013888888884,
+            "layer": 4
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17930,
+            "n_annotated": 5650,
+            "n_ontology": 5193,
+            "any_rate_alive": 0.3151143335192415,
+            "ontology_rate_alive": 0.28962632459564974,
+            "ontology_rate_all_features": 0.28173828125,
+            "frequency_ontology_floor_all_features": 0.040961371527777776,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006636921360847741,
+                "ontology_alive": 0.006283695854248002,
+                "any_all_features": 0.006456163194444444,
+                "ontology_all_features": 0.006112557870370371
+              },
+              "freq": {
+                "any_alive": 0.0787321063394683,
+                "ontology_alive": 0.04210819854991634,
+                "any_all_features": 0.07658781828703703,
+                "ontology_all_features": 0.040961371527777776
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 20,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.02723524305555558,
+            "layer": 5
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 18015,
+            "n_annotated": 5510,
+            "n_ontology": 4967,
+            "any_rate_alive": 0.30585623091867886,
+            "ontology_rate_alive": 0.27571468220927003,
+            "ontology_rate_all_features": 0.2694769965277778,
+            "frequency_ontology_floor_all_features": 0.03821252893518519,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.007216208714959756,
+                "ontology_alive": 0.006920159126653715,
+                "any_all_features": 0.007052951388888889,
+                "ontology_all_features": 0.006763599537037038
+              },
+              "freq": {
+                "any_alive": 0.07506707373485058,
+                "ontology_alive": 0.03909704875566657,
+                "any_all_features": 0.07336877893518517,
+                "ontology_all_features": 0.03821252893518519
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.02262369791666663,
+            "layer": 6
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17921,
+            "n_annotated": 5630,
+            "n_ontology": 5101,
+            "any_rate_alive": 0.3141565760839239,
+            "ontology_rate_alive": 0.28463813403269905,
+            "ontology_rate_all_features": 0.2767469618055556,
+            "frequency_ontology_floor_all_features": 0.040473090277777776,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006993657347990254,
+                "ontology_alive": 0.006844856127820248,
+                "any_all_features": 0.006799768518518519,
+                "ontology_all_features": 0.006655092592592593
+              },
+              "freq": {
+                "any_alive": 0.08364488588806428,
+                "ontology_alive": 0.04162714134255901,
+                "any_all_features": 0.0813259548611111,
+                "ontology_all_features": 0.040473090277777776
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 22,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.02772352430555558,
+            "layer": 7
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17885,
+            "n_annotated": 5604,
+            "n_ontology": 5059,
+            "any_rate_alive": 0.31333519709253566,
+            "ontology_rate_alive": 0.28286273413474977,
+            "ontology_rate_all_features": 0.2744683159722222,
+            "frequency_ontology_floor_all_features": 0.04372829861111111,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.007380486441151804,
+                "ontology_alive": 0.0071009225608051445,
+                "any_all_features": 0.007161458333333333,
+                "ontology_all_features": 0.006890190972222223
+              },
+              "freq": {
+                "any_alive": 0.0885285621097754,
+                "ontology_alive": 0.04506569751188146,
+                "any_all_features": 0.0859013310185185,
+                "ontology_all_features": 0.04372829861111111
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 20,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.02967664930555558,
+            "layer": 8
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17816,
+            "n_annotated": 5850,
+            "n_ontology": 5215,
+            "any_rate_alive": 0.32835653345307586,
+            "ontology_rate_alive": 0.29271441400987874,
+            "ontology_rate_all_features": 0.2829318576388889,
+            "frequency_ontology_floor_all_features": 0.05345775462962962,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.007240682532555008,
+                "ontology_alive": 0.006903906600808262,
+                "any_all_features": 0.006998697916666668,
+                "ontology_all_features": 0.006673177083333333
+              },
+              "freq": {
+                "any_alive": 0.1045876365813501,
+                "ontology_alive": 0.055306091902409815,
+                "any_all_features": 0.10109230324074076,
+                "ontology_all_features": 0.05345775462962962
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 1,
+            "n_modules": 20,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.03342013888888884,
+            "layer": 9
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17961,
+            "n_annotated": 6273,
+            "n_ontology": 5706,
+            "any_rate_alive": 0.34925672289961585,
+            "ontology_rate_alive": 0.3176883247035243,
+            "ontology_rate_all_features": 0.3095703125,
+            "frequency_ontology_floor_all_features": 0.06754557291666667,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.007571961472078392,
+                "ontology_alive": 0.007423491639292541,
+                "any_all_features": 0.007378472222222222,
+                "ontology_all_features": 0.0072337962962962955
+              },
+              "freq": {
+                "any_alive": 0.12532709760035632,
+                "ontology_alive": 0.06931685318189411,
+                "any_all_features": 0.12212456597222222,
+                "ontology_all_features": 0.06754557291666667
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.02555338541666663,
+            "layer": 10
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17858,
+            "n_annotated": 6122,
+            "n_ontology": 5549,
+            "any_rate_alive": 0.342815544853847,
+            "ontology_rate_alive": 0.3107290850039198,
+            "ontology_rate_all_features": 0.3010525173611111,
+            "frequency_ontology_floor_all_features": 0.06725622106481481,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006943666703998208,
+                "ontology_alive": 0.006682345914062793,
+                "any_all_features": 0.006727430555555556,
+                "ontology_all_features": 0.006474247685185186
+              },
+              "freq": {
+                "any_alive": 0.13107104192332103,
+                "ontology_alive": 0.0694180012692724,
+                "any_all_features": 0.1269892939814815,
+                "ontology_all_features": 0.06725622106481481
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 22,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.03114149305555558,
+            "layer": 11
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17958,
+            "n_annotated": 6475,
+            "n_ontology": 5828,
+            "any_rate_alive": 0.3605635371422207,
+            "ontology_rate_alive": 0.32453502617217955,
+            "ontology_rate_all_features": 0.3161892361111111,
+            "frequency_ontology_floor_all_features": 0.0784324363425926,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.0077774065411886995,
+                "ontology_alive": 0.007536102758287856,
+                "any_all_features": 0.00757740162037037,
+                "ontology_all_features": 0.0073423032407407395
+              },
+              "freq": {
+                "any_alive": 0.1445595277870587,
+                "ontology_alive": 0.08050265434161191,
+                "any_all_features": 0.1408420138888889,
+                "ontology_all_features": 0.0784324363425926
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.02571614583333337,
+            "layer": 12
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17818,
+            "n_annotated": 5680,
+            "n_ontology": 5174,
+            "any_rate_alive": 0.31877876304860253,
+            "ontology_rate_alive": 0.2903805140868784,
+            "ontology_rate_all_features": 0.2807074652777778,
+            "frequency_ontology_floor_all_features": 0.059968171296296294,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.007165039099038426,
+                "ontology_alive": 0.006959254686272309,
+                "any_all_features": 0.006926359953703704,
+                "ontology_all_features": 0.006727430555555556
+              },
+              "freq": {
+                "any_alive": 0.11810154525386314,
+                "ontology_alive": 0.06203464661204026,
+                "any_all_features": 0.11416739004629631,
+                "ontology_all_features": 0.059968171296296294
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 1,
+            "n_modules": 19,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.03331163194444442,
+            "layer": 13
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 17611,
+            "n_annotated": 5404,
+            "n_ontology": 4897,
+            "any_rate_alive": 0.30685367100107885,
+            "ontology_rate_alive": 0.27806484583498947,
+            "ontology_rate_all_features": 0.2656792534722222,
+            "frequency_ontology_floor_all_features": 0.061668113425925916,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.006870705808869456,
+                "ontology_alive": 0.006567864781481271,
+                "any_all_features": 0.006564670138888888,
+                "ontology_all_features": 0.006275318287037037
+              },
+              "freq": {
+                "any_alive": 0.11706698464974542,
+                "ontology_alive": 0.06454299396210701,
+                "any_all_features": 0.11185257523148147,
+                "ontology_all_features": 0.061668113425925916
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 21,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.04454210069444442,
+            "layer": 14
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 16181,
+            "n_annotated": 4281,
+            "n_ontology": 3944,
+            "any_rate_alive": 0.2645695568877078,
+            "ontology_rate_alive": 0.24374266114578827,
+            "ontology_rate_all_features": 0.21397569444444445,
+            "frequency_ontology_floor_all_features": 0.049008969907407406,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005747481614238922,
+                "ontology_alive": 0.005562078981521538,
+                "any_all_features": 0.005045572916666667,
+                "ontology_all_features": 0.004882812500000001
+              },
+              "freq": {
+                "any_alive": 0.09805739241497229,
+                "ontology_alive": 0.05582679274045691,
+                "any_all_features": 0.08608217592592592,
+                "ontology_all_features": 0.049008969907407406
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 17,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.12212456597222221,
+            "layer": 15
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 16056,
+            "n_annotated": 3921,
+            "n_ontology": 3585,
+            "any_rate_alive": 0.24420777279521674,
+            "ontology_rate_alive": 0.2232810164424514,
+            "ontology_rate_all_features": 0.19449869791666666,
+            "frequency_ontology_floor_all_features": 0.04309534143518519,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005044843049327354,
+                "ontology_alive": 0.004878757681448264,
+                "any_all_features": 0.00439453125,
+                "ontology_all_features": 0.004249855324074073
+              },
+              "freq": {
+                "any_alive": 0.08866882577644909,
+                "ontology_alive": 0.049472678956983894,
+                "any_all_features": 0.07723885995370369,
+                "ontology_all_features": 0.04309534143518519
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.12890625,
+            "layer": 16
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 15706,
+            "n_annotated": 3570,
+            "n_ontology": 3248,
+            "any_rate_alive": 0.2273016681522985,
+            "ontology_rate_alive": 0.20679994906405194,
+            "ontology_rate_all_features": 0.1762152777777778,
+            "frequency_ontology_floor_all_features": 0.03777850115740741,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005390721168131075,
+                "ontology_alive": 0.0052846046097032974,
+                "any_all_features": 0.004593460648148149,
+                "ontology_all_features": 0.004503038194444444
+              },
+              "freq": {
+                "any_alive": 0.08412920752154167,
+                "ontology_alive": 0.04433549811112527,
+                "any_all_features": 0.07168692129629631,
+                "ontology_all_features": 0.03777850115740741
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 1,
+            "n_modules": 17,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.1478949652777778,
+            "layer": 17
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 15272,
+            "n_annotated": 3491,
+            "n_ontology": 3197,
+            "any_rate_alive": 0.2285882661079099,
+            "ontology_rate_alive": 0.20933734939759036,
+            "ontology_rate_all_features": 0.17344835069444445,
+            "frequency_ontology_floor_all_features": 0.03528284143518518,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005631220534311158,
+                "ontology_alive": 0.0055657412257726566,
+                "any_all_features": 0.004665798611111111,
+                "ontology_all_features": 0.00461154513888889
+              },
+              "freq": {
+                "any_alive": 0.08165269774751178,
+                "ontology_alive": 0.042583376986205686,
+                "any_all_features": 0.0676540798611111,
+                "ontology_all_features": 0.03528284143518518
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 2,
+            "n_modules": 17,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.1714409722222222,
+            "layer": 18
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 15333,
+            "n_annotated": 3542,
+            "n_ontology": 3249,
+            "any_rate_alive": 0.23100502184830105,
+            "ontology_rate_alive": 0.21189591078066913,
+            "ontology_rate_all_features": 0.17626953125,
+            "frequency_ontology_floor_all_features": 0.03613281250000001,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.00521750472836366,
+                "ontology_alive": 0.005130546316224266,
+                "any_all_features": 0.004340277777777778,
+                "ontology_all_features": 0.004267939814814815
+              },
+              "freq": {
+                "any_alive": 0.08148003217461249,
+                "ontology_alive": 0.043435726863627476,
+                "any_all_features": 0.0677806712962963,
+                "ontology_all_features": 0.03613281250000001
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.16813151041666663,
+            "layer": 19
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 15554,
+            "n_annotated": 3731,
+            "n_ontology": 3443,
+            "any_rate_alive": 0.23987398739873989,
+            "ontology_rate_alive": 0.22135785007072137,
+            "ontology_rate_all_features": 0.1867947048611111,
+            "frequency_ontology_floor_all_features": 0.04376446759259259,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.004864772191504865,
+                "ontology_alive": 0.004800480048004801,
+                "any_all_features": 0.004105179398148149,
+                "ontology_all_features": 0.004050925925925927
+              },
+              "freq": {
+                "any_alive": 0.08930178732158932,
+                "ontology_alive": 0.05186232909005186,
+                "any_all_features": 0.07535807291666669,
+                "ontology_all_features": 0.04376446759259259
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 15,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.15614149305555558,
+            "layer": 20
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 14959,
+            "n_annotated": 3425,
+            "n_ontology": 3179,
+            "any_rate_alive": 0.22895915502373154,
+            "ontology_rate_alive": 0.21251420549501973,
+            "ontology_rate_all_features": 0.17247178819444445,
+            "frequency_ontology_floor_all_features": 0.04023799189814815,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.004946854736279163,
+                "ontology_alive": 0.004835439089065668,
+                "any_all_features": 0.004014756944444444,
+                "ontology_all_features": 0.0039243344907407395
+              },
+              "freq": {
+                "any_alive": 0.08685963856764045,
+                "ontology_alive": 0.04957996301000512,
+                "any_all_features": 0.07049334490740741,
+                "ontology_all_features": 0.04023799189814815
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 17,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.1884223090277778,
+            "layer": 21
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 14613,
+            "n_annotated": 3390,
+            "n_ontology": 3189,
+            "any_rate_alive": 0.23198521864093616,
+            "ontology_rate_alive": 0.21823034284541162,
+            "ontology_rate_all_features": 0.17301432291666666,
+            "frequency_ontology_floor_all_features": 0.04161241319444445,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005246470038093935,
+                "ontology_alive": 0.005132416341613631,
+                "any_all_features": 0.004159432870370371,
+                "ontology_all_features": 0.004069010416666667
+              },
+              "freq": {
+                "any_alive": 0.08903031547252445,
+                "ontology_alive": 0.05248751112023541,
+                "any_all_features": 0.0705837673611111,
+                "ontology_all_features": 0.04161241319444445
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.20719401041666663,
+            "layer": 22
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 14648,
+            "n_annotated": 3544,
+            "n_ontology": 3315,
+            "any_rate_alive": 0.2419442927362097,
+            "ontology_rate_alive": 0.22631075914800655,
+            "ontology_rate_all_features": 0.17985026041666666,
+            "frequency_ontology_floor_all_features": 0.040237991898148154,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005074640451483706,
+                "ontology_alive": 0.0049836155106499185,
+                "any_all_features": 0.004032841435185185,
+                "ontology_all_features": 0.003960503472222222
+              },
+              "freq": {
+                "any_alive": 0.08654196249772438,
+                "ontology_alive": 0.050632623338794834,
+                "any_all_features": 0.06877531828703703,
+                "ontology_all_features": 0.040237991898148154
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 17,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.20529513888888884,
+            "layer": 23
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 14417,
+            "n_annotated": 3504,
+            "n_ontology": 3244,
+            "any_rate_alive": 0.24304640355136298,
+            "ontology_rate_alive": 0.22501213844766596,
+            "ontology_rate_all_features": 0.1759982638888889,
+            "frequency_ontology_floor_all_features": 0.04466869212962962,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005040345887956348,
+                "ontology_alive": 0.00492474162447111,
+                "any_all_features": 0.003942418981481482,
+                "ontology_all_features": 0.003851996527777778
+              },
+              "freq": {
+                "any_alive": 0.09292270698943376,
+                "ontology_alive": 0.05710850616170724,
+                "any_all_features": 0.07268156828703703,
+                "ontology_all_features": 0.04466869212962962
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 17,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.2178276909722222,
+            "layer": 24
+          },
+          {
+            "n_features": 18432,
+            "n_alive": 15677,
+            "n_annotated": 4475,
+            "n_ontology": 4184,
+            "any_rate_alive": 0.28545002232570005,
+            "ontology_rate_alive": 0.2668877974102188,
+            "ontology_rate_all_features": 0.2269965277777778,
+            "frequency_ontology_floor_all_features": 0.058648003472222224,
+            "floors": {
+              "uniform": {
+                "any_alive": 0.005485743445812336,
+                "ontology_alive": 0.005336905445344559,
+                "any_all_features": 0.004665798611111111,
+                "ontology_all_features": 0.004539207175925926
+              },
+              "freq": {
+                "any_alive": 0.11511556207607748,
+                "ontology_alive": 0.06895451935957135,
+                "any_all_features": 0.09790943287037038,
+                "ontology_all_features": 0.058648003472222224
+              }
+            },
+            "features_with_capped_network_details": 0,
+            "n_svd_aligned": 0,
+            "n_modules": 18,
+            "variance_explained_reextracted": null,
+            "dead_fraction_heldout": null,
+            "dead_fraction_all_rows": 0.1494683159722222,
+            "layer": 25
+          }
+        ]
+      }
+    },
+    "circuits": {
+      "n_annotated_edges": 20924,
+      "n_shared": 17399,
+      "n_source_clusters": 45,
+      "observed": 0.8315331676543682,
+      "same_source_random_target": 0.6125260418985594,
+      "excess": 0.2190071257558088,
+      "source_bootstrap": {
+        "observed": {
+          "estimate": 0.8315331676543682,
+          "ci95": [
+            0.7945552514408754,
+            0.8649351368256053
+          ]
+        },
+        "baseline": {
+          "estimate": 0.6125260418985594,
+          "ci95": [
+            0.577176293587464,
+            0.6433295726104805
+          ]
+        },
+        "excess": {
+          "estimate": 0.2190071257558088,
+          "ci95": [
+            0.18677252606195702,
+            0.2493487808088932
+          ]
+        }
+      }
+    },
+    "residual": {
+      "2b": {
+        "n_layers": 26
+      },
+      "27b_matched": {
+        "n_layers": 46
+      }
+    },
+    "phase8": {
+      "k562": {
+        "n_groups": 60,
+        "n_genes": 8563,
+        "n_representation_layer_families": 5,
+        "n_records": 300,
+        "exact_row_provenance_checked": true,
+        "raw_feature_test_sample": {
+          "8": {
+            "n_conditions": 60,
+            "maximum_features_per_condition": 12,
+            "control_alive_features": 9076,
+            "all_group_eligible_features": 9207
+          },
+          "16": {
+            "n_conditions": 60,
+            "maximum_features_per_condition": 12,
+            "control_alive_features": 8858,
+            "all_group_eligible_features": 9194
+          },
+          "22": {
+            "n_conditions": 60,
+            "maximum_features_per_condition": 12,
+            "control_alive_features": 9013,
+            "all_group_eligible_features": 9212
+          }
+        },
+        "in_silico": {
+          "available": true,
+          "n_tfs": 73,
+          "n_layers": 3
+        },
+        "summary": [
+          {
+            "representation": "expression",
+            "layer": null,
+            "n_tfs": 48,
+            "n_tfs_screened": 48,
+            "n_tfs_evaluable": 34,
+            "n_tfs_unevaluable": 14,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 34,
+                "n_specific_full_family_bh": 0
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 13,
+                "n_specific_full_family_bh": 0
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 9,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 0,
+            "n_responding_groups": 45,
+            "n_groups": 60,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 34,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.0028831519993001114,
+              "mean_average_precision_ci95": [
+                0.0010205557572581072,
+                0.006052929861353299
+              ],
+              "mean_auroc": 0.5185383175925419,
+              "mean_auroc_ci95": [
+                0.4348052798764944,
+                0.6036421165566034
+              ],
+              "mean_ap_lift": 9.461206220306462,
+              "mean_ap_lift_ci95": [
+                3.44934037029557,
+                18.390525504453773
+              ],
+              "mean_prevalence": 0.0004087829946274235,
+              "mean_prevalence_ci95": [
+                0.00026450664358245053,
+                0.0006081935226788682
+              ],
+              "mean_prevalence_lift": 9.461206220306462,
+              "mean_prevalence_lift_ci95": [
+                3.265040185992986,
+                17.548376444729676
+              ],
+              "mean_random_label_expected_ap": 0.0014167066466285864,
+              "mean_random_label_expected_ap_ci95": [
+                0.0012863025243166504,
+                0.001605621039609432
+              ],
+              "mean_lift_over_random_expected_ap": 2.036805092280006,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.6517689693301114,
+                4.261002822817071
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 0,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": null,
+              "mean_average_precision_ci95": null,
+              "mean_auroc": null,
+              "mean_auroc_ci95": null,
+              "mean_ap_lift": null,
+              "mean_ap_lift_ci95": null,
+              "mean_prevalence": null,
+              "mean_prevalence_ci95": null,
+              "mean_prevalence_lift": null,
+              "mean_prevalence_lift_ci95": null,
+              "mean_random_label_expected_ap": null,
+              "mean_random_label_expected_ap_ci95": null,
+              "mean_lift_over_random_expected_ap": null,
+              "mean_lift_over_random_expected_ap_ci95": null
+            },
+            "pseudo_controls": []
+          },
+          {
+            "representation": "input",
+            "layer": null,
+            "n_tfs": 48,
+            "n_tfs_screened": 48,
+            "n_tfs_evaluable": 32,
+            "n_tfs_unevaluable": 16,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 32,
+                "n_specific_full_family_bh": 0
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 13,
+                "n_specific_full_family_bh": 0
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 8,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 0,
+            "n_responding_groups": 49,
+            "n_groups": 60,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 34,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.004051609317841717,
+              "mean_average_precision_ci95": [
+                0.0008968395851615992,
+                0.010064913273676262
+              ],
+              "mean_auroc": 0.5944209989421194,
+              "mean_auroc_ci95": [
+                0.5278956418906221,
+                0.6589336001387085
+              ],
+              "mean_ap_lift": 10.59165340602983,
+              "mean_ap_lift_ci95": [
+                3.4270462820167027,
+                23.643898351102788
+              ],
+              "mean_prevalence": 0.0004087829946274235,
+              "mean_prevalence_ci95": [
+                0.00026450664358245053,
+                0.0006081935226788682
+              ],
+              "mean_prevalence_lift": 10.59165340602983,
+              "mean_prevalence_lift_ci95": [
+                3.0972850339115405,
+                22.855888787685082
+              ],
+              "mean_random_label_expected_ap": 0.0013904104188763962,
+              "mean_random_label_expected_ap_ci95": [
+                0.0012601116770477477,
+                0.001579315342096808
+              ],
+              "mean_lift_over_random_expected_ap": 2.825569845138348,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.7140394784263879,
+                6.494168162041514
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 0,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": null,
+              "mean_average_precision_ci95": null,
+              "mean_auroc": null,
+              "mean_auroc_ci95": null,
+              "mean_ap_lift": null,
+              "mean_ap_lift_ci95": null,
+              "mean_prevalence": null,
+              "mean_prevalence_ci95": null,
+              "mean_prevalence_lift": null,
+              "mean_prevalence_lift_ci95": null,
+              "mean_random_label_expected_ap": null,
+              "mean_random_label_expected_ap_ci95": null,
+              "mean_lift_over_random_expected_ap": null,
+              "mean_lift_over_random_expected_ap_ci95": null
+            },
+            "pseudo_controls": []
+          },
+          {
+            "representation": "model",
+            "layer": 8,
+            "n_tfs": 48,
+            "n_tfs_screened": 48,
+            "n_tfs_evaluable": 28,
+            "n_tfs_unevaluable": 20,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 28,
+                "n_specific_full_family_bh": 2
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 9,
+                "n_specific_full_family_bh": 1
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 5,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 2,
+            "n_responding_groups": 56,
+            "n_groups": 60,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 34,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.0008588600772108304,
+              "mean_average_precision_ci95": [
+                0.0004950622729698593,
+                0.001296908347746975
+              ],
+              "mean_auroc": 0.5129164451012366,
+              "mean_auroc_ci95": [
+                0.4401237346787741,
+                0.58740466145536
+              ],
+              "mean_ap_lift": 3.1434172843561363,
+              "mean_ap_lift_ci95": [
+                1.8327523466249447,
+                5.043198568451873
+              ],
+              "mean_prevalence": 0.0004087829946274235,
+              "mean_prevalence_ci95": [
+                0.00026450664358245053,
+                0.0006081935226788682
+              ],
+              "mean_prevalence_lift": 3.1434172843561363,
+              "mean_prevalence_lift_ci95": [
+                1.8843863688720246,
+                5.448594417908175
+              ],
+              "mean_random_label_expected_ap": 0.0013968106469017447,
+              "mean_random_label_expected_ap_ci95": [
+                0.0012699402689771977,
+                0.001583812193362728
+              ],
+              "mean_lift_over_random_expected_ap": 0.6034922411528866,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.36345933758912,
+                0.927287721032429
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 28,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.017601206551821475,
+              "mean_average_precision_ci95": [
+                0.012490862600567934,
+                0.02517792510073097
+              ],
+              "mean_auroc": 0.5073573926318845,
+              "mean_auroc_ci95": [
+                0.481876141896556,
+                0.5332514529089956
+              ],
+              "mean_ap_lift": 1.7070595439894436,
+              "mean_ap_lift_ci95": [
+                1.1080664487658287,
+                2.709298089399177
+              ],
+              "mean_prevalence": 0.015201942621297463,
+              "mean_prevalence_ci95": [
+                0.01035692951015532,
+                0.021588096789709695
+              ],
+              "mean_prevalence_lift": 1.7070595439894436,
+              "mean_prevalence_lift_ci95": [
+                1.054781822727565,
+                2.7656666101203364
+              ],
+              "mean_random_label_expected_ap": 0.016133136096189497,
+              "mean_random_label_expected_ap_ci95": [
+                0.010795688273511699,
+                0.023390731740859524
+              ],
+              "mean_lift_over_random_expected_ap": 1.3656716442074017,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.9364867696543039,
+                1.8767258857529285
+              ]
+            },
+            "pseudo_controls": []
+          },
+          {
+            "representation": "model",
+            "layer": 16,
+            "n_tfs": 48,
+            "n_tfs_screened": 48,
+            "n_tfs_evaluable": 28,
+            "n_tfs_unevaluable": 20,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 28,
+                "n_specific_full_family_bh": 2
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 9,
+                "n_specific_full_family_bh": 1
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 5,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 2,
+            "n_responding_groups": 60,
+            "n_groups": 60,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 34,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.000789595729503171,
+              "mean_average_precision_ci95": [
+                0.000496138770258548,
+                0.0011982540610140317
+              ],
+              "mean_auroc": 0.4959065432489465,
+              "mean_auroc_ci95": [
+                0.4320796559944178,
+                0.5592196559133078
+              ],
+              "mean_ap_lift": 2.694694417248768,
+              "mean_ap_lift_ci95": [
+                1.691265034444666,
+                4.269018208074712
+              ],
+              "mean_prevalence": 0.0004087829946274235,
+              "mean_prevalence_ci95": [
+                0.00026450664358245053,
+                0.0006081935226788682
+              ],
+              "mean_prevalence_lift": 2.694694417248768,
+              "mean_prevalence_lift_ci95": [
+                1.7239097697176675,
+                4.693202607332209
+              ],
+              "mean_random_label_expected_ap": 0.001396828469118499,
+              "mean_random_label_expected_ap_ci95": [
+                0.001270115830501701,
+                0.001586634482205982
+              ],
+              "mean_lift_over_random_expected_ap": 0.5424223088847285,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.337720662434795,
+                0.8269175310907445
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 28,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.014582740499631831,
+              "mean_average_precision_ci95": [
+                0.009089746596961068,
+                0.022969917892073838
+              ],
+              "mean_auroc": 0.5152760929125507,
+              "mean_auroc_ci95": [
+                0.4913914879312537,
+                0.5473170862796327
+              ],
+              "mean_ap_lift": 1.5344559560585882,
+              "mean_ap_lift_ci95": [
+                1.083911722716807,
+                2.293787688734424
+              ],
+              "mean_prevalence": 0.01285387985953572,
+              "mean_prevalence_ci95": [
+                0.008301998197582273,
+                0.019077659343049815
+              ],
+              "mean_prevalence_lift": 1.5344559560585882,
+              "mean_prevalence_lift_ci95": [
+                1.0895317817590997,
+                2.3523425489355425
+              ],
+              "mean_random_label_expected_ap": 0.013788405768003626,
+              "mean_random_label_expected_ap_ci95": [
+                0.008626593299156644,
+                0.020045585847957553
+              ],
+              "mean_lift_over_random_expected_ap": 1.152143049174944,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.8659757151966381,
+                1.5876305811107667
+              ]
+            },
+            "pseudo_controls": []
+          },
+          {
+            "representation": "model",
+            "layer": 22,
+            "n_tfs": 48,
+            "n_tfs_screened": 48,
+            "n_tfs_evaluable": 28,
+            "n_tfs_unevaluable": 20,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 28,
+                "n_specific_full_family_bh": 2
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 9,
+                "n_specific_full_family_bh": 1
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 5,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 2,
+            "n_responding_groups": 60,
+            "n_groups": 60,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 34,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.0007342624428200783,
+              "mean_average_precision_ci95": [
+                0.00048588122658660974,
+                0.0010380044253682126
+              ],
+              "mean_auroc": 0.47570054514967053,
+              "mean_auroc_ci95": [
+                0.4096648047967562,
+                0.5460535895797832
+              ],
+              "mean_ap_lift": 2.4504418894286717,
+              "mean_ap_lift_ci95": [
+                1.6002178839181262,
+                3.6355079503949437
+              ],
+              "mean_prevalence": 0.0004087829946274235,
+              "mean_prevalence_ci95": [
+                0.00026450664358245053,
+                0.0006081935226788682
+              ],
+              "mean_prevalence_lift": 2.4504418894286717,
+              "mean_prevalence_lift_ci95": [
+                1.6242472982458152,
+                3.9147680645848304
+              ],
+              "mean_random_label_expected_ap": 0.0013897825173734904,
+              "mean_random_label_expected_ap_ci95": [
+                0.001260422386076251,
+                0.00158239895275044
+              ],
+              "mean_lift_over_random_expected_ap": 0.4997272314521539,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.33074672057254806,
+                0.6958589994915304
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 28,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.014126739289026177,
+              "mean_average_precision_ci95": [
+                0.00859007288892748,
+                0.022614908289944138
+              ],
+              "mean_auroc": 0.4850671250904095,
+              "mean_auroc_ci95": [
+                0.45613512989516247,
+                0.5210173830282437
+              ],
+              "mean_ap_lift": 1.4807712640634936,
+              "mean_ap_lift_ci95": [
+                1.0547400550273234,
+                2.1672110103655298
+              ],
+              "mean_prevalence": 0.012258854909745053,
+              "mean_prevalence_ci95": [
+                0.007723039823832268,
+                0.018436647075243475
+              ],
+              "mean_prevalence_lift": 1.4807712640634936,
+              "mean_prevalence_lift_ci95": [
+                1.0542231843238874,
+                2.2807592820536082
+              ],
+              "mean_random_label_expected_ap": 0.013192369693197021,
+              "mean_random_label_expected_ap_ci95": [
+                0.008242044786876747,
+                0.019456022395245447
+              ],
+              "mean_lift_over_random_expected_ap": 1.1478745803487371,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.8331245090320413,
+                1.6441839420280868
+              ]
+            },
+            "pseudo_controls": []
+          }
+        ]
+      },
+      "rpe1": {
+        "n_groups": 181,
+        "n_genes": 8749,
+        "n_representation_layer_families": 5,
+        "n_records": 905,
+        "exact_row_provenance_checked": true,
+        "raw_feature_test_sample": {
+          "8": {
+            "n_conditions": 181,
+            "maximum_features_per_condition": 12,
+            "control_alive_features": 8734,
+            "all_group_eligible_features": 9194
+          },
+          "16": {
+            "n_conditions": 181,
+            "maximum_features_per_condition": 12,
+            "control_alive_features": 8312,
+            "all_group_eligible_features": 9159
+          },
+          "22": {
+            "n_conditions": 181,
+            "maximum_features_per_condition": 12,
+            "control_alive_features": 8502,
+            "all_group_eligible_features": 9188
+          }
+        },
+        "in_silico": {
+          "available": true,
+          "n_tfs": 103,
+          "n_layers": 3
+        },
+        "summary": [
+          {
+            "representation": "expression",
+            "layer": null,
+            "n_tfs": 121,
+            "n_tfs_screened": 121,
+            "n_tfs_evaluable": 102,
+            "n_tfs_unevaluable": 19,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 102,
+                "n_specific_full_family_bh": 2
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 51,
+                "n_specific_full_family_bh": 2
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 32,
+                "n_specific_full_family_bh": 2
+              }
+            },
+            "n_specific": 2,
+            "n_responding_groups": 153,
+            "n_groups": 181,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 102,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.006240486768690787,
+              "mean_average_precision_ci95": [
+                0.0034368670830210927,
+                0.010119069442765237
+              ],
+              "mean_auroc": 0.589588111453027,
+              "mean_auroc_ci95": [
+                0.5464224607124636,
+                0.6353612839327913
+              ],
+              "mean_ap_lift": 13.439187293567356,
+              "mean_ap_lift_ci95": [
+                7.445746787451061,
+                21.00845814005874
+              ],
+              "mean_prevalence": 0.0008483611446369382,
+              "mean_prevalence_ci95": [
+                0.0004714675896972582,
+                0.0014772420122135675
+              ],
+              "mean_prevalence_lift": 13.439187293567356,
+              "mean_prevalence_lift_ci95": [
+                7.711205805148427,
+                20.227608639947338
+              ],
+              "mean_random_label_expected_ap": 0.0018368571379469094,
+              "mean_random_label_expected_ap_ci95": [
+                0.001443825341320169,
+                0.0023668236194954737
+              ],
+              "mean_lift_over_random_expected_ap": 3.234060722984678,
+              "mean_lift_over_random_expected_ap_ci95": [
+                1.8852179631165158,
+                5.236198473741269
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 0,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": null,
+              "mean_average_precision_ci95": null,
+              "mean_auroc": null,
+              "mean_auroc_ci95": null,
+              "mean_ap_lift": null,
+              "mean_ap_lift_ci95": null,
+              "mean_prevalence": null,
+              "mean_prevalence_ci95": null,
+              "mean_prevalence_lift": null,
+              "mean_prevalence_lift_ci95": null,
+              "mean_random_label_expected_ap": null,
+              "mean_random_label_expected_ap_ci95": null,
+              "mean_lift_over_random_expected_ap": null,
+              "mean_lift_over_random_expected_ap_ci95": null
+            },
+            "pseudo_controls": [
+              {
+                "group": "pseudo_00",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_01",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_02",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_03",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_04",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_05",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_06",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_07",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_08",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_09",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_10",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_11",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_12",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_13",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_14",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_15",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_16",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_17",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_18",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_19",
+                "n_responding": 0
+              }
+            ]
+          },
+          {
+            "representation": "input",
+            "layer": null,
+            "n_tfs": 121,
+            "n_tfs_screened": 121,
+            "n_tfs_evaluable": 99,
+            "n_tfs_unevaluable": 22,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 99,
+                "n_specific_full_family_bh": 0
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 48,
+                "n_specific_full_family_bh": 0
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 31,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 0,
+            "n_responding_groups": 147,
+            "n_groups": 181,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 102,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.003327676989043567,
+              "mean_average_precision_ci95": [
+                0.0021636585161368344,
+                0.004930331656766948
+              ],
+              "mean_auroc": 0.6283755230863964,
+              "mean_auroc_ci95": [
+                0.5899766535967056,
+                0.6680125710284383
+              ],
+              "mean_ap_lift": 7.008465373753509,
+              "mean_ap_lift_ci95": [
+                4.9421103830540165,
+                9.552580149701283
+              ],
+              "mean_prevalence": 0.0008483611446369382,
+              "mean_prevalence_ci95": [
+                0.0004714675896972582,
+                0.0014772420122135675
+              ],
+              "mean_prevalence_lift": 7.008465373753509,
+              "mean_prevalence_lift_ci95": [
+                4.946099360249921,
+                9.679676884432993
+              ],
+              "mean_random_label_expected_ap": 0.001823833851892257,
+              "mean_random_label_expected_ap_ci95": [
+                0.0014307499758327196,
+                0.002353804377970821
+              ],
+              "mean_lift_over_random_expected_ap": 1.6612160125865962,
+              "mean_lift_over_random_expected_ap_ci95": [
+                1.1156206072105954,
+                2.479513748345065
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 0,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": null,
+              "mean_average_precision_ci95": null,
+              "mean_auroc": null,
+              "mean_auroc_ci95": null,
+              "mean_ap_lift": null,
+              "mean_ap_lift_ci95": null,
+              "mean_prevalence": null,
+              "mean_prevalence_ci95": null,
+              "mean_prevalence_lift": null,
+              "mean_prevalence_lift_ci95": null,
+              "mean_random_label_expected_ap": null,
+              "mean_random_label_expected_ap_ci95": null,
+              "mean_lift_over_random_expected_ap": null,
+              "mean_lift_over_random_expected_ap_ci95": null
+            },
+            "pseudo_controls": [
+              {
+                "group": "pseudo_00",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_01",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_02",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_03",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_04",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_05",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_06",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_07",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_08",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_09",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_10",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_11",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_12",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_13",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_14",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_15",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_16",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_17",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_18",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_19",
+                "n_responding": 0
+              }
+            ]
+          },
+          {
+            "representation": "model",
+            "layer": 8,
+            "n_tfs": 121,
+            "n_tfs_screened": 121,
+            "n_tfs_evaluable": 85,
+            "n_tfs_unevaluable": 36,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 85,
+                "n_specific_full_family_bh": 1
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 37,
+                "n_specific_full_family_bh": 1
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 16,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 1,
+            "n_responding_groups": 155,
+            "n_groups": 181,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 102,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.0010996553847601785,
+              "mean_average_precision_ci95": [
+                0.0007052636153598696,
+                0.0017487001133893504
+              ],
+              "mean_auroc": 0.46044776320717146,
+              "mean_auroc_ci95": [
+                0.4269255562794259,
+                0.49495637845329876
+              ],
+              "mean_ap_lift": 2.179890262220155,
+              "mean_ap_lift_ci95": [
+                1.5915520859026149,
+                2.786208140642019
+              ],
+              "mean_prevalence": 0.0008483611446369382,
+              "mean_prevalence_ci95": [
+                0.0004714675896972582,
+                0.0014772420122135675
+              ],
+              "mean_prevalence_lift": 2.179890262220155,
+              "mean_prevalence_lift_ci95": [
+                1.6967062619342748,
+                2.9059943211150427
+              ],
+              "mean_random_label_expected_ap": 0.0018206744253582026,
+              "mean_random_label_expected_ap_ci95": [
+                0.0014306884585920155,
+                0.0023527396398119937
+              ],
+              "mean_lift_over_random_expected_ap": 0.48461719692757466,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.40884653388685527,
+                0.5653281384436554
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 85,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.02325917851185487,
+              "mean_average_precision_ci95": [
+                0.013533233123899134,
+                0.03331346470616306
+              ],
+              "mean_auroc": 0.5130921091781522,
+              "mean_auroc_ci95": [
+                0.5007488238859272,
+                0.5249475460084199
+              ],
+              "mean_ap_lift": 1.1589526486418054,
+              "mean_ap_lift_ci95": [
+                1.0960725063539731,
+                1.2359284117811975
+              ],
+              "mean_prevalence": 0.022741173911374434,
+              "mean_prevalence_ci95": [
+                0.0127824412340529,
+                0.03517732152682697
+              ],
+              "mean_prevalence_lift": 1.1589526486418054,
+              "mean_prevalence_lift_ci95": [
+                1.0963825084745142,
+                1.2342003383855762
+              ],
+              "mean_random_label_expected_ap": 0.023666281551233487,
+              "mean_random_label_expected_ap_ci95": [
+                0.014026634637634155,
+                0.036831358639446934
+              ],
+              "mean_lift_over_random_expected_ap": 0.9718486969186759,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.9171819752122109,
+                1.0229089526455202
+              ]
+            },
+            "pseudo_controls": [
+              {
+                "group": "pseudo_00",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_01",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_02",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_03",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_04",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_05",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_06",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_07",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_08",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_09",
+                "n_responding": 2
+              },
+              {
+                "group": "pseudo_10",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_11",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_12",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_13",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_14",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_15",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_16",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_17",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_18",
+                "n_responding": 2
+              },
+              {
+                "group": "pseudo_19",
+                "n_responding": 0
+              }
+            ]
+          },
+          {
+            "representation": "model",
+            "layer": 16,
+            "n_tfs": 121,
+            "n_tfs_screened": 121,
+            "n_tfs_evaluable": 85,
+            "n_tfs_unevaluable": 36,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 85,
+                "n_specific_full_family_bh": 0
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 37,
+                "n_specific_full_family_bh": 0
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 16,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 0,
+            "n_responding_groups": 157,
+            "n_groups": 181,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 102,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.0011257025836105806,
+              "mean_average_precision_ci95": [
+                0.0007624845350149501,
+                0.0018161030838862746
+              ],
+              "mean_auroc": 0.4611256623074569,
+              "mean_auroc_ci95": [
+                0.429087324797933,
+                0.5005584239560559
+              ],
+              "mean_ap_lift": 2.44323974382068,
+              "mean_ap_lift_ci95": [
+                1.8664614711367191,
+                3.307772460337126
+              ],
+              "mean_prevalence": 0.0008483611446369382,
+              "mean_prevalence_ci95": [
+                0.0004714675896972582,
+                0.0014772420122135675
+              ],
+              "mean_prevalence_lift": 2.44323974382068,
+              "mean_prevalence_lift_ci95": [
+                1.7810865715333275,
+                3.242747554620861
+              ],
+              "mean_random_label_expected_ap": 0.0018173435343472612,
+              "mean_random_label_expected_ap_ci95": [
+                0.001426585801741008,
+                0.002347389432022383
+              ],
+              "mean_lift_over_random_expected_ap": 0.5120152498904306,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.4339649480628403,
+                0.5938070543228445
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 85,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.02344983641545361,
+              "mean_average_precision_ci95": [
+                0.013638681632223787,
+                0.033173958955029254
+              ],
+              "mean_auroc": 0.5239144642609893,
+              "mean_auroc_ci95": [
+                0.5070877968766238,
+                0.5373740665403538
+              ],
+              "mean_ap_lift": 1.308057812901138,
+              "mean_ap_lift_ci95": [
+                1.187925026218725,
+                1.455961709698526
+              ],
+              "mean_prevalence": 0.022808809078823142,
+              "mean_prevalence_ci95": [
+                0.012564048220008606,
+                0.03527475385830717
+              ],
+              "mean_prevalence_lift": 1.308057812901138,
+              "mean_prevalence_lift_ci95": [
+                1.1944318250699306,
+                1.44854327413936
+              ],
+              "mean_random_label_expected_ap": 0.023736670823592612,
+              "mean_random_label_expected_ap_ci95": [
+                0.01365485878090775,
+                0.03754518076869671
+              ],
+              "mean_lift_over_random_expected_ap": 0.9768391631463929,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.9224904391617361,
+                1.0370094325073107
+              ]
+            },
+            "pseudo_controls": [
+              {
+                "group": "pseudo_00",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_01",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_02",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_03",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_04",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_05",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_06",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_07",
+                "n_responding": 3
+              },
+              {
+                "group": "pseudo_08",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_09",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_10",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_11",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_12",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_13",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_14",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_15",
+                "n_responding": 2
+              },
+              {
+                "group": "pseudo_16",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_17",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_18",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_19",
+                "n_responding": 0
+              }
+            ]
+          },
+          {
+            "representation": "model",
+            "layer": 22,
+            "n_tfs": 121,
+            "n_tfs_screened": 121,
+            "n_tfs_evaluable": 85,
+            "n_tfs_unevaluable": 36,
+            "target_coverage_sensitivity": {
+              "min_1_eligible_target_genes": {
+                "n_tfs_evaluable": 85,
+                "n_specific_full_family_bh": 1
+              },
+              "min_3_eligible_target_genes": {
+                "n_tfs_evaluable": 37,
+                "n_specific_full_family_bh": 1
+              },
+              "min_5_eligible_target_genes": {
+                "n_tfs_evaluable": 16,
+                "n_specific_full_family_bh": 0
+              }
+            },
+            "n_specific": 1,
+            "n_responding_groups": 153,
+            "n_groups": 181,
+            "gene_retrieval": {
+              "n_tfs_evaluable": 102,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.0011012285980249279,
+              "mean_average_precision_ci95": [
+                0.0007415865289757726,
+                0.0018129680530753196
+              ],
+              "mean_auroc": 0.47971301090757074,
+              "mean_auroc_ci95": [
+                0.4432468568395009,
+                0.5164344183017853
+              ],
+              "mean_ap_lift": 2.1811823646108293,
+              "mean_ap_lift_ci95": [
+                1.813263971262285,
+                2.644948566432886
+              ],
+              "mean_prevalence": 0.0008483611446369382,
+              "mean_prevalence_ci95": [
+                0.0004714675896972582,
+                0.0014772420122135675
+              ],
+              "mean_prevalence_lift": 2.1811823646108293,
+              "mean_prevalence_lift_ci95": [
+                1.8170029450087168,
+                2.62885968959018
+              ],
+              "mean_random_label_expected_ap": 0.0018158119143854344,
+              "mean_random_label_expected_ap_ci95": [
+                0.0014207318359290128,
+                0.002343312635391625
+              ],
+              "mean_lift_over_random_expected_ap": 0.4821749969973446,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.4241538878294693,
+                0.52934081931
+              ]
+            },
+            "feature_retrieval": {
+              "n_tfs_evaluable": 85,
+              "bootstrap_unit": "transcription factors",
+              "mean_average_precision": 0.022018965842975437,
+              "mean_average_precision_ci95": [
+                0.012696452071279424,
+                0.03146103730118468
+              ],
+              "mean_auroc": 0.5339191800276244,
+              "mean_auroc_ci95": [
+                0.5218141700273317,
+                0.5470890920306835
+              ],
+              "mean_ap_lift": 1.338600955562982,
+              "mean_ap_lift_ci95": [
+                1.2356407554702808,
+                1.4626679467214843
+              ],
+              "mean_prevalence": 0.021421803375246483,
+              "mean_prevalence_ci95": [
+                0.011143435171195166,
+                0.03321311045097186
+              ],
+              "mean_prevalence_lift": 1.338600955562982,
+              "mean_prevalence_lift_ci95": [
+                1.227925539478112,
+                1.4676389538066377
+              ],
+              "mean_random_label_expected_ap": 0.02234854498405211,
+              "mean_random_label_expected_ap_ci95": [
+                0.012363485933875455,
+                0.03611670504653013
+              ],
+              "mean_lift_over_random_expected_ap": 1.0019331242583511,
+              "mean_lift_over_random_expected_ap_ci95": [
+                0.930333351196457,
+                1.0831587881043812
+              ]
+            },
+            "pseudo_controls": [
+              {
+                "group": "pseudo_00",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_01",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_02",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_03",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_04",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_05",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_06",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_07",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_08",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_09",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_10",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_11",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_12",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_13",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_14",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_15",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_16",
+                "n_responding": 1
+              },
+              {
+                "group": "pseudo_17",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_18",
+                "n_responding": 0
+              },
+              {
+                "group": "pseudo_19",
+                "n_responding": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "source_sha256": {
+    "/workspace/rev1/runs/2b_atlas/row_gene_names.json": "75dfb40cdc3356ca9218fa19a909a9e92774885eb6b2ea68109b25ee6a78a4e6",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L00.json": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L00.json": "8959a6590974e532d4edacf386a863130728084e0587e2e233af1a1cb683fbc4",
+    "/workspace/rev1/ontologies_v2/go_bp.json": "79fef7443c64c0d6f5b596a06fe02d626755b1602d26ce4baa5ae946a5fb4913",
+    "/workspace/rev1/ontologies_v2/kegg.json": "c13fb526879e678f8aaa9e00f7d7dd409a9e7989c66c0fe6c94dd12870c7d245",
+    "/workspace/rev1/ontologies_v2/reactome.json": "657a6e1cf3ace1ca8996d336050123cfd0c4e3c2d253905854b37c00c8e39356",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/ontologies_v2/string_v12.5_score700_pairs.tsv.gz": "ff9ad8e80caf1bcbb7a18215126a7411098b525534a8edbc3baf25810fbbdf7e",
+    "/workspace/rev1/results/2b_eval_L00.json": "a4f1ace68fb57f7ad57a6d19b1418df5b13d080affdb28087ec3818890e1530e",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L00.json": "15ae1572acce523731bc6859bf5d98aafb482f595cb0a650334b150688fda2ea",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L01.json": "af48401f67eb32d2cff623ed0809a94f0e5ae81473da40439eb9abfbfde7a70c",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L01.json": "73df35aa85314470e4e2a29c7b4927029ee5eb8b1ecab39dd8f9122bdac1e05b",
+    "/workspace/rev1/results/2b_eval_L01.json": "13d9d33b6841dc2c9427f3e0903645bff7ff25d16d8b6eff4ecb63a6f622a8c1",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L01.json": "0d166ec629ade15bd7aaa78ba223e6b0b65599325379659008b6c208540e831c",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L02.json": "ed56f8c111b677a61396b3b1ca75b6c11ee04fc79bf349cd790306ba5d949816",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L02.json": "87d0a63298b8783768c3112bcc9a72a651c3a065903bf83b6e8a72ccdb81c61e",
+    "/workspace/rev1/results/2b_eval_L02.json": "ed454062e9d4b64eb12f2b17c2be264fa420b8b8c21eae99c12723a65a5caf66",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L02.json": "ae2b17db314dff1bb0041653515fe04e7f130bda48bfd9d2b288a009a0687572",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L03.json": "9c68b8efa49e9ae8f5d078410af26a6458e225ce58c697fb216273b998ddd5ac",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L03.json": "68ac63d6930bb0ec9b2305eb8f2d356749374411c052ba7cd7555c8c14b807d1",
+    "/workspace/rev1/results/2b_eval_L03.json": "c3524249249d82f380da03530b169c618c6ebdd4992100ece94f9559f41dfa90",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L03.json": "908d0b772ed02c4b9e5e42d23e117565493147e8a98d78b6fcba5c3b399fb866",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L04.json": "2ec2d33e4935aa6cae1be158ab70601b4d4eb7c2d891967792696c57daef3574",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L04.json": "4ec5219676f12220138c0897dfb5c4a85ebf165bfab2ce5b020eadc3e21cc13e",
+    "/workspace/rev1/results/2b_eval_L04.json": "276e11533e584cc3068324b8c282756542616338a3fce655def5a6a40d3977a8",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L04.json": "ffd20448e1caae2473ea81cb2abbc01081d794f79f6f929beed9470fb2731a0b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L05.json": "0ef17f7e5211d86506ad9f682f398b02118310b36f5ad232e9a716afbf92306c",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L05.json": "5fb8fe9fbc2dfee5d451ab72ffcff80dbdbf04588f6d2a755c3f460c8474c081",
+    "/workspace/rev1/results/2b_eval_L05.json": "0c55fefa45009103abdeae7b9963dd274d7460b08b9a18dd190d4fb306822471",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L05.json": "f7a7a6f5815ef646cda1a7893027bccd67d60f14d7ac032f0b67a4db74e496f9",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L06.json": "e0d3e218277c910b6c6b1b2b0eb52bd8145136229219e81a50b8f1a2fc96751b",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L06.json": "352e519bdc0e74f9a52c0f1b255de96dc6c214460203ca216866ad73a6ff361e",
+    "/workspace/rev1/results/2b_eval_L06.json": "f19ee7a6509c7699fdbe1b5f15dff0e1f710ba91e99d6117f8fc922908cbcd63",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L06.json": "296ed414365a94d4a02511423a074157f38880c90acdeface0b3d65ba33f286c",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L07.json": "13003566263e6e84f73ce82cae76cd4ed462687f2e72fc416fdbd9ef356ad842",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L07.json": "655e79a566652277715683ecf3b48d682d63aad08baab5d22b1b59de1364bc90",
+    "/workspace/rev1/results/2b_eval_L07.json": "bf83ba6b094903d018e6431dd01011966ff6dc8dbeb0cb53dc42467973698638",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L07.json": "d44c7ce4db1b4fe13c82709e87246a5e407afb7b0cb3075426ca070d3d2cd4db",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L08.json": "b2b2e098bd360348f3ec6059ca5d95987368f28a8157584c1c66d243157e5ea1",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L08.json": "ff96caca804bef9ab18b5b12ac3db56cd55d497b023d49ef74e59d72ac5964ce",
+    "/workspace/rev1/results/2b_eval_L08.json": "7fd1f0f68390d042e1e3bafe956c0bb0bbe6f6235f772a58ec98bfc165827115",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L08.json": "bd5da9484e29857389642f47580488e2e39ad1486cfbdc12bf2f3de7c5790f1d",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L09.json": "5f01db25eeb465ae7879228dde74af13760edd4b5f18d0d21e1803463c4fbf02",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L09.json": "5800de243c71a8cef3e32b44c6884664625e73dcb8871bfe77201f3674e936bd",
+    "/workspace/rev1/results/2b_eval_L09.json": "49b6ba6c25cfeff35e67d2ebb1b25626f97ac6604622e810cdeb7fa7caaf3df0",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L09.json": "b150ba47c75cdf045ea7089640df4e543631f3e82937c1e3e4ca8dfd64c26a76",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L10.json": "49ba44fffb0e6c22802c71f70587e788882ece34a011af0b75c6ee47ebb8ced5",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L10.json": "898774dee8d16c1dd776a22310f1a39c7c3ddf0cb4d685d7e867c3f8cac73c52",
+    "/workspace/rev1/results/2b_eval_L10.json": "7a543c1b906eef52bcf9c442c105a0fd9df15c7d10f6f5236ecb11c48ae84900",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L10.json": "9222efc4b4cc4ebd591d967a4a6ce5ff1aa46ceec97ce48c3b3d449edb4ebf2b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L11.json": "6a16e91f573bfaec69667174d0f2be8691ef55d86879580d6f8b40d3a3953312",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L11.json": "fbdf13df2ebf3a3dd103ca4ccb2e16ebdc1d432da63b312740b46c15e2195c72",
+    "/workspace/rev1/results/2b_eval_L11.json": "e401bf53d6a5f7d61c5e799328b863b2d1c2b83a7ee3af240158509166fd61be",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L11.json": "68dd5fcd21ca8cdc4967abfd3336433b8c5e49fb3c8612c9f66e8dbc696a18cd",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L12.json": "9571e2605d562994e714b5fb1e11452254d1359ad883e133295ba42380547d97",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L12.json": "0a06f6e76e3aa2a2698dcae815165d7aee16cc44244bc09ac0dbf8c8dd9940be",
+    "/workspace/rev1/results/2b_eval_L12.json": "644299fdfdf15d71d81cdcf239bf2d1b1442a99b8cf57507a529265538af70f5",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L12.json": "8ca1e6a9996778614619273ce51d878fd53352c5e24f7c85924c800b1cdcde63",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L13.json": "7f4f6a678816e1b47dcd4352769c4100f022c9a5de3c78e239496a91494e50f4",
+    "/workspace/rev1/results/2b_eval_L13.json": "d8c8cb2ec7090c922a872dc3924159914d271f34be0ee678403b6f0425e29b38",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L13.json": "da5926be6406585d97994ccee307d074e5a9056ae436b902833f19aa357266bd",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L14.json": "849fab7961951a8d889d75cb89bb838ae3f7e4aaccac3b445fe16d8525785c57",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L14.json": "6f73b53a721878e491acf5daa184a48107ee099960da4b02ab29eb7105d4eb5b",
+    "/workspace/rev1/results/2b_eval_L14.json": "b3cd08417eff264e659659e483feb23a00aa48dece02260a58c115cfd73d8253",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L14.json": "97caa66f1f34ebdb9afe43462c157c21315f5f3faca5694ce836f8985ab12003",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L15.json": "165df7c82ff5f43113b92ff48f8f260b136cb474d732a3660f86e75f361599fa",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L15.json": "100a04c49af3d442f442b1d0d57c0daff9034d91fa28c0db8b42b6a4323f1fd7",
+    "/workspace/rev1/results/2b_eval_L15.json": "2e8272115167576dbd0e5af94addefde8509cbd3f35fe91ad6975859fff3f0cc",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L15.json": "9a95f118d7ea83a20a36f6318953883cbf439f4e023cd22fc16d29f97e080270",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L16.json": "8f20dafdcb6020d22d57ca37f9f7754742be147e212f79ca9da43eacc0b72b19",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L16.json": "ff93005e482889729f3da7e3352a9e11b0c7a05a1cb4227be247b8655b504883",
+    "/workspace/rev1/results/2b_eval_L16.json": "4e728c4184787860bed5c72d2f8e889d7efeb9d400604a280ddc0ef2f486747f",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L16.json": "57e7d26949d0750efb206cd5b9f516119cc3df81abdeb607a88407fb08b228a9",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L17.json": "0fd5cda9432b3149f8a4b288143d183e516f637076610f747588470ed43ae02d",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L17.json": "6982c570f2528c5e729fc97bfa12bbd98d43f4a094a759655c087d111feb7d28",
+    "/workspace/rev1/results/2b_eval_L17.json": "32162e1fbf3e416c200ff730fce328670acac968fdc8e84ebacabd3ff9e5fdd6",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L17.json": "13efd4ca7fd0b98ea2c1fc07515436abf14974bce0d5a93f23b1df7fdb2036d2",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L18.json": "6cb576f11fc7fe2319aefd49d5a5d0d728f715b1a1da37c5553b3d3e7272d32a",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L18.json": "ccc579cedded0c3ec6e622b37ca4055b8070d30c34a55fca6a42dd3fb308ecea",
+    "/workspace/rev1/results/2b_eval_L18.json": "b847cf6f5db9d5b7f7ad8cf5a6afd8365d174f99d8e07da513b6abb5bb1e12e3",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L18.json": "b6d15a43d3b6db6b8d12bdfd1c4a6574eb8b64292c7588251eb9040da47371a9",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L19.json": "4a0b0d1ec267aa20cc6407ea81bc45fea5bc260bc6d88c5d470e8ce9ef515558",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L19.json": "6a6435cf615b3064aa0d44cda260998a6076cbef5f6ce3bf932e997dca725576",
+    "/workspace/rev1/results/2b_eval_L19.json": "9c40fb54c1213ed4281f10895e2940d4822e7e1b07705675fc15fd43e8d3c049",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L19.json": "0fbbd8217f41a574ef7633f49dbedec23ed7841fe0f04cc39b56347b4e698f8d",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L20.json": "24c200634300062d6e474a8273ad89d5105f67c3c10f22bd79bacbf58a5138c8",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L20.json": "b9cab8420f1350eadd886d91a6623af77f2512d73ca91b4c3afe8d062190543d",
+    "/workspace/rev1/results/2b_eval_L20.json": "c7a542f907b88d2eb4e7d6c47ec0cd3e99a68257040af75102b1f58095f161f1",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L20.json": "b08401294eeb60687b13211a4d8ae10ae5d2797a1e9635737477ea4a3da11143",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L21.json": "49106b88846087f75c0bc5326f4e4f3cedb262fa0372edaa4a52221b76bb5087",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L21.json": "63cda0f25fd53a5515680b7981b87a5f751adea0a9f9b68c215c669c6aac4bc7",
+    "/workspace/rev1/results/2b_eval_L21.json": "c470ea5cad81b2036627d1ee494475e8aa103b8a14c26f8cc839850e8e86348a",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L21.json": "b9bc66c19afd25b360c51b1d26cf71c60c2b8f9f61097a97c8509bf263d0daf3",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L22.json": "69cf7d4fd9ec029d3e49bd62ecd730e68108217291aff3165c8af39308c3ea92",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L22.json": "9e2649694bff28952e563495f9b2c1d45e54d4f1be2093b881b16c4dc74dcd14",
+    "/workspace/rev1/results/2b_eval_L22.json": "ee2c30469f2e3611d3e90f7c3702be2fc9c259a00c6f192068ecfd7808fd8acd",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L22.json": "bcfb665c862adb28797ccd9744a3a494f5e079c3cd868fba42fd65d548ac9029",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L23.json": "f62a98f71cfdf04f898150f34e86928180d1053651625dc73ae85c5406de5b80",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L23.json": "9d63c409a15f98ca4760f1b1480b0b3c8aef1a091b150f172c2a6b6bb0b56c0d",
+    "/workspace/rev1/results/2b_eval_L23.json": "1a874368629e43bb02937380c34b7d16892ed6944f41a56c69f6a1a771db4b18",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L23.json": "d5bc1df126c65f64987f78ba22c5255fddccb3f2a54062779c3ca1ac8e328cca",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L24.json": "877becd04075b53264a44f4508a2de1406ba5c2708a4404f04586914b883e5f6",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L24.json": "38eb0516296f188a0d4c75469e556b9b1118df6fecb5eb45ec755b9a4222c086",
+    "/workspace/rev1/results/2b_eval_L24.json": "19d8518b603b375ab6183fafcf58050bcfe28d91b4a6afc239f4d31bcd45f679",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L24.json": "bb45b75d557e59b68e97d44444ff8855436de51dafe74de0b6c19fae9bffdc41",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L25.json": "d2e61d2c26fcd01f2304c403d54a776f570b961417e71136e7908839fcadb852",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L25.json": "e6677e90c6c5c3f47d4fd7a6d13564bdbb536148c4d7844e2cf4182f88153ffb",
+    "/workspace/rev1/results/2b_eval_L25.json": "c61064f24db1c35eba1981aa4068fcfbe41bff970bed1be291825afd5dc3081f",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L25.json": "8692ea75d4ed0ca936631fe334dd3f041cc82a6e53696ee3ee38cb1c9eba2f04",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L00.json": "60f90dba7e04593a0ae6da5f51e9f7461ee5d073ccfb38af95603fcb2af5d11b",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L00.json": "3465956ece2a9d9d6842cb24aeba9c317b0684de15efb191ec454465cd2e1bcd",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L00.json": "a0375d239ce0158ec11d45e97f7bceb46fd5e822cb7cf5f6115d2ea5b3836df9",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L01.json": "dad746182604d15bb5d263869bf012c4e5703b1a65cb7517a3ba0f46995b485f",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L01.json": "048d1f061e27f4bdafa46a95dfe769c25cabd326fa30309c86e857bb4189911c",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L01.json": "a70b0bf6a34291a4d8d897eee24b95a368e24c855d68268800b1c54391a7afef",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L02.json": "c1b859956e122e02e7af57a68bf8b2fc03ddfd73c2e3c4a36a6ee42853221861",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L02.json": "93569c89c6301fc13556a843dea5472377cd371f1665f04d81306700d6301cae",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L02.json": "e87c2c7e8ac5d312725063f6029156b3584f99ca1362c1c38fe74b71cf4b68d1",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L03.json": "147145f2acca03fee0e46dd101359c37e3d6882959bb5624572cdb0927b74d6f",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L03.json": "c46b0c148300cdd03422d73edeb6b4cac02abeedfafd13788585b56359a2fc87",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L03.json": "1694e9509663cfabed4205e62c71986bf75408af4745c3ff960d0dda3ec44774",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L04.json": "54058279d1bb0dbc4c1382004c99dc5ad52fbe26ecb7d6fe403841af32af8898",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L04.json": "7b961fa1e3de2f9c2a4db352a80abec458354dbe725aa8edc774d80a0131ccfc",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L04.json": "03016df0b52ceb87424d5b55fab1d579ae6f7c8941c1d7e7be680045420b4618",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L05.json": "1f21c7d681546a9c5be2cac45d736db504efa87076b0102f1eac3bb7002e3adf",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L05.json": "d6022ad48bc33215810d28a17dc20358f66a3d1c21814431bc9775950d50612d",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L05.json": "831310189942026d20271893ebb0a27edffe5e6d309cc2d0c646010c09260119",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L06.json": "50f178e8668782fb824502f5f87028baf47906fb2b1759fa9a0783ac190ef18f",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L06.json": "af755e1491489b8e44046b8358825841a23e0edaf2baeae6e3fa7ec3534404ae",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L06.json": "005efa3dbda108fab3550200b2dc353d679e885d36c4de21b82561168a389516",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L07.json": "58b652655e46bcf2141e12734495237046725941ee3a800f9fedf66915732e40",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L07.json": "f4e94dd246c2af8b1ae441232444a8572b20a4847e0626de7c930d8ca0980661",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L07.json": "e4e75bd2d73e87827c00a25b8ab541338ba84a03539a9357d64d9cfc7d368ded",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L08.json": "20b3ee32b22dc11b70808020bda4695a35c95a12332bab459f9aa49e720949b5",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L08.json": "490c6c74b83720aaec2121bbe3ebc0c9eee0c51d1617bae485d39dca7ccff92e",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L08.json": "b6a7221cb2992a1f2076d6765ddecc2ac5ef7f146f91c806097ad3805292a486",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L09.json": "4fe7d6ced5fbf533a4728f2046289b8ec9993aa6cfb2257abc8661b434c013b3",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L09.json": "b7ed3f35226e7e22f6389b0a455b18b08f7604652f0b999fc29ecf56ec15cd99",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L09.json": "58d2cc53fe0b07483ae45f3582320df060a89356cdf093080d232e1b68917f60",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L10.json": "f6a9110a1a92e49277178b08ee6e171a0b3ae520ac0ca02c84c8927f46cf7891",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L10.json": "3c32b7ffe0f4c271019e2cd8716d83f76e1a4665a7fe80cd8f1412ab108819a5",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L10.json": "d192aab6398d6963701d3caaf737c97576e6953becce5792ad9c0f6372a844e0",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L11.json": "766d1214e59c0918f515d195c5e966be2a99cc7f696217cc983fa0a26ec1705b",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L11.json": "2fecb022090e08ff928928e2985086aba640ad6dc6e8da72b838491995641cdd",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L11.json": "e7be56983de0f08b7e527a09b7280276875ae9b4e54ca450030415c3f2943060",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L12.json": "77e2ea531988bcce290bc3f4ad84bf5f1664ee71156f23fbf8db015bcbdff2ad",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L12.json": "35f7fbdab1733acacc76e3b21aba7c7307096f83edf897def6a58c15a815ed76",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L12.json": "d1ab5240f4b25d240bd3e27457bb347a24a8b7011338a3b713e9dfbf9fa481e4",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L13.json": "1d0f3c37b9348651950ce580a4b5d11a375e3b0da03c65f22e0b9da51b36bcee",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L13.json": "56b5d98a0c57e8aaf7fc51c6b855a79dcc61ec5eb579562092000df8ca720d3c",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L13.json": "3457774c0d433082052e05145cc86219cd2a9ce552e95edddfe27ca333a03e1d",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L14.json": "e7984f53df4685e238ae7ee05808541bc484405c8b50f72f7556e41cf33842d3",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L14.json": "35989e5034d76bb3815e7690fc64f215d9d028443335a3f467615daa89a9b858",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L14.json": "0191cee46721eb4e8506f7125d73ed6c73198072787843dfb9082449c4403a3a",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L15.json": "2063c18ecec95cb0303f1677e191573971c34269675030a2ac64ec19c29c60e0",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L15.json": "8fff7d78f4f28d90e98ce9654bc0885104d1cab1ba0ee2067a46ad758e6a0b32",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L15.json": "222e1eb6921062a2f3fbd870a1f1887b6a00e9c0f1d7cd7362ef6d416296e800",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L16.json": "525d1e79150463b996d02a09ef171faf00c67e4b117e963ef689f254e80a8e0b",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L16.json": "24ab029c61ac198b5c48e65edeb34ed34e174d5baf22933e5d284a9c6f142844",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L16.json": "107ecc1acfecc00c08e960813e69ab4f7e03187b35228184f3472c0fb1195a0c",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L17.json": "ca00d595f198e1a2fac970246b77e26d51c9f74596b319db0ef7d7765d85727a",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L17.json": "d0e3aef652998168c61f66ebae2a5439bff4d7d3e9334e3daa55766bb7b18dc8",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L17.json": "f7095fafb934ce4429a3082b80f0bdf7098d5c68ae0c00e0d367adfdd573d113",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L18.json": "3ec735e5767ce55f2a9aaba6edaaaf9008724e661eea7be490186a30d8854953",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L18.json": "a459ba9079c3d9aa481ccbc10d91564311580bf9a3d39fa7f8ac7c054bc4636e",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L18.json": "4f06f5b73204a8b1741387b0eb675e507b1f15f16fa1258f51e48a665d7b6d55",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L19.json": "e375cf1a6a38d91d9ca78811a3b9448893c1e80421ef13ae795906c524065080",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L19.json": "ac839888543b73a37690e2e988c7826bf2ac9c3e66d612f6f44c817fc1fc4a84",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L19.json": "e56bb742b96274118cb2a62c7de450812e884ca7c2f313fd487e03d33b259df7",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L20.json": "c8c2593d95b85ef07c3f34435e5dfff167f08c837c94cb28b53cf9351ba660b0",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L20.json": "c9c2b3cebf787093b2bc2f913daab77e4f6fc25a162b13921e2cc25605510ee3",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L20.json": "a68cfa4991a31a05a81e9178780f835996c2f2065b53110015271222f0a048f4",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L21.json": "8a7d34be0a3ec6c9b3d9d522b8ce30b7f7e1008393bd5c73d58928b49c7bde05",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L21.json": "a465d51ec8b71a5ad8d02b8fa498b02a05e4d9e47f5e4020920f95e02572efbb",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L21.json": "d8c6f5cb742664761d9bb4e1af1a636952d4d0a3587174b7e6a1a7b294bbe056",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L22.json": "d1593da9e78df04a89f5d5d77640f4263e8d546ceaece468a36e955f5832f31b",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L22.json": "1fea6f3b28adbf50016a7d7c9f248ceecb5e9b6ac668300db5eebe3429014462",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L22.json": "a334a4b465ba08f6f44b096f89def398505c9e1874168a3d5133cb858b65da62",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L23.json": "c01e0de82793f8c73d2da571ca6c2c6869a5330dc0683b168bcaeb9be526b53a",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L23.json": "b270a9fb1767bbce568bd880f3b312030df23e2d80d83f58287fc18b2e669159",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L23.json": "4f1269e70a94af998c29a1b75231f5978d6fede502e25981aa00a3a1471f018f",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L24.json": "f08a9ef64bfe66e9b5b1e2e2a175d453494baa3e5de5f85d05f9868c1b842daa",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L24.json": "61d01ee1da37c4221131f4fc4e438606bbd206bddf5b9a3db4793ea8ff41e651",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L24.json": "f156084b39dc7f5539b07483ac0c8fd2e5141511fea3e89ff455bcc453db52cc",
+    "/workspace/rev1/results/annotations/27b_x4/ann_v2_L25.json": "04da3562939444ebb1e593480e9af57ed46091b3bdab7561325ca45fdb22853d",
+    "/workspace/rev1/runs/27b_atlas/feature_catalog_L25.json": "26a5b95dbb465fa2d3d57e13c3e1c38a1f202159ccfa9f4d334d66ec6210e68c",
+    "/workspace/rev1/runs/27b_atlas/coactivation_modules_L25.json": "a8f382b68aeab2ce3ac6903981943ef658a3aca52ac87290cd9248b772528343",
+    "/workspace/rev1/results/circuit_baseline.json": "d0f1e4087c24a41a6cf18ebba95ecb44c54656e251f4ca61709387eb8e055634",
+    "/workspace/rev1/results/residual_summary.json": "da79b3197f2dbab3330125f07fe43e289cc70653a6272c1f8b9599e1f2f27d3f",
+    "/workspace/rev1/results/atlas-extract_residual_stats.npz": "b89187f0c2309de1f6e376b1006779860c0c6525b14003ccc04765297752e8b7",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L00.json": "cd20a3f48c856d8b03473a9e38f98780c8db1a890e57e269f0639c251170a2f9",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L01.json": "822c91fd3a9a87e5a2ca2c68214d082a26db116edf2404fe9e3016f74c67e2d8",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L02.json": "c50f1ec57871f061cdf3a5c9e0d1f6043ef9655898a1fc54892adadcfb8d0346",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L03.json": "d42db8e1c874d14b012afa6783436eb165ca17e206f5680bf208c8e10020e930",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L04.json": "ccc8d7c10310c7bb68252501b3f23b8316575980af233fc7fd156a39d707e485",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L05.json": "3ef8e0edd78e781de5a3a6a1cdacfd913e829cb921264b93771229175070424e",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L06.json": "e5914f4b569a308ff3f01e14a39f8bfc514b3980b4393550ade5ad58b43be8bd",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L07.json": "fcf6d9042b22d6cb2e6453fd1e5db6165302860d47b39624eb3b8ccac37a5e03",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L08.json": "50784a929c731a5f522370913489020be19ba354b4dc09dea3fdc84fb93b31ec",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L09.json": "d871f38b71004b90e4c696bef19dd79af2639311c30d788762a2fa193b0bc860",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L10.json": "96ffdc578416ded878832928051e3234dd6df037f1632ce17c86542ad4dd30e7",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L11.json": "2fca351930b2268bb7da750396d9c08529a57ad8d1826a46fb478eb0ef56aec4",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L12.json": "b2b9818a2bce4c1bc1150f271e65b8bfadd13e295a74f8e5ad39d42ac9b8a99d",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L13.json": "2d4561225c532811e33cce9ec1ad4ada3fa96ea74146e10193b16f79a09dab7b",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L14.json": "7dfb76358753ffe3640756ff815c49676527f92fdd4390fe41e1b9892aae84b2",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L15.json": "ba711ec218a25e85f3ec336e70d1741c07b05c36dabdf8f4e8ce932c14548e5f",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L16.json": "29774f227e4dc2ace8ff775c67afdaf4c95ea454c21ceab53338ab027dfebb60",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L17.json": "b9bbc72cf5575e430ee4648c70e355eae15d64838541faf9d34c37dd1b77e29e",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L18.json": "e3a8408250b6b31646a59e845cee086acbfe3b41b129beb21a5f418b9b0d479c",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L19.json": "a4c464f84fe63c86a145f8946322510f702411af2ce14e509b42cf78f6594a65",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L20.json": "44d7571a7481dbaf2a9eb55e8200a23f919de1d50c2e27fbca0809cff9c346a4",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L21.json": "97d16d189252ee8901991536e5d90ff9ffe80ce0e68b92e9f0a85771efe11d04",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L22.json": "5fba76197d530709cf168d49352e0619cab52d5d116f855c3d94de4e94c87321",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L23.json": "427f23c710eed6f1463bf9d5333853ef9b59a1451fd35657dbb4e5ba343c40f8",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L24.json": "cca34eb61ab77da8dca1c77d08aeaf33af79d439a4f5559e49c7d7069481a508",
+    "/workspace/rev1/runs/2b_atlas/sae/train_L25.json": "7a1d3cd1c92089597b3ba7f3fa32bebd99c4a616d691f121fcebb7a08cfafd0e",
+    "/workspace/rev1/results/scale-extract_residual_stats.npz": "41ffee996634fa56e07be0d4ef19fd2f3b2dd8f0f43007cd92c9e35f7cf9ebb9",
+    "/workspace/rev1/runs/27b_matched/sae/train_L00.json": "5355cf03c0dffb8f1e3e9cfd5b2b93d016472e7b6c363a680f7aceec139da01b",
+    "/workspace/rev1/runs/27b_matched/sae/train_L07.json": "58f2918a49bd60f59bf008f00b006c0613263d3079857bacd04eb66472a83957",
+    "/workspace/rev1/runs/27b_matched/sae/train_L14.json": "9f60615e3e8c5246b83b6bbe05c46f64cf5fae0fdbceb82745ba0db5dbc6c989",
+    "/workspace/rev1/runs/27b_matched/sae/train_L24.json": "b93cba7d56a54a06c9f3b583c24d026e4107f40d18a9e1e7072a632dd20e1e18",
+    "/workspace/rev1/runs/27b_matched/sae/train_L31.json": "acd8f870b28a7351800b8810cf13597f0efa7aaff915860da2a63f9478dba2ba",
+    "/workspace/rev1/runs/27b_matched/sae/train_L38.json": "3ef41bc4e453cede6da4200b5d33edba48602a27b8b6debcfd74dba1dfb35790",
+    "/workspace/rev1/runs/27b_matched/sae/train_L45.json": "9654a0e5aa98c8e52c8200e2cb5dc0a80e32b2de803d5a27f441d592d773fcad",
+    "/workspace/rev1/results/phase8_k562/statistics/manifest.json": "de50330c41bbd4acacb2e70bd6c311bdda8870284b01c1d7c29bc834060a7628",
+    "/workspace/rev1/results/phase8_k562/statistics/regulatory_statistics.json": "358ed53f5a6f3fe2bd282277f68d3786ec2498943a64a0d5e538ff644abe8771",
+    "/workspace/rev1/designs/phase8_k562_original48.json": "0bfb5ae06542a5328e7d56bf5efe87a79059642ecc4be73d046cccbfbc2a85b9",
+    "/workspace/rev1/results/phase8_k562/rows.json": "e3e977e36e4b88247dda97db2db625336ce03a87d6997b8cc851f0c9c78767b9",
+    "/workspace/rev1/scripts/rev_phase8_stats.py": "0571c151f8942eba59efa631518ae9e5972b60d1befa9ae760f0ae84698103cf",
+    "/workspace/rev1/results/phase8_k562/statistics/gene_statistics.npz": "818aba0a1e64d6ffcf786709829fef81c5bef7a35ed551c7fb3f21bf5d41eb0d",
+    "/workspace/rev1/results/phase8_k562/statistics/feature_statistics_L08.npz": "2a954b5f9c8ebb5e80e2785ec749235cf4df690a72c149ac63e9f0a25eb90d34",
+    "/workspace/rev1/results/phase8_k562/feat_L08.npz": "361541ee14ac606ff535f3a882cd8a22e863acaaad7198b34a38712400780d4f",
+    "/workspace/rev1/results/phase8_k562/statistics/feature_statistics_L16.npz": "254f7936b146b34295b589846b023cd157c3fc35dfd7b78effdf9f27f0589ddb",
+    "/workspace/rev1/results/phase8_k562/feat_L16.npz": "fc0c8a6506829d0087152ad95fa764668df51d952a6645b68bd4a32357b9bf17",
+    "/workspace/rev1/results/phase8_k562/statistics/feature_statistics_L22.npz": "c2f21e80099f198648be3ceafac1075b3440a7ddd8ca8ee370586cd166480737",
+    "/workspace/rev1/results/phase8_k562/feat_L22.npz": "0471009eccea8f1591681cf809f5dfe5891e447dd872e4ac0cb533b78ce1f93e",
+    "/workspace/rev1/results/phase8_k562/insilico.npz": "2b5050d88342c934fc8a9a1191ec94d006264d0ed1e12cda71f1c365eed2e74a",
+    "/workspace/rev1/results/phase8_k562/statistics/insilico_statistics.npz": "4624796dc1a6054320c6255e48d97b25454e51499f28f930e8d4fd91a1eb6fe9",
+    "/workspace/rev1/results/phase8_k562/insilico_meta.json": "799231650024f418cc5c7aa5ff6ad12efbffba9dc33f8d297c20f138869ffce0",
+    "/workspace/rev1/results/phase8_k562/statistics/insilico_retrieval.json": "30c1816f73ced580a475c98ad59a257e381b317e73e16ddcd918c3d731642ead",
+    "/workspace/rev1/results/phase8_rpe1/statistics/manifest.json": "17aafb82f2b23cd19140c75f53f62178baf94c3d7cf5f8c7745af64cbf75e694",
+    "/workspace/rev1/results/phase8_rpe1/statistics/regulatory_statistics.json": "e426a5e1969bf9da2c39fe4f5969af37ce6e933993d6cd0f50f9995a7d9a3994",
+    "/workspace/rev1/designs/phase8_rpe1.json": "22f61f3b671c802e837f6c0a2a92475cf96b0ba60d54c5fd4f194659ad2b0a3c",
+    "/workspace/rev1/results/phase8_rpe1/rows.json": "d01c3b37ab6a59747aa0cd64495f8dfef45ae0e8a103c319f81f1ffa11185247",
+    "/workspace/rev1/results/phase8_rpe1/statistics/gene_statistics.npz": "5df2606047fd1c9fc2e0ffa189f016dffc66200dcb2f7799dafedb9b465bc7ba",
+    "/workspace/rev1/results/phase8_rpe1/statistics/feature_statistics_L08.npz": "f2d18cd70afe686293cbd110781b07f10d70b58f0c79b8605e029796a4fde2f8",
+    "/workspace/rev1/results/phase8_rpe1/feat_L08.npz": "d2420acd8462163dec908de7580e5d1817e78588d6a3ffdc12b45b04ce28359f",
+    "/workspace/rev1/results/phase8_rpe1/statistics/feature_statistics_L16.npz": "12e1fbe9cbbdb95d6db14976c73b592b074b143aea844d01eca37ec11102475e",
+    "/workspace/rev1/results/phase8_rpe1/feat_L16.npz": "0dcabc96bf9ddd31612bd58ee9365ee5e8226652e1552e5adfab038575ec6a82",
+    "/workspace/rev1/results/phase8_rpe1/statistics/feature_statistics_L22.npz": "54d6335ec0962c2607619daf106efa3e216e510092685ae17684dc6c1e162ceb",
+    "/workspace/rev1/results/phase8_rpe1/feat_L22.npz": "92609a3dbef73e50a828d0976152dee6c2fa0d5b9934e0cf020e89b594304138",
+    "/workspace/rev1/results/phase8_rpe1/insilico.npz": "5760450ffd39c0036c9a68263808cfe2052b013a487ba59b4acda2e202345b83",
+    "/workspace/rev1/results/phase8_rpe1/statistics/insilico_statistics.npz": "095e110838dc14c19674f0ffe92228886c7e348eb813613f62631410507b906b",
+    "/workspace/rev1/results/phase8_rpe1/insilico_meta.json": "67aeb94b9192ae6d13c4e0cd72303f85c379a3ea98ff36e25300a9fa9544d9d4",
+    "/workspace/rev1/results/phase8_rpe1/statistics/insilico_retrieval.json": "27d4b426f20e1de38159c700eab2451f96f5b69a2601917163226c0895c3c62d",
+    "/workspace/rev1/results/audits/audit_experimental_saved.py": "c910878ceb60ad112d0d2f0cfaafe4a718ae61d77bc50dc90e3839e2320459ef",
+    "/workspace/rev1/results/audits/audit_phase8_saved.py": "dd3064d27a0d7693b0c861ea27b7fb91a17b569dcc46fe080668ea09dac3ec08"
+  },
+  "peak_rss_bytes": 1152753664,
+  "limitations": [
+    "No model/SAE/refit calculations or raw activation matrices are opened.",
+    "Complete named IDs determine all-feature ontology rates; capped term details only bound undisplayed network-source rates.",
+    "Stored chance seed-rate arithmetic is checked; null gene sets and their p-values are not independently regenerated.",
+    "Global BH rate is checked at the saved threshold; full threshold regeneration requires unsaved complete p-value vectors.",
+    "Circuit bootstrap is independently reproduced from saved source-level counts, not fresh model interventions.",
+    "Phase8 response p-values are retained inputs. Full-column BH, specificity Fisher/full-TF BH, self-excluded retrieval, and TF-bootstrap means/intervals are recomputed; per-item intervals receive only finite/order checks."
+  ]
+}

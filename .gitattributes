@@ -1,0 +1,3 @@
+# Preserve renderer-generated artifacts byte-for-byte for provenance checks.
+paper/figures/*.svg -whitespace
+paper/supplement_generated/*.tex whitespace=-blank-at-eof

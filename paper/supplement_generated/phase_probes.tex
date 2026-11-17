@@ -1,0 +1,73 @@
+\begin{longtable}{@{}L{0.34\linewidth}L{0.15\linewidth}L{0.26\linewidth}L{0.12\linewidth}@{}}
+\caption{Within-K562 circular R-squared on 3~000 cells. Intervals use 5~000 paired cell draws with fixed out-of-fold predictions and the resampled circular-loss denominator. PCA and scaling use the whole cohort before five-fold Ridge (alpha=10).}\\
+\toprule
+Input / representation & circular R-squared & 95\% interval & PCA dimensions \\
+\midrule
+\endfirsthead
+\toprule
+Input / representation & circular R-squared & 95\% interval & PCA dimensions \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Full expression & 0.928639 & 0.920272 to 0.936399 & 50 \\
+Top 512: magnitudes & 0.884613 & 0.87393 to 0.894362 & 50 \\
+Top 512: binary membership & 0.882467 & 0.871807 to 0.892506 & 50 \\
+Top 512: ranks & 0.867863 & 0.856107 to 0.878747 & 50 \\
+Model L21 & 0.873892 & 0.862494 to 0.884375 & 50 \\
+Constant phase reference & \mbox{1.0858e-12} & -0.00639606 to \mbox{-1.49789e-06} & -- \\
+Random phase reference & -0.0818838 & -0.124772 to -0.044778 & -- \\
+\end{longtable}
+\begin{longtable}{@{}L{0.31\linewidth}L{0.15\linewidth}L{0.25\linewidth}L{0.16\linewidth}@{}}
+\caption{Paired within-K562 contrasts in circular R-squared. Intervals spanning zero do not establish equivalence.}\\
+\toprule
+Contrast & Point difference & 95\% interval & Saved interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Contrast & Point difference & 95\% interval & Saved interpretation \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Model minus rank input & 0.0060294 & -0.00480446 to 0.0170072 & unresolved difference \\
+Model minus binary input & -0.00857485 & -0.0185751 to 0.00115546 & unresolved difference \\
+Model minus full expression & -0.0547468 & -0.063814 to -0.0460909 & model lower \\
+\end{longtable}
+\begin{longtable}{@{}L{0.63\linewidth}L{0.24\linewidth}@{}}
+\caption{Frozen K562-to-RPE1 transfer R-diff: 3~000 source cells, 3~000 target cells and 6~544 shared gene identities for expression predictors. Source-only scaling and Ridge (alpha=1~000) use no PCA. Individual-arm confidence intervals are not supplied by this artifact.}\\
+\toprule
+Input / representation & R-diff \\
+\midrule
+\endfirsthead
+\toprule
+Input / representation & R-diff \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Full shared expression & 0.878397 \\
+Full-panel top 512: magnitudes & 0.826304 \\
+Full-panel top 512: ranks & 0.790535 \\
+Model L21 & 0.789443 \\
+Constant phase reference & 0.0427473 \\
+Random phase reference & 0.0173803 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.31\linewidth}L{0.15\linewidth}L{0.25\linewidth}L{0.16\linewidth}@{}}
+\caption{Primary paired transfer contrast in R-diff. The 5~000 bootstrap draws resample target cells with source fits fixed; this is not uncertainty over source fitting or independent experiments.}\\
+\toprule
+Contrast & Point difference & 95\% interval & Saved interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Contrast & Point difference & 95\% interval & Saved interpretation \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Model minus full-panel rank input & -0.00109173 & -0.0132448 to 0.0111122 & unresolved difference \\
+\end{longtable}

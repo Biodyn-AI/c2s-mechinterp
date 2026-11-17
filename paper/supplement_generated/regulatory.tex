@@ -1,0 +1,105 @@
+\begin{longtable}{@{}L{0.12\linewidth}L{0.28\linewidth}L{0.12\linewidth}L{0.32\linewidth}@{}}
+\caption{Unsigned target-set specificity. The denominator is the full screened TF family, including TFs with sparse or absent eligible targets. THP1 (pooled guides) groups cells by perturbation target.}\\
+\toprule
+Line & Arm & Layer & Specific / tested TFs \\
+\midrule
+\endfirsthead
+\toprule
+Line & Arm & Layer & Specific / tested TFs \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+K562 & expression & -- & 0/48 \\
+K562 & input & -- & 0/48 \\
+K562 & model & 8 & 2/48 \\
+K562 & model & 16 & 2/48 \\
+K562 & model & 22 & 2/48 \\
+RPE1 & expression & -- & 2/121 \\
+RPE1 & input & -- & 0/121 \\
+RPE1 & model & 8 & 1/121 \\
+RPE1 & model & 16 & 0/121 \\
+RPE1 & model & 22 & 1/121 \\
+THP1 & expression & -- & 3/12 \\
+THP1 & input & -- & 1/12 \\
+THP1 & model & 8 & 1/12 \\
+THP1 & model & 16 & 1/12 \\
+THP1 & model & 22 & 0/12 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.06\linewidth}L{0.16\linewidth}L{0.09\linewidth}L{0.13\linewidth}L{0.15\linewidth}L{0.13\linewidth}L{0.13\linewidth}@{}}
+\caption{Gene- and feature-level target retrieval by average precision (AP). The TF count includes only evaluable factors. Target prevalence and the exact finite random-label AP expectation are distinct descriptive reference quantities. Intervals resample TFs, not cells.}\\
+\toprule
+Line & Readout / level & TFs & Mean AP & 95\% interval & Target prevalence & Exact random-label expected AP \\
+\midrule
+\endfirsthead
+\toprule
+Line & Readout / level & TFs & Mean AP & 95\% interval & Target prevalence & Exact random-label expected AP \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+K562 & expression / gene & 34 & 0.00288315 & 0.00102056 to 0.00605293 & 0.000408783 & 0.00141671 \\
+K562 & input / gene & 34 & 0.00405161 & 0.00089684 to 0.0100649 & 0.000408783 & 0.00139041 \\
+K562 & model L8 / gene & 34 & 0.00085886 & 0.000495062 to 0.00129691 & 0.000408783 & 0.00139681 \\
+K562 & model L8 / feature & 28 & 0.0176012 & 0.0124909 to 0.0251779 & 0.0152019 & 0.0161331 \\
+K562 & model L16 / gene & 34 & 0.000789596 & 0.000496139 to 0.00119825 & 0.000408783 & 0.00139683 \\
+K562 & model L16 / feature & 28 & 0.0145827 & 0.00908975 to 0.0229699 & 0.0128539 & 0.0137884 \\
+K562 & model L22 / gene & 34 & 0.000734262 & 0.000485881 to 0.001038 & 0.000408783 & 0.00138978 \\
+K562 & model L22 / feature & 28 & 0.0141267 & 0.00859007 to 0.0226149 & 0.0122589 & 0.0131924 \\
+RPE1 & expression / gene & 102 & 0.00624049 & 0.00343687 to 0.0101191 & 0.000848361 & 0.00183686 \\
+RPE1 & input / gene & 102 & 0.00332768 & 0.00216366 to 0.00493033 & 0.000848361 & 0.00182383 \\
+RPE1 & model L8 / gene & 102 & 0.00109966 & 0.000705264 to 0.0017487 & 0.000848361 & 0.00182067 \\
+RPE1 & model L8 / feature & 85 & 0.0232592 & 0.0135332 to 0.0333135 & 0.0227412 & 0.0236663 \\
+RPE1 & model L16 / gene & 102 & 0.0011257 & 0.000762485 to 0.0018161 & 0.000848361 & 0.00181734 \\
+RPE1 & model L16 / feature & 85 & 0.0234498 & 0.0136387 to 0.033174 & 0.0228088 & 0.0237367 \\
+RPE1 & model L22 / gene & 102 & 0.00110123 & 0.000741587 to 0.00181297 & 0.000848361 & 0.00181581 \\
+RPE1 & model L22 / feature & 85 & 0.022019 & 0.0126965 to 0.031461 & 0.0214218 & 0.0223485 \\
+THP1 & expression / gene & 12 & 0.00911129 & 0.00251195 to 0.0218318 & 0.00187251 & 0.00237573 \\
+THP1 & input / gene & 12 & 0.0109717 & 0.00410366 to 0.0222506 & 0.00187251 & 0.00234889 \\
+THP1 & model L8 / gene & 12 & 0.00263677 & 0.00128329 to 0.00400751 & 0.00187251 & 0.00234193 \\
+THP1 & model L8 / feature & 12 & 0.060433 & 0.020851 to 0.110429 & 0.0553214 & 0.0562643 \\
+THP1 & model L16 / gene & 12 & 0.00340368 & 0.00137025 to 0.00570271 & 0.00187251 & 0.00234234 \\
+THP1 & model L16 / feature & 12 & 0.0592772 & 0.0208365 to 0.110551 & 0.0512998 & 0.0522817 \\
+THP1 & model L22 / gene & 12 & 0.00234535 & 0.00112434 to 0.00396385 & 0.00187251 & 0.00234207 \\
+THP1 & model L22 / feature & 12 & 0.0506543 & 0.0173324 to 0.100948 & 0.0483931 & 0.0493518 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.07\linewidth}L{0.31\linewidth}L{0.09\linewidth}L{0.15\linewidth}L{0.24\linewidth}@{}}
+\caption{Target retrieval by AUROC for the same evaluable TF families. Intervals resample evaluable TFs.}\\
+\toprule
+Line & Readout / level & TFs & Mean AUROC & 95\% interval \\
+\midrule
+\endfirsthead
+\toprule
+Line & Readout / level & TFs & Mean AUROC & 95\% interval \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+K562 & expression / gene & 34 & 0.518538 & 0.434805 to 0.603642 \\
+K562 & input / gene & 34 & 0.594421 & 0.527896 to 0.658934 \\
+K562 & model L8 / gene & 34 & 0.512916 & 0.440124 to 0.587405 \\
+K562 & model L8 / feature & 28 & 0.507357 & 0.481876 to 0.533251 \\
+K562 & model L16 / gene & 34 & 0.495907 & 0.43208 to 0.55922 \\
+K562 & model L16 / feature & 28 & 0.515276 & 0.491391 to 0.547317 \\
+K562 & model L22 / gene & 34 & 0.475701 & 0.409665 to 0.546054 \\
+K562 & model L22 / feature & 28 & 0.485067 & 0.456135 to 0.521017 \\
+RPE1 & expression / gene & 102 & 0.589588 & 0.546422 to 0.635361 \\
+RPE1 & input / gene & 102 & 0.628376 & 0.589977 to 0.668013 \\
+RPE1 & model L8 / gene & 102 & 0.460448 & 0.426926 to 0.494956 \\
+RPE1 & model L8 / feature & 85 & 0.513092 & 0.500749 to 0.524948 \\
+RPE1 & model L16 / gene & 102 & 0.461126 & 0.429087 to 0.500558 \\
+RPE1 & model L16 / feature & 85 & 0.523914 & 0.507088 to 0.537374 \\
+RPE1 & model L22 / gene & 102 & 0.479713 & 0.443247 to 0.516434 \\
+RPE1 & model L22 / feature & 85 & 0.533919 & 0.521814 to 0.547089 \\
+THP1 & expression / gene & 12 & 0.548134 & 0.494477 to 0.596344 \\
+THP1 & input / gene & 12 & 0.678543 & 0.640602 to 0.717996 \\
+THP1 & model L8 / gene & 12 & 0.503002 & 0.460632 to 0.546833 \\
+THP1 & model L8 / feature & 12 & 0.519976 & 0.494021 to 0.543998 \\
+THP1 & model L16 / gene & 12 & 0.512565 & 0.465353 to 0.56028 \\
+THP1 & model L16 / feature & 12 & 0.526513 & 0.500938 to 0.554299 \\
+THP1 & model L22 / gene & 12 & 0.512614 & 0.463139 to 0.55994 \\
+THP1 & model L22 / feature & 12 & 0.524344 & 0.496363 to 0.549811 \\
+\end{longtable}

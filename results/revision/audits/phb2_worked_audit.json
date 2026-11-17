@@ -1,0 +1,118 @@
+{
+  "audit": "PHB2 L16 worked example independent saved-data check",
+  "passed": true,
+  "n_checks": 57,
+  "findings": [],
+  "counts": {
+    "n_responding": 856,
+    "n_target_labelled_responses": 8,
+    "n_generic_programme_responses": 604,
+    "n_both_generic_and_target_labelled": 2,
+    "n_ontology_unannotated_responses": 194
+  },
+  "feature_response": {
+    "p": 5.833218645083667e-10,
+    "q": 3.735360798071442e-07,
+    "effect": -1.7083828725300454,
+    "mean_difference": -0.19943185165524482
+  },
+  "gene_records": [
+    {
+      "gene": "MT-ND4",
+      "expression_d": -1.343478322585386,
+      "expression_q": 5.37832562404238e-05,
+      "expression_responding": true,
+      "rank_d": -1.0502836097623989,
+      "rank_q": 1.248172389232927e-05
+    },
+    {
+      "gene": "MT-CO2",
+      "expression_d": -1.3694026033675826,
+      "expression_q": 1.6334434130886747e-05,
+      "expression_responding": true,
+      "rank_d": -0.8626201810061571,
+      "rank_q": 8.055874353855277e-09
+    },
+    {
+      "gene": "MT-CO1",
+      "expression_d": -1.5027053388757143,
+      "expression_q": 4.349585258456042e-06,
+      "expression_responding": true,
+      "rank_d": -1.179370888337775,
+      "rank_q": 3.0906088105657957e-06
+    },
+    {
+      "gene": "MT-CYB",
+      "expression_d": -0.6271849605019965,
+      "expression_q": 0.04565962734586651,
+      "expression_responding": true,
+      "rank_d": -0.8052061596600621,
+      "rank_q": 0.0006003668013241384
+    },
+    {
+      "gene": "ARNT",
+      "expression_d": 0.09978270978122973,
+      "expression_q": 0.873884663843364,
+      "expression_responding": false,
+      "rank_d": 0.0,
+      "rank_q": 1.0
+    },
+    {
+      "gene": "BTG2",
+      "expression_d": 0.2389447474468492,
+      "expression_q": 0.37342162210672436,
+      "expression_responding": false,
+      "rank_d": -0.15974240886630894,
+      "rank_q": 1.0
+    },
+    {
+      "gene": "PHB2",
+      "expression_d": -1.0418265170835401,
+      "expression_q": 0.0020779613883218457,
+      "expression_responding": true,
+      "rank_d": -0.3727785183903693,
+      "rank_q": 0.4695278921945491
+    }
+  ],
+  "best_annotation": {
+    "source": "Reactome",
+    "term": "FASTK Family Proteins Regulate Processing and Stability of Mitochondrial RNAs",
+    "k": 10,
+    "K": 15,
+    "n": 20,
+    "fold": 188.73333333333332,
+    "p": 5.945321042926083e-23,
+    "q": 1.364451179351536e-19,
+    "genes": [
+      "MT-ATP6",
+      "MT-CO1",
+      "MT-CO2",
+      "MT-CO3",
+      "MT-CYB",
+      "MT-ND1",
+      "MT-ND2",
+      "MT-ND3",
+      "MT-ND4",
+      "MT-ND5"
+    ]
+  },
+  "source_sha256": {
+    "/workspace/rev1/results/audits/phb2_worked_claims.json": "b1b1c35ee28e107ce431cf1d78aff02b3d4d01975cce457d86d0208e0b4211c4",
+    "/workspace/rev1/results/phase8_k562/rows.json": "e3e977e36e4b88247dda97db2db625336ce03a87d6997b8cc851f0c9c78767b9",
+    "/workspace/rev1/results/phase8_k562/statistics/response_biology.json": "26170e1a1d22a2f23a3e9a1d129159d217d70043a591bc04903034a9cd885867",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L16.json": "ff93005e482889729f3da7e3352a9e11b0c7a05a1cb4227be247b8655b504883",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L16.json": "8f20dafdcb6020d22d57ca37f9f7754742be147e212f79ca9da43eacc0b72b19",
+    "/workspace/rev1/results/phase8_k562/statistics/gene_statistics.npz": "818aba0a1e64d6ffcf786709829fef81c5bef7a35ed551c7fb3f21bf5d41eb0d",
+    "/workspace/rev1/results/phase8_k562/statistics/feature_statistics_L16.npz": "254f7936b146b34295b589846b023cd157c3fc35dfd7b78effdf9f27f0589ddb",
+    "/workspace/rev1/runs/2b_atlas/row_gene_names.json": "75dfb40cdc3356ca9218fa19a909a9e92774885eb6b2ea68109b25ee6a78a4e6",
+    "/workspace/rev1/ontologies_v2/go_bp.json": "79fef7443c64c0d6f5b596a06fe02d626755b1602d26ce4baa5ae946a5fb4913",
+    "/workspace/rev1/ontologies_v2/kegg.json": "c13fb526879e678f8aaa9e00f7d7dd409a9e7989c66c0fe6c94dd12870c7d245",
+    "/workspace/rev1/ontologies_v2/reactome.json": "657a6e1cf3ace1ca8996d336050123cfd0c4e3c2d253905854b37c00c8e39356",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/ontologies_v2/string_v12.5_score700_pairs.tsv.gz": "ff9ad8e80caf1bcbb7a18215126a7411098b525534a8edbc3baf25810fbbdf7e",
+    "/workspace/rev1/scripts/rev_cpu_analysis.py": "54d7e7b073f9e9be1c7cd46c47d165c15a7d6662415dfad4c46a99fbfd7c8bd4",
+    "/workspace/rev1/results/audits/audit_phb2_worked.py": "fc7e472d5487b92c0169eadf577b7a624f55ebc0e74e360371eebbb2c343cf0b",
+    "/workspace/rev1/results/audits/audit_annotation_dense.py": "ac9410b12216c54c558254cebe8c8aaa2f0ad0bb4cd44684a0fc5f8eb82cd182"
+  },
+  "scope": "Same 25 knockdown and 400 control cells; no independent guide or external PHB2 mechanism claim. Annotation names describe the feature gene set, not a PHB2 regulatory pathway."
+}

@@ -1,0 +1,44 @@
+{
+  "audit": "Independent E4 inactive-feature and RMS-preset saved-data audit",
+  "passed": true,
+  "n_checks": 56,
+  "findings": [],
+  "layers": [
+    {
+      "layer": 24,
+      "n_removed_dimensions": 20,
+      "dead_fraction_heldout_original": 0.6720920138888888,
+      "dead_fraction_heldout_projected": 0.474609375,
+      "dead_fraction_heldout_delta": -0.1974826388888889,
+      "dead_fraction_all_rows_original": 0.1750217013888889,
+      "dead_fraction_all_rows_projected": 0.03439670138888889,
+      "dead_fraction_all_rows_delta": -0.140625,
+      "variance_reference_note": "Original and projected VE are retained separately; no VE difference is interpreted."
+    },
+    {
+      "layer": 38,
+      "n_removed_dimensions": 3,
+      "dead_fraction_heldout_original": 0.10514322916666667,
+      "dead_fraction_heldout_projected": 0.07389322916666667,
+      "dead_fraction_heldout_delta": -0.03125,
+      "dead_fraction_all_rows_original": 0.0,
+      "dead_fraction_all_rows_projected": 0.00010850694444444444,
+      "dead_fraction_all_rows_delta": 0.00010850694444444444,
+      "variance_reference_note": "Original and projected VE are retained separately; no VE difference is interpreted."
+    }
+  ],
+  "source_sha256": {
+    "/workspace/rev1/results/dropmassive_comparison.json": "e8516f00e653278b5eb86cbab13c7051ee7b64e432ac379036dcb9d8d450e83d",
+    "/workspace/rev1/results/scale-extract_residual_stats.npz": "41ffee996634fa56e07be0d4ef19fd2f3b2dd8f0f43007cd92c9e35f7cf9ebb9",
+    "/workspace/rev1/runs/27b_matched/sae/train_L24.json": "b93cba7d56a54a06c9f3b583c24d026e4107f40d18a9e1e7072a632dd20e1e18",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L24.json": "84348922a4d87c66fc10a6425781915435a3396063aaac870f4a733e38ff24d8",
+    "/workspace/rev1/results/dropmassive_dimensions/dimensions_L24.json": "2f347dd679d6f26e224f4f480ec7a1c06525664e4efe98d8253b2e0730266e90",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/mu_L24.npy": "726a47ef889a6e7f5a8c0736e198c0936374fbced5806675ec5e00f853709b4e",
+    "/workspace/rev1/runs/27b_matched/sae/train_L38.json": "3ef41bc4e453cede6da4200b5d33edba48602a27b8b6debcfd74dba1dfb35790",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L38.json": "ceaeec36c0b9931ab988b7e53cec074826fdcd4bd19bc7659524639b161dd42a",
+    "/workspace/rev1/results/dropmassive_dimensions/dimensions_L38.json": "2b988fed8ff3f97a508c233d3d2f6ce399da521f9925cca3697f2e49c331b8eb",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/mu_L38.npy": "13c1d8812e3ef4135e0708c387aa39f3fa79951daa617ba1d0dd65e91d5054cf",
+    "/workspace/rev1/results/audits/audit_e4_saved.py": "6fc700aa152ea293c66e4bb01e9744e7151bd28c193b84ccc4192855ffca07e8"
+  },
+  "scope": "Same capacity/training recipe, projected inputs. No reconstruction forwards, raw activation writes or model fits are performed."
+}

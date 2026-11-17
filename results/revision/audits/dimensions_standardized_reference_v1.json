@@ -1,0 +1,34 @@
+{
+  "schema": "c2s-dimensions-standardized-reference-v1",
+  "passed": true,
+  "complete": true,
+  "cohort": "earlier CD34 extraction (separate gene/cell sampling and coordinates)",
+  "source_sha256": {
+    "geometry/gene_manifold_null.json": "9af0a70354a51c3b06ed7a673260a0e308f3fac5a88a2e0cf5e644ac8e4e4f2d",
+    "geometry/drafts/gene_manifold_gpu.py": "e58e770a0a53d76b85501feef0ad0d5cd8a81f5577d985986e70fd5832eecdbe"
+  },
+  "coordinate_definition": "Gz=(G-G.mean(0))/(G.std(0)+1e-6), i.e. coordinate-wise standardization of gene-mean model vectors before both PR and TwoNN.",
+  "code_line": 267,
+  "standardization_source_verified": true,
+  "rows": [
+    {
+      "layer": 9,
+      "n_genes": 11507,
+      "participation_ratio": 132.0624237060547,
+      "twonn_id": 5.281558276643001
+    },
+    {
+      "layer": 13,
+      "n_genes": 11507,
+      "participation_ratio": 95.58934783935547,
+      "twonn_id": 6.156661103364075
+    },
+    {
+      "layer": 17,
+      "n_genes": 11507,
+      "participation_ratio": 93.8647232055664,
+      "twonn_id": 5.003546728943291
+    }
+  ],
+  "limitation": "Separate standardized-coordinate reference; neither the exact raw-coordinate cohort nor a matched expression comparison."
+}

@@ -1,0 +1,298 @@
+{
+  "cohort": "k562_replication",
+  "n_cells": 1200,
+  "n_source_genes": 8563,
+  "n_shared_genes": 1905,
+  "n_gene_occurrences": 614400,
+  "selected_counts_sha256": "9453f8f498f204702fcd5892112c3c563c4a255c95f892a063c20e9e75df32d9",
+  "selected_cell_indices_sha256": "26639c3de760a5ccf969ad8e48b7df6de88b1964ff2d624802c3cfb146a764e6",
+  "selected_cell_names_sha256": "193ff81a10abe7c8cc87dd03633e08eafcc22f4416620622afdd44a0f68651be",
+  "source_counts_layer": "X",
+  "cell_id_semantics": "ordinal mapped through explicit h5ad_cell_indices.json",
+  "aggregation": [
+    {
+      "layer": 9,
+      "n_genes": 1905,
+      "max_abs_gene_mean_error": 0.0,
+      "source_shape": [
+        614400,
+        2304
+      ]
+    },
+    {
+      "layer": 13,
+      "n_genes": 1905,
+      "max_abs_gene_mean_error": 0.0,
+      "source_shape": [
+        614400,
+        2304
+      ]
+    },
+    {
+      "layer": 17,
+      "n_genes": 1905,
+      "max_abs_gene_mean_error": 0.0,
+      "source_shape": [
+        614400,
+        2304
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "representation": "expression_log1p_CP10k",
+      "saved": {
+        "representation": "expression_log1p_CP10k",
+        "n_genes": 1905,
+        "n_coordinates": 1200,
+        "participation_ratio": 1.9283754466569372,
+        "twonn_id": 94.91630889925224,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 1200,
+        "participation_ratio": 1.9283754466569336,
+        "twonn_id": 94.91630889925042,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "f17b0276d2c9e5f9602718496bf9a1531f4422a2338f974668bb2178db0cf2ae"
+    },
+    {
+      "representation": "expression_cells_shuffled_within_gene",
+      "saved": {
+        "representation": "expression_cells_shuffled_within_gene",
+        "n_genes": 1905,
+        "n_coordinates": 1200,
+        "participation_ratio": 1.9469707158594987,
+        "twonn_id": 124.1768294340341,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 1200,
+        "participation_ratio": 1.9469707158594962,
+        "twonn_id": 124.17682943403358,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "c73fa923af632bc1e89216fcc1dc2c7484ef7359ee42fede2da1ae5103d0043c"
+    },
+    {
+      "representation": "expression_shape_iid_normal",
+      "saved": {
+        "representation": "expression_shape_iid_normal",
+        "n_genes": 1905,
+        "n_coordinates": 1200,
+        "participation_ratio": 735.7813711743222,
+        "twonn_id": 210.94160851906008,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 1200,
+        "participation_ratio": 735.7813711743231,
+        "twonn_id": 210.94160851905963,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "e7bb336abd0788e6a9bf2029491006f9080638b128242311de346380f373aa8b"
+    },
+    {
+      "representation": "model_L09",
+      "saved": {
+        "representation": "model_L09",
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 94.4397368027368,
+        "twonn_id": 4.931069197127351,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 94.43973680273693,
+        "twonn_id": 4.931069197127344,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "c7110bc2f5e782c3d63e09f39d26f24b7dc74a3667bc68847a55114fcee2e385"
+    },
+    {
+      "representation": "model_L09_shape_iid_normal",
+      "saved": {
+        "representation": "model_L09_shape_iid_normal",
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 1042.275042242154,
+        "twonn_id": 289.3975762352931,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 1042.2750422421548,
+        "twonn_id": 289.39757623529033,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "e1c4f1fecfa8c9034066390eac51b5a81d893b46e72a7966c463a9ce150f9ac0"
+    },
+    {
+      "representation": "model_L13",
+      "saved": {
+        "representation": "model_L13",
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 62.7239254573788,
+        "twonn_id": 4.730071254060147,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 62.72392545737894,
+        "twonn_id": 4.73007125406015,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "00c5cd0a1ad2da8056a6054c9bead96c8af62993ef4b1a7f8a7e60d6390f9abc"
+    },
+    {
+      "representation": "model_L13_shape_iid_normal",
+      "saved": {
+        "representation": "model_L13_shape_iid_normal",
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 1042.7610027133105,
+        "twonn_id": 276.58027979952135,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 1042.7610027133087,
+        "twonn_id": 276.58027979952,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "bdd0e1743c194f9ffeae071faeca892711b25d347efe82cb95ac0c6c72d82f3c"
+    },
+    {
+      "representation": "model_L17",
+      "saved": {
+        "representation": "model_L17",
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 61.88064744742543,
+        "twonn_id": 3.648994021571155,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 61.880647447425474,
+        "twonn_id": 3.6489940215711703,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "d50ae1779e3638c7527f4c9bd272a6570a05aceba6a24c5e6fd0639042b878d0"
+    },
+    {
+      "representation": "model_L17_shape_iid_normal",
+      "saved": {
+        "representation": "model_L17_shape_iid_normal",
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 1042.595662328244,
+        "twonn_id": 283.0738156709184,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0
+      },
+      "independent": {
+        "n_genes": 1905,
+        "n_coordinates": 2304,
+        "participation_ratio": 1042.5956623282436,
+        "twonn_id": 283.0738156709207,
+        "twonn_valid_rows": 1905,
+        "twonn_excluded_rows": 0,
+        "zero_nearest_rows": 0,
+        "positive_tied_nearest_rows": 0
+      },
+      "matrix_sha256": "cb790bff3bcfbf2270bf7772b20a0e09178fb604f26f89d09a1455b1cbb2af19"
+    }
+  ],
+  "rng": {
+    "seed": 0,
+    "algorithm": "NumPy default_rng/PCG64",
+    "sampling_consumes_rng": false,
+    "sequence": "sample cells if implicit; optional gene cap (zero here); shuffle each shared gene over cells; expression iid normal; layer9 iid normal; layer13 iid normal; layer17 iid normal",
+    "final_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 162475437681798873193441883826957630361,
+        "inc": 87136372517582989555478159403783844777
+      },
+      "has_uint32": 0,
+      "uinteger": 3795202228
+    }
+  },
+  "coordinate_definition": "Rows are genes. Raw model gene means; expression log1p(CP10k) normalized over the entire source gene panel, then projected to the shared genes. No gene standardization or dimensionality reduction.",
+  "reference_distinction": "Earlier standardized geometry (PR approximately94\u2013132; TwoNN approximately5\u20136.2) uses different coordinates and is not a matched numerical baseline.",
+  "schema": "c2s-dimension-independent-audit-v1",
+  "passed": true,
+  "complete": true,
+  "n_checks": 94,
+  "findings": [],
+  "source_sha256": {
+    "/workspace/rev1/results/k562_replication_dimensions.json": "ca26be7ca29a82b69cbb0ab2911aad4a444aa64753c1b2a66ac87754abf7e86c",
+    "/workspace/rev1/runs/geometry_k562_replication/manifest.json": "be5831712ba72b7997cfaac297e91cc8ddb7ca10448d193402a000b12965c7d2",
+    "/workspace/rev1/designs/atlas_k562/h5ad_cell_indices.json": "5c1521bc9fa6c911522dd6961ac9b7002c67846739642803004ea1b280a62427",
+    "/workspace/rev1/runs/geometry_k562_replication/row_gene_names.json": "38e08e59ee3f01141915b7a3aaf424e9e5c95f9eec4d6be62d9fb4b762c70d4e",
+    "/workspace/rev1/designs/atlas_k562/row_gene_names.json": "38e08e59ee3f01141915b7a3aaf424e9e5c95f9eec4d6be62d9fb4b762c70d4e",
+    "/workspace/rev1/runs/geometry_k562_replication/layer_09_activations.npy": "58e23394cfe58515c5546d052865ee72a03ce260e1860dc95e08fbdc973113b2",
+    "/workspace/rev1/runs/geometry_k562_replication/layer_13_activations.npy": "9aa4e78bb1a19ccd963cea48aabc4c264d26b6648507a322d0c89ea0ae5f8ca0",
+    "/workspace/rev1/runs/geometry_k562_replication/layer_17_activations.npy": "6a8a61ba9f0b46298109725ce9fed370f7ae8c5dc4b7b65214f7ac829de09d3d",
+    "/workspace/rev1/data/ReplogleWeissman2022_K562_essential.h5ad": "412fd0df8c4ccea9f4db91cd88033c49200838b29d40945e48574be588b48789",
+    "/workspace/rev1/results/k562_replication_gene_means.npz": "c73993ad9a6df4e3ef02ed7f20ce1c14fff69aca05a58c643014171d019600de",
+    "/workspace/rev1/runs/geometry_k562_replication/row_cell_ids.npy": "60e0ef5ca5798e51e71d76d8f001dd4b8231ea0080cb98da224c050a5f72ce1b",
+    "/workspace/rev1/designs/atlas_k562/row_cell_ids.npy": "60e0ef5ca5798e51e71d76d8f001dd4b8231ea0080cb98da224c050a5f72ce1b",
+    "/workspace/rev1/scripts/rev_cpu_analysis.py": "54d7e7b073f9e9be1c7cd46c47d165c15a7d6662415dfad4c46a99fbfd7c8bd4",
+    "/workspace/rev1/scripts/rev_misc.py": "7bb35a972bce146da5dfb9ec42f1ec27e7ca998fcb9e840b3de382d280278ae9",
+    "/workspace/rev1/scripts/rev_extract.py": "0bfdf2c674f159fdbbcd1842e8ba3ed1d5fbd6343694ee77da5a6c86367017f9",
+    "/workspace/rev1/results/audits/audit_dimensions_saved.py": "8bbe226dcce20b6a39fe17c55c1b49146b98c3af5c7dc2dd54e10986704fa814",
+    "/workspace/rev1/results/audits/audit_biology_lines.py": "99a0f066c98b8d3027eada770a88f6a626170563dd5238c1546ff143c59f6b11",
+    "/workspace/rev1/results/audits/audit_c6_merge.py": "ef8f57cf0c835030f56dc73edaed5dbc15fd170ee57e755063d533940fdde46c",
+    "/workspace/rev1/results/audits/audit_experimental_saved.py": "c910878ceb60ad112d0d2f0cfaafe4a718ae61d77bc50dc90e3839e2320459ef"
+  },
+  "peak_rss_bytes": 3451121664,
+  "limits": [
+    "Saved activations and their exact per-gene aggregation are audited; no model forward is repeated.",
+    "TwoNN is a Euclidean nearest-neighbour estimator, sensitive to coordinate scaling, ties and high-dimensional distance concentration; the nulls are representation-shape controls, not uncertainty estimates."
+  ]
+}

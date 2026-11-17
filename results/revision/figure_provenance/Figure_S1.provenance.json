@@ -1,0 +1,212 @@
+{
+  "figure": "S1",
+  "synthetic_preview": false,
+  "source_sha256": {
+    "runs/sweep_L00_k8_x4/sae/train_L00.json": "c835b3a858405ce043bfcf7ad6196092cd0ab3656698151104320c8f08596c82",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L00_k8_x4/ann_v2_L00.json": "7f822d24727bea259b01a446756b11fdac8f9e3bd4066591f1b4e9b47572c32f",
+    "runs/sweep_L00_k16_x4/sae/train_L00.json": "4097bbd66afff596c73555b9518829dbd0cc2250f1cec1af1dd8a918d7c8a75a",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L00_k16_x4/ann_v2_L00.json": "fb2edc24ad6fc18797e6edfde0c165290c4e7fe6fcf856d211a12389dfc075e3",
+    "runs/2b_atlas/sae/train_L00.json": "cd20a3f48c856d8b03473a9e38f98780c8db1a890e57e269f0639c251170a2f9",
+    "paper_cbc_rev1/experiments/results/2b_eval_L00.json": "a4f1ace68fb57f7ad57a6d19b1418df5b13d080affdb28087ec3818890e1530e",
+    "paper_cbc_rev1/experiments/results/annotations/2b/ann_v2_L00.json": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452",
+    "runs/sweep_L00_k64_x4/sae/train_L00.json": "6c3b49f790d091d62985f4fb5fefba24cb7550abdb758f7d7a87dd846177138b",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L00_k64_x4/ann_v2_L00.json": "18c4b5568f3fe45a3426fc7e43433d35e77624f85e4854de64d78ed944fa6746",
+    "runs/sweep_L00_k128_x4/sae/train_L00.json": "5e3fe72b590fb7ef85625d38dc82d18067e0635df3d8a29fc742b8d750d2eace",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L00_k128_x4/ann_v2_L00.json": "0a0319f78acb42342c79b4dec22ff4d17de5dab3c9d733663f81eb910eda2bad",
+    "runs/sweep_L13_k8_x4/sae/train_L13.json": "dd306fb33ac6b5bbd2b20667b02cee1989f2ad6bb9274e88a7b96f0935474019",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L13_k8_x4/ann_v2_L13.json": "52c2ea40dc07e7053b694211c9073504cdc57c0f4fdff4012a65b1b8fc2d0a67",
+    "runs/sweep_L13_k16_x4/sae/train_L13.json": "99fe4146db1d466f01109033b65c1f0cc14ce7f07ef7b1c819c6f2f338ea6022",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L13_k16_x4/ann_v2_L13.json": "706a183b8e76f733657431da7e47e5b15b3fd939329834989485375a2c1b99ef",
+    "runs/2b_atlas/sae/train_L13.json": "2d4561225c532811e33cce9ec1ad4ada3fa96ea74146e10193b16f79a09dab7b",
+    "paper_cbc_rev1/experiments/results/2b_eval_L13.json": "d8c8cb2ec7090c922a872dc3924159914d271f34be0ee678403b6f0425e29b38",
+    "paper_cbc_rev1/experiments/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "runs/sweep_L13_k64_x4/sae/train_L13.json": "6e993669a158957a84bdad46c69d0c741971a1bf607108acffd7b3aac9845559",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L13_k64_x4/ann_v2_L13.json": "6bbe1d78ba94e101b2bef0206151a031dad3cfd40f9eb4f0151fc066f214ea6f",
+    "runs/sweep_L13_k128_x4/sae/train_L13.json": "74ee1abce3d204867acea564baa3624bc9152df7489a9ff92f0645093afb3feb",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L13_k128_x4/ann_v2_L13.json": "de9126d36bbe3e0fbdea81bd78d6b753f50cf195596d3ad6d5b1f143e716ffe7",
+    "runs/sweep_L13_k32_x2/sae/train_L13.json": "0cac03d264ea475327cdd87a06362942525b536c3e65b8257c7609357e640416",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L13_k32_x2/ann_v2_L13.json": "e7ba106c443b539fe3613d8f5f421e6ac73d390e8155bacecee7971ff9ba5d6c",
+    "runs/sweep_L13_k32_x8/sae/train_L13.json": "9a27853268ed246527505da785d485c16e6327e31e349a30c9b11dae073cbe9b",
+    "paper_cbc_rev1/experiments/results/annotations/sweep_L13_k32_x8/ann_v2_L13.json": "927c16aabd413a537a80bc286a9379b5c478b9c12018525b685d8a64ed8de91e"
+  },
+  "plotted_values": {
+    "sparsity_sweep": {
+      "0": [
+        {
+          "k": 8,
+          "expansion": 4,
+          "layer": 0,
+          "ve": 0.9771297962560539,
+          "dead": 0.4363064236111111,
+          "median_firing": 2.9296875000000002e-05,
+          "decoder_overlap": 0.017503786832094193,
+          "rate": 0.20258818140174073,
+          "floor": 0.031531531531531536,
+          "n_alive": 8732,
+          "n_total": 9216
+        },
+        {
+          "k": 16,
+          "expansion": 4,
+          "layer": 0,
+          "ve": 0.9890151574716645,
+          "dead": 0.10850694444444445,
+          "median_firing": 0.00013671875,
+          "decoder_overlap": 0.01807638257741928,
+          "rate": 0.43910117238384716,
+          "floor": 0.11383702417137069,
+          "n_alive": 9212,
+          "n_total": 9216
+        },
+        {
+          "k": 32,
+          "expansion": 4,
+          "layer": 0,
+          "ve": 0.9930632926817315,
+          "dead": 0.0026041666666666665,
+          "median_firing": 0.00100341796875,
+          "decoder_overlap": 0.018557002767920494,
+          "rate": 0.5342881944444444,
+          "floor": 0.07895688657407407,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "k": 64,
+          "expansion": 4,
+          "layer": 0,
+          "ve": 0.9937889532897825,
+          "dead": 0.0,
+          "median_firing": 0.004081217447916667,
+          "decoder_overlap": 0.019459184259176254,
+          "rate": 0.4485677083333333,
+          "floor": 0.01443142361111111,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "k": 128,
+          "expansion": 4,
+          "layer": 0,
+          "ve": 0.9934897583568996,
+          "dead": 0.0,
+          "median_firing": 0.010521647135416666,
+          "decoder_overlap": 0.019381562247872353,
+          "rate": 0.5642361111111112,
+          "floor": 0.013599537037037037,
+          "n_alive": 9216,
+          "n_total": 9216
+        }
+      ],
+      "13": [
+        {
+          "k": 8,
+          "expansion": 4,
+          "layer": 13,
+          "ve": 0.8601161750198412,
+          "dead": 0.7205946180555556,
+          "median_firing": 6.510416666666667e-06,
+          "decoder_overlap": 0.017768925055861473,
+          "rate": 0.1681448632668145,
+          "floor": 0.04052722345405272,
+          "n_alive": 8118,
+          "n_total": 9216
+        },
+        {
+          "k": 16,
+          "expansion": 4,
+          "layer": 13,
+          "ve": 0.9003113830281853,
+          "dead": 0.3332248263888889,
+          "median_firing": 2.604166666666667e-05,
+          "decoder_overlap": 0.0187960434705019,
+          "rate": 0.39199913034025435,
+          "floor": 0.12468746602891619,
+          "n_alive": 9199,
+          "n_total": 9216
+        },
+        {
+          "k": 32,
+          "expansion": 4,
+          "layer": 13,
+          "ve": 0.9246504624954273,
+          "dead": 0.017144097222222224,
+          "median_firing": 0.00016438802083333333,
+          "decoder_overlap": 0.020548304542899132,
+          "rate": 0.6366102430555556,
+          "floor": 0.25614872685185186,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "k": 64,
+          "expansion": 4,
+          "layer": 13,
+          "ve": 0.9371167980555406,
+          "dead": 0.0,
+          "median_firing": 0.0028019205729166666,
+          "decoder_overlap": 0.021843599155545235,
+          "rate": 0.5031467013888888,
+          "floor": 0.057544849537037035,
+          "n_alive": 9216,
+          "n_total": 9216
+        },
+        {
+          "k": 128,
+          "expansion": 4,
+          "layer": 13,
+          "ve": 0.9423529108982872,
+          "dead": 0.0,
+          "median_firing": 0.007652180989583333,
+          "decoder_overlap": 0.022301066666841507,
+          "rate": 0.5327690972222222,
+          "floor": 0.02043547453703704,
+          "n_alive": 9216,
+          "n_total": 9216
+        }
+      ]
+    },
+    "expansion_sweep": [
+      {
+        "k": 32,
+        "expansion": 2,
+        "layer": 13,
+        "ve": 0.9189951993284093,
+        "dead": 0.004774305555555556,
+        "median_firing": 0.0027197265625,
+        "decoder_overlap": 0.023479368537664413,
+        "rate": 0.646484375,
+        "floor": 0.1417824074074074,
+        "n_alive": 4608,
+        "n_total": 4608
+      },
+      {
+        "k": 32,
+        "expansion": 4,
+        "layer": 13,
+        "ve": 0.9246504624954273,
+        "dead": 0.017144097222222224,
+        "median_firing": 0.00016438802083333333,
+        "decoder_overlap": 0.020548304542899132,
+        "rate": 0.6366102430555556,
+        "floor": 0.25614872685185186,
+        "n_alive": 9216,
+        "n_total": 9216
+      },
+      {
+        "k": 32,
+        "expansion": 8,
+        "layer": 13,
+        "ve": 0.9271279755580228,
+        "dead": 0.042426215277777776,
+        "median_firing": 0.00010091145833333335,
+        "decoder_overlap": 0.018742427229881287,
+        "rate": 0.6338975694444444,
+        "floor": 0.3645833333333333,
+        "n_alive": 18432,
+        "n_total": 18432
+      }
+    ]
+  },
+  "generator_sha256": "aed2797658b12b6184cb0b0ee7dcad8f16fddc9e37d53017748721a00787ea74"
+}

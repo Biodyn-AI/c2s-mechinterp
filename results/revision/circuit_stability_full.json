@@ -1,0 +1,401 @@
+{
+  "audit": "Independent circuit stability over full common eligible tested families",
+  "passed": true,
+  "status": "complete",
+  "n_checks": 27,
+  "findings": [],
+  "source_layers": [
+    7
+  ],
+  "n_source_features": 15,
+  "n_common_eligible_source_features": 15,
+  "per_source": [
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 1219,
+      "n_second_passing": 1217,
+      "n_shared_passing": 1097,
+      "passing_jaccard": 0.8192681105302465,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9430416189863156,
+        "spearman": 0.7787161605806683
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 1097,
+        "pearson": 0.9717376546984394,
+        "spearman": 0.9436958836357799
+      },
+      "source_layer": 7,
+      "source_feature": 6418,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 1186,
+      "n_second_passing": 1100,
+      "n_shared_passing": 1051,
+      "passing_jaccard": 0.8510121457489879,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9757590386656565,
+        "spearman": 0.7766514763603327
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 1051,
+        "pearson": 0.9886288753730809,
+        "spearman": 0.9762547657723353
+      },
+      "source_layer": 7,
+      "source_feature": 4471,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 807,
+      "n_second_passing": 793,
+      "n_shared_passing": 736,
+      "passing_jaccard": 0.8518518518518519,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9772991161957789,
+        "spearman": 0.7819133462640315
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 736,
+        "pearson": 0.9906537549180404,
+        "spearman": 0.9875166596636884
+      },
+      "source_layer": 7,
+      "source_feature": 8136,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 1177,
+      "n_second_passing": 1135,
+      "n_shared_passing": 1083,
+      "passing_jaccard": 0.8812042310821806,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9793527103378141,
+        "spearman": 0.7733699939586927
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 1083,
+        "pearson": 0.9902719138366619,
+        "spearman": 0.9824890318324231
+      },
+      "source_layer": 7,
+      "source_feature": 272,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 1042,
+      "n_second_passing": 868,
+      "n_shared_passing": 814,
+      "passing_jaccard": 0.7427007299270073,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.900289189942521,
+        "spearman": 0.7722235432702403
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 814,
+        "pearson": 0.989581442196896,
+        "spearman": 0.9244902566750755
+      },
+      "source_layer": 7,
+      "source_feature": 4243,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 534,
+      "n_second_passing": 474,
+      "n_shared_passing": 461,
+      "passing_jaccard": 0.8427787934186471,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9824432130125536,
+        "spearman": 0.7438852959363668
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 461,
+        "pearson": 0.9882209988925443,
+        "spearman": 0.9808172399137222
+      },
+      "source_layer": 7,
+      "source_feature": 142,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 561,
+      "n_second_passing": 553,
+      "n_shared_passing": 516,
+      "passing_jaccard": 0.862876254180602,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9935173763933588,
+        "spearman": 0.7756224141521071
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 516,
+        "pearson": 0.9958333070619111,
+        "spearman": 0.9913644595821541
+      },
+      "source_layer": 7,
+      "source_feature": 4413,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 532,
+      "n_second_passing": 510,
+      "n_shared_passing": 479,
+      "passing_jaccard": 0.8507992895204263,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9907193275554991,
+        "spearman": 0.7477202745951117
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 479,
+        "pearson": 0.9948241857052856,
+        "spearman": 0.9908625667141274
+      },
+      "source_layer": 7,
+      "source_feature": 211,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 515,
+      "n_second_passing": 503,
+      "n_shared_passing": 475,
+      "passing_jaccard": 0.8747697974217311,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9906825231799966,
+        "spearman": 0.774526419827142
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 475,
+        "pearson": 0.9929096276293337,
+        "spearman": 0.9912841299077926
+      },
+      "source_layer": 7,
+      "source_feature": 1220,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 464,
+      "n_second_passing": 440,
+      "n_shared_passing": 429,
+      "passing_jaccard": 0.9031578947368422,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9700211189370999,
+        "spearman": 0.7908534342596649
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 429,
+        "pearson": 0.9943169748694366,
+        "spearman": 0.9900281635339231
+      },
+      "source_layer": 7,
+      "source_feature": 2307,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 562,
+      "n_second_passing": 566,
+      "n_shared_passing": 527,
+      "passing_jaccard": 0.8768718801996672,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9921787418537111,
+        "spearman": 0.7708606255125755
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 527,
+        "pearson": 0.9932418925568868,
+        "spearman": 0.9865124612114174
+      },
+      "source_layer": 7,
+      "source_feature": 9184,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 490,
+      "n_second_passing": 455,
+      "n_shared_passing": 438,
+      "passing_jaccard": 0.863905325443787,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9737190945919283,
+        "spearman": 0.7530649281077069
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 438,
+        "pearson": 0.9926077453059683,
+        "spearman": 0.9870207794772822
+      },
+      "source_layer": 7,
+      "source_feature": 7533,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 520,
+      "n_second_passing": 501,
+      "n_shared_passing": 474,
+      "passing_jaccard": 0.8665447897623401,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9853943823324767,
+        "spearman": 0.775688091087041
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 474,
+        "pearson": 0.9863797364859757,
+        "spearman": 0.98674259443669
+      },
+      "source_layer": 7,
+      "source_feature": 2505,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 503,
+      "n_second_passing": 497,
+      "n_shared_passing": 469,
+      "passing_jaccard": 0.8832391713747646,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9884051825987835,
+        "spearman": 0.7985481974009359
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 469,
+        "pearson": 0.9903069216654142,
+        "spearman": 0.988277457696321
+      },
+      "source_layer": 7,
+      "source_feature": 7725,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    },
+    {
+      "common_eligible": true,
+      "n_active_first": 50,
+      "n_active_second": 100,
+      "n_first_passing": 1181,
+      "n_second_passing": 1107,
+      "n_shared_passing": 1072,
+      "passing_jaccard": 0.881578947368421,
+      "all_tested": {
+        "n_effect_pairs": 165888,
+        "pearson": 0.9761486758526304,
+        "spearman": 0.7941642110276741
+      },
+      "shared_passing_only": {
+        "n_effect_pairs": 1072,
+        "pearson": 0.9879969165315325,
+        "spearman": 0.9810174226177376
+      },
+      "source_layer": 7,
+      "source_feature": 254,
+      "n_target_layers": 18,
+      "n_target_features_per_layer": 9216
+    }
+  ],
+  "pooled_all_tested": {
+    "n_effect_pairs": 2488320,
+    "pearson": 0.9824201765607051,
+    "spearman": 0.7729787893565037
+  },
+  "selection_conditioned_shared_passing": {
+    "correlations": {
+      "n_effect_pairs": 10121,
+      "pearson": 0.9905783985752756,
+      "spearman": 0.983134869901434
+    },
+    "edge_comparison": {
+      "n_first": 11293,
+      "n_second": 10719,
+      "n_shared": 10121,
+      "jaccard": 0.8511479270036162,
+      "fraction_first_recovered": 0.8962188966616488,
+      "effect_pearson_shared_edges": 0.9905783985752756
+    },
+    "label": "Conditions on passing the edge rule in both runs; not an all-tested correlation."
+  },
+  "source_sha256": {
+    "/workspace/rev1/results/circuit_50/circuit_L07_summary.json": "2964866aacc9c731857603a520b719c4a2c14193e6e0ef86ae2cb436e90fa324",
+    "/workspace/rev1/results/circuit_100/circuit_L07_summary.json": "106fb22c3e0b756ddc0ade384b0a944040e0c9b7c6805dfa4bb3184cfe41a70c",
+    "/workspace/rev1/results/circuit_50/circuit_L07.npz": "fdca05c23a2c01645818b5fef26062a760bfee652160365a81d4731134b394e4",
+    "/workspace/rev1/results/circuit_100/circuit_L07.npz": "216c94c7c57db5cf7fbace0621ea9e6a8209fdbdf42c1f6b08edc066ef7f5f40",
+    "/workspace/rev1/results/circuit_stability.json": "33a34aa391817f5671d9c862c72c696046421da801b11535f13b928257694d03",
+    "/workspace/rev1/results/audits/audit_circuit_stability_full.py": "1d70790c4df4cf40176fbd8852900b85403b6a0584d756fcf66169cfcf95a9d1"
+  },
+  "peak_rss_bytes": 325853184,
+  "definitions": {
+    "eligible_source": "At least two source-active cells in each run; same prespecified source set.",
+    "full_tested_family": "Every common downstream layer/feature column, including zeros and nonpassing effects.",
+    "passing_mask": "Saved full-precision edge_mask plus source activity >=2; no thresholding of rounded d_all.",
+    "pooled_weight": "Each tested source/layer/target-feature effect pair contributes once.",
+    "input_precision": "Stored float32 d_all; no fresh model effects are recomputed."
+  },
+  "limitations": [
+    "Prespecified source features are a subset of the dictionary; all-tested refers to their tested downstream families.",
+    "The 50-cell panel is nested within the 100-cell panel; this is not independent-sample replication.",
+    "Target columns and source effects are dependent. Correlations are descriptive; no p-values or independent-pair intervals."
+  ]
+}

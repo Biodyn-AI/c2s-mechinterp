@@ -1,6 +1,7 @@
-\documentclass[preprint,12pt]{elsarticle}
+\documentclass[review,authoryear,12pt]{elsarticle}
 
 \usepackage[T1]{fontenc}
+\usepackage[margin=3cm]{geometry}
 \usepackage{lineno}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -13,9 +14,15 @@
 \captionsetup{font=small,labelfont=bf}
 \usepackage{ragged2e}
 \newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
-\journal{Journal of Biomedical Informatics}
+\journal{Computational Biology and Chemistry}
+
+% Trim trailing glue emitted by the elsarticle title-page footer.
+\makeatletter
+\apptocmd{\ps@pprintTitle}{\apptocmd{\@oddfoot}{\unskip}{}{}}{}{}
+\makeatother
 
 \begin{document}
+\raggedright
 
 \begin{frontmatter}
 
@@ -28,35 +35,26 @@ language model trained to read cells as sentences}
                   University of Tübingen}, city={Tübingen}, country={Germany}}
 
 \begin{abstract}
-\textbf{Objective.} Single-cell foundation models are increasingly proposed for target
-prioritisation and perturbation prediction, yet are judged by benchmark scores that cannot
-separate genuine biological computation from a re-encoding of the input. A new class represents a
-cell as a \emph{sentence} of gene names, trained as a general-purpose language model. We asked what
-such a model internally computes, and sought a reusable protocol for any biomedical foundation
-model.
-
-\textbf{Methods.} We applied a four-stage protocol to C2S-Scale, a Cell2Sentence family built on
-Gemma-2 (2B and 27B). We trained per-layer TopK sparse autoencoders on gene-token activations,
-annotated features against Gene Ontology, KEGG, Reactome, STRING and TRRUST, traced causal circuits
-by feature ablation, and tested whether the geometry exceeds co-expression and is causally used,
-via permutation nulls and activation steering. Three controls applied throughout: baselines encoded
-with the model's own input information, nulls matched on co-expression, and capacity-matched
-comparison across sizes.
-
-\textbf{Results.} The models carry extensive biologically organised structure: 68\% of features
-received a significant ontology annotation; half of the layer-0 features remained recoverable at
-layer 25, versus 2--3\% for an encoder-style model under the same pipeline; 27,633 causal
-cross-layer edges were recovered, 85.2\% joining features sharing an ontology term; and functional
-relatedness exceeded a co-expression-matched null ($z = 3.9$--$6.6$). Steering internal directions
-moved the model's own predictions; random directions did not. Two negatives were equally robust:
-gene knockdowns were detected for 96.7\% of targets but only 2.1\% produced a
-transcription-factor-target-specific response, and at matched capacity the 27B model had 31 times
-more dead features and 19 points lower annotation than the 2B.
-
-\textbf{Conclusion.} Cell-sentence language models build rich, causally used, largely interpretable
-structure, but it encodes co-expression rather than regulatory direction, and scale does not
-improve it. The protocol and a public feature atlas are released for assessing other biomedical
-foundation models.
+Cell-sentence foundation models represent a transcriptome as ranked gene names. Their internal
+biological structure needs to be distinguished from information already available in that input.
+We audit C2S-Scale, a Gemma-2 language model at 2B and 27B parameters, using sparse autoencoders,
+feature ablations, geometry, steering and controlled readouts. Validation includes complete
+multiple-testing families, empirical annotation floors, measured-expression controls,
+input-matched baselines and comparisons at matched dictionary capacity and relative depth.
+The 2B atlas contains 239~616 features across all 26 layers. Named ontology or regulon terms
+label 63.8\%, compared with a 34.4\% frequency-matched random-gene floor on average. Two late
+layers do not exceed their matched floor.
+Untrained directions also carry extensive labels. At seven matched depths, 27B has greater
+held-out inactivity and lower raw annotation, while its annotation excess is not uniformly lower.
+Half of the layer-zero decoder directions have a similar direction at the final layer.
+Gene geometry exceeds a co-expression-matched null, and internal steering changes the model's
+gene readout. These are model-level findings rather than evidence of regulation inside cells.
+Cell-phase readouts show no resolved gain over input-rank baselines: for frozen K562-to-RPE1
+transfer, the model-minus-rank difference is $-0.001$, with a paired 95\% interval of
+$-0.013$ to $0.011$. The known-target assay is unsigned and must be interpreted together with
+its expression positive control and target coverage. The resulting atlas supports inspection of
+cell-state programmes and generation of hypotheses; claims about regulatory direction require
+independent biological evidence.
 \end{abstract}
 
 \begin{keyword}
@@ -68,450 +66,1204 @@ foundation models \sep interpretability \sep sparse autoencoders \sep single-cel
 
 \section{Introduction}
 
-Foundation models trained on large single-cell transcriptomic corpora are now being proposed for
-tasks with direct translational consequence: prioritising drug targets, predicting the effect of a
-genetic perturbation, and annotating cells in diseased human tissue \cite{ref3,ref4}. Decisions
-taken on the strength of such predictions are only as trustworthy as our understanding of what the
-model has actually learned. That understanding is currently thin. Most evaluations report a
-downstream accuracy, and accuracy alone cannot separate a model that has internalised gene
-regulation from one that has efficiently re-described the correlations already present in its
-input.
+Single-cell foundation models are used to annotate cells, prioritise targets and predict responses to
+perturbations \citep{ref3,ref4}. These tasks require different kinds of evidence. Cell annotation may
+benefit from a representation of genes that are expressed together. A claim about which factor controls
+a target requires evidence about regulatory direction. Predictive performance alone does not establish
+that a model has learned that mechanism. Comparisons with simple baselines are especially important:
+several deep-learning perturbation predictors have failed to exceed linear baselines in controlled
+benchmarks \citep{refPerturbBaselines}.
 
-This gap matters because the dominant statistical structure in transcriptomic data --- genes that
-are expressed together --- can imitate almost any biological signal one might wish to claim. A model
-that reproduces co-expression will appear to ``know'' pathways, cell types and cell states, because
-those categories are themselves largely defined by co-expression. Prior work across several
-architectures has repeatedly found that apparent regulatory knowledge in these models collapses
-once co-expression is properly controlled \cite{ref8,ref9}. Evaluation therefore needs to be
-supplemented by interpretability: methods that open the model and ask which internal quantities
-exist, how they are connected, whether they are used, and whether any of it exceeds the information
-already handed to the model at its input.
+Mechanistic interpretability asks what a model represents and how it uses that information. It can
+identify internal features, trace the effects of interventions and test whether representations add
+information beyond the input. Each question needs its own validation. An ontology label needs a chance
+baseline. A regulatory test needs a positive control showing that it can detect target-specific signal.
+An intervention inside a model establishes a model-level effect; it does not by itself establish a
+causal interaction inside a cell. We therefore audit an existing model with controlled tests rather
+than propose a predictor whose quality can be summarised by one accuracy score.
 
-A recent and distinctive class of single-cell models makes this question sharper. Cell2Sentence
-\cite{ref1} represents a cell as a \emph{sentence}: the genes are sorted by expression and written
-out as a plain list of gene symbols, so that a general-purpose language model can be trained on
-cells exactly as it would be trained on text. C2S-Scale \cite{ref2} scales this idea to billions of
-parameters on the Gemma-2 architecture. Such a model is architecturally a text transformer, has no
-learned gene-embedding table of the kind found in encoder-style single-cell models, and ---
-importantly --- discards expression magnitudes, retaining only which genes are present and in what
-order. It is therefore an unusually clean testbed: whatever the model contributes must be visible as
-a difference between the model and its own input encoding.
+Cell2Sentence represents cells as lists of gene symbols ordered by expression \citep{ref1}.
+C2S-Scale adapts this representation to language models with billions of parameters \citep{ref2}.
+The representation makes the limits of a language architecture explicit. A cell profile is an unordered
+vector; its sentence imposes an order in which position denotes expression rank. In the inputs used
+here, retaining the top 512 genes removes both expression magnitudes and the less abundant genes.
+A causal transformer can use genes earlier in the list to represent a gene, but cannot use genes
+that follow it. The same gene therefore receives different context across cells. Its symbol may also
+be split into several sub-word tokens from a vocabulary designed for text. Finally, next-token
+prediction rewards the ability to predict gene names from their rank and co-occurrence. It need not
+identify the direction of regulation that produced those associations.
 
-We report a mechanistic-interpretability study of this model class, and, as the methodological
-contribution, the protocol used to obtain it. The protocol has four stages (Fig.~\ref{fig:design})
---- a sparse-autoencoder feature atlas, causal circuit tracing, geometry and steering tests, and
-public deployment of the resulting atlas --- and is bound together by three controls that we argue
-should be standard: (i) \textbf{information-matched baselines}, in which the comparison baseline is
-encoded with exactly the information the model receives; (ii) \textbf{co-expression-matched nulls},
-in which the null distribution preserves the co-expression structure of the same cells; and (iii)
-\textbf{capacity-matched scaling controls}, in which interpretability is compared across model sizes
-only after equalising the number of features per unit of training data. Each of these controls
-changed a conclusion in this study, in one case reversing it.
+These limits have practical consequences. A feature associated with a pathway may describe a cell
+state without distinguishing a driver from a co-expressed passenger. Such a feature may help find
+biomarkers or annotate cells. It needs separate perturbation evidence before it can support a drug
+mechanism or a factor-to-target claim. Attention-based analyses of single-cell models illustrate this
+distinction: apparent target-prediction signal can be explained by simpler gene-level features
+\citep{ref9}.
 
-We apply the protocol to C2S-Scale at 2B and 27B parameters, using human chronic myeloid leukaemia
-cells (K562) with genome-scale CRISPR interference \cite{ref24} and human bone-marrow CD34+
-haematopoietic progenitors \cite{ref25}. We report both positive and negative findings, and we
-release the feature atlas as a public, browsable resource.
+We study C2S-Scale at 2B and 27B parameters through four stages (Fig.~\ref{fig:design}): a sparse-autoencoder
+feature atlas, causal circuit tracing, geometry and steering tests, and a browsable atlas resource.
+The protocol uses information-matched input baselines, co-expression-matched nulls and
+capacity-matched comparisons across model sizes. Empirical annotation floors and sensitivity analyses
+make the conditions of each result explicit. The biological data include K562 CRISPRi profiles
+\citep{ref24} and human bone-marrow CD34+ progenitors \citep{ref25}.
 
-\begin{table}[htbp]
-\centering
-\caption{Statement of Significance.}
-\label{tab:sos}
-\small
-\begin{tabular}{@{}L{0.24\linewidth}L{0.70\linewidth}@{}}
-\toprule
-\textbf{Problem or Issue} & Single-cell foundation models are being adopted for translational tasks, but are evaluated by benchmark accuracy, which cannot distinguish learned biology from a re-encoding of the model's own input. \\
-\midrule
-\textbf{What is Already Known} & Sparse autoencoders extract interpretable features from encoder-style single-cell models, whose attention largely reflects co-expression rather than regulation. Nothing is known about the internals of models that read a cell as a sentence of gene names. \\
-\midrule
-\textbf{What this Paper Adds} & A four-stage interpretability protocol with three transferable controls (information-matched baselines, co-expression-matched nulls, capacity-matched scaling), applied to a cell-sentence language model at two scales. It finds extensive, causally used interpretable structure, no transcription-factor-to-target regulatory logic, and that scaling to 27B parameters reduces interpretability. A public feature atlas is released. \\
-\midrule
-\textbf{Who would benefit} & Developers and evaluators of biomedical foundation models; computational biologists judging whether such models can be trusted for target or perturbation reasoning; interpretability researchers. \\
-\bottomrule
-\end{tabular}
-\end{table}
+The scope has limits. Most atlas and circuit analyses concern one cell line. Circuit tracing samples
+selected source features rather than every possible interaction. Biological labels depend on curated
+databases and on their coverage of the genes available to the model. The protocol measures information
+and causal effects within a model; it does not establish clinical validity or generalisation to all
+cell types.
 
-\section{Related Work}
+\subsection{Related work}
 
-\textbf{Sparse autoencoders for language models.} Sparse dictionary learning on transformer
-activations recovers directions that are more interpretable than individual neurons, addressing
-superposition, in which a network represents more concepts than it has dimensions \cite{ref21}. This
-line of work established that features found this way are monosemantic and manipulable
-\cite{ref17,ref18,ref19}, and that a TopK constraint gives a clean sparsity--fidelity trade-off with
-a single interpretable hyperparameter \cite{ref20}. We adopt the TopK formulation.
+\textbf{Attention and attribution.} Attention weights and input attributions offer different views of a
+prediction. Integrated gradients measures contributions relative to an input baseline
+\citep{refIntegratedGradients}. Attention weights need not provide a faithful account of importance
+in the tasks where they have been tested \citep{refAttentionExplanation}. For single-cell models,
+comparisons of attention-derived scores with gene-level baselines test whether an apparent regulatory
+signal adds information beyond properties of the genes themselves \citep{ref9}.
 
-\textbf{Interpretability of single-cell foundation models.} Sparse autoencoders have been applied to
-encoder-style single-cell models, recovering cell-type and pathway programmes \cite{ref6} and, in a
-comparative atlas of Geneformer and scGPT, organised biological knowledge together with a
-conspicuous absence of regulatory logic \cite{ref7}. Causal circuit tracing has been used to compare
-computational architectures across such models \cite{ref10}, and extended to exhaustive mapping
-\cite{ref11}. Complementary studies show that attention-derived scores mainly re-encode
-co-expression and add little over simple gene-level features for perturbation-target prediction
-\cite{ref8,ref9}, and that geometric and topological structure in these models is extensive but
-frequently explicable by data structure \cite{ref12,ref13,ref37}. Intervention-based validation of
-putative regulatory signal has been formalised separately \cite{ref14}. The present work carries
-this programme to a model class it has not previously reached, and adds the capacity-matched scaling
-control.
+\textbf{Probing and baseline comparisons.} A probe tests whether a property can be recovered from a
+representation. Control tasks help distinguish information in that representation from what the probe
+can memorise \citep{refProbeControls}. In single-cell models, zero-shot evaluations and perturbation
+benchmarks similarly test whether complex representations improve over simpler alternatives
+\citep{ref5,refPerturbBaselines}. Our baselines match sentence-level gene selection and rank encoding.
+The shared-column restriction in frozen transfer is reported explicitly, because model sentences
+can also contain nonshared gene identities.
 
-\textbf{Cell-sentence models.} Cell2Sentence \cite{ref1} introduced the rank-ordered gene-name
-representation and showed that language models fine-tuned on it can generate and annotate cells;
-C2S-Scale \cite{ref2} scaled this to 27B parameters. Independently, zero-shot evaluations have
-questioned how much single-cell foundation models add over simple baselines \cite{ref5}, which is
-precisely the question our information-matched baselines are designed to answer.
+\textbf{Dictionary learning.} Sparse autoencoders (SAEs) decompose dense activations into sparse feature
+sets. They address superposition, in which more concepts are represented than there are dimensions
+\citep{ref21}. Language-model studies have found interpretable and manipulable SAE features
+\citep{ref17,ref18,ref19}. TopK autoencoders control sparsity directly \citep{ref20}. In single-cell
+models, SAEs recover cell-type and pathway programmes \citep{ref6,ref7}. Interpretability scores alone
+remain insufficient evidence of a learned mechanism: strong scores can also arise with randomized
+transformers or constrained random SAE baselines \citep{refRandomTransformerSAE,refRandomSAEBaselines}.
+This motivates empirical floors for biological annotation.
 
-\textbf{Evaluation validity.} Benchmark rankings for these models are unstable under protocol
-choices and are bounded by partial-label ceilings \cite{ref39,ref40}. This motivates our emphasis on
-controls rather than on leaderboard position.
+\textbf{Causal interventions and circuits.} Causal mediation and activation editing test which internal
+components contribute to model behaviour \citep{refCausalMediation,ref22}. In single-cell models,
+circuit tracing has characterised feature interactions and computational redundancy
+\citep{ref10,ref11}. Intervention-based tests separately assess whether a biological association
+supports a regulatory claim \citep{ref14}. We retain this distinction between an intervention on a
+model feature and an intervention on a biological factor.
+
+\textbf{Geometry and topology.} Contextual language representations can be anisotropic, so geometric
+structure needs an appropriate reference distribution \citep{refAnisotropy}. Single-cell studies
+report extensive geometric and topological structure, with some regulatory signal beyond
+co-expression but substantial dependence on the input data \citep{ref12,ref13,ref37}. Our gene-level
+and cell-level comparisons ask separately which structure exceeds the corresponding input baseline.
+
+\textbf{Steering.} Activation engineering changes model behaviour by intervening along internal
+directions \citep{ref48,ref49}. Applied to cell representations, the central question is whether a
+steering intervention changes the model's readout relative to a fixed displacement or a
+norm-matched random direction. We compare those model interventions directly. Expression-based
+comparisons assess geometry and phase readouts separately; none of these measurements alone
+establishes biological causality.
+
+\textbf{Cell-sentence models and evaluation validity.} Cell2Sentence introduced ranked gene names as a
+language-model input \citep{ref1}; C2S-Scale extended the approach to larger models \citep{ref2}.
+Their use of a shared text vocabulary provides a test of what a language model contributes beyond
+the sentence encoding. More broadly, partial reference labels and changes in evaluation protocols
+can alter single-cell model rankings \citep{ref39,ref40}. We therefore report the statistic, comparison
+set, controls and scope of each conclusion.
 
 \section{Methods}
 
-\subsection{Models, data and input construction}
-We studied C2S-Scale \cite{ref2} built on Gemma-2 \cite{ref23}: the 2B variant (26 transformer
-layers, hidden width 2304) and the 27B variant (46 layers, width 4608). Both use a shared
-20,275-token vocabulary and were accessed as HuggingFace \texttt{safetensors} checkpoints so that
-hidden states could be captured with standard hooks.
+\subsection{Models, data and token-to-gene pooling}
 
-A cell is converted to a sentence by ranking genes by expression and emitting the top 512 gene
-symbols in order; expression magnitudes are discarded. Because a gene symbol may span several
-sub-word tokens, we mapped tokens back to genes using the tokenizer's character offsets and
-mean-pooled the residual stream over the tokens of each gene, yielding one activation vector per
-(cell, gene) pair, which we call a \emph{gene-token position}. Scaffold tokens (prompt and
-punctuation) were excluded.
+We studied the public C2S-Scale Gemma-2 checkpoints at 2B and 27B parameters
+\citep{ref2,ref23}. Their hidden widths are 2~304 and 4~608, with 26 and 46 transformer blocks.
+Block labels start at zero. A tap labelled $L$ reads Hugging Face
+\texttt{hidden\_states[L+1]}. For blocks before the last, this is the post-block residual stream
+before the final RMS normalisation; the final tap (2B: 25; 27B: 45) is after that normalisation.
+Model forward passes use bfloat16 weights in evaluation mode. Pooling and autoencoder arithmetic
+use float32. Model identifiers, checkpoint commits and extraction settings are saved in manifests.
 
-Two human datasets were used. For the atlas, circuit tracing and the regulatory-logic test we used
-K562 cells from a genome-scale CRISPR-interference Perturb-seq experiment \cite{ref24}; the atlas
-used 1,200 unperturbed cells (614,400 gene-token positions per layer) and the regulatory-logic test
-used the full essential-gene screen. For the geometry analyses we used CD34+ human bone-marrow
-progenitors with diffusion-pseudotime and lineage labels \cite{ref25}.
+The feature atlas uses 1~200 non-targeting K562 cells from the Replogle CRISPRi screen
+\citep{ref24}. Its stored sentences specify exactly 614~400 gene positions and 5~662 distinct
+symbols. The knockdown assays use the K562 essential-gene and RPE1 screens from the same study.
+Trajectory analyses use CD34+ human bone-marrow progenitors with Palantir pseudotime and cluster
+labels \citep{ref25}. We retain cell identifiers and their order when comparing representations.
 
-\subsection{Stage 1 --- sparse-autoencoder feature atlas}
-For each layer we trained a TopK sparse autoencoder \cite{ref20} on the gene-token activations:
-dictionary size 9,216 ($4\times$ the 2B width), $k = 32$ active features per position, 6 epochs,
-with decoder columns constrained to unit norm. Two implementation details proved load-bearing.
-First, the unit-norm constraint must be applied along the \emph{feature} axis; normalising the wrong
-axis silently killed 34.8\% of features. Second, activations must be stored in 32-bit precision for
-the 27B model, whose late-layer activations exceed the range of 16-bit floats and otherwise produce
-non-finite values.
+A sentence contains up to 512 expressed genes ranked by descending raw count. Equal counts retain
+the source gene order. Gene names are separated by spaces and preceded by the prompt
+``The following is a list of [number] gene names ordered by descending expression level in a human
+cell.'' Magnitudes are omitted. The tokenizer limit is 8~192 tokens. Each gene's character span is
+recorded before tokenisation. A token is assigned to the gene with the largest positive overlap
+between their character spans; ties retain the first gene. Tokens with zero overlap, including
+prompt and special tokens, are excluded. The arithmetic mean over a gene's assigned tokens gives
+one vector per cell--gene occurrence. This is the \emph{gene position} used for the atlas.
 
-Each feature was summarised by its activation frequency, mean activation and the genes that most
-strongly drive it. Features were annotated by testing the overlap between a feature's top genes and
-Gene Ontology biological processes \cite{ref41,ref42}, KEGG pathways \cite{ref43,ref44}, Reactome
-pathways \cite{ref45}, STRING interaction neighbourhoods \cite{ref46} and TRRUST
-transcription-factor target sets \cite{ref47}, using Fisher's exact test with Benjamini--Hochberg
-control of the false discovery rate \cite{ref34}. Co-activation modules were obtained by Leiden
-clustering \cite{ref32} of the feature co-activation graph. To quantify how features change with
-depth we matched features between layers by decoder cosine similarity and recorded the fraction of
-layer-0 features still recoverable at each later layer.
+The saved tokenizer audit records a mean of 3.302 tokens per occurrence and 3.381 per distinct
+symbol. Single-token symbols account for 1.113\% of symbols and 1.558\% of occurrences.
+Whole sentences average 1~713.571 tokens, ranging from 1~658 to 1~817; none loses a gene to
+truncation. These summaries use the actual prompted atlas sentences rather than isolated symbols.
+A pooling sensitivity analysis at layer 13 uses the first or last assigned token instead of the
+mean. It keeps the same dictionary and centring vector, and compares all-position reconstruction,
+annotation and gene-similarity matrices. The similarity comparison uses up to 600 genes with at
+least 20 occurrences and correlates the upper triangles of their centred, cosine-similarity matrices.
 
-\subsection{Stage 2 --- causal circuit tracing}
-For a chosen source layer we selected the highest-scoring annotated features and, for each, ran a
-clean forward pass and an ablated forward pass in which that feature's contribution was removed from
-the residual stream, using a forward hook, in the spirit of activation patching in language models
-\cite{ref22}. We then measured the change in every downstream layer's feature activations,
-accumulating means and variances online. An edge was recorded when the standardised effect was
-significant and consistent across cells. Because the full design (200 cells $\times$ 30 features
-$\times$ 3 layers, an unbatched pass per pair) required roughly 15--20\,h on the available hardware,
-we ran a reduced but complete design: 50 cells and 15 features at source layers 0, 7 and 16.
+\subsection{Sparse dictionaries and biological annotation}
 
-\subsection{Regulatory-logic test}
-We asked whether an internal feature encodes the direction of regulation rather than mere
-association. For each of 48 TRRUST transcription factors and 12 non-transcription-factor controls we
-compared 25 knockdown cells against 400 non-targeting control cells. A feature was \emph{responding}
-if its activation differed between conditions (Mann--Whitney $U$, BH-corrected). A transcription
-factor showed \emph{specific} response if the genes driving its responding features overlapped that
-factor's known targets more than expected (Fisher's exact test, BH-corrected across factors).
+For each 2B layer, a TopK sparse autoencoder maps centred activations $x$ to
+$h=\operatorname{ReLU}(\operatorname{TopK}(W_ex+b_e))$ and reconstructs them as
+$\hat x=W_dh+b_d$ \citep{ref20}. TopK retains at most $k$ positive features without an L1
+shrinkage penalty. The standard setting uses $k=32$ and 9~216 features, an expansion of four.
+This matches the dictionary scale used for the encoder-model atlases \citep{ref6,ref7} and supplies
+about 67 stored positions per feature. Decoder columns, each representing one feature direction,
+are normalised to unit length after every optimisation step.
 
-\subsection{Capacity-matched scaling control}
-Comparing interpretability across model sizes is confounded: at a fixed expansion factor the wider
-model receives a proportionally larger dictionary trained on the same number of positions, so its
-features are systematically under-trained. We therefore retrained the 27B autoencoders at an
-expansion factor of 2, giving 9,216 features --- the same absolute dictionary as the 2B model and
-hence the same ${\sim}67$ positions per feature --- and repeated the catalogue and annotation steps.
+Training uses mean-squared reconstruction loss, Adam with learning rate $3\times10^{-4}$,
+batches of 4~096 and six epochs. NumPy and PyTorch seeds are zero. The centring vector is the
+mean over all stored positions. A random 5\% of positions, or 30~720 positions for the atlas,
+is held out from weight optimisation. This split evaluates reconstruction of positions, not
+transfer to independent cells. We distinguish features that never fire on those held-out positions
+from features that never fire anywhere in the catalogue. Activation frequency is the fraction of
+positions with $h_f>0$; mean activation includes zero values. A feature's top 20 genes are ranked
+by mean activation \emph{conditional on that feature firing} for the gene.
 
-\subsection{Stage 3 --- geometry, nulls and steering}
-To ask whether the model's gene geometry encodes function beyond co-expression, we binned gene pairs
-jointly on co-expression and mean expression and measured, within bins, how much more
-cosine-similar same-function pairs are than different-function pairs. Because the binning already
-matches co-expression, the appropriate null permutes the assignment of functional labels to genes;
-we drew 200 such permutations and report a $z$-score against them. Intrinsic dimensionality was
-estimated by participation ratio and by the TwoNN estimator.
+The sparsity sensitivity grid uses $k\in\{8,16,32,64,128\}$ at layers 0 and 13.
+Dictionary expansion is varied over $\{2,4,8\}$ at layer 13 with $k=32$. Other training settings
+are fixed. A random-direction control at layers 0, 13 and 22 uses random encoder and decoder
+directions, encoder row norms matched to the trained dictionary, and its learned biases and
+centring vector. It tests the contribution of learned directions rather than removing every
+quantity learned during training \citep{refRandomSAEBaselines}.
 
-For cell-state geometry we compared the model's representation with a principal-component embedding
-of the raw counts of the \emph{same} cells, matched on dimensionality, scoring pseudotime recovery,
-curvature (the gain of a nearest-neighbour regressor over a linear one) and lineage recovery.
+The annotation universe $U$ is the set of distinct atlas gene symbols, uppercased. GO biological
+process, KEGG, Reactome and TRRUST regulon terms are intersected with $U$; terms containing
+5--500 genes after intersection are retained \citep{ref41,ref42,ref43,ref44,ref45,ref47}.
+For a feature gene set $S$, each retained term receives a one-sided hypergeometric overlap test.
+Terms sharing fewer than two genes with $S$ receive $p=1$ and remain in the test family.
+Sets with fewer than three available genes are treated as nondiscoveries.
 
-Causal use was tested by activation steering \cite{ref48,ref49}: internal states were displaced
-along a target direction and the model's own next-gene predictions were read out, against a
-norm-matched random direction as control.
+Three further tests concern STRING pair enrichment, TRRUST pair enrichment and TF membership.
+For each interaction network, an undirected pair is counted once. If $M$ pairs lie in a universe
+of $N$ genes, the within-set pair count is compared with a Poisson distribution of mean
+$\binom{|S|}{2}M/\binom{N}{2}$. TF membership uses a hypergeometric test against the number of
+TRRUST factors in $U$. Pair-density tests are approximations: they do not condition on the
+network's degree sequence or edge dependence \citep{ref46,refEnrichmentBias}.
 
-\subsection{Information-matched baselines}
-Every model-versus-data comparison used a baseline given exactly the information the model receives.
-Because a cell sentence is the top-512 genes in rank order without magnitudes, the correct baseline
-is not the full expression vector but the same truncated, rank-only encoding. We report the full
-ladder (full expression, top-512 with magnitudes, top-512 as a binary set, top-512 set plus rank) so
-that the cost of tokenisation is separated from the contribution of the model.
+BH adjustment includes \emph{all retained terms plus these three tests} for each feature, including
+tests with $p=1$ \citep{ref34}. We use the 5\% threshold. An \emph{ontology-annotated} feature has
+at least one significant named term or regulon. \emph{Any-evidence annotation} also includes pair
+and TF-membership tests. Pair or membership evidence alone never counts as a shared ontology term.
+For each definition we report both the fraction of all dictionary features and the fraction of
+features active somewhere in the catalogue. The all-feature rate retains inactive features in its
+denominator.
 
-\subsection{Implementation}
-Experiments ran on rented NVIDIA A40, A5000, RTX 4090 and A100/H100 GPUs. Code, trained
-autoencoders and result artefacts are available as described in Data Availability.
+Chance floors use three resampled catalogues of the same set sizes, drawn without replacement
+within each set. Genes are sampled either uniformly from $U$, or with weights proportional to
+their frequency in the observed feature top-gene lists. Null catalogues pass through the identical
+scorer. Ontology-only and any-evidence floors remain separate; all-feature floors multiply the
+active-feature floor by the active fraction. Global BH across all feature--test pairs and a pooled,
+inclusive plus-one empirical minimum-$p$ calculation provide sensitivity summaries. Neither is
+substituted for the primary per-feature definition.
+Table~\ref{tab:databases} lists the annotation resources and their snapshot definitions.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Annotation resources. Libraries were retrieved on 17 November 2026. Snapshot names identify
+Enrichr libraries, rather than claiming a specific upstream release date. URLs and content checksums
+are saved with the library files. Counts describe the downloaded resources before intersection with
+the model's gene universe.}
+\label{tab:databases}
+\begin{tabular}{L{2.0cm} L{6.7cm} L{3.2cm}}
+\toprule
+Resource & Snapshot or version & Downloaded content \\
+\midrule
+GO BP & \texttt{GO\_Biological\_Process\_2026} & 5~954 terms \\
+KEGG & \texttt{KEGG\_2026} & 352 terms \\
+Reactome & \texttt{Reactome\_Pathways\_2024} & 2~105 terms \\
+STRING & v12.5, human; combined score at least 700 & 282~864 gene pairs \\
+TRRUST & v2, human & 9~396 interaction records \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Database sensitivity uses the archived GO BP 2023, KEGG 2021 Human and Reactome 2022 libraries at
+layers 0, 13 and 22. Those archived files have restricted gene coverage, so this comparison concerns
+both snapshot and coverage.
+
+The archived annotation libraries were generated by
+\texttt{src/15\_biological/02\_biological\_characterization.py} in the
+\texttt{Biodyn-AI/biomechinterp-framework} repository, pinned at commit
+\texttt{40e6da0ae21a768dbbcb2bfa62539845f0ef7c88} with recorded pin date 14 April 2026.
+The producer script's SHA256 and each input library's SHA256 are retained in the ontology
+provenance record. The archived Enrichr libraries are GO BP 2023, KEGG 2021 Human and
+Reactome 2022 restricted to an inherited highly variable gene panel; the archived interaction
+sources are STRING v12.0 and TRRUST v2. Exact upstream release dates were not recorded.
+The producer pin date identifies the reproducible code snapshot, rather than the
+release date of those upstream resources.
+
+Feature co-activation graphs retain pairs observed together at least
+50 times with $\log_2[P(i,j)/(P(i)P(j))]>2$. Leiden clustering uses the RB configuration
+partition, resolution 1, seed 42 and a minimum reported module size of three \citep{ref32}.
+Cross-layer persistence is the fraction of source features with a best absolute decoder cosine of
+at least 0.7 in the target layer; target reuse is allowed. This tests directional similarity rather
+than identity of the complete activation function.
+
+\subsection{Circuit interventions, shared terms and sampling sensitivity}
+
+Circuit tracing removes one feature contribution at a time through a block-output hook
+\citep{ref22}. The difference between the decoded code and the code with that feature set to zero
+is added to every sub-word token assigned to a gene where the feature is active. Clean and ablated
+passes are compared at downstream dictionary layers. Within each cell, downstream changes are
+averaged over genes where the source feature fired. Thus cells, rather than tokens, are observations
+for the edge statistic.
+
+The circuit panel uses 15 selected features at source layers 0, 7 and 16 and 50 cells.
+Sources were selected among features with at least ten catalogue genes and activation frequency
+at least 1\%, using the stored annotation-based ranking. For a downstream feature, an edge is
+retained when the absolute mean cell-level change divided by its sample standard deviation exceeds
+0.5 and more than 70\% of active-source cells have the majority sign. At least two active-source
+cells are required. This is an effect-and-consistency rule, not a $p$-value or FDR test.
+The stored panel graph retains at most 50 downstream targets per source feature and target layer;
+its shared-term proportions refer to that retained graph.
+
+Shared-term calculations use complete significant term identifiers, qualified by database source.
+Both endpoints must have a named ontology or regulon annotation. The primary baseline keeps each
+source fixed and replaces its target uniformly with an annotated feature from the same target
+layer. The probability of sharing any term is evaluated exactly for that pool. A second baseline
+samples both endpoints within their layers. We report observed fraction, baseline and excess,
+with 95\% percentile intervals from 2~000 bootstrap resamples of source features.
+
+A layer-7 sampling check uses the same source features at 50 and 100 cells and saves complete
+downstream effect arrays. Edge-set Jaccard overlap and effect correlation among common retained
+edges describe selection-conditioned stability. Correlations across the complete common tested
+effect family, including nonpassing and zero effects, provide a separate comparison. The 50-cell
+panel is nested within the 100-cell panel. A simulation of independent normal cell-level changes evaluates how often
+the joint edge rule is met across effect sizes at 50 and 100 active-source cells. It is a conditional
+sensitivity calculation; nominal cell count is distinguished from the number in which a source fires.
+
+\subsection{Perturbation responses and unsigned TF-target enrichment}
+
+Here, ``TF'' denotes a regulator listed as a source factor in TRRUST.
+The primary K562 design contains 48 TRRUST factors, 12 non-TF knockdowns, 25 cells per knockdown and
+400 non-targeting controls. Eligible knockdowns have at least 15 cells; factors are ordered by
+screen cell abundance and the first 48 are retained. Non-TF knockdowns and cells are sampled with
+a fixed seed-42 recipe. The RPE1 replication
+includes all 121 TRRUST factors with at least 30 cells, up to 50 cells per knockdown, 40 non-TF
+knockdowns and 1~000 non-targeting controls. Twenty disjoint groups of 50 other non-targeting cells
+provide pseudo-perturbations. RPE1 sampling uses seed 20261117. Cells are selected using group
+identity and availability, without selecting for a favourable response.
+
+The THP1 cohort uses the pooled ECCITE-seq RNA data from Papalexi et al.
+\citep{refPapalexi}, distributed through scPerturb \citep{refScPerturb}. Its inducible-Cas9
+loss-of-function screen differs from the Replogle CRISPRi screens. We sample by assigned guide
+rather than selecting cells by their inferred perturbation response; successful editing is not
+verified for every sampled cell. We retain the single
+recorded HTO partition \texttt{rep1-tx}. With seed 20261117, availability-based selection includes
+12 TRRUST factors with at least 30 cells, up to 50 cells per factor, four randomly sampled eligible
+non-TF targets, 400 non-targeting controls and four disjoint pseudo-control groups of 50 cells.
+The staged cohort contains 1~384 cells and 18~648 gene columns. Cells are allocated across available
+guides by shuffled round-robin sampling, and guide identities are retained. The same fixed K562
+dictionaries and response definitions are used; no text-deletion arm is applied to this cohort.
+Raw counts for \texttt{C2orf15} and \texttt{C2ORF15} are summed because both columns have the exact
+Ensembl identifier \texttt{ENSG00000273045}. Case-colliding symbols with distinct or missing
+identifiers are excluded as a group. All selected counts are checked as finite, nonnegative integers.
+
+Cells are the observations for the response tests. Among the sampled K562 factor groups,
+43 contain one guide label and five contain two. These comparisons therefore do not estimate
+variation across independent guides. The saved design audit records guide and batch coverage.
+
+At layers 8, 16 and 22, each cell is represented by its mean SAE feature activity across its gene
+positions. The same extracted cells also supply two input-side controls: measured expression
+$\log(1+10^4c_g/\sum_jc_j)$ and rank weights $(512-r)/512$ for zero-based sentence rank $r$,
+with absent genes assigned zero. Two-sided Mann--Whitney tests compare a knockdown with its control
+cells. BH adjustment spans every gene or feature column for that condition and representation.
+A response requires $q<0.05$ and an absolute standardised mean difference above 0.5. The latter uses
+$\sqrt{(s_P^2+s_C^2)/2}$ with population variances, matching the implemented effect convention.
+
+For each factor, a feature is target-labelled if its top-gene list contains at least one known
+TRRUST target. One-sided Fisher tests ask whether target-labelled columns are enriched among
+responses. The fixed eligible background contains columns nonzero anywhere among the extracted
+groups. Gene-level backgrounds also exclude the perturbed factor itself. Autoregulatory entries
+are removed from target labels for every representation. BH adjustment across \emph{all screened
+factors} is separate for each representation and layer. Factors without eligible target or
+non-target columns are flagged as unevaluable. Sensitivities require at least one, three or five
+distinct eligible known target genes, while retaining the full screened BH family.
+Overlapping catalogue memberships make feature columns dependent. Factor-level BH adjustment
+does not remove that dependence within a feature-enrichment table. We therefore treat feature
+target enrichment as a representation-level association and do not count its labelled features
+as independent biological targets.
+
+For retrieval, feature scores are absolute response effects. A model-derived gene score averages
+those effects across catalogue features listing that gene; genes with no membership receive zero.
+Expression, rank-input and model gene retrieval use the same full dataset gene universe, excluding
+the directly perturbed gene. Known targets are positives. Unlisted genes form the comparator class;
+they are not experimentally established nontargets. We report AUROC, average precision and
+prevalence, including coverage of targets in the dictionary. Feature-level and gene-level retrieval
+have different units and are reported separately. These statistics test target-set association and
+omit TRRUST activation/repression signs; they do not test regulatory direction.
+
+Text deletion is assessed separately from measured knockdowns. A TF name is removed from a control
+sentence and replaced by the next ranked gene. A neighbouring non-TF, non-target deletion supplies
+a positional control. Factors must occur among the first 506 names in at least 15 control sentences;
+up to 40 cell pairs are retained per factor. Only genes downstream of both deletions are compared. Paired differences in
+cosine displacement are accumulated per TF, gene and layer; a gene requires at least five pairs.
+Paired $t$ summaries and BH adjustment span all gene columns for that TF and layer. Deletion controls
+match nearby gene rank, while sub-word token lengths may differ. Retrieval ranks genes by their mean
+excess cosine displacement after factor deletion relative to the positional control. This is an intervention on model
+text, not on a biological factor.
+
+\subsection{Matched scaling and residual-stream statistics}
+
+Dictionary transfer uses 300 verified non-targeting controls from each of K562 and RPE1.
+Every stored top-512 sentence is checked against its recorded row in the named source dataset.
+The K562 dictionaries and centring vectors are held fixed when measuring per-line reconstruction
+and feature firing frequencies; no dictionary is trained on the RPE1 cells for this comparison.
+
+The primary scaling comparison uses the same 1~200 sentences, $k=32$, 9~216 dictionary features,
+six training epochs and the same position split for both models. Seven 27B taps span its full
+relative depth: 0, 7, 14, 24, 31, 38 and 45, corresponding approximately to 2B taps
+0, 4, 8, 13, 17, 21 and 25. The 27B dictionary therefore has expansion two, matching absolute
+capacity and positions per feature rather than expansion factor. Its pooled activations are stored
+in float32. Extraction fails on nonfinite or out-of-range values; overflowed float16 values are
+never clipped into a primary comparison.
+
+Residual statistics use the first 200 identical sentences across every layer of each model.
+Double-precision accumulated moments give centred covariance spectra, participation ratio,
+variance shares in the leading one and ten directions, coordinate RMS values and maximum absolute
+activation. The recorded reference magnitude is the median of per-cell scalar medians.
+These distinguish centred variance concentration from a shared mean or unusually large coordinates
+\citep{refMassiveActivations,refAnisotropy}. Their association with feature inactivity is descriptive.
+
+\subsection{Gene and cell geometry}
+
+For the functional gene-geometry test, occurrence means are computed with a cap of 200 occurrences
+per gene at layers 9, 13 and 17, then each representation coordinate is z-scored across genes.
+Gene pairs are placed in a five-by-five grid of co-expression and mean-expression quantile bins.
+Within bins containing at least 20 same-function and 20 other pairs, we compute the difference in
+mean cosine similarity. The reported $\Delta\cos$ averages those bin differences equally.
+Function means sharing a GO BP, KEGG or Reactome term from the archived libraries.
+Permuting the assignment of complete term sets to genes while fixing pairs and bins supplies the
+null. We use 199 valid permutations at layer 9 and 200 at layers 13 and 17, reporting the
+standardised null deviation and the inclusive plus-one one-sided permutation $p$.
+
+A separate dimensionality comparison uses the same sampled CD34+ cells and common gene identities
+for expression and model vectors. Genes observed at least 20 times in the sentences are retained.
+Rows are genes; expression coordinates are log-normalised counts across cells, whereas model
+coordinates are occurrence-averaged hidden-state dimensions. Controls independently shuffle cells
+within each expression gene vector or use independent Gaussian matrices of the corresponding
+shape. This comparison uses original Euclidean coordinates. It is distinct from the z-scored
+functional analysis and from a manifold whose rows are cells.
+
+The K562 dimensionality comparison uses a fixed cohort of 1~200 non-targeting cells sampled
+with seed 20261117. Source row indices and top-512 sentences are retained together. Model
+vectors at layers 9, 13 and 17 and expression, shuffled-expression and shape-matched Gaussian
+references use these same cells and common gene identities. This is a controlled cohort for
+the dimensionality comparison, separate from the fixed feature-atlas sentence corpus.
+
+Participation ratio is $(\sum_i\lambda_i)^2/\sum_i\lambda_i^2$ for centred covariance
+eigenvalues. TwoNN uses $n/\sum_i\log(r_{2i}/r_{1i})$, retaining rows with positive, unequal
+first- and second-neighbour distances \citep{refTwoNN}. Both valid and excluded row counts are saved.
+The estimators describe different aspects of dimension and depend on sampling
+\citep{refSingleCellID}.
+
+Cell-state geometry uses the last-position representation at layer 18 and a matched 20-dimensional
+PCA space. The expression reference uses log-normalised counts for the same cells and the
+2~000 genes with greatest variance. Coordinate standardisation and PCA are fitted to the sampled
+cell panel before readout cross-validation. Five-fold random cross-validation compares ridge regression
+with 15-neighbour regression of pseudotime; their $R^2$ difference defines the curvature score.
+A linear synthetic target with noise matched to linear decodability supplies a sensitivity control.
+Lineage recovery uses 15-neighbour classification, stratified folds and balanced accuracy against
+shuffled labels. These folds assess interpolation among sampled cells and do not remove pseudotime
+autocorrelation.
+
+\subsection{Input-matched tasks, gene-name probes and steering}
+
+Cell-cycle comparisons use the same cell identities and readouts for the full provided expression panel,
+top-512 expression with magnitudes, binary membership, linearly descending ranks and model
+representations. Reciprocal-rank weighting is kept separate because it changes the geometry of an
+otherwise information-equivalent input. The standard cell-cycle battery uses PCA dimensions
+10, 20 and 50, five-fold ridge prediction of sine and cosine of phase, and held-out logistic
+classification of phase classes. The binary S/G2M task excludes G1 cells.
+
+Continuous phase is the angle in the leading two principal components of standardised S/G2M
+marker expression. Marker-module scores fix the orientation; the S-score peak is placed at
+45 degrees in each dataset. The target is therefore expression-derived, which gives expression
+baselines a definitional advantage. It is not an independent measurement of cell-cycle timing.
+
+The within-K562 ladder uses 3~000 cells and layer-21 cell summaries. Each representation is
+reduced to 50 principal components and standardised over the whole cohort before five-fold
+ridge prediction with penalty 10. The preprocessing is transductive;
+preprocessing is not refitted within each training fold. The frozen transfer comparison uses
+3~000 K562 and 3~000 RPE1 cells. Its scaler and ridge predictor, with penalty 1~000, are fitted
+on K562 only and applied to RPE1 without PCA or target-side refitting. Expression arms use
+shared gene columns. Top-512 selection and its rank weights are determined on each full panel
+before that projection; model sentences can also contain nonshared gene identities.
+
+Paired 95\% intervals use 5~000 cell-bootstrap draws with the readout fits held fixed.
+Within-cohort draws resample the circular-$R^2$ denominator as well as prediction errors;
+transfer draws use the same target-cell sample for every arm. No equivalence margin is specified.
+The cached cell summaries are linked to checksummed inputs and checked by re-extracting 20 sampled
+rows per cell line. This is sampled verification of that linkage rather than a re-extraction of
+every cached row.
+
+The gene-name assay inserts each of 87 curated S/G2M symbols at fixed rank into 24 phase-neutral
+backbones. A fixed ridge readout maps the resulting cell states to phase. Scoring uses proximity
+to the G2M pole minus proximity to the S pole. Real symbols, case variants, one-character
+near-misses and anagrams share the procedure. Constructed controls are checked against the
+available K562/RPE1 gene panels. Both AUROC and average precision are calculated from the saved
+scores and labels; the panel contains 50 G2M and 37 S genes.
+
+Steering adds a displacement at the last sentence position through a forward hook
+\citep{ref48,ref49}. Twelve phase-bin centroids define a piecewise-linear path between source
+and target bins. Fixed source-to-target displacement and a Gaussian random direction with the
+same endpoint norm are controls. The readout uses the model's next-token logits over phase-bin
+marker genes, aggregated to a circular mean. We report target progress, the reduction in angular
+distance to the target, and path length, the sum of absolute wrapped angular steps over the
+intervention sweep. Each has units of radians. The two path rules share endpoints, so progress
+and traversal length answer different questions. Comparisons are paired within cells.
+
+The steering comparisons reuse the same 24 source cells in each of three runs: layer 21, layer 18
+and layer 21 with the 512-gene sentence cap matched to centroid construction. For each run,
+a one-sided exact binomial sign test asks whether the fraction of cells with greater
+readout path length under the centroid path than under the fixed displacement exceeds one half.
+A run's mean path length and a mean across the three runs have distinct aggregation units.
+
+\subsection{Metrics and statistical interpretation}
+
+Reconstruction variance explained is
+$1-\sum_j\operatorname{Var}(x_j-\hat x_j)/\sum_j\operatorname{Var}(x_j)$.
+Annotation fractions, firing frequencies, inactive-feature fractions, persistence and circuit
+shared-term fractions use the explicit denominators above. Circular phase recovery is
+$1-\overline{[1-\cos(\hat\theta-\theta)]}/
+\overline{[1-\cos(\theta-\bar\theta)]}$, where $\bar\theta$ is the circular mean.
+Balanced accuracy averages class-specific recalls. AUROC is the probability that a positive ranks
+above a negative, assigning half credit to ties. Average precision is the stepwise precision--recall
+integral, $\sum_t(R_t-R_{t-1})P_t$, rather than a trapezoidal area
+\citep{refPRAUC}. Prevalence is reported because target retrieval is imbalanced.
+
+Finite random rankings need not have expected average precision equal to prevalence. For $n$ items,
+$m$ positives and descending score-tie groups of sizes $a_g$ ending at cumulative positions $b_g$,
+we calculate the exact random-label expectation as
+\[
+E_0(\mathrm{AP})=\sum_g\frac{a_g}{n b_g}
+\left[1+\frac{(b_g-1)(m-1)}{n-1}\right].
+\]
+AP divided by prevalence and AP divided by this expectation are distinct descriptive ratios.
+Neither ratio alone is a significance test. Retrieval intervals resample positive and negative
+items separately; macro-average intervals resample factors. They describe retrieval conditional
+on the observed cells, rather than uncertainty over independent biological samples. The bootstrap
+count and seed are saved with each statistic. All significance thresholds and test families are
+specified within the relevant assay; effect-and-consistency circuit thresholds remain separate
+from FDR decisions.
+
+\subsection{Validation design}
+
+We interpret each assay together with its controls (Table~\ref{tab:validation}). A biological
+positive control tests whether a negative assay can detect its intended signal. A sensitivity
+analysis tests dependence on an analysis choice. Neither substitutes for replication in an
+independent biological context. Figure provenance links each plotted quantity to its script,
+input sample, test definition and saved numerical artefact in the code repository.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Validation attached to each class of claim. Each control addresses the stated assay;
+passing one control does not validate every biological interpretation.}
+\label{tab:validation}
+\begin{tabular}{L{2.4cm} L{3.5cm} L{6.0cm}}
+\toprule
+Assay & Principal quantity & Controls and sensitivity \\
+\midrule
+Dictionary & Reconstruction, inactivity, annotation excess & Uniform and frequency-weighted gene
+sets; random directions; sparsity, expansion and pooling settings \\
+Circuits & Shared-term excess & Same-source random targets in matched layers; source bootstrap;
+50/100-cell source-layer comparison \\
+Knockdowns & Response and target retrieval & Same-cell measured expression and rank input;
+non-TF and pseudo-perturbations; RPE1; target-coverage strata \\
+Scaling & Matched dictionary and residual statistics & Same sentences, absolute capacity,
+training exposure and relative depth; float32 27B storage \\
+Gene geometry & Within-bin $\Delta\cos$, PR, TwoNN & Term-label permutations; common genes;
+expression, within-gene shuffles and shape-matched Gaussian controls \\
+Cell and name tasks & Phase recovery, AUROC, AP & Information-matched input ladder;
+name anagrams and case variants; measured prevalence \\
+Steering & Target progress and path length & Unsteered readout calibration; fixed direction;
+endpoint-norm-matched random direction; paired cells \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Computational cost and software provenance}
+
+GPU extraction, dictionary training and model interventions run on RunPod. The reproduction
+hardware is one NVIDIA RTX PRO 6000 Blackwell Server Edition with 96 GB of memory.
+One atlas layer occupies 2.83 GB at 614~400 by 2~304 float16 values; a 27B layer occupies
+11.32 GB at the same position count and width 4~608 in float32. These are array sizes, excluding
+weights, dictionaries and temporary tensors. Chunked catalogue construction and sparse
+co-activation accumulation bound working memory. Circuit tracing requires an ablated model
+forward pass for every active source--cell pair, which limits its sampling scope.
+
+Per-stage records save commands, script hashes, start and end times, sampled process-tree RAM,
+sampled device memory and disk-use changes. Extraction and training records also save peak
+PyTorch-allocated GPU memory. These measurements distinguish allocation peaks from sampled
+device use. The supplementary computational table reports the corresponding wall times,
+hardware and billed cost. The transformer interface is pinned to \texttt{transformers 4.46.3}.
+Tokenizer audit provenance records \texttt{tokenizers 0.20.3}, \texttt{sentencepiece 0.2.2}
+and checkpoint asset checksums. Runtime package versions and model commits accompany the
+numerical artefacts; the tokenizer audit and GPU runtime are recorded separately.
+Table~\ref{tab:software} lists the packages observed in the GPU environment.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Software in the GPU execution environment. Versions are recorded from the executing
+pod, separately from the tokenizer-only audit environment. CUDA denotes the runtime reported
+by PyTorch.}
+\label{tab:software}
+\begin{tabular}{ll ll}
+\toprule
+Component & Version & Component & Version \\
+\midrule
+Python & 3.12.3 & PyTorch & 2.8.0+cu128 \\
+CUDA & 12.8 & transformers & 4.46.3 \\
+NumPy & 2.1.2 & SciPy & 1.18.1 \\
+statsmodels & 0.15.0 & scanpy & 1.12.6 \\
+anndata & 0.13.4 & leidenalg & 0.12.0 \\
+igraph & 1.0.0 & umap-learn & 0.6.0 \\
+scikit-learn & 1.9.1 & tokenizers & 0.20.3 \\
+accelerate & 1.1.1 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Results}
 
-\subsection{The model carries a large, biologically annotated feature dictionary}
-Sparse autoencoders trained on all 26 layers of the 2B model reconstructed the residual stream well,
-explaining 87--99\% of activation variance (mean 0.93), with few dead features (mean 1.2\%) and
-near-orthogonal decoder directions (mean absolute cosine 0.02) (Fig.~\ref{fig:atlas}a). On average
-68\% of features per layer received at least one significant ontology annotation, ranging from 80\%
-in early layers to about 50\% late (Fig.~\ref{fig:atlas}b), and 16--26 co-activation modules were
-recovered per layer. Feature contents were recognisable cell-biological programmes --- ribosomal
-subunits (with the large and small subunits separated), proteasome, spliceosome, chaperonin,
-translation initiation, mitosis and glycolysis --- consistent with a proliferating leukaemia line.
+\subsection{Biological annotation depends on depth and the chance baseline}
 
-Almost no feature aligned with a top-50 singular direction of the same activations (0--1 per layer;
-99.99\% of features novel), reproducing in a cell-sentence model the observation that sparse
-features are not visible to linear decomposition \cite{ref7,ref21}.
+Across all 26 layers, the 2B dictionaries explained 87.3--99.3\% of held-out activation variance,
+with an unweighted layer mean of 93.3\% (Fig.~\ref{fig:atlas}a). On average, 1.19\% of features
+never fired on the held-out positions; every feature fired somewhere among all atlas positions
+(Fig.~\ref{fig:atlas}b). Inactivity on a finite evaluation sample therefore differs from permanent
+inactivity on this corpus. The 577 co-activation modules contain 124~302 feature instances,
+51.9\% of the dictionary total, with 16--27 modules per layer. Counts across layers are feature
+instances rather than distinct biological programmes.
+
+Named ontology or regulon terms label 152~782 of 239~616 features, or 63.8\%. The corresponding
+frequency-weighted random-set floor is 34.4\%, an average excess of 29.4 percentage points.
+The uniform floor is only 0.916\%, showing why a uniform gene-set reference is insufficient
+(Fig.~\ref{fig:atlas}c). The depth profile also changes after accounting for gene frequencies.
+Layer 22 has the highest annotation rate, 77.6\%, but its weighted floor is 80.7\%; layer 23
+has 74.9\% against 77.0\%. These two highly annotated late layers do not exceed that
+floor. The all-feature and catalogue-active denominators coincide for this 2B corpus.
+
+Including network-pair and TF-membership evidence raises the combined rate to 75.4\%, against
+its own weighted floor of 51.6\%. A further 27~902 features have only these evidence types and
+no named ontology or regulon term. We keep them separate from features carrying biological
+term labels and from the shared-term circuit analysis.
+Sparsity changes both reconstruction and firing. Across $k=8$ to 128, held-out variance explained
+rose from 97.7\% to 99.3\% at layer 0 and from 86.0\% to 94.2\% at layer 13. Held-out inactivity
+fell from 43.6\% to zero and from 72.1\% to zero, respectively. At layer 13 and $k=32$, increasing
+expansion from two to eight raised reconstruction from 91.9\% to 92.7\%, while inactivity rose
+from 0.477\% to 4.24\%. Annotation and its matching floor changed non-monotonically across
+settings. These single-seed comparisons describe a design tradeoff, rather than identifying an
+optimal dictionary (Supplementary Fig.~S1).
+
+Pooling rules are not interchangeable under the fixed layer-13 dictionary. Across all positions,
+variance explained was 92.6\% for mean pooling, 71.9\% for first-token pooling and 54.9\% for
+last-token pooling. Gene-similarity matrices correlated with the mean-pooled matrix at 0.745 and
+0.496, respectively. Ontology coverage among all features changed from 63.7\% for mean pooling
+to 59.9\% and 44.8\%; each rule has its own empirical floor (Supplementary Fig.~S2).
+These all-position reconstruction scores differ from the held-out scores above.
+
+Labels also depend on the dictionary control and reference libraries (Supplementary Fig.~S3).
+Random directions retaining trained row norms, biases and centring gave ontology coverage of
+36.0\%, 75.4\% and 75.7\% at layers 0, 13 and 22, against their own weighted floors of 1.32\%,
+29.8\% and 82.9\%. The learned dictionaries gave 53.4\%, 63.7\% and 77.6\% at those layers.
+Thus dictionary training is not required for high annotation coverage on these structured model
+activations; layer 13's random-direction control even has the larger above-floor excess.
+Using the archived restricted libraries instead of the full libraries reduced learned-dictionary
+coverage to 12.2\%, 12.8\% and 7.89\%. The corresponding weighted floors were 1.35\%, 0.893\%
+and 0.423\%. The term families contain 2~373 versus 4~590 tests per feature. Library coverage,
+membership and multiplicity change together, so this comparison does not isolate release date.
+
+Only two of the 239~616 decoder directions had absolute cosine above 0.7 with any of the sampled
+activations' top 50 singular axes. This distinguishes the dictionary directions from those
+particular variance axes \citep{ref7,ref21}. It does not by itself establish monosemanticity,
+nonlinear information or biological specificity.
+
+\subsection{What the features encode}
+
+The term-name categories connect the atlas to biological descriptions, while retaining their broad
+and overlapping scope (Fig.~\ref{fig:biology}a). At layer 13, 3~138 of 9~216 features carried
+translation or ribosome terms (34.0\%), 3~156 carried RNA-processing terms (34.2\%), 837 carried
+cell-cycle or mitosis terms (9.08\%), and 55 carried haem or erythroid terms (0.597\%). A feature
+can receive several categories, including ``other'', through different significant terms.
+These counts describe curated gene-set associations rather than separate cell-state measurements.
+
+The examples show why the genes must be inspected alongside the labels (Fig.~\ref{fig:biology}b).
+Layer-13 feature F9106 lists ATF5, ATF4, ATF1 and TRIB3 among its leading genes. Its haem-associated
+term concerns the EIF2AK1/HRI response to heme deficiency, with fold enrichment 154.4 and
+BH-adjusted probability $5.94\times10^{-10}$. The term names a heme-deficiency response rather than
+haemoglobin expression.
+F1089 instead lists ribosomal genes including RPS5, RPS9 and RPS13. Its strongest translation
+term is labelled ``SARS-CoV-1 Modulates Host Translation Machinery'', with fold enrichment 161.8
+and $q=1.64\times10^{-44}$. This shared host-gene set does not imply infection in the sampled cells.
+F254 has proteasome genes under a mitotic-entry term, illustrating that a cell-cycle category
+need not identify an exclusively cell-cycle feature. At the module level, layer-13 co-activation
+module 1 contains 382 features, of which 248 have RNA-processing labels and 207 have translation
+or ribosome labels. These overlapping counts describe a mixed module rather than a functionally
+pure group.
+
+On the independent 300-control-cell samples, F9106 fired at 0.322\% of K562 gene positions and
+0.124\% of RPE1 positions. F1089 fired at 2.44\% and 4.79\%, respectively; F254 fired at 2.31\%
+and 1.66\% (Fig.~\ref{fig:biology}c--e). The haem-associated example was therefore less active
+in RPE1, while the ribosomal example was more active. These are frequencies under the same K562
+dictionary and centring vector, with different input gene distributions and reconstruction quality.
+They support inspection of line-dependent feature activity, rather than establishing that a whole
+pathway is active or absent in either cell line.
 
 \subsection{Features persist across the entire depth}
-Tracking features by decoder similarity, 63\% of layer-0 features were still recoverable more than
-ten layers later, and 50.4\% remained at layer 25 with mean cosine 0.88
-(Fig.~\ref{fig:atlas}c). Under the identical pipeline, an encoder-style single-cell model retains
-2--3\% and nothing beyond layer 11 \cite{ref7}. A decoder-only residual stream therefore preserves
-gene-level feature directions written early, whereas encoder-style single-cell models rebuild their
-features layer by layer. This is an architecture-level contrast with a practical consequence: in
-this model class, a feature discovered at one depth can be expected to remain addressable at others.
+At layer 25, 4~641 of the 9~216 layer-0 decoder directions (50.4\%) had a match with absolute
+cosine at least 0.7; their mean best-match cosine was 0.88 (Fig.~\ref{fig:atlas}d).
+The matching fraction fell to 40.3\% around layer 8 before rising again. Counted over the whole
+trajectory, 5~782 layer-0 directions (62.7\%) had matches across more than ten layers.
+Target reuse is allowed, so these counts measure directional similarity rather than a one-to-one
+lineage of features or preservation of their complete activation functions.
 
-\subsection{Causal circuits propagate biological function}
-Ablating individual features and measuring downstream consequences yielded 27,633 significant
-cross-layer edges from 45 source features to 7,959 distinct downstream features. Influence
-attenuated smoothly with distance, from 746 edges into the adjacent layer to 196 into the last
-(Fig.~\ref{fig:circuits}a), with no long-range anomalies. Of the 12,816 edges for which both
-endpoints were annotated, 10,919 (85.2\%) connected features sharing at least one ontology term
-(Fig.~\ref{fig:circuits}b). Typical circuits propagate a single function across depth: a
-DNA-damage-response feature at layer 7 drives DNA-damage-response features at layers 8, 12, 14 and
-22.
+Among 1~744 decoder-matched pairs with named annotations at both ends, 94.8\% shared a broad
+biological category. A fixed-source random annotated-target baseline already gave 93.9\%.
+The excess was only 0.92 percentage points, with a source-bootstrap 95\% interval of
+$-0.05$ to 1.86 points. Thus the directional matches do not show a resolved excess of broad
+category preservation over this high baseline.
 
-This is coherent, interpretable computation. It is not, by itself, evidence of regulatory logic:
-features sharing an ontology term are annotated from overlapping and largely co-expressed gene sets,
-so functional propagation is what co-expression alone predicts.
+An encoder-style single-cell model analysed with the same matching procedure retained only
+2--3\% of its source directions, with no matches beyond layer 11 \citep{ref7}.
+The contrast concerns these two trained models; architecture, objective and training data all
+differ. For C2S-Scale-2B, the result supports looking for a related direction at distant depths,
+then checking its gene contents and activity before treating it as the same biological feature.
 
-\subsection{The model detects perturbations but does not encode regulatory direction}
-The regulatory-logic test separates these possibilities. The model registered the knockdown for
-96.7\% of targets (58/60): individual transcription factors shifted hundreds of features. Yet only
-2.1\% of transcription factors (1 of 48, BH $q < 0.05$) produced a response whose driving genes were
-enriched for that factor's known targets (Fig.~\ref{fig:circuits}c) --- at the false-discovery
-floor, and statistically indistinguishable from zero. An encoder-style reference model under the
-same test reaches 6.2\% \cite{ref7}.
+\subsection{Feature-ablation circuits connect biological annotations}
 
-Near-perfect detection with null specificity is the signature of a model that has learned which
-genes move together, not which gene controls which. Scaling from encoder-style single-cell models to
-a 2B-parameter generative language model trained on tens of millions of cells did not purchase
-regulatory logic.
+The sampled circuit panel contained 33~070 downstream effects meeting the magnitude and sign
+consistency rule. The saved graph retains 27~633 edges from 45 source features to 7~959 distinct
+(target layer, feature) pairs, after the cap of 50 targets per source and downstream layer.
+These are model-intervention effects under a selection rule, rather than FDR-controlled edge
+discoveries. For example, source layer 0 has 1~275 rule-passing effects into layer 1, of which
+746 are retained in the graph. Counts from the two representations should not be interchanged.
+Among 20~924 stored edges with named annotations at both endpoints, 17~399 (83.2\%) shared at
+least one term. Keeping each source fixed and drawing an annotated target from the same layer
+gave 61.3\%. The excess was 21.9 percentage points, with a source-bootstrap 95\% interval of
+18.7--24.9 points (Fig.~\ref{fig:circuits}b). Drawing both endpoints at random gave the lower
+reference of 28.9\%, illustrating the importance of preserving the selected source.
+The source-bootstrap interval for the stored edge count was 24~165--31~162. These intervals
+describe heterogeneity among the selected sources and do not remove their selection bias.
 
-\subsection{Scale reduces interpretability, and the confound is only partly responsible}
-At its native $4\times$ expansion the 27B model looked markedly less interpretable than the 2B:
-47.5\% dead features against 1.2\%, and 44.9\% of live features annotated against 73.4\%. This
-comparison is confounded, because the wider model's dictionary is twice as large on the same data.
-Retraining the 27B autoencoders at matched dictionary size recovered roughly ten points on each
-measure (dead 47.5\% $\rightarrow$ 37.7\%; annotation 44.9\% $\rightarrow$ 54.5\%), confirming that
-under-training was a real effect worth controlling.
+A high-magnitude example links layer-7 F254 to layer-9 F254. Ablating the source reduced the
+target feature, with standardised effect $-12.3$ and sign consistency 1.0. Both catalogues begin
+with PSMA3, PSMA4 and PSMA5 and share the term ``Proteasomal Protein Catabolic Process''
+(GO:0010498). Its fold enrichment is 24.0 at both ends, with BH-adjusted probabilities of
+$7.20\times10^{-18}$ and $7.14\times10^{-18}$. This connects a model-intervention effect to a
+protein-turnover annotation; it does not establish a protein-degradation mechanism in cells.
 
-It did not explain the gap. At matched capacity and matched positions per feature, the 27B model
-still had 37.7\% dead features against the 2B model's 1.2\% --- a factor of 31 --- and 19 percentage
-points lower annotation among live features (Fig.~\ref{fig:scaling}). The 27B model simultaneously
-achieved \emph{higher} reconstruction fidelity (0.977 against 0.933) using far fewer live features,
-indicating a more anisotropic residual stream in which computation concentrates in fewer, denser and
-less ontology-aligned directions. In this model family, thirteen times the parameters made the
-internals harder to read, not easier.
+Under independent normal cell-level changes, the joint edge rule reached 80\% detection at a
+population mean-to-standard-deviation ratio of 0.725 with 50 active-source cells and 0.675 with
+100, on the simulated grid. At a ratio of 0.5, detection was only about 35\% in both settings.
+These are conditional sensitivity calculations rather than FDR guarantees or power estimates
+for every observed source feature.
+The nested 50- and 100-cell layer-7 panels contained 11~293 and 10~719 uncapped effects passing
+the edge rule. They shared 10~121 effects, giving Jaccard overlap 0.851 and recovering 89.6\%
+of the 50-cell set (Supplementary Fig.~S4). All 15 source features fired in every selected cell.
+Across all 2~488~320 tested source--target effects, including zeros and nonpassing effects,
+Pearson correlation was 0.982 and Spearman correlation 0.773. The higher Pearson correlation
+of 0.991 among shared passing effects is selection-conditioned. These panels share cells,
+sources and targets, so the agreement describes stability within this selected panel rather
+than independent replication of a complete model network.
 
-\subsection{Gene geometry exceeds co-expression; cell-state geometry does not}
-Gene representations were high-dimensional (participation ratio 94--132; TwoNN estimate 5.0--6.2).
-Within bins matched on co-expression and mean expression, functionally related gene pairs were more
-aligned than unrelated pairs by $\Delta\cos = 0.062$, 0.044 and 0.055 at layers 9, 13 and 17.
-Against 200 label permutations the null sat at approximately zero, and the observed values cleared
-it at $z = 6.57$, 3.86 and 4.52 ($p \le 0.01$) (Fig.~\ref{fig:beyond}a). This is a genuine, if
-modest, signal beyond co-expression, strongest in mid-network layers.
+A shared biological term is evidence about the annotations of connected features. It does not
+establish the direction of regulation inside a cell. The comparison with a fixed source and a
+random annotated target asks whether the stored model edges share more biology than that
+source's annotations and target-layer composition already predict. Source-feature resampling
+addresses dependence among edges from the same intervention, while leaving the selection of
+sources and the graph cap as limits on generalisation.
 
-The cell-level result went the other way. The model does embed the haematopoietic trajectory as a
-curved manifold, recovering pseudotime ($R^2 = 0.70$) and lineage (balanced accuracy 0.605 against a
-0.107 chance level), and its curvature exceeds a decodability-matched linear control. But a
-principal-component embedding of the raw counts of the same cells did all of it better (pseudotime
-$R^2$ 0.86; curvature 0.102 against 0.023; lineage accuracy 0.862). At the level of cell state, the
-representation adds no trajectory geometry beyond expression.
+\subsection{Curated-target recovery depends on cell context and readout}
 
-\subsection{Internal directions are causally used}
-Interpretability claims are strengthened when the identified structure is shown to drive behaviour.
-Steering the residual stream along an internal cell-state direction moved the model's own next-gene
-predictions by approximately 0.8\,rad toward the target state, while a norm-matched random direction
-produced essentially no movement (0.007). Comparing steering rules, displacement along the local
-geometry of the representation produced a longer traversal of the model's readout than a fixed
-linear direction in three independent runs (1.97/0.93/2.29\,rad against 0.95/0.47/1.32; 75--92\% of
-cells; $p$ between $1\times10^{-5}$ and 0.01) (Fig.~\ref{fig:beyond}b). The internal geometry is
-therefore not decorative: the model's outputs follow the path along which its states are moved.
+At layer 16, every K562 knockdown group had at least one responding feature at the 5\% BH threshold and
+absolute effect threshold of 0.5: 48 of 48 TF groups and 12 of 12 non-TF groups.
+At each of layers 8, 16 and 22, two of the 48 screened factors, PHB2 and MAX, passed the
+feature-level target-enrichment threshold (Fig.~\ref{fig:circuits}c). Only 28 factors had eligible
+known-target features. At layer 16, PHB2's label rests on one distinct known target gene represented
+in 12 features; these are not 12 independent target genes. Requiring three eligible target genes
+leaves MAX as the only discovery, with nine factors meeting that coverage criterion. Requiring
+five leaves no discoveries and only five evaluable factors. All sensitivities retain the full
+48-factor BH family.
 
-\subsection{On cell-level tasks the model does not exceed its own input}
-Placing the model and its baselines on one ruler, recovery of a cell-state variable was 0.929 from
-full expression with magnitudes, 0.882 from the top-512 genes as a binary set, 0.875 from the model,
-and 0.868 from the same set plus rank (Fig.~\ref{fig:beyond}c). Almost the entire loss relative to
-full expression ($-0.047$) occurs at tokenisation, when magnitudes are discarded; the model itself
-sits within 0.007 of a linear readout of its own input. In a matched benchmark across layers and
-embedding dimensionalities, the model did not exceed the expression baseline in any of 36
-comparisons.
+The measured-expression and input-rank gene assays produced no specific factors among the 48
+screened; 34 and 32 factors, respectively, had eligible known targets. These percentages have
+different testing units from the feature assay and do not directly compare its statistical power.
+On the common gene retrieval universe, expression had mean AUROC 0.519, with a TF-bootstrap
+95\% interval of 0.435--0.604. Its mean average precision was 0.00288, compared with target
+prevalence 0.000409 and finite random-label expectation 0.00142. The input-rank and layer-16 model
+mean average precisions were 0.00405 and 0.000790, respectively (Fig.~\ref{fig:circuits}d;
+Supplementary material). These are descriptive macro-averages over curated-target retrieval;
+separate intervals are not a paired superiority test.
 
-An important qualification prevents this from being read as ``the model learns nothing''. When the
-model is given a gene \emph{name} alone, on a phase-neutral background where no expression
-covariance is available, it still sorts genes by the cell-cycle phase they belong to (AUROC 0.989),
-whereas an anagram of the same letters performs at chance (0.511); the effect survives residualising
-on symbol length, abundance and detection rate (0.908). The mapping from gene name to biological
-role is in the weights, even though the cell-level representation is largely a re-encoding of the
-input.
+The expression control therefore does not establish sensitivity for a broad negative claim about
+regulatory information. Sparse target coverage and the mismatch between curated targets and cell
+context remain plausible explanations. The K562 result is inconclusive about absence of regulatory
+information, and the assay is unsigned regardless of its sensitivity.
 
-\subsection{A public feature atlas}
-The final protocol stage deploys the atlas as a browsable resource: 13 layers, 119,808 features,
-88,137 with ontology annotations, 188 co-activation modules, with per-feature gene loadings,
-enrichments, UMAP layouts \cite{ref50}, cross-layer flow and causal edges, at
-\url{https://biodyn-ai.github.io/c2s-atlas/}.
+The PHB2 comparison illustrates a programme-level description. Layer-16 feature F7801 had lower
+activity in knockdown cells, with standardised effect $-1.71$ and response $q=3.74\times10^{-7}$.
+Its leading genes include MT-ND4, MT-CO2 and MT-CO1. All three also decreased in measured expression,
+with effects from $-1.34$ to $-1.50$ and BH-adjusted probabilities below $5.4\times10^{-5}$.
+The feature's strongest term concerns FASTK-family processing and stability of mitochondrial RNAs,
+with fold enrichment 188.7 and ontology $q=1.36\times10^{-19}$. Neither ARNT nor BTG2, the two
+curated PHB2 targets in the expression panel, met the expression-response criterion. The feature
+therefore provides an inspectable mitochondrial-RNA-associated response, while its label alone
+does not establish a direct PHB2-to-target mechanism.
+The same K562 dictionaries explained 87.7\%, 79.2\% and 70.5\% of variance on the 1~000 RPE1
+control cells at layers 8, 16 and 22. These reconstruction measurements precede interpretation
+of its target assay.
+Among the 121 screened RPE1 factors, expression recovered HMGA1 and NPM1 at the 5\% factor-level
+FDR, with 102 factors having eligible targets. Input ranks recovered none, with 99 evaluable
+factors. The feature assay recovered SF1 at layers 8 and 22 and none at layer 16; 85 factors
+were evaluable at each layer (Fig.~\ref{fig:circuits}e). On the common gene universe,
+expression, input ranks and the layer-16 model score had mean average precisions of 0.00624,
+0.00333 and 0.00113. Their respective finite random-label expectations were 0.00184, 0.00182
+and 0.00182. Mean AUROC was 0.590 for expression, 0.628 for input ranks and 0.461 for the
+model score. Curated-target recovery is therefore limited and depends on context and readout;
+the expression-side factor enrichment is also sparse in this second screen.
+
+The THP1 comparison has detectable expression-side target enrichments and a dictionary-transfer
+limitation. On its 400 control cells, the fixed K562 dictionaries
+explained 74.6\%, 60.9\% and 53.2\% of variance at layers 8, 16 and 22. The corresponding
+K562-control values were 92.0\%, 85.4\% and 81.3\%. These are control-corpus reconstruction
+measurements, not held-out training scores. Lower THP1 reconstruction limits the interpretation
+of its feature-level responses.
+
+All 12 THP1 factors had eligible known targets. Expression recovered IRF1, STAT1 and STAT2 at
+the 5\% factor-level BH threshold; input ranks recovered STAT1. The model feature assay recovered STAT2
+at layers 8 and 16 and none at layer 22. On the common gene universe, mean input-rank AUROC was
+0.679 with a TF-bootstrap 95\% interval of 0.641--0.718, while the layer-16 model score gave
+0.513 with an interval of 0.465--0.560. Their mean average precisions were 0.01097 and 0.00340,
+against respective finite random-label expectations of 0.00235 and 0.00234. These results establish
+recoverable curated-target signal for some regulators in this context, while the transferred
+dictionary and readout recover it unevenly. They do not establish regulatory direction or absence
+of information in the underlying language model.
+
+Guide-level descriptions retained all selected guides; 46 of 48 had at least three cells.
+At layer 16, the median feature-effect correlation across the 66 evaluable guide pairs was 0.089
+and the median responding-set Jaccard overlap was zero. This summary includes nonresponding groups
+and pairs that reuse the same 400 controls. It is descriptive evidence about this small cell sample,
+not independent guide-pair or culture replication.
+Text-name deletion gives a separate, model-level comparison. At layer 16, mean target-retrieval
+average precision was 0.0946 in K562 and 0.0958 in RPE1, against finite random-label expectations
+of 0.0169 and 0.0183. Only 20 of 73 named K562 factors and 16 of 103 RPE1 factors were evaluable
+on the downstream-gene subsets. Mean AUROC was 0.568 in K562 and 0.567 in RPE1, with TF-bootstrap 95\% intervals
+of 0.432--0.707 and 0.428--0.701. These families differ from the measured-knockdown panels.
+Deleting a name changes causal attention context and token positions; the nearby-name control
+does not match sub-word length. The result describes association with curated targets under a
+text intervention, rather than a biological knockout or a signed regulatory mechanism.
+
+\subsection{Scale is compared at matched capacity and relative depth}
+
+The scaling comparison holds dictionary size, sparsity, training epochs and stored sentences
+fixed. Seven relative-depth pairs cover both models through their final taps. Biological
+annotation is reported together with a matching empirical floor and the fraction of features
+active anywhere in the catalogue. Held-out inactivity is a separate statistic.
+Held-out inactivity was higher for 27B at every matched pair: 10.5--67.2\%, compared with
+0.260--3.24\% for 2B (Fig.~\ref{fig:scaling}a). The 27B dictionaries explained 91.4--99.0\%
+of held-out variance. Across all atlas positions, however, their inactive fraction ranged from
+zero to 17.5\%; no 2B feature was inactive on that full corpus. The largest 27B discrepancy was
+at layer 24, with 67.2\% held-out inactivity versus 17.5\% all-position inactivity.
+
+Raw named-term annotation was lower in 27B at all seven pairs (Fig.~\ref{fig:scaling}b).
+Among catalogue-active features, 27B coverage ranged from 25.2\% to 64.3\%, while the paired
+2B rates ranged from 51.0\% to 76.5\%. The excess over each dictionary's matching floor gives
+a different comparison. On the all-feature denominator, 27B had the larger excess at the last
+three pairs, by 16.9, 30.8 and 8.67 percentage points at 2B/27B layers 17/31, 21/38 and 25/45.
+Thus lower raw coverage does not imply uniformly weaker biological annotation above chance.
+
+Residual shape also differed. At the middle pair, layers 13/24, centred covariance participation
+ratio occupied 2.60\% of 2B width and 0.317\% of 27B width (Fig.~\ref{fig:scaling}c).
+The maximum-to-median coordinate RMS ratio ranged from about 20 to 45 at the seven 2B taps and
+80 to 1~299 at the 27B taps. Within the seven 27B taps, held-out inactivity had descriptive
+Spearman correlations of $-0.643$ with covariance participation ratio and $-0.286$ with the RMS
+ratio (Fig.~\ref{fig:scaling}d). These dependent-layer associations do not identify a single cause.
+
+Removing the prespecified high-RMS coordinates provides a direct dictionary-fit sensitivity.
+At 27B layer 24, removing 20 coordinates reduced held-out inactivity from 67.2\% to 47.5\%
+and all-position inactivity from 17.5\% to 3.44\%. At layer 38, removing three coordinates
+reduced held-out inactivity from 10.5\% to 7.39\%, while all-position inactivity increased from
+zero to one feature. Large coordinates therefore contribute to the observed fit in these settings,
+without explaining every inactivity measure or establishing an intrinsic limitation of model scale.
+
+Covariance spectra and coordinate magnitudes distinguish concentration of varying signal from
+a large shared mean or a small set of high-RMS coordinates. Descriptive associations across layers
+can motivate a mechanism test; they do not establish that activation shape causes feature inactivity.
+Removing selected high-RMS coordinates also changes the reconstruction target, so its variance
+explained is defined within the projected input space.
+
+\subsection{Gene function survives a co-expression control; cell trajectories favour expression}
+\label{sec:geometry}
+Gene vectors retained functional associations after a control based on observed co-expression.
+Within bins matched on co-expression and mean expression, the cosine gap between functionally
+related and unrelated gene pairs was 0.062, 0.044 and 0.055 at layers 9, 13 and 17.
+The gaps were 6.57, 3.86 and 4.52 null standard deviations above the label-permutation means.
+All three passed the 1\% one-sided permutation threshold; layer 9 had 199 valid permutations and
+the other layers had 200 (Fig.~\ref{fig:beyond}a). This supports functional structure beyond this
+binned null, rather than independence from every possible expression-based explanation
+\citep{ref13,ref37}. The effect was largest at layer 9 and was not monotone across the three taps.
+
+The standardised-coordinate geometry analysis on 11~507 genes gave participation ratios of 94--132
+and TwoNN estimates of 5.0--6.2. The former describes the spread of global variance, while the latter uses local neighbour
+distances. Their numerical difference is therefore not a disagreement between estimates of one
+quantity. This corpus has a different gene and cell sample from the matched-data raw-coordinate
+controls below.
+
+In the raw-coordinate CD34+ comparison, all arms used the same 6~633 genes and 4~000 cells.
+Expression participation ratio was 11.1 and model values were 67.3--111.5 across layers 9, 13
+and 17 (Fig.~\ref{fig:beyond}d). TwoNN instead gave 236.1 for expression and 4.07--4.74 for the
+model vectors. Within-gene cell shuffling gave expression participation ratio 11.8 and
+TwoNN 346.2. Shape-matched Gaussian controls had much larger participation ratios and TwoNN
+estimates than the model vectors (Supplementary Fig.~S5). These controls preserve different
+properties: shuffling retains each gene's marginal expression distribution, while Gaussian
+matrices retain only shape.
+
+The separate K562 replication matched 1~905 genes across 1~200 cells. Model participation ratios
+were 61.9--94.4, compared with 1.93 for expression; model TwoNN estimates were 3.65--4.93,
+compared with 94.9 for expression. Every gene had valid neighbour distances in all nine arms of
+each cohort. Low local model dimension therefore coexists with greater global variance spread
+than matched expression, rather than establishing a universally lower-dimensional model
+representation. The rows here are genes, not cell states, so these values are not direct estimates
+of a cell-state manifold's biological degrees of freedom.
+
+At cell level, the expression reference supported stronger trajectory readouts. In matched
+20-dimensional spaces, linear pseudotime prediction reached $R^2=0.696$ for the model and 0.862
+for expression PCA. The gain from a neighbour readout over a linear readout was 0.023 and 0.102,
+respectively. Lineage balanced accuracy was 0.605 for the model and 0.862 for expression; the
+shuffled-label reference was approximately 0.107. These results describe interpolation among the
+sampled CD34+ cells. They do not show an advantage over expression PCA for the tested cell-state
+readouts, consistent with the need to distinguish geometric structure from added predictive value
+\citep{ref12,ref37}.
+
+\subsection{Internal directions affect the model's gene readout}
+\label{sec:steering}
+Moving the layer-21 residual stream along the cell-cycle path shifted the model's next-gene readout
+toward the target by 0.820\,rad on average. A norm-matched random direction gave 0.007\,rad.
+The curved and straight paths shared endpoints and achieved the same endpoint progress.
+Their traversals differed: mean readout path length across 24 cells was 1.968\,rad for the curved
+path, 0.945 for the straight path and 0.189 for the random control (Fig.~\ref{fig:beyond}b).
+
+Across the layer-21, layer-18 and length-matched layer-21 runs, each containing 24 cells, the curved
+path was longer than the straight path in 21, 22 and 18 cells. All three passed the 5\% one-sided
+binomial sign-test threshold; probabilities ranged from $1.8\times10^{-5}$ to 0.011.
+Longer traversal establishes sensitivity to the intervening path; it does not establish greater
+endpoint progress or a biological transition. The intervention acts on a model readout, as in
+activation-based interpretability studies \citep{ref17,ref18,ref19}.
+
+\subsection{Cell-state readouts show no resolved gain over input-matched baselines}
+\label{sec:celltasks}
+Cell-cycle phase was already accessible from the selected gene identities and ranks.
+On the same 3~000 K562 cells, circular $R^2$ was 0.929 for full expression, 0.885 for the top-512
+magnitudes, 0.882 for binary membership, 0.868 for full-panel ranks and 0.874 for model layer 21.
+The paired model-minus-rank difference was 0.006, with a 95\% interval from $-0.005$ to 0.017.
+Against binary membership the difference was $-0.009$, with an interval from $-0.019$ to 0.001.
+These intervals bound the tested readout differences without establishing equivalence.
+The model was below full expression by 0.055, with a paired interval from 0.046 to 0.064 for the
+expression advantage. In the standard, information-unmatched cell-cycle battery, the model also
+failed to exceed full expression in all 36 layer-by-dimension-by-task comparisons \citep{ref5}.
+
+Frozen transfer to 3~000 RPE1 cells gave phase agreement $R_{\mathrm{diff}}=0.789$ for the model
+and 0.791 for the rank baseline, when both selected their 512 genes from the full panel before
+projection to shared gene columns. The paired difference was $-0.001$, with a 95\% interval from
+$-0.013$ to 0.011 (Fig.~\ref{fig:beyond}c). Full shared-gene expression reached 0.878 and the
+full-panel top-512 magnitudes reached 0.826. The constant-predictor floor was 0.043.
+Each readout is fitted on K562 and frozen for RPE1. They assess a particular
+readout and cell-line shift; they do not establish a universal information ceiling.
+
+The gene-name probes address a different source of structure. One query symbol was placed at a
+fixed rank in a phase-neutralised real-cell backbone. Across 87 phase-labelled genes, the human
+symbols reached AUROC 0.989 and average precision 0.993; anagrams gave 0.511 and 0.607.
+The G2M prevalence was 0.575 and the finite random-label expectation for average precision was
+0.595. Mouse-style capitalisation, lowercase and one-character near-misses gave AUROCs of
+0.782, 0.767 and 0.685, respectively. Their class separations were only 2.8--4.3$^\circ$, compared
+with 40.7$^\circ$ for the human symbols. Thus discrimination can persist while the displacement
+amplitude becomes small. Family nomenclature and surface form contribute to these associations;
+the assay does not identify which training stage acquired them. Gene-name associations and
+cell-state readout performance should therefore be interpreted separately \citep{refProbeControls}.
+
+\subsection{The C2S-Scale SAE feature atlas: a released resource}
+\label{sec:atlas}
+
+The atlas exposes all 26 layers and 239~616 dictionary features. Each feature has a stable layer
+and feature identifier, its driving genes and activation weights, and its co-activation module.
+Named ontology and regulon terms include their BH-adjusted $q$-values and fold enrichment.
+Network-pair and TF-membership evidence appears separately. Reconstruction quality uses the
+held-out evaluation; catalogue inactivity refers to all atlas positions. Their denominators are
+stated alongside the measurements.
+The release includes 152~782 features with named ontology or regulon annotations and 577
+co-activation modules. Network-only evidence is counted separately.
+
+A decoder-direction UMAP layout supports inspection within a layer \citep{ref50}.
+Cross-layer matching and feature-ablation edges connect those views across depth. The displayed
+circuit graph is capped, as is its underlying saved panel; it is not a census of model interactions.
+Gene and pathway searches use display-limited indices, while complete significant term counts and
+per-feature annotation files remain available in the released data. A search result therefore
+provides an entry point for inspection rather than an exhaustive absence test.
+
+The atlas is available at \url{https://biodyn-ai.github.io/c2s-atlas/}, with source and feature data at
+\url{https://github.com/Biodyn-AI/c2s-atlas}. The export manifest records input and output hashes,
+layer coverage, evidence definitions and display limits. Its generator requires complete catalogue
+and annotation files together with a fresh held-out evaluation for every layer. These checks keep
+the browser's counts and definitions traceable to the same saved analyses as the paper.
+Table~\ref{tab:grid} summarises the sampling units across analyses, and
+Table~\ref{tab:findings} pairs the main findings with their controls and interpretation limits.
 
 \begin{table}[htbp]
 \centering
-\caption{The protocol as executed. Positions are gene-token activations; one position is one
-(cell, gene) pair.}
+\caption{The protocol and its sampling units. A stored gene position is one (cell, gene) pair;
+cell-level observations remain distinct from those positions.}
 \label{tab:grid}
-\footnotesize
-\begin{tabular}{@{}L{0.17\linewidth}L{0.15\linewidth}L{0.15\linewidth}L{0.22\linewidth}L{0.23\linewidth}@{}}
+\footnotesize\linespread{1}\selectfont
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.18\linewidth}L{0.25\linewidth}L{0.28\linewidth}L{0.21\linewidth}@{}}
 \toprule
-\textbf{Stage} & \textbf{Model} & \textbf{Data} & \textbf{Scale of run} & \textbf{Primary output} \\
+\textbf{Analysis} & \textbf{Data and model} & \textbf{Sampling and capacity} & \textbf{Primary measurement} \\
 \midrule
-1. Feature atlas & C2S-2B, all 26 layers & K562, 1,200 cells & 614,400 positions/layer; 9,216
-features/layer & 239,616 features; catalogues, annotations, modules \\
-1. Feature atlas & C2S-27B, 26 of 46 layers & K562, 1,200 cells & 614,400 positions/layer &
-Scaling comparison \\
-1b. Capacity-matched control & C2S-27B, 26 layers & K562 & 9,216 features/layer ($2\times$
-expansion) & Confound-corrected scaling verdict \\
-2. Circuit tracing & C2S-2B, sources L0/L7/L16 & K562, 50 cells & 15 features/source; 800 forward
-passes/source & 27,633 causal edges \\
-2b. Regulatory-logic test & C2S-2B, L16 & K562 CRISPRi, 60 targets & 25 cells/target vs.\ 400
-controls & Detection and specificity rates \\
-3. Gene geometry $+$ null & C2S-2B, L9/L13/L17 & CD34+, 4,000 cells & 2.03M positions; 200
-permutations & Beyond-co-expression $z$-scores \\
-3. Cell-state geometry & C2S-2B, L18 & CD34+, 3,000 cells & Matched 20-D comparison & Model vs.\
-expression-PCA verdict \\
-3. Steering & C2S-2B & K562 & 3 runs; 12--32 cells/run & Causal-use test \\
-4. Deployment & C2S-2B, 13 layers & --- & 119,808 features & Public web atlas \\
+Feature atlas & K562; 2B, all 26 layers & 1~200 sentences; 614~400 positions/layer;
+9~216 features/layer & Reconstruction, firing, annotation and modules \\
+Annotation controls & Same atlas gene universe & Uniform and frequency-weighted random gene sets;
+random dictionary directions at three layers & Annotation relative to its matching floor \\
+Scaling & Same sentences; 2B and 27B & Seven relative-depth pairs; 9~216 features,
+$k=32$, six epochs; all-layer shape statistics on 200 sentences & Inactivity, reconstruction,
+annotation and residual covariance \\
+Circuit tracing & K562; 2B, sources L0/L7/L16 & 15 features/source; 50 cells;
+L7 sensitivity at 50 and 100 cells & Effect-and-consistency edges; shared-term excess \\
+Known-target assay & K562 and RPE1; 2B, L8/L16/L22 & K562: 48 TFs and 12 non-TFs,
+25 cells/target, 400 controls; RPE1: 121 TFs and 40 non-TFs, up to 50 cells/target & Unsigned
+target enrichment and retrieval; expression and rank controls \\
+THP1 target assay & ECCITE-seq Cas9 screen; fixed K562 dictionaries & 12 TFs, four non-TFs;
+four guides/TF, 400 controls; 1~384 cells total & Unsigned target enrichment, retrieval
+and descriptive guide concordance \\
+Biological transfer & K562 and RPE1; fixed K562 dictionaries & 300 verified non-targeting
+cells/line; L0/L13/L22 & Reconstruction and programme firing \\
+Gene geometry & CD34+ and a separate K562 cohort; 2B, L9/L13/L17 & 4~000 CD34+ cells;
+1~200 K562 cells; matched expression and random controls & Functional alignment in CD34+;
+dimensionality controls in both cohorts \\
+Cell geometry and tasks & CD34+, K562 and RPE1; 2B & Matched cells and readouts; frozen
+K562-to-RPE1 phase transfer & Trajectory readouts and input-encoding ladder \\
+Steering & K562; 2B, L18/L21 & Three settings, the same 24 cells;
+endpoint-norm-matched random direction & Target progress and readout path length \\
+Public atlas & 2B, all 26 layers & 239~616 dictionary features & Searchable features,
+terms, modules and model interventions \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\caption{Summary of findings. Each claim is paired with the control that makes it interpretable.}
+\caption{Findings and the scope supported by their controls. Annotation rates in this table
+refer to all dictionary features; phase scores retain their distinct definitions.}
 \label{tab:findings}
-\footnotesize
-\begin{tabular}{@{}L{0.27\linewidth}L{0.22\linewidth}L{0.28\linewidth}L{0.16\linewidth}@{}}
+\footnotesize\linespread{1}\selectfont
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}L{0.22\linewidth}L{0.25\linewidth}L{0.24\linewidth}L{0.21\linewidth}@{}}
 \toprule
-\textbf{Finding} & \textbf{Statistic} & \textbf{Control applied} & \textbf{Verdict} \\
+\textbf{Finding} & \textbf{Saved measurement} & \textbf{Control or condition} & \textbf{Interpretation} \\
 \midrule
-Features are biologically annotated & 68\% of features per layer (mean) & BH-corrected Fisher tests
-& Positive \\
-Features persist across depth & 50.4\% of L0 features at L25, cosine 0.88 & Same pipeline on an
-encoder model (2--3\%) & Positive \\
-Circuits propagate function & 85.2\% of annotated edges share a term & Attenuation profile; ontology
-annotation & Positive, but co-expression-compatible \\
-Gene geometry beyond co-expression & $\Delta\cos$ 0.044--0.062, $z = 3.9$--$6.6$ & 200
-co-expression-matched label permutations & Positive \\
-Internal directions are causally used & Own-logit shift 0.82\,rad vs.\ 0.007 & Norm-matched random
-direction & Positive \\
-Regulatory (TF$\rightarrow$target) logic & 2.1\% specific vs.\ 96.7\% detection & BH across factors;
-non-TF controls & Negative \\
-Scale improves interpretability & 37.7\% vs.\ 1.2\% dead at matched capacity & Capacity-matched
-retraining & Negative \\
-Cell-state geometry beats expression & Curvature 0.023 vs.\ 0.102 & Matched-dimension expression PCA
-& Negative \\
-Cell-level task performance beats input & 0.875 vs.\ 0.882 (set) / 0.929 (full) &
-Information-matched encoding ladder & Negative \\
+Biological labels across 26 layers & 63.8\% ontology/regulon annotated; 34.4\% weighted random floor &
+Complete test families; gene-frequency-matched sets & Average excess; two late layers below their floors \\
+Decoder directions across depth & 50.4\% of L0 directions match at L25; mean matched cosine 0.88 &
+Absolute cosine at least 0.7; target reuse allowed & Directional similarity, not feature identity \\
+Gene functional geometry & $\Delta\cos=0.044$--0.062; $z=3.9$--6.6 &
+199--200 valid permutations within co-expression/expression bins & Alignment beyond this conditional null \\
+Internal steering & Mean L21 target progress 0.820\,rad; random 0.007\,rad &
+Endpoint-norm-matched random direction; paired cells & Effect on the model's gene readout \\
+Cell trajectory readouts & Nonlinear-minus-linear $R^2$: model 0.023, expression 0.102 &
+Matched cells, dimension and readouts & Expression supports the larger nonlinear gain \\
+Within-K562 phase ladder & Model-minus-rank circular $R^2$: 0.006; 95\% CI $[-0.005,0.017]$ &
+Same cells, preprocessing and five-fold readout & Difference unresolved; no equivalence claim \\
+Frozen K562-to-RPE1 phase transfer & Model-minus-rank $R_{\rm diff}$: $-0.001$;
+95\% CI $[-0.013,0.011]$ & Full-panel sentence selection; source fits held fixed &
+Difference unresolved; shared-column identity limit \\
+Stored circuit term overlap & 83.2\% observed, 61.3\% fixed-source baseline;
+excess 21.9 points, 95\% CI 18.7--24.9 & Random annotated targets in the same layers;
+source bootstrap & Biological overlap within a selected, capped model graph \\
+Curated-target assays & Expression-specific factors: K562 0/48, RPE1 2/121, THP1 3/12 &
+Target coverage, gene/feature units and dictionary-transfer quality & Context-dependent,
+unsigned association; no absence claim \\
+Dictionary design & L13 ontology: trained 63.7\%, random directions 75.4\% &
+Own weighted floors 25.6\% and 29.8\%; pooling and sparsity controls & Labels alone do not
+establish a learned biological factorisation \\
+Matched model sizes & Held-out inactivity: 27B 10.5--67.2\%, 2B 0.260--3.24\% &
+9~216 features, six epochs and seven relative-depth pairs & Higher finite-sample inactivity;
+annotation excess is not uniformly lower \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \section{Discussion}
 
-Read together, the results describe a model that has learned a great deal about \emph{which genes
-belong together} and very little about \emph{which gene controls which}. The evidence for the first
-is strong and comes from several independent directions: an extensive dictionary of annotated
-features, coherent causal circuits that propagate function across depth, gene geometry that exceeds
-a co-expression-matched null, and internal directions whose manipulation changes the model's own
-predictions. The evidence for the second is a clean and well-powered negative: near-perfect
-detection of gene knockdowns combined with essentially no transcription-factor-target specificity.
+The protocol separates three questions: what information a representation contains, which internal
+quantities affect model behaviour, and whether either supports a biological mechanism.
+Sparse-autoencoder features provide a vocabulary for inspecting the representation
+\citep{ref17,ref18,ref19}. Circuit ablations and steering establish effects within the model.
+The gene-geometry and input-baseline comparisons ask whether these descriptions exceed structure
+already available in the data. Evidence from these tests has different scope. An ontology label
+supports functional association. A model intervention supports a computational effect. A claim about
+a factor controlling a biological target requires evidence beyond those two observations.
 
-This distinction has direct translational consequence. A model of this kind is a reasonable
-instrument for describing and organising cell state, and its features are usable as an interpretable
-vocabulary for that purpose. It is not a safe basis for claims of the form ``perturbing gene A will
-act through target B'', which is precisely the form of claim most attractive in target discovery.
-Our results suggest such claims would be supported by co-expression structure rather than by learned
-regulation, and would fail in exactly the cases --- novel or non-co-expressed regulatory
-relationships --- where a model would be most valuable.
+The distinction is particularly important for the perturbation assay. This assay asks whether known
+TF targets are preferentially represented among responses; it does not score the sign of regulation.
+It also depends on the sampled cells, the target database and the mapping from features to genes.
+A low enrichment rate can reflect weak target information, limited assay sensitivity or a mismatch
+between curated targets and the cell context. Its interpretation therefore depends on the
+measured-expression control. When a target set cannot be recovered from measured expression, a
+negative model result cannot distinguish these explanations. When expression supports target
+retrieval, a weaker model result concerns the tested representation and readout. It still does not
+establish absence of regulatory information under every possible readout. This caution follows the
+broader need to compare perturbation predictors with informative simple baselines
+\citep{refPerturbBaselines,ref5}.
 
-The scaling result deserves separate emphasis because it runs against a common assumption. Larger
-models are widely expected to be more capable and, implicitly, more legible. Here the opposite held:
-after removing the under-training confound, the 27B model retained 31 times more dead features and
-19 points lower annotation than the 2B model, while reconstructing its activations \emph{better}
-with fewer live features. The natural reading is increased anisotropy: computation concentrates in
-fewer, denser directions that align less well with curated biological categories. For practitioners
-this means an interpretability budget is not automatically better spent on the largest available
-model, and for the field it means interpretability of biomedical foundation models should be
-measured, not assumed to follow capability.
+\subsection{Consequences for translational use}
 
-The most transferable part of this work is the control discipline, because each control changed a
-conclusion. The information-matched baseline was decisive: an earlier analysis appeared to show the
-model sharpening a biological signal roughly three-fold over its own input, but that gap was an
-artefact of how we had encoded the baseline; encoding the baseline with exactly the information the
-model receives reduced the model's advantage to 0.007. The co-expression-matched null converted an
-ungated descriptive observation into a significant finding in one case and dissolved apparent
-structure in others. The capacity-matched scaling control recovered ten points of apparent
-interpretability that were pure artefact, while leaving a real effect intact. We recommend all three
-as routine practice for interpretability claims about biomedical foundation models, and we note that
-the same logic --- match the baseline to the model's input, match the null to the data's dominant
-correlation structure, match capacity before comparing sizes --- applies equally to models of
-clinical text or medical images.
+For target prioritisation, co-expression can place a passenger gene beside a causal driver. Both may
+belong to a feature associated with proliferation or stress. Ranking genes by that feature therefore
+identifies a programme worth investigating, while the choice of a driver requires perturbation or
+other causal evidence. The atlas can help organise such hypotheses by showing the genes and terms
+behind a feature. Functional coherence alone cannot decide which gene should be targeted.
 
-Finally, one asymmetry is worth highlighting because it is easy to miss. Although the model's
-\emph{cell-level} representation is close to a re-encoding of its input, the mapping from a gene's
-\emph{name} to its biological role is clearly in the weights: given only a gene symbol on a neutral
-background, the model sorts genes by cell-cycle phase at AUROC 0.989 while a letter-scrambled
-control performs at chance. Language pretraining has left real biological knowledge in the model
-that is not present in any single input; the limitation is in what the model does with a cell, not
-in what it knows about a gene.
+For perturbation analysis, a feature response can describe which programme changes after targeting a
+regulator. It does not determine which members are direct targets, which changes are indirect, or
+whether the factor activates or represses them. In the PHB2 comparison, the atlas identifies a
+mitochondrial-RNA-associated feature whose activity falls alongside its leading genes' measured
+expression. This is useful for describing a programme and choosing follow-up measurements. It does
+not resolve whether those genes are direct regulatory targets. Interpreting that change requires
+the measured expression response, appropriate controls and the cell context of the regulatory
+evidence \citep{ref24,refPerturbBaselines}.
+
+For drug studies, similar feature profiles can support a comparison of cell states or responses.
+Inferring a shared molecular mechanism requires target-engagement and perturbation evidence.
+Conversely, biomarker panels and cell annotation often need stable associations rather than a causal
+network. Those tasks are plausible uses of a feature atlas when the associations are validated in
+the intended population. Predictive usefulness and mechanistic explanation should each be evaluated
+for the task in which they will be used \citep{ref3,ref4}.
+
+\subsection{Scale, geometry and feature inactivity}
+
+Feature inactivity is a property of the autoencoder fit and its evaluation sample. It depends on
+sparsity, dictionary size, optimisation and the number of observed positions \citep{ref20}.
+A feature that does not fire on held-out positions may still fire elsewhere. Comparisons across
+model sizes therefore require the same inactivity definition, matched dictionary capacity and
+training exposure, and comparable relative depths. Reconstruction quality and biological annotation
+measure different aspects of a dictionary; strong reconstruction alone does not establish a useful
+biological decomposition \citep{refRandomTransformerSAE,refRandomSAEBaselines}.
+
+Several geometric mechanisms may affect the comparison. Concentration of centred covariance means
+that a small set of varying directions explains much of the residual stream. A shared mean direction
+can instead make uncentred vectors appear strongly aligned. These properties are related to different
+uses of the word anisotropy and should be measured separately \citep{refAnisotropy}.
+Very large activations can also behave as largely input-independent biases in language models
+\citep{refMassiveActivations}. Their presence motivates inspecting activation scales and numerical
+precision. An association between activation concentration and inactive features is insufficient to
+identify the cause of inactivity. The practical implication is to measure the cost and readability
+of each model and dictionary configuration in the setting where it will be used.
+
+\subsection{Validation against the information available at the input}
+
+The cell-level comparisons show why input construction is part of the scientific question.
+A rank-weighted gene list and a binary presence vector contain different information. A comparison
+that gives the model expression rank while giving the baseline only presence cannot isolate what
+processing inside the model contributes. The baseline should retain the same identities, ranks and
+truncation as the model input. Co-expression-matched nulls answer a complementary question about
+gene geometry. Together, these controls distinguish an informative representation from information
+that becomes informative only because the comparison removed part of the input
+\citep{ref5,ref9,ref39,ref40}.
+
+The gene-name assay addresses a different source of information. Its functional associations are
+available from symbols inserted at a fixed rank in shared, phase-neutralised real-cell backbones. Such signal
+can reflect gene-family nomenclature and associations acquired during language pretraining,
+cell-sentence training, or both. It therefore needs to be interpreted separately from cell-state
+performance and from regulatory inference. The distinction between information recoverable from a
+representation and information used by the model also motivates probe controls and internal
+interventions \citep{refProbeControls,refCausalMediation}.
 
 \subsection{Limitations}
-The atlas, circuit tracing and regulatory-logic test used one human cell line (K562), so feature
-contents are biased toward a proliferative phenotype; the geometry analyses used one progenitor
-tissue. Circuit tracing was run at reduced scope (50 cells, 15 features, three source layers)
-because the unbatched design is computationally expensive; effect sizes should be read as indicative
-and the design does not exhaust the circuit. The 27B atlas covers 26 of 46 layers. Two layers were
-excluded from the public atlas because their stored catalogues were corrupted. Ontology annotation
-is subject to database circularity; our permutation nulls neutralise this for the comparative claims
-but not for absolute annotation rates. Steering was tested on a small number of cells and on a
-limited set of internal variables. Finally, all claims concern this model family; the protocol, not
-the specific numbers, is what we expect to transfer.
+\label{sec:limits}
+
+Most atlas and circuit analyses concern K562. This chronic myeloid leukaemia line has a largely
+triploid, structurally rearranged genome, including the BCR/ABL1 fusion and extensive copy-number
+variation \citep{refK562Genome}. TP53 is inactivated \citep{refK562TP53}.
+Gene dosage, lineage and growth in culture can shape the expression programmes available to the
+model and the background against which enrichment is tested. The curated targets of a TF may also
+come from other cell types. RPE1 provides a distinct, noncancerous retinal epithelial context, but it
+is telomerase-immortalised and has a characteristic chromosome X;10 translocation
+\citep{refRPE1Genome}. A comparison across these cell lines addresses one source of dependence;
+it does not establish generalisation to primary tissues, patients or all perturbations.
+
+Perturbation tests compare sampled cells rather than independent guides or biological replicates.
+Most K562 factor groups contain only one sampled guide. Differences can therefore depend on that
+guide and on the sampled background. Retrieval intervals condition on these observed effects;
+they do not quantify reproducibility across new guides, batches or experiments.
+
+Annotation depends on database coverage, gene selection and the chosen background. Detection bias
+and tissue-specific expression can generate enrichment without a model-specific biological effect
+\citep{refEnrichmentBias}. Frequency-matched gene-set floors address unequal representation of genes
+in feature catalogues, while leaving other sources of database bias. Reusing a database across
+annotation and validation also limits the independence of the resulting biological descriptions.
+Network pair tests use an approximate density null and should be distinguished from named ontology
+terms. These considerations support reporting the observed rate, its empirical floor and the
+contributing evidence types together.
+The random-direction controls further show that curated labels can arise from the structured
+activations without learned dictionary directions. High annotation coverage therefore does not
+by itself establish that SAE training discovered a selective biological factorisation.
+The pooling and library sensitivities likewise limit comparisons across pipelines that use
+different token aggregation rules or reference coverage.
+
+Circuit tracing covers selected source features and cells. It is conditional on source activity and
+does not exhaust the interactions available in the model. Source-level bootstrap intervals address
+dependence among edges from the same source, but do not remove source-selection bias. The edge
+rule uses effect magnitude and sign consistency; its retained edges should be interpreted according
+to that rule rather than as discoveries from an FDR-controlled significance test. Steering likewise
+concerns a limited set of directions, cells and model readouts.
+
+Cell-state geometry uses one progenitor dataset; gene-dimensionality controls also use a separate
+K562 cohort. Estimated dimension depends on sampling,
+preprocessing and the estimator \citep{refSingleCellID}. Gene vectors and cell vectors have different
+sampling units, so a dimension estimated for genes is not directly comparable with a published
+dimension of a cell-state manifold. Pseudotime autocorrelation also limits interpretation of random
+cross-validation splits. Finally, these experiments concern one cell-sentence model family.
+Applying the protocol elsewhere requires adapting the input-matched baselines, token-to-gene mapping
+and biological controls to that setting.
 
 \section{Conclusion}
 
-We have described a four-stage mechanistic-interpretability protocol for biomedical foundation
-models and applied it to a language model that reads a cell as a sentence of gene names. The model
-builds an extensive, biologically annotated and causally used internal vocabulary whose features,
-unusually, persist across its entire depth; its gene geometry encodes functional relatedness beyond
-co-expression; and, given only a gene name, it demonstrably knows something about that gene's role.
-At the same time it does not represent the direction of gene regulation, it does not exceed a
-properly encoded baseline on cell-level tasks, and scaling it thirteen-fold made its internals less
-rather than more interpretable.
+A feature atlas, model interventions and controlled comparisons provide complementary evidence about
+what a cell-sentence language model represents and uses. The gene-geometry, gene-name and steering
+assays reveal structure that warrants biological inspection. The cell-level comparisons also show
+how strongly the interpretation depends on preserving the information available at the input.
+Ontology labels alone do not establish a learned biological factorisation, because random
+dictionary directions also receive extensive annotations.
+Known-target enrichment measures one aspect of a perturbation response; it does not establish the
+sign or absence of regulation. The protocol makes these distinctions explicit so that a useful
+description of cell state can be assessed separately from a claim about biological mechanism.
 
-\textbf{Applicability.} For groups building or selecting single-cell foundation models, the protocol
-provides a concrete, reusable procedure --- with three specific controls --- for deciding what a
-model can be trusted to do before it informs a biological or clinical decision. For groups using
-such models, the immediate practical guidance is to treat their outputs as statements about
-co-expression rather than regulation, to prefer smaller models when internal legibility matters, and
-to benchmark against baselines encoded with the model's own input. The released feature atlas allows
-any of the features reported here to be inspected directly, and the protocol can be applied
-unchanged to other model families.
+\subsection{Applicability}
+
+The atlas supports inspection of gene programmes, description of cell states and generation of
+biological hypotheses. A practical use is to look up a gene, inspect the features that include it,
+and compare the activity of those features across a perturbation and its controls. The feature's
+top genes and enriched terms explain which programme the comparison concerns. The measured
+expression changes then show whether the same genes support that interpretation.
+
+For each use, four checks make the evidence traceable:
+\begin{enumerate}
+\item Record the model, layer and feature identifier. Inspect the top genes and the evidence behind
+any biological label, including its annotation floor.
+\item Compare conditions with the same dictionary and matched cell selection. Check the corresponding
+expression and input representations.
+\item State whether the claim concerns cell state, target retrieval or a causal mechanism. Use a
+metric and control that can test that claim.
+\item Validate a proposed driver or drug mechanism with independent biological evidence in the
+intended cell context before using it to guide an intervention.
+\end{enumerate}
+
+For model development, the protocol provides a way to compare representations and their computational
+cost under explicit controls. For biological use, the atlas provides inspectable associations whose
+value can be tested in the relevant tissue and task. Neither an ontology label nor an internal
+ablation effect alone establishes a clinically actionable regulatory relationship.
 
 \section*{Declaration of competing interest}
 The author declares no competing financial interests or personal relationships that could have
@@ -526,124 +1278,257 @@ not-for-profit sectors.
 Data curation, Writing -- original draft, Writing -- review and editing, Visualization, Project
 administration.
 
-\section*{Data availability}
-The single-cell datasets analysed are publicly available: genome-scale Perturb-seq in K562
-\cite{ref24} and CD34+ bone-marrow progenitors \cite{ref25}. Model weights are publicly available
-from the model authors \cite{ref2}. Code, trained sparse autoencoders, feature catalogues,
-annotations and causal-edge tables generated in this study are accessible through the interactive
-atlas at \url{https://biodyn-ai.github.io/c2s-atlas/} and its source repository
-\url{https://github.com/Biodyn-AI/c2s-atlas}.
+\section*{Data statement}
+
+\textbf{Analysis code.} All pipelines described in this paper --- gene-token activation extraction,
+TopK sparse-autoencoder training, feature cataloguing and ontology annotation, co-activation modules,
+cross-layer tracking, causal circuit tracing, the perturbation-response test, the capacity-matched
+scaling control, the geometry analyses with their co-expression-matched nulls, and the steering
+experiments --- are available at \url{https://github.com/Biodyn-AI/c2s-mechinterp} under an MIT licence
+\citep{refcode}. The repository documents the four-stage protocol, the three controls, the datasets, exact
+reproduction commands for every figure, and a table mapping each numerical claim in this paper to the
+artefact it is read from.
+
+\textbf{Interactive feature atlas.} The feature atlas described in Section~\ref{sec:atlas} is a
+separate released resource: it is browsable at \url{https://biodyn-ai.github.io/c2s-atlas/} and its
+source code and released feature data are deposited at
+\url{https://github.com/Biodyn-AI/c2s-atlas} \citep{refatlas}.
+
+\textbf{Data.} The single-cell datasets analysed are publicly available: genome-scale Perturb-seq in
+K562 and RPE1 \citep{ref24}, CD34+ human bone-marrow progenitors \citep{ref25}, and THP1
+ECCITE-seq \citep{refPapalexi}. The THP1 input is distributed through scPerturb
+\citep{refScPerturb}. Source checksums, cell-selection designs and the explicit gene-identity merge
+are recorded with the analysis. Raw count datasets are obtained from their cited sources.
+
+\textbf{Models.} The C2S-Scale checkpoints (\texttt{vandijklab/C2S-Scale-Gemma-2-2B} and
+\texttt{-27B}) are publicly available from the model authors \citep{ref2}.
+
+\textbf{Large artefacts.} Activation memmaps and trained autoencoder weights are regenerated by
+the documented commands. The release includes numerical summaries, statistical outputs, input
+designs and figure provenance so that reported measurements can be inspected without rerunning
+model inference. Versioned numerical archives and checksums are deposited at
+\url{https://github.com/Biodyn-AI/c2s-mechinterp/releases/tag/controlled-analysis-2026-11}.
+The atlas exposes the derived feature and annotation data directly.
 
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation
 process}
-During the preparation of this work the author used an AI coding assistant (Anthropic Claude, via
-Claude Code) to help implement analysis pipelines, generate figures from computed results, and draft
-and edit manuscript text. After using this tool the author reviewed and edited the content as needed
-and takes full responsibility for the content of the published article.
+During the preparation of this work the author used AI coding assistants (Anthropic Claude, via
+Claude Code, and OpenAI Codex) to help implement analysis pipelines, generate figures from computed
+results, and draft and edit manuscript text. The author is responsible for reviewing and editing
+the content and takes full responsibility for the published article.
 
 \clearpage
 \section*{Figures}
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth]{figures/fig1_design.pdf}
+\includegraphics[width=\linewidth]{figures/Figure_1_schematic.pdf}
 \caption{\textbf{The interpretability protocol and its application.} A cell is converted to a
 sentence of the top-512 gene symbols in rank order, with expression magnitudes discarded, and passed
 to C2S-Scale (Gemma-2, 2B and 27B). The residual stream is tapped and analysed in four stages: a
-sparse-autoencoder feature atlas, causal circuit tracing, a regulatory-logic test, a
-capacity-matched scaling control, geometry and steering tests, and public deployment. All model
-claims are judged against expression baselines encoded with the same information the model
-receives.}
+sparse-autoencoder feature atlas, causal circuit tracing, geometry and steering tests, and public
+deployment; the unsigned known-target assay and the capacity-matched scaling control are analyses within
+stages 2 and 1 respectively. Three controls are applied wherever the design allows: baselines encoded
+with the information the model receives, nulls matched on co-expression, and capacity matched before
+comparing model sizes.}
 \label{fig:design}
 \end{figure}
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth]{figures/fig2_sae_atlas.pdf}
-\caption{\textbf{Sparse-autoencoder feature atlas of C2S-Scale-2B across all 26 layers.}
-(a) Reconstruction quality: variance explained (left axis, blue) and dead features (right axis,
-red). (b) Percentage of features receiving a significant ontology annotation (green) and assigned to
-a co-activation module (purple). (c) Fraction of layer-0 features still recoverable at each later
-layer by decoder cosine matching; the shaded band shows the 2--3\% retained by an encoder-style
-single-cell model under the identical pipeline.}
+\includegraphics[width=\linewidth]{figures/Figure_2.pdf}
+\caption{\textbf{Dictionary reconstruction, annotation and directional persistence across all
+26 C2S-Scale-2B layers.} (a) Held-out variance explained from the stored dictionaries on the
+extracted inputs. (b) Fraction of features that never fire on held-out positions, distinguished
+from the fraction that never fires anywhere in the atlas corpus. (c) Named ontology/regulon
+annotation at the 5\% per-feature BH threshold, together with the mean of three gene-frequency-matched
+random catalogues. Network-pair and TF-membership evidence is excluded. All 2B features are active
+somewhere in the corpus, so active- and all-feature denominators coincide. The high raw annotation
+rates at layers 22 and 23 do not exceed their weighted floors. (d) Fraction of layer-zero decoder
+directions with an absolute-cosine match of at least 0.7 at each target layer. Target reuse is
+allowed; this measures directional similarity rather than feature identity.}
 \label{fig:atlas}
 \end{figure}
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth]{figures/fig3_scaling.pdf}
-\caption{\textbf{Capacity-matched scaling control.} (a) Dead features, (b) percentage of live
-features receiving an ontology annotation, and (c) variance explained, for the 2B model at
-$4\times$ expansion, the 27B model retrained at $2\times$ expansion (matched to the same absolute
-dictionary size and therefore the same positions per feature), and the 27B model at its native
-$4\times$ expansion. Matching capacity recovers roughly ten points on each interpretability measure
-but leaves a large gap.}
-\label{fig:scaling}
+\includegraphics[width=\linewidth]{figures/Figure_3.pdf}
+\caption{\textbf{Biological labels and transfer of fixed feature dictionaries.} (a) Shares of all
+dictionary features assigned to biological categories by their significant named terms. Categories
+can overlap, including ``other'', so rows need not sum to 100\%. This is a term-name grouping rule,
+not a separate biological classifier. (b) Example feature identifiers, leading genes, terms,
+BH-adjusted probabilities and fold enrichments. Term labels describe gene-set overlap rather than
+proving activity of an entire pathway. (c--e) Firing of the same example features on 300 verified
+non-targeting K562 and 300 RPE1 cells. Bars show the percentage of gene positions with positive
+feature activation under the fixed K562 dictionary and centring vector; these are descriptive
+sample frequencies.}
+\label{fig:biology}
 \end{figure}
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth]{figures/fig4_circuits.pdf}
-\caption{\textbf{Causal circuit tracing and the regulatory-logic test.} (a) Number of significant
-causal edges from each source layer into each downstream layer; influence attenuates smoothly with
-distance. (b) Of edges whose endpoints are both annotated, the proportion sharing at least one
-ontology term. (c) Perturbation response: the model registers the knockdown for 96.7\% of targets
-but only 2.1\% of transcription factors produce a target-specific response; the dashed line marks
-the corresponding rate for an encoder-style reference model.}
+\includegraphics[width=\linewidth]{figures/Figure_4.pdf}
+\caption{\textbf{Model-intervention circuits and curated-target assays.} (a) Stored circuit edges
+by source and target layer. The graph caps targets at 50 per source feature and downstream layer;
+counts therefore describe the retained panel. (b) Shared named-term fraction among edges annotated
+at both endpoints, against a fixed-source random-annotated-target baseline. Intervals resample the
+45 source features 2~000 times. (c,e) Specific factors among all screened K562 and RPE1 TFs.
+Expression and rank-input tests use genes; model tests use overlapping feature memberships, so
+these bars have different testing units and statistical power. (d) K562 gene-level average precision
+on the common gene universe for expression, input ranks and the layer-16 model score. (f) K562
+feature-level average precision at layers 8, 16 and 22. Retrieval points average evaluable factors;
+intervals use 200 TF-bootstrap draws. Crosses show target prevalence, a class-balance reference;
+plus signs show the separate finite random-label AP expectation. AUROC is given in the supplement. None of
+these unsigned tests measures activation versus repression.}
 \label{fig:circuits}
 \end{figure}
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth]{figures/fig5_beyond_input.pdf}
-\caption{\textbf{What lies beyond the input.} (a) Within bins matched on co-expression and mean
-expression, same-function gene pairs are more aligned than different-function pairs; grey points
-show the co-expression-matched permutation null ($\pm 2$\,SD) and $z$-scores are given above each
-bar. (b) Readout path length under three steering rules, in three independent runs; displacement
-along the local geometry moves the model's own predictions further than a fixed linear direction,
-while a norm-matched random direction does almost nothing. (c) Recovery of a cell-state variable
-from full expression, from progressively more restricted encodings of the same data, and from the
-model; the model sits within 0.007 of a linear readout of its own input encoding.}
-\label{fig:beyond}
+\includegraphics[width=\linewidth]{figures/Figure_5.pdf}
+\caption{\textbf{Matched-capacity comparison across model depth.} (a) Held-out inactive features
+for 2B and 27B dictionaries with 9~216 features, $k=32$ and six training epochs at seven
+relative-depth pairs. (b) Named ontology/regulon annotation among catalogue-active features,
+with the matching active-set frequency-weighted random floor. This denominator differs from
+held-out activity in panel a. (c) Centred covariance participation ratio divided by model width,
+using the same 200 sentences across all 26 or 46 taps. (d) Held-out inactivity versus the maximum
+to median coordinate RMS ratio for all 26 available 2B dictionaries and the seven 27B dictionaries.
+Layers are dependent observations; these associations are
+descriptive. Final taps include the model's final RMS normalisation. The complete 27B extraction
+stores the seven selected activation arrays in float32.}
+\label{fig:scaling}
 \end{figure}
 
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/Figure_6.pdf}
+\caption{\textbf{Geometry, model steering and input-matched phase readouts.} (a) Same- versus
+different-function gene cosine gap within bins matched on co-expression and mean expression.
+The grey reference shows the permutation-null mean and two standard deviations, rather than a
+confidence interval. There are 199 valid permutations at layer 9 and 200 at layers 13 and 17.
+(b) Paired readout path lengths for 24 layer-21 steering cells. Boxes show medians and interquartile
+ranges; whiskers extend to the last value within 1.5 interquartile ranges, with remaining points
+shown individually. Curved and linear paths share endpoints, so path length differs from target
+progress. (c) Frozen K562-to-RPE1 phase readouts with full-panel top-512 selection before projection
+onto shared genes. The paired 95\% interval resamples target cells with source fits held fixed;
+an unresolved difference is not equivalence. The model may also use nonshared gene identities.
+(d) Covariance participation ratio, on a logarithmic horizontal axis, for raw-coordinate CD34+ gene vectors and matched expression
+and shape controls. These gene-vector dimensions differ from cell-state dimensions and from
+standardised-coordinate geometry. TwoNN estimates and sample shapes are given in the supplement.}
+\label{fig:beyond}
+\end{figure}
 \clearpage
 
-\section*{References}
 \begin{thebibliography}{99}
-\bibitem{ref3} C.V. Theodoris, L. Xiao, A. Chopra, et al. (11 authors), Transfer learning enables predictions in network biology, Nature 618 (2023) 616--624. \url{https://doi.org/10.1038/s41586-023-06139-9}.
-\bibitem{ref4} H. Cui, C. Wang, H. Maan, K. Pang, F. Luo, N. Duan, B. Wang, scGPT: toward building a foundation model for single-cell multi-omics using generative AI, Nat. Methods 21 (2024) 1470--1480. \url{https://doi.org/10.1038/s41592-024-02201-0}.
-\bibitem{ref8} I. Kendiukhov, Systematic evaluation of single-cell foundation model interpretability reveals attention captures co-expression rather than unique regulatory signal, arXiv:2602.17532 (2026), preprint. \url{https://arxiv.org/abs/2602.17532}.
-\bibitem{ref9} I. Kendiukhov, Systematic evaluation of single-cell foundation model interpretability: attention-derived edge scores add no incremental value over gene-level features for perturbation-target prediction, BMC Genomics 27 (2026). \url{https://doi.org/10.1186/s12864-026-12965-8}.
-\bibitem{ref1} D. Levine, S.A. Rizvi, S. Lévy, et al. (19 authors), Cell2Sentence: teaching large language models the language of biology, in: Proc. 41st Int. Conf. Mach. Learn. (ICML), PMLR 235 (2024) 27299--27325. \url{https://proceedings.mlr.press/v235/levine24a.html}.
-\bibitem{ref2} S.A. Rizvi, D. Levine, A. Patel, et al. (28 authors), Scaling large language models for next-generation single-cell analysis, bioRxiv preprint v4 (2026). \url{https://doi.org/10.1101/2025.04.14.648850}.
-\bibitem{ref24} J.M. Replogle, R.A. Saunders, A.N. Pogson, et al. (17 authors), Mapping information-rich genotype-phenotype landscapes with genome-scale Perturb-seq, Cell 185 (2022) 2559--2575.e28. \url{https://doi.org/10.1016/j.cell.2022.05.013}.
-\bibitem{ref25} M. Setty, V. Kiseliovas, J. Levine, A. Gayoso, L. Mazutis, D. Pe'er, Characterization of cell fate probabilities in single-cell data with Palantir, Nat. Biotechnol. 37 (2019) 451--460. \url{https://doi.org/10.1038/s41587-019-0068-4}.
-\bibitem{ref21} N. Elhage, T. Hume, C. Olsson, et al. (16 authors), Toy models of superposition, Transformer Circuits Thread (2022). \url{https://transformer-circuits.pub/2022/toy_model/index.html} (accessed 18 August 2026).
-\bibitem{ref17} T. Bricken, A. Templeton, J. Batson, et al. (24 authors), Towards monosemanticity: decomposing language models with dictionary learning, Transformer Circuits Thread (2023). \url{https://transformer-circuits.pub/2023/monosemantic-features/index.html} (accessed 18 August 2026).
-\bibitem{ref18} A. Templeton, T. Conerly, J. Marcus, et al. (26 authors), Scaling monosemanticity: extracting interpretable features from Claude 3 Sonnet, Transformer Circuits Thread (2024). \url{https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html} (accessed 18 August 2026).
-\bibitem{ref19} H. Cunningham, A. Ewart, L. Riggs, R. Huben, L. Sharkey, Sparse autoencoders find highly interpretable features in language models, arXiv:2309.08600 (2023), preprint. \url{https://arxiv.org/abs/2309.08600}.
-\bibitem{ref20} L. Gao, T. Dupré la Tour, H. Tillman, G. Goh, R. Troll, A. Radford, I. Sutskever, J. Leike, J. Wu, Scaling and evaluating sparse autoencoders, arXiv:2406.04093 (2024), preprint. \url{https://arxiv.org/abs/2406.04093}.
-\bibitem{ref6} I. Kendiukhov, Sparse autoencoders reveal interpretable cell-type programs in single-cell foundation model representations, J. Biomed. Inform. 180 (2026) 105056. \url{https://doi.org/10.1016/j.jbi.2026.105056}.
-\bibitem{ref7} I. Kendiukhov, Sparse autoencoders reveal organized biological knowledge but minimal regulatory logic in single-cell foundation models: a comparative atlas of Geneformer and scGPT, arXiv:2603.02952 (2026), preprint. \url{https://arxiv.org/abs/2603.02952}.
-\bibitem{ref10} I. Kendiukhov, Causal circuit tracing reveals distinct computational architectures in single-cell foundation models: inhibitory dominance, biological coherence, and cross-model convergence, Bioinformatics 42 (2026) btag379. \url{https://doi.org/10.1093/bioinformatics/btag379}.
-\bibitem{ref11} I. Kendiukhov, Exhaustive circuit mapping of a single-cell foundation model reveals massive redundancy, heavy-tailed hub architecture, and layer-dependent differentiation control, arXiv:2603.11940 (2026), preprint. \url{https://arxiv.org/abs/2603.11940}.
-\bibitem{ref12} I. Kendiukhov, What topological and geometric structure do biological foundation models learn? Evidence from 141 hypotheses, PLOS ONE 21 (2026) e0344826. \url{https://doi.org/10.1371/journal.pone.0344826}.
-\bibitem{ref13} I. Kendiukhov, Residual-stream geometry of single-cell foundation models carries incremental gene-regulatory signal across tissues, BMC Bioinformatics 27 (2026). \url{https://doi.org/10.1186/s12859-026-06538-5}.
-\bibitem{ref37} I. Kendiukhov, Multi-dimensional spectral geometry of biological knowledge in single-cell transformer representations, arXiv:2602.22247 (2026), preprint. \url{https://arxiv.org/abs/2602.22247}.
-\bibitem{ref14} I. Kendiukhov, Causal intervention validation of gene regulatory signals in scGPT, J. Biomed. Inform. 180 (2026) 105080. \url{https://doi.org/10.1016/j.jbi.2026.105080}.
-\bibitem{ref5} K.Z. Kedzierska, L. Crawford, A.P. Amini, A.X. Lu, Zero-shot evaluation reveals limitations of single-cell foundation models, Genome Biol. 26 (2025) 101. \url{https://doi.org/10.1186/s13059-025-03574-x}.
-\bibitem{ref39} I. Kendiukhov, Partial-label metric ceilings for evaluating gene regulatory networks inferred from single-cell foundation models, BioSystems 266 (2026) 105864. \url{https://doi.org/10.1016/j.biosystems.2026.105864}.
-\bibitem{ref40} I. Kendiukhov, Quantifying ranking instability across evaluation protocol axes in gene regulatory network benchmarking, arXiv:2603.03493 (2026), preprint. \url{https://arxiv.org/abs/2603.03493}.
-\bibitem{ref23} Gemma Team, M. Riviere, S. Pathak, et al., Gemma 2: improving open language models at a practical size, arXiv:2408.00118 (2024), preprint. \url{https://arxiv.org/abs/2408.00118}.
-\bibitem{ref41} M. Ashburner, C.A. Ball, J.A. Blake, et al. (20 authors), Gene Ontology: tool for the unification of biology, Nat. Genet. 25 (2000) 25--29. \url{https://doi.org/10.1038/75556}.
-\bibitem{ref42} The Gene Ontology Consortium, The Gene Ontology knowledgebase in 2026, Nucleic Acids Res. 54 (2026) D1779--D1792. \url{https://doi.org/10.1093/nar/gkaf1292}.
-\bibitem{ref43} M. Kanehisa, S. Goto, KEGG: Kyoto Encyclopedia of Genes and Genomes, Nucleic Acids Res. 28 (2000) 27--30. \url{https://doi.org/10.1093/nar/28.1.27}.
-\bibitem{ref44} M. Kanehisa, M. Furumichi, Y. Sato, Y. Matsuura, M. Ishiguro-Watanabe, KEGG: biological systems database as a model of the real world, Nucleic Acids Res. 53 (2025) D672--D677. \url{https://doi.org/10.1093/nar/gkae909}.
-\bibitem{ref45} E. Ragueneau, C. Gong, P. Sinquin, et al. (25 authors), The Reactome Knowledgebase 2026, Nucleic Acids Res. 54 (2026) D673--D681. \url{https://doi.org/10.1093/nar/gkaf1223}.
-\bibitem{ref46} D. Szklarczyk, K. Nastou, M. Koutrouli, et al. (15 authors), The STRING database in 2025: protein networks with directionality of regulation, Nucleic Acids Res. 53 (2025) D730--D737. \url{https://doi.org/10.1093/nar/gkae1113}.
-\bibitem{ref47} H. Han, J.-W. Cho, S. Lee, et al. (20 authors), TRRUST v2: an expanded reference database of human and mouse transcriptional regulatory interactions, Nucleic Acids Res. 46 (2018) D380--D386. \url{https://doi.org/10.1093/nar/gkx1013}.
-\bibitem{ref34} Y. Benjamini, Y. Hochberg, Controlling the false discovery rate: a practical and powerful approach to multiple testing, J. R. Stat. Soc. Ser. B Methodol. 57 (1995) 289--300. \url{https://doi.org/10.1111/j.2517-6161.1995.tb02031.x}.
-\bibitem{ref32} V.A. Traag, L. Waltman, N.J. van Eck, From Louvain to Leiden: guaranteeing well-connected communities, Sci. Rep. 9 (2019) 5233. \url{https://doi.org/10.1038/s41598-019-41695-z}.
-\bibitem{ref22} K. Meng, D. Bau, A. Andonian, Y. Belinkov, Locating and editing factual associations in GPT, in: Adv. Neural Inf. Process. Syst. 35 (NeurIPS 2022), 2022. \url{https://arxiv.org/abs/2202.05262}.
-\bibitem{ref48} A.M. Turner, L. Thiergart, G. Leech, D. Udell, J.J. Vazquez, U. Mini, M. MacDiarmid, Steering language models with activation engineering, arXiv:2308.10248 (2023), preprint. \url{https://arxiv.org/abs/2308.10248}.
-\bibitem{ref49} A. Zou, L. Phan, S. Chen, et al. (21 authors), Representation engineering: a top-down approach to AI transparency, arXiv:2310.01405 (2023), preprint. \url{https://arxiv.org/abs/2310.01405}.
-\bibitem{ref50} L. McInnes, J. Healy, J. Melville, UMAP: uniform manifold approximation and projection for dimension reduction, arXiv:1802.03426 (2018), preprint. \url{https://arxiv.org/abs/1802.03426}.
+
+\bibitem[{Ahlmann-Eltze et~al.}(2025)]{refPerturbBaselines} Ahlmann-Eltze, C., Huber, W., Anders, S., 2025. Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines. Nat. Methods 22, 1657--1661. \url{https://doi.org/10.1038/s41592-025-02772-6}.
+
+\bibitem[{Ashburner et~al.}(2000)]{ref41} Ashburner, M., Ball, C.A., Blake, J.A., et al., 2000. Gene Ontology: tool for the unification of biology. Nat. Genet. 25, 25--29. \url{https://doi.org/10.1038/75556}.
+
+\bibitem[{Benjamini and Hochberg}(1995)]{ref34} Benjamini, Y., Hochberg, Y., 1995. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J. R. Stat. Soc. Ser. B Methodol. 57, 289--300. \url{https://doi.org/10.1111/j.2517-6161.1995.tb02031.x}.
+
+\bibitem[{Biondo et~al.}(2025)]{refSingleCellID} Biondo, M., Cirone, N., Valle, F., Lazzardi, S., Caselle, M., Osella, M., 2025. The intrinsic dimension of gene expression during cell differentiation. Nucleic Acids Res. 53, gkaf805. \url{https://doi.org/10.1093/nar/gkaf805}.
+
+\bibitem[{Bricken et~al.}(2023)]{ref17} Bricken, T., Templeton, A., Batson, J., et al., 2023. Towards monosemanticity: decomposing language models with dictionary learning. Transformer Circuits Thread. \url{https://transformer-circuits.pub/2023/monosemantic-features/index.html} (accessed 18 August 2026).
+
+\bibitem[{Cui et~al.}(2024)]{ref4} Cui, H., Wang, C., Maan, H., Pang, K., Luo, F., Duan, N., Wang, B., 2024. scGPT: toward building a foundation model for single-cell multi-omics using generative AI. Nat. Methods 21, 1470--1480. \url{https://doi.org/10.1038/s41592-024-02201-0}.
+
+\bibitem[{Cunningham et~al.}(2023)]{ref19} Cunningham, H., Ewart, A., Riggs, L., Huben, R., Sharkey, L., 2023. Sparse autoencoders find highly interpretable features in language models. arXiv:2309.08600, preprint. \url{https://arxiv.org/abs/2309.08600}.
+
+\bibitem[{Elhage et~al.}(2022)]{ref21} Elhage, N., Hume, T., Olsson, C., et al., 2022. Toy models of superposition. Transformer Circuits Thread. \url{https://transformer-circuits.pub/2022/toy_model/index.html} (accessed 18 August 2026).
+
+\bibitem[{Ethayarajh}(2019)]{refAnisotropy} Ethayarajh, K., 2019. How contextual are contextualized word representations? Comparing the geometry of BERT, ELMo, and GPT-2 embeddings, in: Proc. EMNLP-IJCNLP 2019, pp. 55--65. \url{https://doi.org/10.18653/v1/D19-1006}.
+
+\bibitem[{Facco et~al.}(2017)]{refTwoNN} Facco, E., d'Errico, M., Rodriguez, A., Laio, A., 2017. Estimating the intrinsic dimension of datasets by a minimal neighborhood information. Sci. Rep. 7, 12140. \url{https://doi.org/10.1038/s41598-017-11873-y}.
+
+\bibitem[{Gao et~al.}(2024)]{ref20} Gao, L., Dupr\'e la Tour, T., Tillman, H., Goh, G., Troll, R., Radford, A., Sutskever, I., Leike, J., Wu, J., 2024. Scaling and evaluating sparse autoencoders. arXiv:2406.04093, preprint. \url{https://arxiv.org/abs/2406.04093}.
+
+\bibitem[{Gemma Team}(2024)]{ref23} Gemma Team, Riviere, M., Pathak, S., et al., 2024. Gemma 2: improving open language models at a practical size. arXiv:2408.00118, preprint. \url{https://arxiv.org/abs/2408.00118}.
+
+\bibitem[{Gene Ontology Consortium}(2026)]{ref42} Gene Ontology Consortium, 2026. The Gene Ontology knowledgebase in 2026. Nucleic Acids Res. 54, D1779--D1792. \url{https://doi.org/10.1093/nar/gkaf1292}.
+
+\bibitem[{Han et~al.}(2018)]{ref47} Han, H., Cho, J.-W., Lee, S., et al., 2018. TRRUST v2: an expanded reference database of human and mouse transcriptional regulatory interactions. Nucleic Acids Res. 46, D380--D386. \url{https://doi.org/10.1093/nar/gkx1013}.
+
+\bibitem[{Heap et~al.}(2026)]{refRandomTransformerSAE} Heap, T., Lawson, T., Farnik, L., Aitchison, L., 2026. Automated interpretability metrics do not distinguish trained and random transformers. arXiv:2501.17727v2, preprint. \url{https://arxiv.org/abs/2501.17727v2}.
+
+\bibitem[{Hewitt and Liang}(2019)]{refProbeControls} Hewitt, J., Liang, P., 2019. Designing and interpreting probes with control tasks, in: Proc. EMNLP-IJCNLP 2019, pp. 2733--2743. \url{https://doi.org/10.18653/v1/D19-1275}.
+
+\bibitem[{Jain and Wallace}(2019)]{refAttentionExplanation} Jain, S., Wallace, B.C., 2019. Attention is not explanation, in: Proc. NAACL-HLT 2019, pp. 3543--3556. \url{https://doi.org/10.18653/v1/N19-1357}.
+
+\bibitem[{Kanehisa and Goto}(2000)]{ref43} Kanehisa, M., Goto, S., 2000. KEGG: Kyoto Encyclopedia of Genes and Genomes. Nucleic Acids Res. 28, 27--30. \url{https://doi.org/10.1093/nar/28.1.27}.
+
+\bibitem[{Kanehisa et~al.}(2025)]{ref44} Kanehisa, M., Furumichi, M., Sato, Y., Matsuura, Y., Ishiguro-Watanabe, M., 2025. KEGG: biological systems database as a model of the real world. Nucleic Acids Res. 53, D672--D677. \url{https://doi.org/10.1093/nar/gkae909}.
+
+\bibitem[{Kedzierska et~al.}(2025)]{ref5} Kedzierska, K.Z., Crawford, L., Amini, A.P., Lu, A.X., 2025. Zero-shot evaluation reveals limitations of single-cell foundation models. Genome Biol. 26, 101. \url{https://doi.org/10.1186/s13059-025-03574-x}.
+
+\bibitem[{Kendiukhov}(2026a)]{ref10} Kendiukhov, I., 2026a. Causal circuit tracing reveals distinct computational architectures in single-cell foundation models: inhibitory dominance, biological coherence, and cross-model convergence. Bioinformatics 42, btag379. \url{https://doi.org/10.1093/bioinformatics/btag379}.
+
+\bibitem[{Kendiukhov}(2026b)]{ref14} Kendiukhov, I., 2026b. Causal intervention validation of gene regulatory signals in scGPT. J. Biomed. Inform. 180, 105080. \url{https://doi.org/10.1016/j.jbi.2026.105080}.
+
+\bibitem[{Kendiukhov}(2026c)]{ref11} Kendiukhov, I., 2026c. Exhaustive circuit mapping of a single-cell foundation model reveals massive redundancy, heavy-tailed hub architecture, and layer-dependent differentiation control. arXiv:2603.11940, preprint. \url{https://arxiv.org/abs/2603.11940}.
+
+\bibitem[{Kendiukhov}(2026d)]{ref37} Kendiukhov, I., 2026d. Multi-dimensional spectral geometry of biological knowledge in single-cell transformer representations. arXiv:2602.22247, preprint. \url{https://arxiv.org/abs/2602.22247}.
+
+\bibitem[{Kendiukhov}(2026e)]{ref39} Kendiukhov, I., 2026e. Partial-label metric ceilings for evaluating gene regulatory networks inferred from single-cell foundation models. BioSystems 266, 105864. \url{https://doi.org/10.1016/j.biosystems.2026.105864}.
+
+\bibitem[{Kendiukhov}(2026f)]{ref40} Kendiukhov, I., 2026f. Quantifying ranking instability across evaluation protocol axes in gene regulatory network benchmarking. arXiv:2603.03493, preprint. \url{https://arxiv.org/abs/2603.03493}.
+
+\bibitem[{Kendiukhov}(2026g)]{ref13} Kendiukhov, I., 2026g. Residual-stream geometry of single-cell foundation models carries incremental gene-regulatory signal across tissues. BMC Bioinformatics 27, 162. \url{https://doi.org/10.1186/s12859-026-06538-5}.
+
+\bibitem[{Kendiukhov}(2026h)]{ref6} Kendiukhov, I., 2026h. Sparse autoencoders reveal interpretable cell-type programs in single-cell foundation model representations. J. Biomed. Inform. 180, 105056. \url{https://doi.org/10.1016/j.jbi.2026.105056}.
+
+\bibitem[{Kendiukhov}(2026i)]{ref7} Kendiukhov, I., 2026i. Sparse autoencoders reveal organized biological knowledge but minimal regulatory logic in single-cell foundation models: a comparative atlas of Geneformer and scGPT. arXiv:2603.02952, preprint. \url{https://arxiv.org/abs/2603.02952}.
+
+\bibitem[{Kendiukhov}(2026j)]{ref9} Kendiukhov, I., 2026j. Systematic evaluation of single-cell foundation model interpretability: attention-derived edge scores add no incremental value over gene-level features for perturbation-target prediction. BMC Genomics 27, 634. \url{https://doi.org/10.1186/s12864-026-12965-8}.
+
+\bibitem[{Kendiukhov}(2026k)]{ref12} Kendiukhov, I., 2026k. What topological and geometric structure do biological foundation models learn? Evidence from 141 hypotheses. PLOS ONE 21, e0344826. \url{https://doi.org/10.1371/journal.pone.0344826}.
+
+\bibitem[{Kendiukhov}(2026l)]{refcode} [dataset] Kendiukhov, I., 2026l. c2s-mechinterp: mechanistic interpretability pipelines for Cell2Sentence language models [software]. GitHub. \url{https://github.com/Biodyn-AI/c2s-mechinterp}.
+
+\bibitem[{Kendiukhov}(2026m)]{refatlas} [dataset] Kendiukhov, I., 2026m. C2S-Scale sparse-autoencoder feature atlas [dataset]. GitHub. \url{https://github.com/Biodyn-AI/c2s-atlas}.
+
+\bibitem[{Korznikov et~al.}(2026)]{refRandomSAEBaselines} Korznikov, A., Galichin, A., Dontsov, A., Rogov, O., Oseledets, I., Tutubalina, E., 2026. Sanity checks for sparse autoencoders: do SAEs beat random baselines? arXiv:2602.14111v2, preprint. \url{https://arxiv.org/abs/2602.14111v2}.
+
+\bibitem[{Law et~al.}(1993)]{refK562TP53} Law, J.C., Ritke, M.K., Yalowich, J.C., Leder, G.H., Ferrell, R.E., 1993. Mutational inactivation of the p53 gene in the human erythroid leukemic K562 cell line. Leuk. Res. 17, 1045--1050. \url{https://doi.org/10.1016/0145-2126(93)90161-D}.
+
+\bibitem[{Levine et~al.}(2024)]{ref1} Levine, D., Rizvi, S.A., L\'evy, S., et al., 2024. Cell2Sentence: teaching large language models the language of biology, in: Proc. 41st Int. Conf. Mach. Learn. (ICML). PMLR 235, pp. 27299--27325. \url{https://proceedings.mlr.press/v235/levine24a.html}.
+
+\bibitem[{McInnes et~al.}(2018)]{ref50} McInnes, L., Healy, J., Melville, J., 2018. UMAP: uniform manifold approximation and projection for dimension reduction. arXiv:1802.03426, preprint. \url{https://arxiv.org/abs/1802.03426}.
+
+\bibitem[{Meng et~al.}(2022)]{ref22} Meng, K., Bau, D., Andonian, A., Belinkov, Y., 2022. Locating and editing factual associations in GPT, in: Adv. Neural Inf. Process. Syst. 35 (NeurIPS 2022). \url{https://arxiv.org/abs/2202.05262}.
+
+\bibitem[{Papalexi et~al.}(2021)]{refPapalexi} Papalexi, E., Mimitou, E.P., Butler, A.W., et al., 2021. Characterizing the molecular regulation of inhibitory immune checkpoints with multimodal single-cell screens. Nat. Genet. 53, 322--331. \url{https://doi.org/10.1038/s41588-021-00778-2}.
+
+\bibitem[{Peidli et~al.}(2024)]{refScPerturb} Peidli, S., Green, T.D., Shen, C., et al., 2024. scPerturb: harmonized single-cell perturbation data. Nat. Methods 21, 531--540. \url{https://doi.org/10.1038/s41592-023-02144-y}.
+
+\bibitem[{Ragueneau et~al.}(2026)]{ref45} Ragueneau, E., Gong, C., Sinquin, P., et al., 2026. The Reactome Knowledgebase 2026. Nucleic Acids Res. 54, D673--D681. \url{https://doi.org/10.1093/nar/gkaf1223}.
+
+\bibitem[{Replogle et~al.}(2022)]{ref24} Replogle, J.M., Saunders, R.A., Pogson, A.N., et al., 2022. Mapping information-rich genotype-phenotype landscapes with genome-scale Perturb-seq. Cell 185, 2559--2575.e28. \url{https://doi.org/10.1016/j.cell.2022.05.013}.
+
+\bibitem[{Rizvi et~al.}(2026)]{ref2} Rizvi, S.A., Levine, D., Patel, A., et al., 2026. Scaling large language models for next-generation single-cell analysis. bioRxiv, preprint v4. \url{https://doi.org/10.1101/2025.04.14.648850}.
+
+\bibitem[{Saito and Rehmsmeier}(2015)]{refPRAUC} Saito, T., Rehmsmeier, M., 2015. The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. PLOS ONE 10, e0118432. \url{https://doi.org/10.1371/journal.pone.0118432}.
+
+\bibitem[{Setty et~al.}(2019)]{ref25} Setty, M., Kiseliovas, V., Levine, J., Gayoso, A., Mazutis, L., Pe'er, D., 2019. Characterization of cell fate probabilities in single-cell data with Palantir. Nat. Biotechnol. 37, 451--460. \url{https://doi.org/10.1038/s41587-019-0068-4}.
+
+\bibitem[{Sun et~al.}(2024)]{refMassiveActivations} Sun, M., Chen, X., Kolter, J.Z., Liu, Z., 2024. Massive activations in large language models, in: Proc. First Conf. Language Modeling (COLM). \url{https://arxiv.org/abs/2402.17762}.
+
+\bibitem[{Sundararajan et~al.}(2017)]{refIntegratedGradients} Sundararajan, M., Taly, A., Yan, Q., 2017. Axiomatic attribution for deep networks, in: Proc. 34th Int. Conf. Mach. Learn. PMLR 70, pp. 3319--3328. \url{https://proceedings.mlr.press/v70/sundararajan17a.html}.
+
+\bibitem[{Szklarczyk et~al.}(2025)]{ref46} Szklarczyk, D., Nastou, K., Koutrouli, M., et al., 2025. The STRING database in 2025: protein networks with directionality of regulation. Nucleic Acids Res. 53, D730--D737. \url{https://doi.org/10.1093/nar/gkae1113}.
+
+\bibitem[{Templeton et~al.}(2024)]{ref18} Templeton, A., Conerly, T., Marcus, J., et al., 2024. Scaling monosemanticity: extracting interpretable features from Claude 3 Sonnet. Transformer Circuits Thread. \url{https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html} (accessed 18 August 2026).
+
+\bibitem[{Theodoris et~al.}(2023)]{ref3} Theodoris, C.V., Xiao, L., Chopra, A., et al., 2023. Transfer learning enables predictions in network biology. Nature 618, 616--624. \url{https://doi.org/10.1038/s41586-023-06139-9}.
+
+\bibitem[{Timmons et~al.}(2015)]{refEnrichmentBias} Timmons, J.A., Szkop, K.J., Gallagher, I.J., 2015. Multiple sources of bias confound functional enrichment analysis of global -omics data. Genome Biol. 16, 186. \url{https://doi.org/10.1186/s13059-015-0761-7}.
+
+\bibitem[{Traag et~al.}(2019)]{ref32} Traag, V.A., Waltman, L., van Eck, N.J., 2019. From Louvain to Leiden: guaranteeing well-connected communities. Sci. Rep. 9, 5233. \url{https://doi.org/10.1038/s41598-019-41695-z}.
+
+\bibitem[{Turner et~al.}(2023)]{ref48} Turner, A.M., Thiergart, L., Leech, G., Udell, D., Vazquez, J.J., Mini, U., MacDiarmid, M., 2023. Steering language models with activation engineering. arXiv:2308.10248, preprint. \url{https://arxiv.org/abs/2308.10248}.
+
+\bibitem[{Vig et~al.}(2020)]{refCausalMediation} Vig, J., Gehrmann, S., Belinkov, Y., Qian, S., Nevo, D., Singer, Y., Shieber, S., 2020. Investigating gender bias in language models using causal mediation analysis, in: Adv. Neural Inf. Process. Syst. 33. \url{https://proceedings.neurips.cc/paper_files/paper/2020/hash/92650b2e92217715fe312e6fa7b90d82-Abstract.html}.
+
+\bibitem[{Volpe et~al.}(2025)]{refRPE1Genome} Volpe, E., Colantoni, A., Corda, L., et al., 2025. The reference genome of the human diploid cell line RPE-1. Nat. Commun. 16, 7751. \url{https://doi.org/10.1038/s41467-025-62428-z}.
+
+\bibitem[{Zhou et~al.}(2019)]{refK562Genome} Zhou, B., Ho, S.S., Greer, S.U., et al., 2019. Comprehensive, integrated, and phased whole-genome analysis of the primary ENCODE cell line K562. Genome Res. 29, 472--484. \url{https://doi.org/10.1101/gr.234948.118}.
+
+\bibitem[{Zou et~al.}(2023)]{ref49} Zou, A., Phan, L., Chen, S., et al., 2023. Representation engineering: a top-down approach to AI transparency. arXiv:2310.01405, preprint. \url{https://arxiv.org/abs/2310.01405}.
+
 \end{thebibliography}
 
 \end{document}

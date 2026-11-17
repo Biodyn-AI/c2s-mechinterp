@@ -1,0 +1,54 @@
+{
+  "figure": "S2",
+  "synthetic_preview": false,
+  "source_sha256": {
+    "paper_cbc_rev1/experiments/results/pool_comparison.json": "b56edec4cef92d24b6e21cb8c6edeb35c206578cefc6ffe03f73f5321dd9e0d0",
+    "paper_cbc_rev1/experiments/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "paper_cbc_rev1/experiments/results/annotations/pool_first/ann_v2_L13.json": "65668ba725b464a2e7b9a365bba21fe3e3ef919a0529ac820371f12a3f6a149f",
+    "paper_cbc_rev1/experiments/results/annotations/pool_last/ann_v2_L13.json": "d490f61428a01d52d7859e0bbe3e581dea19a73a25ac476315641821a9caf805"
+  },
+  "plotted_values": {
+    "pooling": {
+      "layer": 13,
+      "mean": {
+        "sae_variance_explained": 0.9256298246926328
+      },
+      "first": {
+        "row_cosine_with_mean_pool_mean": 0.8326463103294373,
+        "row_cosine_with_mean_pool_p05": 0.745731770992279,
+        "gene_similarity_matrix_correlation": 0.7449969352697134,
+        "sae_variance_explained": 0.7189206603891749
+      },
+      "last": {
+        "row_cosine_with_mean_pool_mean": 0.7915966510772705,
+        "row_cosine_with_mean_pool_p05": 0.7078512907028198,
+        "gene_similarity_matrix_correlation": 0.49565707475219495,
+        "sae_variance_explained": 0.5486077966972178
+      }
+    },
+    "annotation": [
+      {
+        "layer": 13,
+        "rate": 0.6366102430555556,
+        "floor": 0.25614872685185186,
+        "n_alive": 9216,
+        "n_total": 9216
+      },
+      {
+        "layer": 13,
+        "rate": 0.6224351747463359,
+        "floor": 0.23712889891018415,
+        "n_alive": 8870,
+        "n_total": 9216
+      },
+      {
+        "layer": 13,
+        "rate": 0.4588143872113677,
+        "floor": 0.3159783895796329,
+        "n_alive": 9008,
+        "n_total": 9216
+      }
+    ]
+  },
+  "generator_sha256": "aed2797658b12b6184cb0b0ee7dcad8f16fddc9e37d53017748721a00787ea74"
+}

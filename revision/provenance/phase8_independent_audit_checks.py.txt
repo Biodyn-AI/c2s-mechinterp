@@ -1,0 +1,138 @@
+"""Small metadata/synthetic audit; does not run a model or mutate experiment inputs."""
+from pathlib import Path
+import hashlib
+import json
+import sys
+
+import h5py
+import numpy as np
+
+PROJECT = Path(__file__).resolve().parents[3]
+WORK = PROJECT.parents[1]
+POD = PROJECT/'experiments/pod'
+sys.path.insert(0, str(POD))
+from make_original48_design import select_groups
+from rev_phase8_stats import downstream_target_labels, input_rank_matrix, feature_gene_scores, insilico_statistics
+
+
+def read_column(file, group, key):
+    node = file[group][key]
+    if isinstance(node, h5py.Group):
+        categories = node['categories'].asstr()[:]
+        codes = node['codes'][:]
+        return np.asarray([categories[code] if code >= 0 else '' for code in codes])
+    return node.asstr()[:] if node.dtype.kind in 'OSU' else node[:]
+
+
+def original_recipe(gene, tfs):
+    """Independent direct transcription of historical code's sampling sequence."""
+    rng = np.random.RandomState(42)
+    indices = np.where(gene == 'non-targeting')[0]
+    if len(indices) > 400:
+        indices = rng.choice(indices, 400, replace=False)
+    unique, counts = np.unique(gene, return_counts=True)
+    present = {name: int(count) for name, count in zip(unique, counts)
+               if name != 'non-targeting' and count >= 15}
+    factors = sorted([name for name in present if name.upper() in tfs], key=lambda name: -present[name])[:48]
+    nonfactors = list(rng.permutation(sorted([name for name in present if name.upper() not in tfs])))[:12]
+    groups = [('control', indices.tolist())]
+    for target in factors + nonfactors:
+        indices = np.where(gene == target)[0]
+        if len(indices) > 25:
+            indices = rng.choice(indices, 25, replace=False)
+        groups.append((str(target), indices.tolist()))
+    return groups
+
+
+trrust_path = WORK/'data/ontologies/trrust_human.tsv'
+targets = {}
+for line in trrust_path.read_text().splitlines():
+    fields = line.split('\t')
+    if len(fields)>=2:
+        targets.setdefault(fields[0].upper(), set()).add(fields[1].upper())
+report = {'source_sha256': {str(path.relative_to(PROJECT)): hashlib.sha256(path.read_bytes()).hexdigest()
+                           for path in (POD/'rev_phase8_extract.py', POD/'rev_phase8_stats.py',
+                                        POD/'rev_response_biology.py', POD/'make_original48_design.py')},
+          'checks': {}, 'designs': {}}
+with h5py.File(WORK/'data/ReplogleWeissman2022_K562_essential.h5ad') as file:
+    gene = read_column(file, 'obs', 'gene')
+    guide = read_column(file, 'obs', 'guide_id')
+    batch = read_column(file, 'obs', 'batch')
+    groups = select_groups(gene, set(targets))
+    independent = original_recipe(gene, set(targets))
+    assert [(group['group'], group['cells']) for group in groups] == independent
+    old = json.loads((PROJECT.parent/'runs/2b_atlas/phase8v2_L16.json').read_text())['targets']
+    assert [row['target'] for row in old] == [group['group'] for group in groups[1:]]
+    assert [row['n_cells'] for row in old] == [len(group['cells']) for group in groups[1:]]
+    flattened = [cell for group in groups for cell in group['cells']]
+    assert len(flattened) == len(set(flattened))
+    assert all(np.all(gene[group['cells']] == ('non-targeting' if group['kind']=='control' else group['group']))
+               for group in groups)
+    tf_groups = [group for group in groups if group['kind']=='tf']
+    report['designs']['k562_original48'] = {
+        'n_tfs': len(tf_groups), 'n_nontfs': sum(group['kind']=='nontf' for group in groups),
+        'n_controls': len(groups[0]['cells']), 'n_cells_total': len(flattened),
+        'exact_rng_recipe_agreement': True, 'historical_target_order_and_count_agreement': True,
+        'original_cell_ids_previously_saved': False, 'groups_disjoint': True,
+        'observed_labels_match_selected_groups': True,
+        'tf_groups_with_self_TRRUST_edge': [group['group'] for group in tf_groups if group['group'].upper() in targets[group['group'].upper()]],
+        'guide_counts_per_tf': {group['group']: len(set(guide[group['cells']])) for group in tf_groups},
+        'batch_counts_per_tf': {group['group']: len(set(batch[group['cells']])) for group in tf_groups},
+        'control_guide_count': len(set(guide[groups[0]['cells']])),
+        'control_batch_count': len(set(batch[groups[0]['cells']])),
+        'n_tf_groups_with_single_guide':sum(len(set(guide[group['cells']]))==1 for group in tf_groups),
+        'n_tf_groups_with_two_guides':sum(len(set(guide[group['cells']]))==2 for group in tf_groups),
+        'guide_count_source_column':'obs/guide_id', 'batch_count_source_column':'obs/batch',
+        'perturbation_assignment_source_column':'obs/gene'}
+
+rpe_design = json.loads((WORK/'designs/phase8_rpe1.json').read_text())
+with h5py.File(WORK/'data/ReplogleWeissman2022_rpe1.h5ad') as file:
+    gene = read_column(file, 'obs', 'gene')
+    groups = rpe_design['groups']
+    flattened = [cell for group in groups for cell in group['cells']]
+    assert len(flattened) == len(set(flattened))
+    assert all(np.all(gene[group['cells']] == ('non-targeting' if group['kind'] in ('control','pseudo') else group['group']))
+               for group in groups)
+    control = next(group for group in groups if group['kind']=='control')
+    report['designs']['rpe1'] = {'n_tfs': sum(group['kind']=='tf' for group in groups),
+                                'n_nontfs': sum(group['kind']=='nontf' for group in groups),
+                                'n_pseudo': sum(group['kind']=='pseudo' for group in groups),
+                                'n_controls': len(control['cells']), 'n_cells_total': len(flattened),
+                                'groups_disjoint': True, 'observed_labels_match_selected_groups': True,
+                                'n_controls_with_513_or_more_names': sum(len(sentence)>=513 for sentence in control['sentences'])}
+
+# Illustrative same-gene alignment for deletion indices r<rc and the appended 513th gene.
+base = [f'G{i}' for i in range(512)]
+long = base + ['G512']
+for tf_rank, control_rank in [(0, 1), (39, 43), (505, 509)]:
+    tf_deleted = long[:tf_rank] + long[tf_rank+1:]
+    control_deleted = long[:control_rank] + long[control_rank+1:]
+    for original in range(control_rank+1, 512):
+        assert base[original] == tf_deleted[original-1] == control_deleted[original-1]
+report['checks']['in_silico_same_downstream_gene_alignment'] = True
+
+known, labels, candidates = downstream_target_labels(['TF','A','UNSEEN','B'], {'TF','A'}, 'tf')
+assert known=={'A'} and labels.tolist()==[False,True,False,False] and candidates.tolist()==[False,True,True,True]
+input_matrix = input_rank_matrix([['TF','A']], ['TF','A','UNSEEN','B'], max_genes=2)
+gene_scores, coverage = feature_gene_scores([7, 3], [{'feature_idx':0,'top_genes':['TF','A']},
+                                                    {'feature_idx':1,'top_genes':['B']}], ['TF','A','UNSEEN','B'])
+assert input_matrix[0,2] == gene_scores[2] == 0
+assert feature_gene_scores([7,3], [{'feature_idx':0,'top_genes':['TF','A']},
+                                 {'feature_idx':1,'top_genes':['B']}], ['TF','A','UNSEEN','B'])[0].tolist()==[7,7,0,3]
+report['checks']['self_exclusion_and_common_gene_candidate_universe'] = True
+report['checks']['feature_gene_scoring_target_label_independent'] = True
+
+paired = np.array([.2,.8,-.1,1.1,.5,.3])
+arrays = {'sum_tf': np.array([[[paired.sum()+6]]]), 'sum_ctrl':np.array([[[6.]]]),
+          'sum_d2':np.array([[[np.square(paired).sum()]]]), 'count':np.array([[len(paired)]])}
+statistics = insilico_statistics(arrays)
+assert np.isclose(statistics['mean_difference'][0,0,0], paired.mean())
+assert np.isclose(statistics['standard_error'][0,0,0], paired.std(ddof=1)/np.sqrt(len(paired)))
+report['checks']['in_silico_sufficient_statistics_match_direct_paired_calculation'] = True
+
+# Fresh pod-generated feature catalogues are outside this local static audit.
+path = PROJECT/'experiments/results/audits/phase8_independent_checks.json'
+path.write_text(json.dumps(report, indent=2))
+print(json.dumps({key:value for key,value in report.items() if key not in ('source_sha256','designs')}, indent=2))
+for tag, record in report['designs'].items():
+    print(tag,{key:value for key,value in record.items() if not key.endswith('per_tf')})

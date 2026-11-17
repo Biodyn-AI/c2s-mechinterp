@@ -1,0 +1,95 @@
+{
+  "audit": "Independent descriptive guide-pair saved-array arithmetic",
+  "passed": true,
+  "n_checks": 2627,
+  "findings": [],
+  "summary": [
+    {
+      "layer": 8,
+      "n_selected_guide_records": 48,
+      "n_evaluable_guide_records": 46,
+      "n_pairs": 66,
+      "unevaluable": [
+        {
+          "guide": "MYCg4",
+          "n_cells": 1
+        },
+        {
+          "guide": "STAT1g4",
+          "n_cells": 2
+        }
+      ],
+      "n_pairs_with_joint_responses": 15,
+      "n_pairs_with_empty_response_union": 0,
+      "median_effect_pearson": 0.10069100880589223,
+      "median_response_jaccard": 0.0,
+      "median_effect_supported_sign_agreement": 0.7272445820433436
+    },
+    {
+      "layer": 16,
+      "n_selected_guide_records": 48,
+      "n_evaluable_guide_records": 46,
+      "n_pairs": 66,
+      "unevaluable": [
+        {
+          "guide": "MYCg4",
+          "n_cells": 1
+        },
+        {
+          "guide": "STAT1g4",
+          "n_cells": 2
+        }
+      ],
+      "n_pairs_with_joint_responses": 22,
+      "n_pairs_with_empty_response_union": 0,
+      "median_effect_pearson": 0.08887675034714121,
+      "median_response_jaccard": 0.0,
+      "median_effect_supported_sign_agreement": 0.7437689969604864
+    },
+    {
+      "layer": 22,
+      "n_selected_guide_records": 48,
+      "n_evaluable_guide_records": 46,
+      "n_pairs": 66,
+      "unevaluable": [
+        {
+          "guide": "MYCg4",
+          "n_cells": 1
+        },
+        {
+          "guide": "STAT1g4",
+          "n_cells": 2
+        }
+      ],
+      "n_pairs_with_joint_responses": 25,
+      "n_pairs_with_empty_response_union": 0,
+      "median_effect_pearson": 0.1013098731527164,
+      "median_response_jaccard": 0.0,
+      "median_effect_supported_sign_agreement": 0.7476914197768373
+    }
+  ],
+  "source_sha256": {
+    "/workspace/rev1/results/phase8_thp1_pooled/statistics/guide_concordance.json": "da8cdfaa0693c349258ee18083c59f666d1e87027b0639d80a42c524588dfcb8",
+    "/workspace/rev1/data/papalexi/c6_pooled_rep1tx/design.json": "198c48a3484fc2bf659a801b32a280f2d09ac7af4420d2e224bb367c54990629",
+    "/workspace/rev1/results/phase8_thp1_pooled/rows.json": "49330a1472791f376598f116b1f6b420982d688581fd5cfb67a56e0ccc4fc1fc",
+    "/workspace/rev1/data/papalexi/c6_pooled_rep1tx/counts_cleaned.h5ad": "ee8bf3c0a2611508bb2f0b0418e6f98e3e7a5270ed00f80c86e59452f127c6c9",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/scripts/rev_guide_concordance.py": "d7e174534d3e75bc4dfdf4200fa7ff76b86cb5d5d3beb537bec2c5051a41d9c6",
+    "/workspace/rev1/scripts/rev_phase8_stats.py": "0571c151f8942eba59efa631518ae9e5972b60d1befa9ae760f0ae84698103cf",
+    "/workspace/rev1/results/phase8_thp1_pooled/feat_L08.npz": "2bc3502adb7b5d49744dc8b2de0c10a547a270d4e931933c4a7de856a9111434",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L08.json": "ff96caca804bef9ab18b5b12ac3db56cd55d497b023d49ef74e59d72ac5964ce",
+    "/workspace/rev1/results/phase8_thp1_pooled/feat_L16.npz": "466449a4bf9bf7fb9d4648f99f2f1c1670436009cd95bd13b7526453920b6fb8",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L16.json": "ff93005e482889729f3da7e3352a9e11b0c7a05a1cb4227be247b8655b504883",
+    "/workspace/rev1/results/phase8_thp1_pooled/feat_L22.npz": "4b10c774a516c50756bbbbb0c9cc5b49e67361e04c7d24261ec71bf1bff10df4",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L22.json": "9e2649694bff28952e563495f9b2c1d45e54d4f1be2093b881b16c4dc74dcd14",
+    "/workspace/rev1/results/phase8_thp1_pooled/statistics/guide_statistics_L08.npz": "40e1afd5bcb162f41ed9580b0bd361289495f2d168dad9515f6a0d2fcdf0d8a1",
+    "/workspace/rev1/results/phase8_thp1_pooled/statistics/guide_statistics_L16.npz": "7eab192ea301ece745aa60641d645be5a6fc8221ee3f327b3bc718b1c32783b2",
+    "/workspace/rev1/results/phase8_thp1_pooled/statistics/guide_statistics_L22.npz": "a0e9954c47fc2a990d0f16fe1ff5353613527a91fc8e7ff85827a535fc5e0ac8",
+    "/workspace/rev1/results/audits/audit_guides_saved.py": "b116913cd2aec22ad05c14ee93bdf54b088fa720ac59c789608df29222e611af"
+  },
+  "limitations": [
+    "Stored float32 guide effects and exact saved response masks are checked; raw per-guide MW/BH tests are not rerun.",
+    "Guide pairs share controls, factors and feature columns; no independent-pair significance test or interval is calculated.",
+    "Guide-level gene AP ratios are checked arithmetically; gene score rankings are not regenerated."
+  ]
+}

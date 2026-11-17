@@ -1,0 +1,446 @@
+{
+  "schema": "numeric-preservation-proof-v1",
+  "source_artifacts": 72,
+  "numeric_leaves_verified": 688058,
+  "all_passed": true,
+  "tests": [
+    "Signed-zero and extreme-float bit preservation",
+    "Large-integer exactness",
+    "Known-prefix dictionary-key mapping",
+    "Normalized-key collision rejection"
+  ],
+  "per_artifact": [
+    {
+      "path": "atlas_reporting.json",
+      "numeric_leaves_checked": 2263,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "sensitivity_reporting.json",
+      "numeric_leaves_checked": 1893,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "scale_reporting.json",
+      "numeric_leaves_checked": 802,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "residual_summary.json",
+      "numeric_leaves_checked": 1648,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "dropmassive_comparison.json",
+      "numeric_leaves_checked": 53,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "biology.json",
+      "numeric_leaves_checked": 17259,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "lines2.json",
+      "numeric_leaves_checked": 24,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "pool_comparison.json",
+      "numeric_leaves_checked": 10,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "cd34_dimensions.json",
+      "numeric_leaves_checked": 4060,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "k562_replication_dimensions.json",
+      "numeric_leaves_checked": 1260,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "surface_form_retrieval.json",
+      "numeric_leaves_checked": 2162,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "text_deletion_reporting.json",
+      "numeric_leaves_checked": 116,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "selection_matched_transfer.json",
+      "numeric_leaves_checked": 75082,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "within_k562_cellcycle.json",
+      "numeric_leaves_checked": 30050,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "cache_validation_k562.json",
+      "numeric_leaves_checked": 238,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "cache_validation_rpe1.json",
+      "numeric_leaves_checked": 238,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "tokenization.json",
+      "numeric_leaves_checked": 35663,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "environment.json",
+      "numeric_leaves_checked": 0,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "environment_dependencies.json",
+      "numeric_leaves_checked": 0,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "ontology_provenance.json",
+      "numeric_leaves_checked": 11,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "circuit_baseline.json",
+      "numeric_leaves_checked": 710,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "circuit_stability.json",
+      "numeric_leaves_checked": 506,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "circuit_stability_full.json",
+      "numeric_leaves_checked": 257,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "retained_steering_audit.json",
+      "numeric_leaves_checked": 351,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/annotation_2b_L00.json",
+      "numeric_leaves_checked": 45103,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "audits/annotation_27b_x4_L00.json",
+      "numeric_leaves_checked": 78571,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "audits/retained_saved_v1.json",
+      "numeric_leaves_checked": 72620,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "audits/experimental_saved_v1.json",
+      "numeric_leaves_checked": 1819,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/biology_lines_v1.json",
+      "numeric_leaves_checked": 158,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/sensitivity_saved_v1.json",
+      "numeric_leaves_checked": 172,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/e4_saved_v1.json",
+      "numeric_leaves_checked": 17,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/dimensions_cd34_v1.json",
+      "numeric_leaves_checked": 152,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/dimensions_k562_replication_v1.json",
+      "numeric_leaves_checked": 152,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/dimensions_standardized_reference_v1.json",
+      "numeric_leaves_checked": 13,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "audits/phase8_k562_saved_v1.json",
+      "numeric_leaves_checked": 266,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/phase8_rpe1_saved_v1.json",
+      "numeric_leaves_checked": 366,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/phase8_thp1_pooled_saved_v1.json",
+      "numeric_leaves_checked": 284,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/phb2_worked_audit.json",
+      "numeric_leaves_checked": 44,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/phb2_worked_values.json",
+      "numeric_leaves_checked": 34,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/circuits_exact_join_v1.json",
+      "numeric_leaves_checked": 252,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/circuit_proteasome_worked_v1.json",
+      "numeric_leaves_checked": 107,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/circuit_storage_counts.json",
+      "numeric_leaves_checked": 14,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/c6_guide_concordance_v1.json",
+      "numeric_leaves_checked": 34,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/c6_pooled_metadata_v1.json",
+      "numeric_leaves_checked": 47,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/c6_pooled_raw_merge_v1.json",
+      "numeric_leaves_checked": 31,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "audits/phase8_independent_checks.json",
+      "numeric_leaves_checked": 110,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "phase8_k562/statistics/regulatory_statistics.json",
+      "numeric_leaves_checked": 10850,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "phase8_rpe1/statistics/regulatory_statistics.json",
+      "numeric_leaves_checked": 32198,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "phase8_thp1_pooled/statistics/regulatory_statistics.json",
+      "numeric_leaves_checked": 3930,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "phase8_thp1_pooled/statistics/guide_concordance.json",
+      "numeric_leaves_checked": 4236,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "geometry/gene_manifold_null.json",
+      "numeric_leaves_checked": 65,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "geometry/results/cell_state_gpu.json",
+      "numeric_leaves_checked": 47,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "route_genemanifold_c2s/results/cc_benchmark_c2s.json",
+      "numeric_leaves_checked": 47,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "route_genemanifold_c2s/results/manifold_steer_L18.json",
+      "numeric_leaves_checked": 3983,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "route_genemanifold_c2s/results/manifold_steer_L21.json",
+      "numeric_leaves_checked": 3983,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "route_genemanifold_c2s/results/manifold_steer_L21_matched.json",
+      "numeric_leaves_checked": 3983,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "route_genemanifold_c2s/results/surface_forms.json",
+      "numeric_leaves_checked": 491,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "route_genemanifold_c2s/results/ring_analysis.json",
+      "numeric_leaves_checked": 41,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "runs/2b_atlas/cross_layer_tracking.json",
+      "numeric_leaves_checked": 160769,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "figure_provenance/Figure_2.provenance.json",
+      "numeric_leaves_checked": 729,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_3.provenance.json",
+      "numeric_leaves_checked": 428,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_4.provenance.json",
+      "numeric_leaves_checked": 1416,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_5.provenance.json",
+      "numeric_leaves_checked": 1718,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_6.provenance.json",
+      "numeric_leaves_checked": 79271,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_S1.provenance.json",
+      "numeric_leaves_checked": 143,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_S2.provenance.json",
+      "numeric_leaves_checked": 25,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_S3.provenance.json",
+      "numeric_leaves_checked": 45,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_S4.provenance.json",
+      "numeric_leaves_checked": 506,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_S5.provenance.json",
+      "numeric_leaves_checked": 4060,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "figure_provenance/Figure_S6.provenance.json",
+      "numeric_leaves_checked": 72,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": false
+    },
+    {
+      "path": "audits/annotation_2b_L00.dense_pq.npz",
+      "numeric_leaves_checked": null,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    },
+    {
+      "path": "audits/annotation_27b_x4_L00.dense_pq.npz",
+      "numeric_leaves_checked": null,
+      "structure_and_nonpath_strings_preserved": true,
+      "binary_identical": true
+    }
+  ]
+}

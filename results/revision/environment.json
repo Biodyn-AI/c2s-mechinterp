@@ -1,0 +1,20 @@
+{
+  "python": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.46.3",
+    "numpy": "2.1.2",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "scanpy": "1.12.6",
+    "anndata": "0.13.4",
+    "leidenalg": "0.12.0",
+    "igraph": "1.0.0",
+    "umap-learn": "0.6.0",
+    "scikit-learn": "1.9.1",
+    "tokenizers": "0.20.3",
+    "accelerate": "1.1.1"
+  },
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+}

@@ -1,0 +1,56 @@
+\begin{longtable}{@{}L{0.14\linewidth}L{0.08\linewidth}L{0.15\linewidth}L{0.16\linewidth}L{0.16\linewidth}L{0.2\linewidth}@{}}
+\caption{Seven matched-capacity layer pairs. Each dictionary has 9~216 features, k=32 and six saved training epochs. Held-out variance explained (VE) uses each model's residual-activation variance; 2B values are fresh re-evaluations. Held-out inactive features and features inactive across all catalogue positions have separate definitions.}\\
+\toprule
+2B / 27B taps & Model & Held-out VE (\%) & Held-out inactive (\%) & All-position inactive (\%) & Catalogue active / features \\
+\midrule
+\endfirsthead
+\toprule
+2B / 27B taps & Model & Held-out VE (\%) & Held-out inactive (\%) & All-position inactive (\%) & Catalogue active / features \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+0 / 0 & 2B & 99.3063 & 0.260417 & 0 & 9~216/9~216 \\
+0 / 0 & 27B & 98.9905 & 13.9757 & 0.564236 & 9~164/9~216 \\
+4 / 7 & 2B & 98.1169 & 0.444878 & 0 & 9~216/9~216 \\
+4 / 7 & 27B & 98.2803 & 19.9761 & 0.868056 & 9~136/9~216 \\
+8 / 14 & 2B & 95.8821 & 0.802951 & 0 & 9~216/9~216 \\
+8 / 14 & 27B & 97.4482 & 33.1706 & 2.3763 & 8~997/9~216 \\
+13 / 24 & 2B & 92.465 & 1.71441 & 0 & 9~216/9~216 \\
+13 / 24 & 27B & 94.5225 & 67.2092 & 17.5022 & 7~603/9~216 \\
+17 / 31 & 2B & 90.6966 & 3.24436 & 0 & 9~216/9~216 \\
+17 / 31 & 27B & 93.1334 & 35.1562 & 0.792101 & 9~143/9~216 \\
+21 / 38 & 2B & 89.3256 & 0.889757 & 0 & 9~216/9~216 \\
+21 / 38 & 27B & 91.3882 & 10.5143 & 0 & 9~216/9~216 \\
+25 / 45 & 2B & 88.3981 & 1.16102 & 0 & 9~216/9~216 \\
+25 / 45 & 27B & 93.6188 & 30.8377 & 0.694444 & 9~152/9~216 \\
+\end{longtable}
+\begin{longtable}{@{}L{0.14\linewidth}L{0.08\linewidth}L{0.16\linewidth}L{0.16\linewidth}L{0.17\linewidth}L{0.17\linewidth}@{}}
+\caption{Named ontology/regulon annotation and its frequency-weighted random-set floor. Rates among all dictionary features retain inactive features in the denominator; catalogue-active rates use features firing anywhere. Floors have the corresponding denominator. Pair/network membership evidence is excluded.}\\
+\toprule
+2B / 27B taps & Model & Named / all (\%) & Floor / all (\%) & Named / active (\%) & Floor / active (\%) \\
+\midrule
+\endfirsthead
+\toprule
+2B / 27B taps & Model & Named / all (\%) & Floor / all (\%) & Named / active (\%) & Floor / active (\%) \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+0 / 0 & 2B & 53.4288 & 7.89569 & 53.4288 & 7.89569 \\
+0 / 0 & 27B & 38.7478 & 3.50839 & 38.9677 & 3.5283 \\
+4 / 7 & 2B & 50.9549 & 3.46861 & 50.9549 & 3.46861 \\
+4 / 7 & 27B & 39.3121 & 4.00752 & 39.6563 & 4.04262 \\
+8 / 14 & 2B & 56.0764 & 8.21759 & 56.0764 & 8.21759 \\
+8 / 14 & 27B & 35.1671 & 7.33869 & 36.0231 & 7.51732 \\
+13 / 24 & 2B & 63.661 & 25.6149 & 63.661 & 25.6149 \\
+13 / 24 & 27B & 20.7899 & 4.6224 & 25.2006 & 5.60305 \\
+17 / 31 & 2B & 72.2548 & 57.657 & 72.2548 & 57.657 \\
+17 / 31 & 27B & 47.9384 & 16.4605 & 48.3211 & 16.5919 \\
+21 / 38 & 2B & 76.454 & 74.6781 & 76.454 & 74.6781 \\
+21 / 38 & 27B & 64.3446 & 31.7564 & 64.3446 & 31.7564 \\
+25 / 45 & 2B & 68.9019 & 57.8559 & 68.9019 & 57.8559 \\
+25 / 45 & 27B & 42.6866 & 22.9745 & 42.9851 & 23.1352 \\
+\end{longtable}

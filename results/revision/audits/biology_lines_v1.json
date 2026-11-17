@@ -1,0 +1,392 @@
+{
+  "audit": "Independent biological categories, decoder persistence and two-line source/firing audit",
+  "passed": true,
+  "n_checks": 5961,
+  "findings": [],
+  "category_distributions": [
+    {
+      "layer": 0,
+      "n_ontology": 4924,
+      "median_categories_per_annotated_feature": 4.0,
+      "other_share_annotated": 0.886068237205524
+    },
+    {
+      "layer": 1,
+      "n_ontology": 5384,
+      "median_categories_per_annotated_feature": 4.0,
+      "other_share_annotated": 0.8948736998514116
+    },
+    {
+      "layer": 2,
+      "n_ontology": 5070,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8583826429980276
+    },
+    {
+      "layer": 3,
+      "n_ontology": 4920,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8538617886178862
+    },
+    {
+      "layer": 4,
+      "n_ontology": 4696,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8477427597955707
+    },
+    {
+      "layer": 5,
+      "n_ontology": 4666,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8459065580797257
+    },
+    {
+      "layer": 6,
+      "n_ontology": 5035,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8611717974180735
+    },
+    {
+      "layer": 7,
+      "n_ontology": 5065,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8517275419545903
+    },
+    {
+      "layer": 8,
+      "n_ontology": 5168,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8626160990712074
+    },
+    {
+      "layer": 9,
+      "n_ontology": 5133,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8587570621468926
+    },
+    {
+      "layer": 10,
+      "n_ontology": 5016,
+      "median_categories_per_annotated_feature": 3.0,
+      "other_share_annotated": 0.8604465709728868
+    },
+    {
+      "layer": 11,
+      "n_ontology": 5441,
+      "median_categories_per_annotated_feature": 4.0,
+      "other_share_annotated": 0.8645469582797279
+    },
+    {
+      "layer": 12,
+      "n_ontology": 5540,
+      "median_categories_per_annotated_feature": 4.0,
+      "other_share_annotated": 0.8777978339350181
+    },
+    {
+      "layer": 13,
+      "n_ontology": 5867,
+      "median_categories_per_annotated_feature": 5.0,
+      "other_share_annotated": 0.8856314982103289
+    },
+    {
+      "layer": 14,
+      "n_ontology": 6155,
+      "median_categories_per_annotated_feature": 5.0,
+      "other_share_annotated": 0.9031681559707555
+    },
+    {
+      "layer": 15,
+      "n_ontology": 6482,
+      "median_categories_per_annotated_feature": 6.0,
+      "other_share_annotated": 0.9112928108608455
+    },
+    {
+      "layer": 16,
+      "n_ontology": 6514,
+      "median_categories_per_annotated_feature": 6.0,
+      "other_share_annotated": 0.9117285845870433
+    },
+    {
+      "layer": 17,
+      "n_ontology": 6659,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.916503979576513
+    },
+    {
+      "layer": 18,
+      "n_ontology": 6894,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9271830577313606
+    },
+    {
+      "layer": 19,
+      "n_ontology": 6971,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9294218906900015
+    },
+    {
+      "layer": 20,
+      "n_ontology": 6955,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9282530553558591
+    },
+    {
+      "layer": 21,
+      "n_ontology": 7046,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9324439398240136
+    },
+    {
+      "layer": 22,
+      "n_ontology": 7152,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9386185682326622
+    },
+    {
+      "layer": 23,
+      "n_ontology": 6900,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9273913043478261
+    },
+    {
+      "layer": 24,
+      "n_ontology": 6779,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9333234990411565
+    },
+    {
+      "layer": 25,
+      "n_ontology": 6350,
+      "median_categories_per_annotated_feature": 7.0,
+      "other_share_annotated": 0.9125984251968504
+    }
+  ],
+  "persistence": {
+    "n_matched_annotated_pairs": 1744,
+    "observed_same_category": 0.948394495412844,
+    "random_target_baseline": 0.9391597738929404,
+    "excess": 0.009234721519903677,
+    "excess_ci95": [
+      -0.00046617198222523564,
+      0.01861699730911375
+    ],
+    "cosine_threshold": 0.7,
+    "n_distinct_target_features_among_all_best_matches": 8576,
+    "interpretation": "Dependent source-feature bootstrap; broad overlapping categories and target reuse. Interval includes zero excess."
+  },
+  "lines": {
+    "raw_source_verification": [
+      {
+        "line": "k562",
+        "n_cells": 300,
+        "source": "/workspace/rev1/data/ReplogleWeissman2022_K562_essential.h5ad",
+        "selected_counts_sha256": "702b549ac75334a4aa0488b28ea331fcf83e90a7836c9481d974a1342ba3a630",
+        "source_shape": [
+          310385,
+          8563
+        ]
+      },
+      {
+        "line": "rpe1",
+        "n_cells": 300,
+        "source": "/workspace/rev1/data/ReplogleWeissman2022_rpe1.h5ad",
+        "selected_counts_sha256": "66b5c99e2f2f9b6c50f2e42b526ca17f18eb94c368688fbfdd9369875ec27276",
+        "source_shape": [
+          247914,
+          8749
+        ]
+      }
+    ],
+    "saved_firing_metrics": {
+      "lines": [
+        "k562",
+        "rpe1"
+      ],
+      "layers": {
+        "0": {
+          "k562": {
+            "n_rows": 153600,
+            "variance_explained": 0.9772407512866406,
+            "share_features_firing": 0.9995659722222222,
+            "mu_shift_rel": 0.025075078010559082
+          },
+          "rpe1": {
+            "n_rows": 153600,
+            "variance_explained": 0.9548775329389436,
+            "share_features_firing": 0.9992404513888888,
+            "mu_shift_rel": 0.03596547245979309
+          }
+        },
+        "13": {
+          "k562": {
+            "n_rows": 153600,
+            "variance_explained": 0.8794355366470944,
+            "share_features_firing": 0.9738498263888888,
+            "mu_shift_rel": 0.14602985978126526
+          },
+          "rpe1": {
+            "n_rows": 153600,
+            "variance_explained": 0.8256095195963497,
+            "share_features_firing": 0.8666449652777778,
+            "mu_shift_rel": 0.25750866532325745
+          }
+        },
+        "22": {
+          "k562": {
+            "n_rows": 153600,
+            "variance_explained": 0.8130865348617307,
+            "share_features_firing": 0.9625651041666666,
+            "mu_shift_rel": 0.24125219881534576
+          },
+          "rpe1": {
+            "n_rows": 153600,
+            "variance_explained": 0.7046265569757928,
+            "share_features_firing": 0.8407118055555556,
+            "mu_shift_rel": 0.4164172410964966
+          }
+        }
+      }
+    },
+    "reconstruction_scope": "Saved all-position line reconstruction values are retained; SAE reconstruction forwards are not repeated."
+  },
+  "circuit_categories_descriptive": {
+    "n_capped_edges": 27633,
+    "n_ontology_annotated_edges": 20924,
+    "n_edges_sharing_at_least_one_broad_category": 20834,
+    "shared_category_counts_overlapping": {
+      "RNA processing": 15175,
+      "cell cycle and mitosis": 14214,
+      "immune and signalling": 16444,
+      "stress and apoptosis": 14510,
+      "trafficking and membranes": 15765,
+      "energy and other metabolism": 17063,
+      "chromatin and transcription": 14814,
+      "protein folding and degradation": 14806,
+      "DNA replication and repair": 13890,
+      "other": 19699,
+      "translation and ribosome": 244
+    },
+    "interpretation": "Descriptive broad category overlap; no chance correction, causal/pathway or independent-edge claim."
+  },
+  "source_sha256": {
+    "/workspace/rev1/results/biology.json": "e2ce2e1316468814e7720abf64fa9ad5d027d8735115f236f58b0a122d95b155",
+    "/workspace/rev1/scripts/rev_cpu_analysis.py": "54d7e7b073f9e9be1c7cd46c47d165c15a7d6662415dfad4c46a99fbfd7c8bd4",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L00.json": "40942e6d20d5a449cf0a8551b6751ce9aa27c03a4241a0641aaf5bab8387b452",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L00.json": "8959a6590974e532d4edacf386a863130728084e0587e2e233af1a1cb683fbc4",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L00.json": "15ae1572acce523731bc6859bf5d98aafb482f595cb0a650334b150688fda2ea",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L01.json": "af48401f67eb32d2cff623ed0809a94f0e5ae81473da40439eb9abfbfde7a70c",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L01.json": "73df35aa85314470e4e2a29c7b4927029ee5eb8b1ecab39dd8f9122bdac1e05b",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L01.json": "0d166ec629ade15bd7aaa78ba223e6b0b65599325379659008b6c208540e831c",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L02.json": "ed56f8c111b677a61396b3b1ca75b6c11ee04fc79bf349cd790306ba5d949816",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L02.json": "87d0a63298b8783768c3112bcc9a72a651c3a065903bf83b6e8a72ccdb81c61e",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L02.json": "ae2b17db314dff1bb0041653515fe04e7f130bda48bfd9d2b288a009a0687572",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L03.json": "9c68b8efa49e9ae8f5d078410af26a6458e225ce58c697fb216273b998ddd5ac",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L03.json": "68ac63d6930bb0ec9b2305eb8f2d356749374411c052ba7cd7555c8c14b807d1",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L03.json": "908d0b772ed02c4b9e5e42d23e117565493147e8a98d78b6fcba5c3b399fb866",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L04.json": "2ec2d33e4935aa6cae1be158ab70601b4d4eb7c2d891967792696c57daef3574",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L04.json": "4ec5219676f12220138c0897dfb5c4a85ebf165bfab2ce5b020eadc3e21cc13e",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L04.json": "ffd20448e1caae2473ea81cb2abbc01081d794f79f6f929beed9470fb2731a0b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L05.json": "0ef17f7e5211d86506ad9f682f398b02118310b36f5ad232e9a716afbf92306c",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L05.json": "5fb8fe9fbc2dfee5d451ab72ffcff80dbdbf04588f6d2a755c3f460c8474c081",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L05.json": "f7a7a6f5815ef646cda1a7893027bccd67d60f14d7ac032f0b67a4db74e496f9",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L06.json": "e0d3e218277c910b6c6b1b2b0eb52bd8145136229219e81a50b8f1a2fc96751b",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L06.json": "352e519bdc0e74f9a52c0f1b255de96dc6c214460203ca216866ad73a6ff361e",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L06.json": "296ed414365a94d4a02511423a074157f38880c90acdeface0b3d65ba33f286c",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L07.json": "13003566263e6e84f73ce82cae76cd4ed462687f2e72fc416fdbd9ef356ad842",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L07.json": "655e79a566652277715683ecf3b48d682d63aad08baab5d22b1b59de1364bc90",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L07.json": "d44c7ce4db1b4fe13c82709e87246a5e407afb7b0cb3075426ca070d3d2cd4db",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L08.json": "b2b2e098bd360348f3ec6059ca5d95987368f28a8157584c1c66d243157e5ea1",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L08.json": "ff96caca804bef9ab18b5b12ac3db56cd55d497b023d49ef74e59d72ac5964ce",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L08.json": "bd5da9484e29857389642f47580488e2e39ad1486cfbdc12bf2f3de7c5790f1d",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L09.json": "5f01db25eeb465ae7879228dde74af13760edd4b5f18d0d21e1803463c4fbf02",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L09.json": "5800de243c71a8cef3e32b44c6884664625e73dcb8871bfe77201f3674e936bd",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L09.json": "b150ba47c75cdf045ea7089640df4e543631f3e82937c1e3e4ca8dfd64c26a76",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L10.json": "49ba44fffb0e6c22802c71f70587e788882ece34a011af0b75c6ee47ebb8ced5",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L10.json": "898774dee8d16c1dd776a22310f1a39c7c3ddf0cb4d685d7e867c3f8cac73c52",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L10.json": "9222efc4b4cc4ebd591d967a4a6ce5ff1aa46ceec97ce48c3b3d449edb4ebf2b",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L11.json": "6a16e91f573bfaec69667174d0f2be8691ef55d86879580d6f8b40d3a3953312",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L11.json": "fbdf13df2ebf3a3dd103ca4ccb2e16ebdc1d432da63b312740b46c15e2195c72",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L11.json": "68dd5fcd21ca8cdc4967abfd3336433b8c5e49fb3c8612c9f66e8dbc696a18cd",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L12.json": "9571e2605d562994e714b5fb1e11452254d1359ad883e133295ba42380547d97",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L12.json": "0a06f6e76e3aa2a2698dcae815165d7aee16cc44244bc09ac0dbf8c8dd9940be",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L12.json": "8ca1e6a9996778614619273ce51d878fd53352c5e24f7c85924c800b1cdcde63",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L13.json": "dcbb4a74bfd27bb45e8fca5bc603a8eab9b6839e0259cb777a274a92d284808f",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L13.json": "7f4f6a678816e1b47dcd4352769c4100f022c9a5de3c78e239496a91494e50f4",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L13.json": "da5926be6406585d97994ccee307d074e5a9056ae436b902833f19aa357266bd",
+    "/workspace/rev1/runs/2b_atlas/row_gene_names.json": "75dfb40cdc3356ca9218fa19a909a9e92774885eb6b2ea68109b25ee6a78a4e6",
+    "/workspace/rev1/ontologies_v2/go_bp.json": "79fef7443c64c0d6f5b596a06fe02d626755b1602d26ce4baa5ae946a5fb4913",
+    "/workspace/rev1/ontologies_v2/kegg.json": "c13fb526879e678f8aaa9e00f7d7dd409a9e7989c66c0fe6c94dd12870c7d245",
+    "/workspace/rev1/ontologies_v2/reactome.json": "657a6e1cf3ace1ca8996d336050123cfd0c4e3c2d253905854b37c00c8e39356",
+    "/workspace/rev1/ontologies_v2/trrust_human.tsv": "9b909319ccc8e36588b5a1bd3640e0dfba03936c6fc154cc4304d742bec11bed",
+    "/workspace/rev1/ontologies_v2/string_v12.5_score700_pairs.tsv.gz": "ff9ad8e80caf1bcbb7a18215126a7411098b525534a8edbc3baf25810fbbdf7e",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L14.json": "849fab7961951a8d889d75cb89bb838ae3f7e4aaccac3b445fe16d8525785c57",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L14.json": "6f73b53a721878e491acf5daa184a48107ee099960da4b02ab29eb7105d4eb5b",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L14.json": "97caa66f1f34ebdb9afe43462c157c21315f5f3faca5694ce836f8985ab12003",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L15.json": "165df7c82ff5f43113b92ff48f8f260b136cb474d732a3660f86e75f361599fa",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L15.json": "100a04c49af3d442f442b1d0d57c0daff9034d91fa28c0db8b42b6a4323f1fd7",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L15.json": "9a95f118d7ea83a20a36f6318953883cbf439f4e023cd22fc16d29f97e080270",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L16.json": "8f20dafdcb6020d22d57ca37f9f7754742be147e212f79ca9da43eacc0b72b19",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L16.json": "ff93005e482889729f3da7e3352a9e11b0c7a05a1cb4227be247b8655b504883",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L16.json": "57e7d26949d0750efb206cd5b9f516119cc3df81abdeb607a88407fb08b228a9",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L17.json": "0fd5cda9432b3149f8a4b288143d183e516f637076610f747588470ed43ae02d",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L17.json": "6982c570f2528c5e729fc97bfa12bbd98d43f4a094a759655c087d111feb7d28",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L17.json": "13efd4ca7fd0b98ea2c1fc07515436abf14974bce0d5a93f23b1df7fdb2036d2",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L18.json": "6cb576f11fc7fe2319aefd49d5a5d0d728f715b1a1da37c5553b3d3e7272d32a",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L18.json": "ccc579cedded0c3ec6e622b37ca4055b8070d30c34a55fca6a42dd3fb308ecea",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L18.json": "b6d15a43d3b6db6b8d12bdfd1c4a6574eb8b64292c7588251eb9040da47371a9",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L19.json": "4a0b0d1ec267aa20cc6407ea81bc45fea5bc260bc6d88c5d470e8ce9ef515558",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L19.json": "6a6435cf615b3064aa0d44cda260998a6076cbef5f6ce3bf932e997dca725576",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L19.json": "0fbbd8217f41a574ef7633f49dbedec23ed7841fe0f04cc39b56347b4e698f8d",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L20.json": "24c200634300062d6e474a8273ad89d5105f67c3c10f22bd79bacbf58a5138c8",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L20.json": "b9cab8420f1350eadd886d91a6623af77f2512d73ca91b4c3afe8d062190543d",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L20.json": "b08401294eeb60687b13211a4d8ae10ae5d2797a1e9635737477ea4a3da11143",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L21.json": "49106b88846087f75c0bc5326f4e4f3cedb262fa0372edaa4a52221b76bb5087",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L21.json": "63cda0f25fd53a5515680b7981b87a5f751adea0a9f9b68c215c669c6aac4bc7",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L21.json": "b9bc66c19afd25b360c51b1d26cf71c60c2b8f9f61097a97c8509bf263d0daf3",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L22.json": "69cf7d4fd9ec029d3e49bd62ecd730e68108217291aff3165c8af39308c3ea92",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L22.json": "9e2649694bff28952e563495f9b2c1d45e54d4f1be2093b881b16c4dc74dcd14",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L22.json": "bcfb665c862adb28797ccd9744a3a494f5e079c3cd868fba42fd65d548ac9029",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L23.json": "f62a98f71cfdf04f898150f34e86928180d1053651625dc73ae85c5406de5b80",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L23.json": "9d63c409a15f98ca4760f1b1480b0b3c8aef1a091b150f172c2a6b6bb0b56c0d",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L23.json": "d5bc1df126c65f64987f78ba22c5255fddccb3f2a54062779c3ca1ac8e328cca",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L24.json": "877becd04075b53264a44f4508a2de1406ba5c2708a4404f04586914b883e5f6",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L24.json": "38eb0516296f188a0d4c75469e556b9b1118df6fecb5eb45ec755b9a4222c086",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L24.json": "bb45b75d557e59b68e97d44444ff8855436de51dafe74de0b6c19fae9bffdc41",
+    "/workspace/rev1/results/annotations/2b/ann_v2_L25.json": "d2e61d2c26fcd01f2304c403d54a776f570b961417e71136e7908839fcadb852",
+    "/workspace/rev1/runs/2b_atlas/feature_catalog_L25.json": "e6677e90c6c5c3f47d4fd7a6d13564bdbb536148c4d7844e2cf4182f88153ffb",
+    "/workspace/rev1/runs/2b_atlas/coactivation_modules_L25.json": "8692ea75d4ed0ca936631fe334dd3f041cc82a6e53696ee3ee38cb1c9eba2f04",
+    "/workspace/rev1/results/biology.json.matches.npz": "bf1f458c307a72b00dbc9b8e0e8ba014ddb911b7e8416fc060fbcf2ffeac62a1",
+    "/workspace/rev1/runs/2b_atlas/sae/sae_L00.pt": "95bd512d42594a2f658a96dc8f1a1301bfa9b86d44fe13573b65df9634ae0de9",
+    "/workspace/rev1/runs/2b_atlas/sae/sae_L25.pt": "cf183e2bb8173bda00b80ee16f786a5c683ca945c63340d845fefdd67a010682",
+    "/workspace/rev1/stage_logs/biology-summary.complete.json": "b3cc2534613e8c51c470f5cc20ac0c30be6597bc17837389321901bec853b7e2",
+    "/workspace/rev1/designs/transfer_controls/SOURCES.json": "e428f674a62ebfa37256cffc8b420a7a8eb96ac8104128896c59c23aea95585a",
+    "/workspace/rev1/designs/transfer_controls/cells.json": "d5cf7bce3f632fa59c7275851446316654a954da0eeafd9511c497160dc0f98b",
+    "/workspace/rev1/designs/transfer_controls/row_gene_names.json": "a53c737a1a739e829e012a204106552423cff3f3037f3c10713ce5ab5d8dda33",
+    "/workspace/rev1/designs/transfer_controls/row_cell_ids.npy": "c28f60f0756c8129d20f52f04a5264572209b2410d5b27a68e699c6d14a0f819",
+    "/workspace/rev1/runs/lines2/cells.json": "d5cf7bce3f632fa59c7275851446316654a954da0eeafd9511c497160dc0f98b",
+    "/workspace/rev1/runs/lines2/row_gene_names.json": "a53c737a1a739e829e012a204106552423cff3f3037f3c10713ce5ab5d8dda33",
+    "/workspace/rev1/runs/lines2/row_cell_ids.npy": "c28f60f0756c8129d20f52f04a5264572209b2410d5b27a68e699c6d14a0f819",
+    "/workspace/rev1/results/lines2.json": "ac0d166255ccbfd3a1f2778affe1637f9d5d5f18727a0c7c9fb15702542f76c0",
+    "/workspace/rev1/stage_logs/lines-eval.complete.json": "1b221840411730e074b306765b7c657b1f5e12bd28a1686debfd04f2b3dfbca9",
+    "/workspace/rev1/designs/phase8_k562.json": "2eb7d4df179d5eac0af0f7e4743a206b68281f194a885dc8e709947a2559f821",
+    "/workspace/rev1/designs/phase8_rpe1.json": "22f61f3b671c802e837f6c0a2a92475cf96b0ba60d54c5fd4f194659ad2b0a3c",
+    "/workspace/rev1/results/lines2_freq.npz": "53b01f39b847773ed23e08dc2ab8986706010ab2d00f447b94799ddac067a0f8",
+    "/workspace/rev1/runs/lines2/layer_00_activations.npy": "a5cbaf859420f278954efd2c16fa26cb3ec54156bbf6875192ddf86b55aca7eb",
+    "/workspace/rev1/runs/2b_atlas/sae/mu_L00.npy": "a01b3e65e9e59098a0a25ec42d6708a7fe2d4fe4fc9eb58d1abe45fac05a6467",
+    "/workspace/rev1/runs/lines2/layer_13_activations.npy": "3bd569eebace9867babb1d4596a3b53885541b045f2a7928954eac27b604a3c8",
+    "/workspace/rev1/runs/2b_atlas/sae/mu_L13.npy": "9bcd86a8b43f14a3bfbd0a04940e97cf521e5eedb8b5d45e0a6b5a661e2d16c2",
+    "/workspace/rev1/runs/2b_atlas/sae/sae_L13.pt": "e347f59943bf1e34567206ac80db0c4e5e8ab1627d017569c1990f4e45644fcb",
+    "/workspace/rev1/runs/lines2/layer_22_activations.npy": "573970a51a2cccef78ba3f07259fdb17f781ad20777cc8e4f1b06349e66dbb14",
+    "/workspace/rev1/runs/2b_atlas/sae/mu_L22.npy": "935504e46b9a23eddd0361e8af4fe85c0824cc535c7a9abaac23d3da19f00700",
+    "/workspace/rev1/runs/2b_atlas/sae/sae_L22.pt": "43c7472df23bbb6cf9096c85bd52fee556317a6cc037cc19d4442ea4d49f09e3",
+    "/workspace/rev1/runs/2b_atlas/circuit_graph.json": "86480ad7bfd4c2217a5e3575c09916ca94a33dd73c3cbc8f76707e730116e88b",
+    "/workspace/rev1/results/audits/audit_biology_lines.py": "99a0f066c98b8d3027eada770a88f6a626170563dd5238c1546ff143c59f6b11"
+  },
+  "peak_rss_bytes": 2908340224,
+  "limitations": [
+    "Category labels are coarse overlapping descriptions; ontology labels do not prove infection or a unique cell programme.",
+    "Example hypergeometric p/fold and saved q/detail joins are checked; F9106/F1089/F254 receive independent dense full-family BH, other example q-values are joined to saved source annotations.",
+    "Raw counts verify every selected line sentence. Selected count matrices are hashed; whole large source h5ads are not rehashed.",
+    "Line firing arrays and mean shifts are checked with fixed dictionary/mean provenance; line SAE reconstruction forwards are not rerun."
+  ]
+}

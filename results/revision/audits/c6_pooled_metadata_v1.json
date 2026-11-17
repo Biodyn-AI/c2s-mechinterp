@@ -1,0 +1,169 @@
+{
+  "audit": "C6 pooled preparation identity/batch/guide audit",
+  "passed": true,
+  "n_checks": 105,
+  "findings": [],
+  "groups": [
+    {
+      "group": "control",
+      "kind": "control",
+      "n_cells": 400,
+      "n_guides": 9
+    },
+    {
+      "group": "ATF2",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "ETV7",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "IRF1",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "IRF7",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "MYC",
+      "kind": "tf",
+      "n_cells": 34,
+      "n_guides": 4
+    },
+    {
+      "group": "NFKBIA",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "POU2F2",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "SMAD4",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "STAT1",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "STAT2",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "STAT3",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "STAT5A",
+      "kind": "tf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "IFNGR1",
+      "kind": "nontf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "IFNGR2",
+      "kind": "nontf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "JAK2",
+      "kind": "nontf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "MARCH8",
+      "kind": "nontf",
+      "n_cells": 50,
+      "n_guides": 4
+    },
+    {
+      "group": "pseudo_00",
+      "kind": "pseudo",
+      "n_cells": 50,
+      "n_guides": 8
+    },
+    {
+      "group": "pseudo_01",
+      "kind": "pseudo",
+      "n_cells": 50,
+      "n_guides": 8
+    },
+    {
+      "group": "pseudo_02",
+      "kind": "pseudo",
+      "n_cells": 50,
+      "n_guides": 9
+    },
+    {
+      "group": "pseudo_03",
+      "kind": "pseudo",
+      "n_cells": 50,
+      "n_guides": 9
+    }
+  ],
+  "batch": "rep1-tx",
+  "shape": [
+    1384,
+    18648
+  ],
+  "collisions": [
+    {
+      "uppercase_symbol": "C2ORF15",
+      "source_indices": [
+        2453,
+        2454
+      ],
+      "source_symbols": [
+        "C2orf15",
+        "C2ORF15"
+      ],
+      "ensembl_ids": [
+        "ENSG00000273045",
+        "ENSG00000273045"
+      ],
+      "action": "sum_same_ensembl"
+    }
+  ],
+  "source_sha256": {
+    "/workspace/rev1/data/papalexi/c6_pooled_rep1tx/design.json": "198c48a3484fc2bf659a801b32a280f2d09ac7af4420d2e224bb367c54990629",
+    "/workspace/rev1/data/papalexi/c6_pooled_rep1tx/provenance.json": "063c0801bf310625febf475146c6d9aecd749b016bf733ccf566076babc3e957",
+    "/workspace/rev1/data/papalexi/c6_pooled_rep1tx/counts_cleaned.h5ad": "ee8bf3c0a2611508bb2f0b0418e6f98e3e7a5270ed00f80c86e59452f127c6c9",
+    "/workspace/rev1/results/audits/audit_c6_metadata.py": "ba158a0852eb93d73abfc5599762c6e45c3c456de04b55543b0154694abb9aea"
+  },
+  "limitations": [
+    "Prepared count hash, full count validity and selected-cell metadata are checked.",
+    "Original deposition count-column summation is not rerun; source collision identities/provenance are checked.",
+    "Several guides per factor are represented; this is not an independent biological replicate or donor design.",
+    "The recorded seed and design/source joins are verified; preparation chronology is not inferred from outcome statistics."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "factor": "PHB2",
+  "layer": 16,
+  "feature": 7801,
+  "gene_records": [
+    {
+      "gene": "MT-ND4",
+      "expression_d": -1.343478322585386,
+      "expression_q": 5.37832562404238e-05,
+      "expression_responding": true,
+      "rank_d": -1.0502836097623989,
+      "rank_q": 1.248172389232927e-05
+    },
+    {
+      "gene": "MT-CO2",
+      "expression_d": -1.3694026033675826,
+      "expression_q": 1.6334434130886747e-05,
+      "expression_responding": true,
+      "rank_d": -0.8626201810061571,
+      "rank_q": 8.055874353855277e-09
+    },
+    {
+      "gene": "MT-CO1",
+      "expression_d": -1.5027053388757143,
+      "expression_q": 4.349585258456042e-06,
+      "expression_responding": true,
+      "rank_d": -1.179370888337775,
+      "rank_q": 3.0906088105657957e-06
+    },
+    {
+      "gene": "MT-CYB",
+      "expression_d": -0.6271849605019965,
+      "expression_q": 0.04565962734586651,
+      "expression_responding": true,
+      "rank_d": -0.8052061596600621,
+      "rank_q": 0.0006003668013241384
+    },
+    {
+      "gene": "ARNT",
+      "expression_d": 0.09978270978122973,
+      "expression_q": 0.873884663843364,
+      "expression_responding": false,
+      "rank_d": 0.0,
+      "rank_q": 1.0
+    },
+    {
+      "gene": "BTG2",
+      "expression_d": 0.2389447474468492,
+      "expression_q": 0.37342162210672436,
+      "expression_responding": false,
+      "rank_d": -0.15974240886630894,
+      "rank_q": 1.0
+    },
+    {
+      "gene": "PHB2",
+      "expression_d": -1.0418265170835401,
+      "expression_q": 0.0020779613883218457,
+      "expression_responding": true,
+      "rank_d": -0.3727785183903693,
+      "rank_q": 0.4695278921945491
+    }
+  ],
+  "feature_response": {
+    "p": 5.833218645083667e-10,
+    "q": 3.735360798071442e-07,
+    "effect": -1.7083828725300454,
+    "mean_difference": -0.19943185165524482
+  },
+  "basis": "Saved effect arrays, same25knockdown and400controlcells; positive d means higher observed mean in knockdown; this is a cell-distribution comparison, not guide-independent causality."
+}

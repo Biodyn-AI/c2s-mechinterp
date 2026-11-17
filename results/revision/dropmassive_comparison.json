@@ -1,0 +1,93 @@
+{
+  "experiment": "E4",
+  "layers": [
+    {
+      "layer": 24,
+      "status": "compared",
+      "input_projection": {
+        "mode": "zero_selected_columns",
+        "original_width": 4608,
+        "removed_dimensions": [
+          458,
+          1306,
+          2350,
+          2367,
+          2416,
+          2479,
+          2730,
+          2924,
+          2962,
+          2994,
+          3055,
+          3246,
+          3320,
+          3589,
+          3662,
+          3776,
+          4140,
+          4156,
+          4525,
+          4530
+        ],
+        "variance_reference": "projected input after zeroing selected columns",
+        "retained_input_dimensions": 4588,
+        "preset_file": "/workspace/rev1/results/dropmassive_dimensions/dimensions_L24.json",
+        "preset_sha256": "2f347dd679d6f26e224f4f480ec7a1c06525664e4efe98d8253b2e0730266e90"
+      },
+      "training_recipe": {
+        "n_features": 9216,
+        "k": 32,
+        "epochs": 6,
+        "seed": 0
+      },
+      "dead_fraction_heldout_original": 0.6720920138888888,
+      "dead_fraction_heldout_projected": 0.474609375,
+      "dead_fraction_heldout_delta": -0.19748263888888884,
+      "dead_fraction_all_rows_original": 0.1750217013888889,
+      "dead_fraction_all_rows_projected": 0.03439670138888889,
+      "dead_fraction_all_rows_delta": -0.140625,
+      "variance_explained_original_input": 0.9452253996207621,
+      "variance_explained_projected_input": 0.9176373605850988,
+      "interpretation": "Different input variance references; variance explained is not a like-for-like contrast"
+    },
+    {
+      "layer": 38,
+      "status": "compared",
+      "input_projection": {
+        "mode": "zero_selected_columns",
+        "original_width": 4608,
+        "removed_dimensions": [
+          3246,
+          4140,
+          4530
+        ],
+        "variance_reference": "projected input after zeroing selected columns",
+        "retained_input_dimensions": 4605,
+        "preset_file": "/workspace/rev1/results/dropmassive_dimensions/dimensions_L38.json",
+        "preset_sha256": "2b988fed8ff3f97a508c233d3d2f6ce399da521f9925cca3697f2e49c331b8eb"
+      },
+      "training_recipe": {
+        "n_features": 9216,
+        "k": 32,
+        "epochs": 6,
+        "seed": 0
+      },
+      "dead_fraction_heldout_original": 0.10514322916666667,
+      "dead_fraction_heldout_projected": 0.07389322916666667,
+      "dead_fraction_heldout_delta": -0.03125,
+      "dead_fraction_all_rows_original": 0.0,
+      "dead_fraction_all_rows_projected": 0.00010850694444444444,
+      "dead_fraction_all_rows_delta": 0.00010850694444444444,
+      "variance_explained_original_input": 0.9138824814592102,
+      "variance_explained_projected_input": 0.9093127569832211,
+      "interpretation": "Different input variance references; variance explained is not a like-for-like contrast"
+    }
+  ],
+  "source_sha256": {
+    "/workspace/rev1/runs/27b_matched/sae/train_L24.json": "b93cba7d56a54a06c9f3b583c24d026e4107f40d18a9e1e7072a632dd20e1e18",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L24.json": "84348922a4d87c66fc10a6425781915435a3396063aaac870f4a733e38ff24d8",
+    "/workspace/rev1/runs/27b_matched/sae/train_L38.json": "3ef41bc4e453cede6da4200b5d33edba48602a27b8b6debcfd74dba1dfb35790",
+    "/workspace/rev1/runs/27b_matched/sae_dropmassive/train_L38.json": "ceaeec36c0b9931ab988b7e53cec074826fdcd4bd19bc7659524639b161dd42a"
+  },
+  "definition": "Dimension ablation using original-width, capacity-matched, identically seeded dictionaries; dead-fraction contrasts only"
+}
