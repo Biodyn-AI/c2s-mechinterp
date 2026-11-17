@@ -284,6 +284,7 @@ plotting sources; the active schematic and quantitative builders above produce t
 Source text checks (the light parser is `pylatexenc==2.10`) are available separately:
 
 ```bash
+pip install pylatexenc==2.10
 python paper/tools/make_title_abstract_keywords.py --check
 python paper/tools/validate_submission.py --supplement paper/supplement.tex
 python -m unittest discover -s paper/tools -p 'test_*.py'

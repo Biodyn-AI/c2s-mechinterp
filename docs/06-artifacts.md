@@ -10,7 +10,7 @@ These archives contain the saved numerical inputs and outputs used for the paper
 | `stage2_scientific_01.tar.gz` | Reference libraries and version metadata, exact designs, K562/RPE1 saved per-cell/statistical results and audit inputs. | 1,039,492,654 |
 | `stage2_scientific_02.tar.gz` | Sparsity/width, pooling and random-direction controls; activated THP1 results; biological categories and cross-line firing. | 154,254,616 |
 | `stage3_annotations_scientific_01.tar.gz` | Complete seven matched-capacity 27B annotation files and annotation-stage records. | 57,880,258 |
-| `stage3_scientific_01.tar.gz` | Matched 27B catalogues/evaluations, 72 residual spectra, coordinate-drop controls, full 50/100-cell circuit statistics, CD34+/K562 dimension controls and final stage records. | 267,627,109 |
+| `stage3_scientific_01.tar.gz` | Matched 27B catalogues/evaluations, 72-tap residual summary (raw spectra are in Stage 1), coordinate-drop controls, full 50/100-cell circuit statistics, CD34+/K562 dimension controls and final stage records. | 267,627,109 |
 | `retained_results.tar.gz` | Retained geometry, steering, gene-name probe, within-K562 and selection-matched frozen-transfer statistics plus sampled-cache validation. | 2,097,387 |
 | `stage3_local_science_audits.tar.gz` | Additional independent saved-array audit results and dense p/q verification arrays. Despite its collection filename, this archive contains only scientific audit material. | 1,271,290 |
 
