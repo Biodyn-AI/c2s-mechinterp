@@ -6,6 +6,10 @@ tables, complete figure provenance and measured resource records. Figure 1 is a 
 Figures 2–6 and S1–S6 are computed from saved artifacts. Every numerical figure has a
 `.provenance.json` sidecar with exact plotted values and source SHA256 hashes.
 
+The delivered `compute_accounting.json` omits cloud resource IDs and shortens billing-source
+paths; `BUILD_MANIFEST.json` retains the canonical source checksum and pins this delivered
+view, with all table values and the charging basis preserved.
+
 `make_revision_figures.py`, `make_design_schematic.py` and `assemble_supplement.py` are the
 current build sources. See [reproduction commands](../docs/04-reproduce.md) and the
 [versioned numerical artifacts](https://github.com/Biodyn-AI/c2s-mechinterp/releases/tag/controlled-analysis-2026-11).

@@ -17,8 +17,8 @@
       "bytes": 18075
     },
     "supplement.pdf": {
-      "sha256": "4bf8ee9b499b2515ed230f6570c81298f7d9ecb1d9a671b35084f7fd7e30f111",
-      "bytes": 299542
+      "sha256": "487d3149c5599463c7824853af4760e397519efc915d181b9571932e7d47a9e5",
+      "bytes": 299534
     },
     "assemble_supplement.py": {
       "sha256": "388d0fc9d83cf87606eae33314765555c9d2ddddf8d3b09e906e080f1416693b",
@@ -39,6 +39,18 @@
     "title_abstract_keywords.txt": {
       "sha256": "e6bdda6e37a7e7dfa6e3f85d57d83fe377321fffbcd2e3259797b0c25135c4ea",
       "bytes": 2010
+    },
+    "compute_accounting.json": {
+      "sha256": "3bef7fb9b1ea3f6851c4cf363a42291c9b2b0a561b02644915835d34c65f8c71",
+      "bytes": 2470
+    },
+    "supplement_generated/costs.tex": {
+      "sha256": "0198964e97730c07f961ee6f128b918607c481e76254f65956c5274f3f80094f",
+      "bytes": 1005
+    },
+    "supplement_generated/assembly_manifest.json": {
+      "sha256": "34b4dfca61b92bc151a20527c367ee41d97740bd03fed4be803a5caa1a04b37e",
+      "bytes": 61615
     }
   },
   "figures": {
@@ -59,5 +71,18 @@
   "generated_table_count": 30,
   "supplement_complete": true,
   "atlas_commit": "d74f5c8cf28459339f7869bb4d64e12de369ce43",
-  "numerical_release": "controlled-analysis-2026-11"
+  "numerical_release": "controlled-analysis-2026-11",
+  "compute_accounting_view_provenance": {
+    "canonical_source_sha256": "490b0f2551c30e06a870bf47b706a9cde220be07e8549567e26db6ceb23c7756",
+    "delivered_view_sha256": "3bef7fb9b1ea3f6851c4cf363a42291c9b2b0a561b02644915835d34c65f8c71",
+    "omitted_fields": [
+      "allocations[].pod_id"
+    ],
+    "normalized_fields": {
+      "allocations[].billing_source": "basename only"
+    },
+    "all_table_values_and_charging_basis_preserved": true,
+    "reported_usage_status": "reported_usage_through_termination_final_bucket_stable",
+    "reported_as_of_utc": "2026-11-17T18:47:08+00:00"
+  }
 }

@@ -38,6 +38,6 @@ for archive in stage1_results.tar.gz stage2_scientific_01.tar.gz \
 done
 ```
 
-Primary h5ad/count matrices, cell-level foundation-model caches, large activation memmaps, foundation-model weights and SAE checkpoint binaries are excluded. Acquire primary data and model weights from the sources documented in the repository; checkpoints and activation caches can be regenerated with the recorded designs and analysis commands. All 22 newly trained checkpoints were retained privately for continuity, outside this public artifact set. The old selection-confounded frozen-transfer result is excluded; `results/selection_matched_transfer.json` is the controlled comparison.
+Primary h5ad/count matrices, cell-level foundation-model caches, large activation memmaps, foundation-model weights and SAE checkpoint binaries are excluded. Acquire primary data and model weights from the sources documented in the repository; checkpoints and activation caches can be regenerated with the recorded designs and analysis commands. All 22 new dictionary checkpoints were retained privately for continuity, outside this public artifact set. The old selection-confounded frozen-transfer result is excluded; `results/selection_matched_transfer.json` is the controlled comparison.
 
 These archives report computed associations and controls; annotation labels and feature interventions do not themselves demonstrate a cellular regulatory mechanism. No editorial correspondence or reviewer text is included.

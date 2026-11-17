@@ -1,7 +1,7 @@
 {
   "schema": "supplement-assembly-v1",
   "status": "complete",
-  "assembled_utc": "2026-11-17T17:43:45.783665+00:00",
+  "assembled_utc": "2026-11-17T18:47:36.375466+00:00",
   "complete_blocks": [
     "circuit_stability",
     "costs",
@@ -300,7 +300,7 @@
     "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/stage_logs/untrained-L22-catalog-L22.complete.json": "596ace96e7b95b835a849b365b066682a11530dc688f87c2347c615c169895b7",
     "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/stage_logs/untrained-L22-init.complete.json": "72cc1e1e5cc117ff2bf73f078ffda6d29f3ef6a25e982e354fc0a9e9dfb707d8",
     "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/stage_logs/untrained-L22-inputs.complete.json": "0b70056294d086ef1e57a3827661da6b0efdcf019241bef410a85a3ad312c05d",
-    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/compute_accounting.json": "9f5b4b1136dd11dca75999d8ab01d3b9282a53c5d496cbb30b14894910e31f12",
+    "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/experiments/results/compute_accounting.json": "490b0f2551c30e06a870bf47b706a9cde220be07e8549567e26db6ceb23c7756",
     "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/figures/Figure_2.provenance.json": "3ff24970e6b37109029f2b917c2b39d7e699ec65cc062fadda5fd69aa59540ed",
     "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/figures/Figure_2.pdf": "1c2d18cfcbc55fb76afc1a83ce459bda785974c530dcb11ed6cca0b45fff59b4",
     "/Users/ihorkendiukhov/c2s_rev1_work/project/paper_cbc_rev1/figures/Figure_3.provenance.json": "aefc6901a14a5f37e0e0a72b2664a449796ab140c4dff33dafbd5a88effd897d",
@@ -391,7 +391,7 @@
     "sampled_cache.tex": "24c9acb77fbd29bee7db894632d33bb651d373316f65695848df83b155be25fd",
     "guide_coverage.tex": "c2919fd283d17da5c77f180897b15681f38cc31b1b223993e052b1bf3d474106",
     "resources.tex": "ae12713b9b399a90de733607983dd5bb113630593c3eee50ecd6713dd717e1f0",
-    "costs.tex": "3c0f68c12ac19bc06f647b0f726b41670f156faf628bc6518e79b33842c8f813",
+    "costs.tex": "0198964e97730c07f961ee6f128b918607c481e76254f65956c5274f3f80094f",
     "provenance.tex": "951d5335075bcdd264fa4cd337cb3acafe1a1bf569c0e30fc7b35e5698e1a2b1",
     "figure_S1.tex": "5030c3b7f5f022b690b962d17c2397b3e9d09fd9bed89a32fdeb3161bc4a31e9",
     "figure_S2.tex": "d6842c92b1b097e903d569e64a7da0d8defbe92370fc81e38f0e7571e1995ac5",
